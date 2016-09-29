@@ -20,8 +20,10 @@ import 'rxjs/add/operator/mergeMap';
 import 'jquery';
 import 'tether';
 import 'bootstrap';
-import 'widgster'
-import 'bootstrap-select'
+import 'widgster';
+import 'bootstrap-select';
+import 'markdown';
+import 'bootstrap-markdown/js/bootstrap-markdown.js';
 
 if ('production' === ENV) {
   // Production
