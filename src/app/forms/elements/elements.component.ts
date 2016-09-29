@@ -8,6 +8,7 @@ declare var jQuery: any;
 export class Elements {
 
   ngOnInit(): void {
+    jQuery('.select2').select2();
     jQuery('#markdown').markdown();
   }
 }
