@@ -18,6 +18,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
 import 'jquery';
+import 'jquery.animate-number/jquery.animateNumber.js';
+import 'jquery-mousewheel/jquery.mousewheel.js';
+// import 'jquery-mapael/js/jquery.mapael.js';
 import 'tether';
 import 'bootstrap';
 import 'widgster';

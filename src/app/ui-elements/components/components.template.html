@@ -1,0 +1,187 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">YOU ARE HERE</li>
+  <li class="active breadcrumb-item">UI Components</li>
+</ol>
+<h1 class="page-title">Components - <span class="fw-semi-bold">Bootstrap</span></h1>
+<div data-ng-controller="UiComponentsDemoController">
+  <section class="widget" widget>
+    <header>
+      <h6>
+        Alert <span class="fw-semi-bold">Messages</span>
+      </h6>
+      <div class="widget-controls">
+        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+        <a href="#"><i class="fa fa-refresh"></i></a>
+        <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+      </div>
+    </header>
+    <div class="widget-body clearfix">
+      <h3>Small <span class="fw-semi-bold">Elements</span></h3>
+      <p class="mb-lg">Gaining direct user attention on some matter. Add dismiss functionality to all alert messages with this plugin.</p>
+      <alert *ngFor="let alert of alerts; let i = index" [type]="alert.type + ' alert-sm'" (close)="closeAlert(i)" dismissible="true">
+        <div [innerHTML]="alert.msg"></div>
+      </alert>
+      <button class='btn btn-secondary btn-sm pull-xs-right' (click)="addAlert()">Add Alert</button>
+    </div>
+  </section>
+  <div class="row">
+    <div class="col-lg-6 col-xs-12">
+      <section class="widget" widget>
+        <header>
+          <h6>
+            Labels & Badge <span class="fw-semi-bold">Options</span>
+          </h6>
+          <div class="widget-controls">
+            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+            <a href="#"><i class="fa fa-refresh"></i></a>
+            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+          </div>
+        </header>
+        <div class="widget-body">
+          <h3>Label <span class="fw-semi-bold">Colors</span></h3>
+          <p>Just add the <code>.tag</code> class to inline element to create a tag.</p>
+          <p>
+            <span class="tag tag-default">Default</span>
+            <span class="tag tag-primary">Primary</span>
+            <span class="tag tag-info">Info</span>
+            <span class="tag tag-success">Success</span>
+            <span class="tag tag-warning">Warning</span>
+            <span class="tag tag-danger">Danger</span>
+          </p>
+          <h3>Label-pill <span class="fw-semi-bold">Variations</span></h3>
+          <p>Same as tags, just add the <code>.tag.tag-pill</code> class to inline element to create a tag-pill.</p>
+          <p>
+            <button class="btn btn-primary" type="button">
+              Notifications &nbsp;&nbsp; <span class="tag tag-pill tag-white text-primary">3</span>
+            </button>
+            <span class="tag tag-pill tag-danger">01</span>
+            <span class="tag tag-pill tag-warning">20</span>
+            <span class="tag tag-pill tag-success">31</span>
+            <span class="tag tag-pill tag-info">18</span>
+            <span class="tag tag-pill tag-primary">41</span>
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-6 col-xs-12">
+      <section class="widget" widget>
+        <header>
+          <h6>
+            Tooltips & Popover <span class="fw-semi-bold">Variations</span>
+          </h6>
+          <div class="widget-controls">
+            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+            <a href="#"><i class="fa fa-refresh"></i></a>
+            <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+          </div>
+        </header>
+        <div class="widget-body">
+          <h3>Position <span class="fw-semi-bold">Tooltips</span></h3>
+          <p>Stable four position options available:</p>
+          <div class="btn-toolbar">
+            <a href="#" class="btn btn-default" tooltip="Tooltip on left" tooltipPlacement="left">On left
+            </a>
+            <a href="#" class="btn btn-default" tooltip="Tooltip on top" tooltipPlacement="top">On top
+            </a>
+            <a href="#" class="btn btn-default" tooltip="Tooltip on bottom" tooltipPlacement="bottom">On bottom
+            </a>
+            <a href="#" class="btn btn-default" tooltip="Tooltip on right" tooltipPlacement="right">On right
+            </a>
+          </div>
+          <h3>Popover <span class="fw-semi-bold">Options</span></h3>
+          <p>Placing help text where needed:</p>
+          <div class="btn-toolbar">
+            <button id="popover1" type="button" class="btn btn-default" title=""
+                    data-toggle="popover"
+                    data-placement="left"
+                    data-content="And here's some amazing content. It's very engaging. right?">
+              Popover on left
+            </button>
+            <button id="popover2" type="button" class="btn btn-info" title="A Title"
+                    data-toggle="popover"
+                    data-placement="top"
+                    data-content="And here's some amazing content. It's very engaging. right?">
+              Titled Popover
+            </button>
+          </div>
+          <h3><span class="fw-semi-bold">Bootstrap</span> Modals</h3>
+          <p>Modals are streamlined, but flexible, dialog prompts with the minimum
+            required functionality and smart defaults.</p>
+          <div modal-component>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <section class="widget" widget>
+    <header>
+      <h6>
+        Progress <span class="fw-semi-bold">Bars</span>
+      </h6>
+      <div class="widget-controls">
+        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+        <a href="#"><i class="fa fa-refresh"></i></a>
+        <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+      </div>
+    </header>
+    <div class="widget-body">
+      <div class="row">
+        <div class="col-lg-4 col-xs-12">
+          <h3>Progress Bar <span class="fw-semi-bold">Colors</span></h3>
+          <p class="fs-mini text-muted">Easily perceptible colored options for Bootstrap progress bars:</p>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-sm progress-danger" value="100" max="100" style="width: 75%;"></progress>
+              </div>
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-sm progress-warning" value="100" max="100" style="width: 60%;"></progress>
+              </div>
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-sm progress-success" value="100" max="100" style="width: 45%;"></progress>
+              </div>
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-sm progress-primary" value="100" max="100" style="width: 30%;"></progress>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+          <h3>Progress Bar <span class="fw-semi-bold">Sizes</span></h3>
+          <p class="fs-mini text-muted">Three different sizes for all of possible use cases:</p>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-xs progress-bar-gray" value="100" max="100" style="width: 60%;"></progress>
+              </div>
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-sm progress-warning" value="100" max="100" style="width: 60%;"></progress>
+              </div>
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress progress-info" value="100" max="100" style="width: 33%;"></progress>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+          <h3>More <span class="fw-semi-bold">Options</span></h3>
+          <div class="alert alert-warning alert-sm">Animated and containg text progress bars are not yet supported in Bootstrap 4</div>
+          <p class="text-muted fs-mini">Animated, stripped and progress bars containing text:</p>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-xs-12">
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-striped progress-animated progress-info" value="100" max="100" style="width: 60%;">
+                  $24 818
+                </progress>
+              </div>
+              <div class="bg-gray-lighter m-t-2">
+                <progress class="progress progress-sm progress-striped progress-bar-gray-light" value="100" max="100" style="width: 60%;">
+                </progress>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

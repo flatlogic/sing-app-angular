@@ -1,24 +1,385 @@
 <h1 class="page-title">Dashboard <small><small>The Lucky One</small></small></h1>
-
+<div class="clearfix mb-lg">
+  <img class="pull-left mr-sm mt-n-xs" src="assets/img/a2.png" alt="Angular 2.0" width="100">
+  <p class="lead">You are looking at a completely new version of Sing App built
+    with brand new <strong>Angular <em>2.0</em>!</strong></p>
+  <p class="fs-mini">Made by <a href="http://flatlogic.com" target="_blank">Flatlogic</a>.</p>
+</div>
 <div class="row">
-  <div class="col-md-6">
-    <section widget class="widget">
+  <div class="col-lg-8 col-xs-12">
+    <!-- minimal widget consist of .widget class. note bg-transparent - it can be any background like bg-gray,
+    bg-primary, bg-white -->
+    <section class="widget bg-transparent">
+      <!-- .widget-body is a mostly semantic class. may be a sibling to .widget>header or .widget>footer -->
+      <div class="widget-body">
+        <!-- for this particular example we also need to preload us map, as this is mapael's extension -->
+        <div class="mapael" geo-locations-widget>
+          <div class="stats">
+            <h6 class="text-white m-t-1">GEO-LOCATIONS</h6>
+            <p class="h3 text-warning no-margin">
+              <strong number-animate>1 656 843</strong>
+              <i class="fa fa-map-marker"></i>
+            </p>
+          </div>
+          <div class="map">
+            <span>Alternative content for the map</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget bg-transparent">
       <header>
-        <h4>
-          Example <span class="fw-semi-bold">Widget</span>
-        </h4>
-        <div class="widget-controls">
-          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
-          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+        <h5>
+          Map
+          <span class="fw-semi-bold">Statistics</span>
+        </h5>
+        <div class="widget-controls widget-controls-hover">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a href="#"><i class="fa fa-refresh"></i></a>
           <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
         </div>
       </header>
       <div class="widget-body">
-        <img class="pull-left mr-sm" src="assets/img/a2.png" alt="Angular 2.0" width="100">
-        <p class="lead">You are looking at a completely new version of Sing App built
-          with brand new <strong>Angular <em>2.0</em> Final Release</strong></p>
-        <p class="fs-mini">Made by <a href="http://flatlogic.com" target="_blank">Flatlogic</a>.</p>
+        <p>Status: <strong>Live</strong></p>
+        <p>
+          <span class="circle bg-warning"><i class="fa fa-map-marker"></i></span>
+          146 Countries, 2759 Cities
+        </p>
+        <div class="row progress-stats">
+          <div class="col-md-9 col-xs-12">
+            <h6 class="name m-t-1">Foreign Visits</h6>
+            <p class="description deemphasize">Some Cool Text</p>
+            <div class="bg-white progress-bar">
+              <progress progress-animate class="progress progress-primary progress-sm" value="100" max="100" style="width: 60%;" data-width="60%"></progress>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-12 text-xs-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small><span number-animate>75</span>%</small>
+                                </span>
+          </div>
+        </div>
+        <div class="row progress-stats">
+          <div class="col-md-9 col-xs-12">
+            <h6 class="name m-t-1">Local Visits</h6>
+            <p class="description deemphasize">P. to C. Conversion</p>
+            <div class="bg-white progress-bar">
+              <progress progress-animate class="progress progress-danger progress-sm" value="100" max="100" style="width: 39%;" data-width="39%"></progress>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-12 text-xs-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small><span number-animate>84</span>%</small>
+                                </span>
+          </div>
+        </div>
+        <div class="row progress-stats">
+          <div class="col-md-9 col-xs-12">
+            <h6 class="name m-t-1">Sound Frequencies</h6>
+            <p class="description deemphasize">Average Bitrate</p>
+            <div class="bg-white progress-bar">
+              <progress progress-animate class="progress progress-success progress-sm" value="100" max="100" style="width: 80%;" data-width="80%"></progress>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-12 text-xs-center">
+                                <span class="status rounded rounded-lg bg-body-light">
+                                    <small><span number-animate>92</span>%</small>
+                                </span>
+          </div>
+        </div>
+        <h6 class="fw-semi-bold mt">Map Distributions</h6>
+        <p>Tracking: <strong>Active</strong></p>
+        <p>
+          <span class="circle bg-warning"><i class="fa fa-cog"></i></span>
+          391 elements installed, 84 sets
+        </p>
+        <div class="input-group mt">
+          <input type="text" class="form-control" placeholder="Search Map">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                  <i class="fa fa-search text-gray"></i>
+                                </button>
+                            </span>
+        </div>
       </div>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget">
+      <!-- .widget>header is generally a place for widget title and widget controls. see .widget in _base.scss -->
+      <header>
+        <h6>
+          USERBASE GROWTH
+        </h6>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <div class="stats-row">
+          <div class="stat-item">
+            <h6 class="name fs-sm">Overall Growth</h6>
+            <p class="value">76.38%</p>
+          </div>
+          <div class="stat-item">
+            <h6 class="name fs-sm">Montly</h6>
+            <p class="value">10.38%</p>
+          </div>
+          <div class="stat-item">
+            <h6 class="name fs-sm">24h</h6>
+            <p class="value">3.38%</p>
+          </div>
+        </div>
+        <div class="bg-gray-lighter progress-bar">
+          <progress class="progress progress-xs progress-success" value="100" max="100" style="width: 60%"></progress>
+        </div>
+        <p>
+          <small><span class="circle bg-warning"><i class="glyphicon glyphicon-chevron-up"></i></span></small>
+          <span class="fw-semi-bold">17% higher</span>
+          than last month</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget">
+      <header>
+        <h6>
+          TRAFFIC VALUES
+        </h6>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <div class="stats-row">
+          <div class="stat-item">
+            <h6 class="name fs-sm">Overall Values</h6>
+            <p class="value">17 567 318</p>
+          </div>
+          <div class="stat-item">
+            <h6 class="name fs-sm">Montly</h6>
+            <p class="value">55 120</p>
+          </div>
+          <div class="stat-item">
+            <h6 class="name fs-sm">24h</h6>
+            <p class="value">9 695</p>
+          </div>
+        </div>
+        <div class="bg-gray-lighter progress-bar">
+          <progress class="progress progress-xs progress-danger" value="100" max="100" style="width: 60%"></progress>
+        </div>
+        <p>
+          <small><span class="circle bg-warning"><i class="fa fa-chevron-down"></i></span></small>
+          <span class="fw-semi-bold">8% lower</span>
+          than last month
+        </p>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget">
+      <header>
+        <h6>
+          RANDOM VALUES
+        </h6>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <div class="stats-row">
+          <div class="stat-item">
+            <h6 class="name fs-sm">Overcome T.</h6>
+            <p class="value">104.85%</p>
+          </div>
+          <div class="stat-item">
+            <h6 class="name fs-sm">Takeoff Angle</h6>
+            <p class="value">14.29&deg;</p>
+          </div>
+          <div class="stat-item">
+            <h6 class="name fs-sm">World Pop.</h6>
+            <p class="value">7,211M</p>
+          </div>
+        </div>
+        <div class="bg-gray-lighter progress-bar">
+          <progress class="progress progress-xs progress-primary" value="100" max="100" style="width: 60%"></progress>
+        </div>
+        <p>
+          <small><span class="circle bg-warning"><i class="fa fa-plus"></i></span></small>
+          <span class="fw-semi-bold">8 734 higher</span>
+          than last month
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget">
+      <header>
+        <h6><span class="label label-danger">New</span> Messages</h6>
+        <div class="widget-controls">
+          <a href="#"><i class="fa fa-refresh"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body no-padding">
+        <div class="list-group list-group-lg">
+          <a class="list-group-item" href="#">
+                                <span class="thumb-sm pull-xs-left mr">
+                                    <img class="img-circle" src="assets/img/people/a2.jpg" alt="...">
+                                    <i class="status status-bottom bg-success"></i>
+                                </span>
+            <h6 class="no-margin">Chris Gray</h6>
+            <p class="help-block text-ellipsis no-margin">Hey! What's up? So many times since we</p>
+          </a>
+          <a class="list-group-item" href="#">
+                                <span class="thumb-sm pull-xs-left mr">
+                                    <img class="img-circle" src="assets/img/people/a4.jpg" alt="...">
+                                    <i class="status status-bottom bg-success"></i>
+                                </span>
+            <h6 class="no-margin">Jamey Brownlow</h6>
+            <p class="help-block text-ellipsis no-margin">Good news coming tonight. Seems they agreed to proceed</p>
+          </a>
+          <a class="list-group-item" href="#">
+                                <span class="thumb-sm pull-xs-left mr">
+                                    <img class="img-circle" src="assets/img/people/a1.jpg" alt="...">
+                                    <i class="status status-bottom bg-warning"></i>
+                                </span>
+            <h6 class="no-margin">Livia Walsh</h6>
+            <p class="help-block text-ellipsis no-margin">Check my latest email plz!</p>
+          </a>
+          <a class="list-group-item" href="#">
+                                <span class="thumb-sm pull-xs-left mr">
+                                    <img class="img-circle" src="assets/img/people/a5.jpg" alt="...">
+                                    <i class="status status-bottom bg-danger"></i>
+                                </span>
+            <h6 class="no-margin">Jaron Fitzroy</h6>
+            <p class="help-block text-ellipsis no-margin">What about summer break?</p>
+          </a>
+        </div>
+      </div>
+      <footer class="bg-body-light mt">
+        <input type="search" class="form-control form-control-sm" placeholder="Search">
+      </footer>
+    </section>
+  </div>
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget">
+      <header>
+        <h6>
+          Market <span class="fw-semi-bold">Stats</span>
+        </h6>
+        <div class="widget-controls">
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <h3>$720 Earned</h3>
+        <p class="fs-mini text-muted mb mt-sm">
+          Target <span class="fw-semi-bold">$820</span> day earnings
+          is <span class="fw-semi-bold">96%</span> reached.
+        </p>
+      </div>
+      <div class="widget-table-overflow">
+        <table class="table table-striped table-sm">
+          <thead class="no-bd">
+          <tr>
+            <th>
+              <div class="abc-checkbox">
+                <input id="checkbox210" type="checkbox" check-all>
+                <label for="checkbox210"></label>
+              </div>
+            </th>
+            <th></th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <div class="abc-checkbox">
+                <input id="checkbox212" type="checkbox">
+                <label for="checkbox212"></label>
+              </div>
+            </td>
+            <td>HP Core i7</td>
+            <td class="text-align-right fw-semi-bold">$346.1</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="abc-checkbox">
+                <input id="checkbox214" type="checkbox">
+                <label for="checkbox214"></label>
+              </div>
+            </td>
+            <td>Air Pro</td>
+            <td class="text-align-right fw-semi-bold">$533.1</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="widget-body mt-xlg" marker-stats-widget>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-4 col-xs-12">
+    <section widget class="widget">
+      <header>
+        <h6>Calendar</h6>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <!--<div class="widget-body no-padding">-->
+        <!--<div class="bg-primary-light" bootstrap-calendar [events]="[-->
+                <!--[-->
+                        <!--'2/'+month+'/'+year,-->
+                    <!--'The flower bed',-->
+                    <!--'#',-->
+                    <!--config.settings.colors['brand-primary'],-->
+                    <!--'Contents here'-->
+                <!--],-->
+                <!--[-->
+                        <!--'5/'+month+'/'+year,-->
+                    <!--'Stop world water pollution',-->
+                    <!--'#',-->
+                    <!--config.settings.colors['brand-warning'],-->
+                    <!--'Have a kick off meeting with .inc company'-->
+                <!--],-->
+                <!--[-->
+                        <!--'18/'+month+'/'+year,-->
+                    <!--'Light Blue 2.2 release',-->
+                    <!--'#',-->
+                    <!--config.settings.colors['brand-success'],-->
+                    <!--'Some contents here'-->
+                <!--],-->
+                <!--[-->
+                        <!--'29/'+month+'/'+year,-->
+                    <!--'A link',-->
+                    <!--'http://www.flatlogic.com',-->
+                    <!--config.settings.colors['brand-danger']-->
+                <!--]-->
+            <!--]"></div>-->
+        <!--<div class="list-group fs-mini">-->
+          <!--<a href="#" class="list-group-item text-ellipsis">-->
+            <!--<span class="label-pill label-warning pull-xs-right">6:45</span>-->
+            <!--Weed out the flower bed-->
+          <!--</a>-->
+          <!--<a href="#" class="list-group-item text-ellipsis">-->
+            <!--<span class="label-pill label-success pull-xs-right">9:41</span>-->
+            <!--Stop world water pollution-->
+          <!--</a>-->
+        <!--</div>-->
+      <!--</div>-->
     </section>
   </div>
 </div>

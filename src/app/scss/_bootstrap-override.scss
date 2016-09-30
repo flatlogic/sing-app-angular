@@ -575,7 +575,7 @@ legend {
   }
 }
 
-.breadcrumb>li+li::before {
+.breadcrumb-item + .breadcrumb-item::before {
   content: ">";
 }
 //
