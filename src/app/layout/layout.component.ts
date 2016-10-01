@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router, NavigationEnd} from '@angular/router';
 import { AppConfig } from '../app.config'
 
 declare var jQuery: any;
@@ -168,8 +168,17 @@ export class Layout {
     let $el = jQuery(this.el.nativeElement);
     this.$sidebar = $el.find('[sidebar]');
 
-    $el.find('a[href="#"]').on('click', (e) => {
-      e.preventDefault();
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => {
+          this.collapseNavIfSmallScreen();
+          window.scrollTo(0, 0);
+
+          $el.find('a[href="#"]').on('click', (e) => {
+            e.preventDefault();
+          });
+        });
+      }
     });
 
     this.$sidebar.on('mouseenter', this._sidebarMouseEnter.bind(this));

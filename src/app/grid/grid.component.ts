@@ -1,0 +1,29 @@
+import {Component, ViewEncapsulation} from '@angular/core';
+declare var jQuery: any;
+
+@Component({
+  selector: '[grid]',
+  template: require('./grid.template.html'),
+  encapsulation: ViewEncapsulation.None,
+  styles: [require('./grid.style.scss')]
+})
+export class GridComponent {
+  sortOptions: Object = {
+    connectWith: '.widget-container',
+    handle: 'header, .handle',
+    cursor: 'move',
+    iframeFix: false,
+    items: '.widget:not(.locked)',
+    opacity: 0.8,
+    helper: 'original',
+    revert: true,
+    forceHelperSize: true,
+    placeholder: 'widget widget-placeholder',
+    forcePlaceholderSize: true,
+    tolerance: 'pointer'
+  };
+
+  ngOnInit(): void {
+    jQuery('.widget-container').sortable(this.sortOptions);
+  }
+}

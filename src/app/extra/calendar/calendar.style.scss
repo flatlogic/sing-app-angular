@@ -1,0 +1,63 @@
+@import "../../../../node_modules/fullcalendar/dist/fullcalendar";
+@import "../../scss/variables";
+@import "../../../../node_modules/bootstrap/scss/_variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+/**************************/
+/* Full Calendar Override */
+/**************************/
+
+.fc-grid th{
+  text-transform: uppercase;
+}
+
+.fc-event {
+  padding: 2px 3px;
+  border: none;
+  font-weight: $font-weight-normal;
+  background-color: $gray-semi-lighter;
+  color: $text-color;
+}
+
+.fc-today{
+  background-color: #fff1b8;
+}
+
+a.fc-event{
+  height: auto;
+  line-height: $line-height-base;
+}
+
+/***********************************/
+/**      Full Calendar Custom     **/
+/***********************************/
+
+.full-calendar{
+  margin-top: 10px;
+}
+
+.calendar-controls{
+  .btn{
+    font-size: $font-size-mini;
+  }
+}
+
+.calendar-external-events{
+  margin-top: 20px;
+
+  .external-event{
+    margin: 10px 0;
+    padding: 6px;
+    font-size: $font-size-mini;
+    cursor: pointer;
+    border-radius: $border-radius;
+    background-color: $white;
+    border: 1px solid #bbb;
+  }
+}
+
+.widget-calendar{
+  @include media-breakpoint-up(xl){
+    margin-top: -100px;
+  }
+}

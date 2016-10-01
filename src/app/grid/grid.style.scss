@@ -1,0 +1,58 @@
+@import "../scss/variables";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+/***********************************/
+/**          NEWS LIST           **/
+/**********************************/
+
+.news-list{
+  margin-bottom: 0;
+  padding-left: 0;
+
+  li{
+    list-style: none;
+    box-sizing: content-box;
+    border-top: 1px solid $gray-lighter;
+    padding: 12px;
+    cursor: pointer;
+    @include transition(background-color .2s ease-out);
+
+    &:hover{
+      background: $body-bg-light;
+    }
+
+    &:last-child{
+      margin-bottom: -10px;
+    }
+  }
+
+  img,
+  .icon{
+    float: left;
+    height: 50px;
+    width: 50px;
+  }
+
+  .icon{
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .news-item-info{
+    margin-left: 62px; /*50 + 12px padding*/
+  }
+
+  .name{
+    text-transform: uppercase;
+
+    a{
+      text-decoration: none;
+      &:hover{
+        color: $link-color;
+      }
+    }
+  }
+}
