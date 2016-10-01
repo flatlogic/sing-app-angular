@@ -1,0 +1,480 @@
+//@import "../../../node_modules/ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker3.min";
+//@import "../../../node_modules/ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min";
+//@import "../../../node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker";
+//@import "../../../node_modules/bootstrap-markdown/css/bootstrap-markdown.min";
+@import "../../../../node_modules/bootstrap-select/dist/css/bootstrap-select";
+//@import "../../../node_modules/select2/select2";
+//@import "../../../node_modules/select2-bootstrap-css/select2-bootstrap";
+//@import "../../../node_modules/jasny-bootstrap/dist/css/jasny-bootstrap";
+//@import "../../../node_modules/dropzone/dist/dropzone";
+@import "../../scss/variables";
+@import "../../scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/_variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+
+/**
+ * Bootstrap Colorpicker
+ * setting correct urls
+ */
+
+
+
+.colorpicker-saturation {
+  background-image: url("assets/bootstrap-colorpicker/saturation.png");;
+}
+
+.colorpicker-hue {
+  background-image: url("assets/bootstrap-colorpicker/hue.png");
+}
+
+.colorpicker-alpha,
+.colorpicker-color {
+  background-image: url("assets/bootstrap-colorpicker/alpha.png");
+}
+
+.colorpicker.colorpicker-horizontal .colorpicker-hue {
+  background-image: url("assets/bootstrap-colorpicker/hue-horizontal.png");
+}
+
+.colorpicker.colorpicker-horizontal .colorpicker-alpha {
+  background-image: url("assets/bootstrap-colorpicker/alpha-horizontal.png");
+}
+
+/**
+ * Switchery.
+ */
+
+.switch{
+  box-sizing: content-box;
+  margin-left: -20px;
+}
+
+.switch input {
+  display: none;
+}
+.switch i {
+  display: inline-block;
+  cursor: pointer;
+  padding-right: 20px;
+  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.2s;
+  border-radius: 20px;
+  box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+}
+.switch i:before {
+  display: block;
+  content: '';
+  width: 30px;
+  height: 30px;
+  padding: 1px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+.switch :checked + i {
+  padding-right: 0;
+  padding-left: 20px;
+  background: rgb(100, 189, 99);
+}
+
+
+
+
+/**
+ * Jasny Bootstrap
+ * Fileinput.less
+ */
+
+.fileinput.fileinput-new {
+  .thumbnail {
+    padding: $thumbnail-padding;
+    line-height: $line-height-base;
+    background-color: $thumbnail-bg;
+    border: $thumbnail-border-width solid $thumbnail-border-color;
+    border-radius: $thumbnail-border-radius;
+    transition: all .2s ease-in-out;
+    @include box-shadow(0 1px 2px rgba(0,0,0,.075));
+  }
+}
+
+.fileinput-preview.fileinput-exists {
+  border: 1px solid $input-border-color;
+  border-radius: $border-radius;
+  padding: 5px;
+}
+
+.fileinput.input-group {
+  display: flex;
+}
+
+.fileinput-new.input-group .btn-file,
+.fileinput-new .input-group .btn-file {
+  border-radius: 0 $border-radius $border-radius 0;
+
+  &.btn-xs,
+  &.btn-sm {
+    border-radius: 0 $border-radius-sm $border-radius-sm 0;
+  }
+  &.btn-lg {
+    border-radius: 0 $border-radius-lg $border-radius-lg 0;
+  }
+}
+
+.form-group.has-warning .fileinput {
+  .fileinput-preview {
+    color: $state-warning-text;
+  }
+  .thumbnail {
+    border-color: $state-warning-border;
+  }
+}
+.form-group.has-error .fileinput {
+  .fileinput-preview {
+    color: $state-danger-text;
+  }
+  .thumbnail {
+    border-color: $state-danger-border;
+  }
+}
+.form-group.has-success .fileinput {
+  .fileinput-preview {
+    color: $state-success-text;
+  }
+  .thumbnail {
+    border-color: $state-success-border;
+  }
+}
+
+.btn-label {
+  background: transparent;
+  left: 2px;
+  padding: 1px 6px;
+}
+
+
+/**
+ * Dropzone
+ */
+
+.dropzone{
+  border: 2px dashed #ccc;
+  @include border-radius($border-radius);
+}
+
+/**
+ * Markdown. converted from less files
+ */
+
+.md-editor {
+  display: block;
+  border: 1px solid $table-border-color;
+
+  > .md-header, .md-footer {
+    display: block;
+    padding: 6px 4px;
+    background: $card-default-heading-bg;
+  }
+
+  > .md-header {
+    margin: 0;
+
+    .glyphicon {
+      top: 3px;
+    }
+  }
+
+  > .md-preview {
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    background: $card-bg;
+    border-top: 1px dashed $table-border-color;
+    min-height: 10px;
+  }
+
+  > textarea {
+    font-family: $font-family-monospace;
+    font-size: $font-size-base;
+    outline: 0;
+    outline: thin dotted  \9; /* IE6-9 */
+    margin: 0;
+    display: block;
+    width: 100%;
+    border: 0;
+    border-top: 1px dashed $table-border-color;
+    border-radius: 0;
+    box-shadow: none;
+    background: $input-bg-disabled;
+    &:focus {
+      box-shadow: none;
+      background: $input-bg;
+    }
+  }
+
+  // Hover state
+  $color: $input-border-focus;
+  &.active {
+    border-color: $color;
+    outline: 0;
+  }
+}
+
+/**
+ * Bootstrap slider. converted from less files
+ */
+
+$slider-line-height: 8px;
+$slider-handle-size: 26px;
+
+.slider {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  &.slider-horizontal {
+    width: 210px;
+    height: $slider-line-height;
+    .slider-track {
+      height: $slider-line-height/2;
+      width: 100%;
+      margin-top: -$slider-line-height/4;
+      top: 50%;
+      left: 0;
+    }
+    .slider-selection {
+      height: 100%;
+      top: 0;
+      bottom: 0;
+    }
+    .slider-handle {
+      margin-left: -$slider-handle-size/2;
+      margin-top: -$slider-handle-size*3/8;
+      &.triangle {
+        border-width: 0 $slider-line-height/2 $slider-line-height/2 $slider-line-height/2;
+        width: 0;
+        height: 0;
+        border-bottom-color: #0480be;
+        margin-top: 0;
+      }
+    }
+  }
+  &.slider-vertical {
+    height: 210px;
+    width: $slider-line-height;
+    .slider-track {
+      width: $slider-line-height/2;
+      height: 100%;
+      margin-left: -$slider-line-height/4;
+      left: 50%;
+      top: 0;
+    }
+    .slider-selection {
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .slider-handle {
+      margin-left: -$slider-handle-size*3/8;
+      margin-top: -$slider-handle-size/2;
+      &.triangle {
+        border-width: $slider-line-height/2 0 $slider-line-height/2 $slider-line-height/2;
+        width: 1px;
+        height: 1px;
+        border-left-color: #0480be;
+        margin-left: 0;
+      }
+    }
+  }
+  &.slider-disabled {
+    .slider-handle {
+      @include gradient-y(#dfdfdf, #bebebe);
+    }
+    .slider-track {
+      @include gradient-y(#e5e5e5, #e9e9e9);
+      cursor: not-allowed;
+    }
+  }
+  input {
+    display: none;
+  }
+  .tooltip-inner {
+    white-space: nowrap;
+  }
+
+  .tooltip.top {
+    top: -30px;
+  }
+}
+.slider-track {
+  position: absolute;
+  cursor: pointer;
+  @include gradient-y(#eee, #f8f8f8);
+
+  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+  border-radius: $border-radius;
+}
+.slider-selection {
+  position: absolute;
+  background-color: $brand-primary;
+  @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  box-sizing: border-box;
+  border-radius: $border-radius;
+
+  .slider-danger &{
+    background-color: $brand-danger;
+  }
+  .slider-success &{
+    background-color: $brand-success;
+  }
+  .slider-warning &{
+    background-color: $brand-warning;
+  }
+  .slider-info &{
+    background-color: $brand-info;
+  }
+  .slider-inverse &{
+    background-color: $gray;
+  }
+}
+.slider-handle {
+  position: absolute;
+  width: $slider-handle-size;
+  height: $slider-handle-size;
+  background-color: $white;
+  @include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 3px rgba(0,0,0,.5));
+  border: 0px solid transparent;
+
+  &:focus{
+    outline: 0;
+  }
+
+  &.round {
+    border-radius: 50%;
+  }
+  &.triangle {
+    background: transparent none;
+  }
+}
+
+/**
+ * select2
+ */
+
+.select2-container .select2-choice abbr {
+  background: url('assets/select2/select2.png') right top no-repeat;
+}
+
+.select2-container .select2-choice .select2-arrow b {
+  background: url('assets/select2/select2.png') no-repeat 0 1px;
+}
+
+.select2-search input {
+  background: #fff url('assets/select2/select2.png') no-repeat 100% -22px;
+  background: url('assets/select2/select2.png') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url('assets/select2/select2.png') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url('assets/select2/select2.png') no-repeat 100% -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url('assets/select2/select2.png') no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
+}
+
+html[dir="rtl"] .select2-search input {
+  background: #fff url('assets/select2/select2.png') no-repeat -37px -22px;
+  background: url('assets/select2/select2.png') no-repeat -37px -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url('assets/select2/select2.png') no-repeat -37px -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url('assets/select2/select2.png') no-repeat -37px -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url('assets/select2/select2.png') no-repeat -37px -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
+}
+
+.select2-search-choice-close {
+  background: url('assets/select2/select2.png') right top no-repeat;
+}
+
+.select2-search input.select2-active {
+  background: #fff url('assets/select2/select2-spinner.gif') no-repeat 100%;
+  background: url('assets/select2/select2-spinner.gif') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee));
+  background: url('assets/select2/select2-spinner.gif') no-repeat 100%, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url('assets/select2/select2-spinner.gif') no-repeat 100%, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%);
+  background: url('assets/select2/select2-spinner.gif') no-repeat 100%, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;
+}
+
+.select2-more-results.select2-active {
+  background: #f4f4f4 url('assets/select2/select2-spinner.gif') no-repeat 100%;
+}
+
+.select2-container-multi .select2-choices .select2-search-field input.select2-active {
+  background: #fff url('assets/select2/select2-spinner.gif') no-repeat 100% !important;
+}
+
+/**
+ * Bootstrap select
+ */
+
+.selectpicker.form-control {
+  height: auto;
+}
+
+.bootstrap-select {
+  .dropdown-toggle {
+    padding-left: 10px;
+
+    &:after {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+  .dropdown-menu > li > a {
+    display: block;
+    width: 100%; // For `<button>`s
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $line-height-base;
+    color: $dropdown-link-color;
+    text-align: inherit; // For `<button>`s
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    background: none; // For `<button>`s
+    border: 0; // For `<button>`s
+
+    @include hover-focus {
+      color: $dropdown-link-hover-color;
+      text-decoration: none;
+      background-color: $dropdown-link-hover-bg;
+    }
+
+    // Active state
+    &.active {
+      @include plain-hover-focus {
+        color: $dropdown-link-active-color;
+        text-decoration: none;
+        background-color: $dropdown-link-active-bg;
+        outline: 0;
+      }
+    }
+
+    // Disabled state
+    //
+    // Gray out text and ensure the hover/focus state remains gray
+    &.disabled {
+      @include plain-hover-focus {
+        color: $dropdown-link-disabled-color;
+      }
+
+      // Nuke hover/focus effects
+      @include hover-focus {
+        text-decoration: none;
+        cursor: $cursor-disabled;
+        background-color: transparent;
+        background-image: none; // Remove CSS gradient
+        @include reset-filter();
+      }
+    }
+  }
+}
+
+/**
+*  autosize
+**/
+
+.autogrow {
+  overflow: hidden;
+  resize: none;
+}

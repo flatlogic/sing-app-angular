@@ -278,6 +278,18 @@ legend {
   border-radius: $border-radius;
 }
 
+.form-actions{
+  margin: $line-height-computed 0 0;
+  padding: $line-height-computed;
+  background-color: #f5f5f5;
+
+  .form-horizontal & .row{
+    margin-left: ($grid-gutter-width/-2) - 20px;
+    margin-right: ($grid-gutter-width/-2) - 20px;
+
+  }
+}
+
 
 // Checkboxes and radios
 //
@@ -573,10 +585,6 @@ legend {
     padding-top: 0;
     padding-bottom: 0;
   }
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  content: ">";
 }
 //
 // Buttons

@@ -141,28 +141,28 @@ export class Calendar implements OnInit {
   };
 
   addEvent(event): void {
-    // this.calendar.events.push(event);
+     this.calendar.events.push(event);
   };
 
   changeView(view): void {
-    // this.$calendar.fullCalendar('changeView', view);
+     this.$calendar.fullCalendar('changeView', view);
   };
 
   currentMonth(): string {
-    // return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
+     return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
   };
 
   currentDay(): string {
-    // return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
+     return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
 
   };
 
   prev(): void {
-    // this.$calendar.fullCalendar('prev');
+     this.$calendar.fullCalendar('prev');
   };
 
   next(): void {
-    // this.$calendar.fullCalendar('next');
+     this.$calendar.fullCalendar('next');
   };
 
   ngOnInit(): void {

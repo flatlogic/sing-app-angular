@@ -282,11 +282,11 @@ $thumbnail-bg:                $white !default;
 //== Breadcrumbs
 //
 
-$breadcrumb-padding-horizontal: 0 !default;
+$breadcrumb-padding-x: 0 !default;
 $breadcrumb-bg:                 transparent !default;
-$breadcrumb-color:              $text-color !default;
+$breadcrumb-divider-color:      $text-color !default;
 $breadcrumb-active-color:       $text-color !default;
-$breadcrumb-separator:          ">" !default;
+$breadcrumb-divider:          ">" !default;
 
 //== Pagination
 //
