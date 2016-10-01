@@ -3,6 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+// libs
+import 'markdown';
+import 'bootstrap-markdown/js/bootstrap-markdown.js';
+
 import {Elements} from './elements/elements.component'
 
 export const routes = [
