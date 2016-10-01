@@ -25,9 +25,8 @@ import 'tether';
 import 'bootstrap';
 import 'widgster';
 import 'bootstrap-select';
-import 'markdown';
-import 'bootstrap-markdown/js/bootstrap-markdown.js';
 import 'select2';
+import 'pace';
 
 if ('production' === ENV) {
   // Production
