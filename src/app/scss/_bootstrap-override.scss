@@ -710,6 +710,125 @@ legend {
   }
 }
 
+//
+// Panels
+// --------------------------------------------------
+
+// Base class
+.panel {
+  margin-bottom: $line-height-computed;
+  background-color: $panel-bg;
+  border: none;
+}
+
+// Panel contents
+.panel-body {
+  padding: $panel-body-padding;
+  @include clearfix;
+}
+
+// Optional heading
+.panel-heading {
+  padding: 13px 15px;
+  border-bottom: 1px solid transparent;
+  @include border-top-radius(($border-radius));
+
+  > .dropdown .dropdown-toggle {
+    color: inherit;
+  }
+}
+
+
+accordion-group .panel-title a.accordion-toggle i {
+  transform: rotate(180deg);
+  transition: transform 0.35s ease;
+}
+
+accordion-group.panel-open .panel-title a.accordion-toggle i {
+  transform: rotate(0deg);
+  transition: transform 0.35s ease;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: $font-size-base;
+  color: inherit;
+
+  > a,
+  > small,
+  > .small,
+  > small > a,
+  > .small > a {
+    color: inherit;
+    display: block;
+  }
+
+  > a:focus {
+    outline: none;
+  }
+}
+
+small, .small {
+  font-size: 85%;
+}
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.panel-group {
+  margin-bottom: $line-height-computed;
+
+  // Tighten up margin so it's only between panels
+  .panel {
+    margin-bottom: 0;
+    border-radius: $border-radius;
+  }
+
+  accordion-group.panel-open .panel-title a {
+    &,
+    & i {
+      opacity: 1;
+    }
+  }
+
+  accordion-group .panel-title a {
+    &,
+    & i {
+      opacity: 0.6;
+    }
+
+    &:hover,
+    &:hover i {
+      opacity: 1;
+    }
+  }
+
+  accordion-group + accordion-group {
+    .panel {
+      margin-top: 5px;
+    }
+  }
+
+  .panel-heading {
+    border-bottom: 0;
+
+    + .panel-collapse > .panel-body,
+    + .panel-collapse > .list-group {
+      border-top: 1px solid $list-group-border-color;
+    }
+
+  }
+}
+
+
+// Contextual variations
+.panel-default {
+  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+
 
 //
 // Labels

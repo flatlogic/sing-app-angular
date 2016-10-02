@@ -101,6 +101,17 @@ $content-padding-vertical: 42px !default;
 $content-padding-top: $content-padding-vertical + $navbar-height !default;
 $content-padding-horizontal: 40px !default;
 
+//== Panels
+//
+//##
+
+$panel-bg:                    transparent !default;
+$panel-body-padding:          15px !default;
+
+$panel-default-text:          $gray-dark !default;
+$panel-default-border:        transparent !default;
+$panel-default-heading-bg:    $gray-semi-lighter !default;
+
 // Screens
 // -------------------------
 
