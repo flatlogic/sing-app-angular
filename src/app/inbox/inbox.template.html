@@ -1,0 +1,40 @@
+<ol class="breadcrumb">
+  <li>YOU ARE HERE</li>
+  <li class="active">Email</li>
+</ol>
+<div class="alert alert-warning alert-sm pull-right no-margin animated bounceInLeft hide" id="app-alert">
+  <button type="button" class="ml-lg close" data-dismiss="alert" aria-hidden="true">×</button>
+  Hey! This is a <span class="fw-semi-bold">real app</span> with CRUD and Search functions. Have fun!
+</div>
+<h1 class="page-title">Email - <span class="fw-semi-bold">Inbox</span></h1>
+<div class="row">
+  <div class="col-lg-3 col-xl-2 col-xs-12">
+    <a class="btn btn-danger btn-block" href="#" id="compose-btn" (click)="handleComposeBtn()">Compose</a>
+    <ul class="nav nav-pills nav-stacked nav-email-folders mt" id="folders-list">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="setFolderName('Inbox')">
+          <span class="tag tag-pill tag-white pull-xs-right">2</span>
+          Inbox
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link" (click)="setFolderName('Starred')">Starred</a></li>
+      <li class="nav-item"><a class="nav-link" (click)="setFolderName('Sent Mail')">Sent Mail</a></li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="setFolderName('Draft')">
+          <span class="tag tag-pill tag-danger pull-xs-right">3</span>
+          Draft
+        </a>
+      </li>
+      <li class="nav-item"><a class="nav-link" (click)="setFolderName('Trash')">Trash</a></li>
+    </ul>
+    <h6 class="mt">QUICK VIEW</h6>
+    <ul class="nav nav-pills nav-stacked nav-email-folders mb-lg fs-mini">
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-danger pull-xs-right"></i> Work </a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-white pull-xs-right"></i> Private </a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-gray-light pull-xs-right"></i> Saved </a></li>
+    </ul>
+  </div>
+  <div *ngIf="mailListShow" mail-list [folderName]="currentFolderName" (replyMail)="onReplyMail($event)" class="col-lg-9 col-xl-10 col-xs-12"></div>
+  <div *ngIf="mailFormShow" mail-form (backToMailList)="changeEmailComponents('mailList')" [message]="repliedMessage" class="col-lg-9 col-xl-10 col-xs-12"></div>
+  <div *ngIf="mailDetailShow" mail-detail [mail]="currentMail" (replyMessage)="handleComposeBtn($event)" (backToMailList)="changeEmailComponents('mailList')" class="col-lg-9 col-xl-10 col-xs-12"></div>
+</div>
