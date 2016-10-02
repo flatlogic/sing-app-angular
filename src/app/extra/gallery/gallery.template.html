@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li>YOU ARE HERE</li>
-  <li class="active">Gallery</li>
+  <li class="breadcrumb-item">YOU ARE HERE</li>
+  <li class="breadcrumb-item active">Gallery</li>
 </ol>
 <h1 class="page-title">Media - <span class="fw-semi-bold">Images</span></h1>
 
@@ -27,7 +27,7 @@
   </div>
   <div class="bs3-row gallery" id="magnific">
     <div *ngFor="let item of items"
-         class="bs3-col-md-6 bs3-col-lg-3 bs3-col-xs-12 gallery-item" attr.data-title="{{ item.name }}">
+         class="bs3-col-md-6 bs3-col-lg-3 bs3-col-xs-12 gallery-item" attr.data-title="{{ item.name }}" attr.data-groups="{{ item.groups[0] }}">
       <figure class="figure img-thumbnail">
         <a href="{{item.src}}"><img class="figure-img" src="{{item.src}}" alt="..."></a>
         <figcaption class="figure-caption">

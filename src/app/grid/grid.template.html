@@ -7,12 +7,12 @@
   }
 </style>
 <ol class="breadcrumb">
-  <li>YOU ARE HERE</li>
-  <li class="active">Grid</li>
+  <li class="breadcrumb-item">YOU ARE HERE</li>
+  <li class="breadcrumb-item active">Grid</li>
 </ol>
 <h1 class="page-title">Grid - <span class="fw-semi-bold">Options</span></h1>
 <div class="row">
-  <div class="col-lg-7 col-xl-offset-1 col-xs-12">
+  <div class="col-lg-7 offset-xl-1 col-xs-12">
     <section class="widget" widget>
       <header>
         <h5>Draggable Grid &nbsp;<span class="tag tag-danger fw-normal">since 2.1</span></h5>
@@ -30,7 +30,7 @@
           <li><strong>Ajax Load</strong> - the hottest option allowing to load/reload widget content asynchronously. You just
             need to provide an url to fetch the data from. With loader delivered.</li>
         </ul>
-        <p>It's available under MIT license, check out github to find it.</p>
+        <p>It's available under MIT license, check out <a href="https://github.com/flatlogic/widgster" target="_blank">github</a> to find it.</p>
         <p>
           Test it out!
         </p>
@@ -124,7 +124,7 @@
           <ul class="dropdown-menu dropdown-menu-right">
             <li>
               <a class="dropdown-item" data-widgster="load" title="Reload" ng-click="isOpen = false">Reload
-                &nbsp;&nbsp;<span class="tag tag-pill label-success animated bounceIn"><strong>9</strong></span>
+                &nbsp;&nbsp;<span class="tag tag-pill tag-success animated bounceIn"><strong>9</strong></span>
               </a>
             </li>
             <li>
@@ -187,7 +187,7 @@ data-widgster-autoload="true"</code></pre>
     <section class="widget" widget id="news-widget" data-widgster-load="assets/demo/grid/news.php" data-post-processing="true">
       <header>
         <h6>
-          News <span class="tag tag-pill label-success">17</span>
+          News <span class="tag tag-pill tag-success">17</span>
         </h6>
         <span class="text-muted">spinning refresh button & close prompt</span>
         <div class="widget-controls">

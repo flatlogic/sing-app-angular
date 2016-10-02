@@ -3,9 +3,9 @@ declare var jQuery: any;
 
 @Component({
   selector: '[grid]',
-  template: require('./grid.template.html'),
+  templateUrl: './grid.template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./grid.style.scss')]
+  styleUrls: ['./grid.style.scss']
 })
 export class GridComponent {
   sortOptions: Object = {

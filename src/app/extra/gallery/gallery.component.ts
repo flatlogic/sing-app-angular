@@ -140,17 +140,11 @@ export class Gallery {
     this.order = order;
   }
 
-  ngAfterContentInit(): void {
+  ngOnInit(): void {
     this.$gallery = jQuery('#magnific');
     this.$gallery.magnificPopup(this.magnificOptions);
 
     setTimeout(() => {
-      let x = 0;
-      let d = this;
-      jQuery('.gallery-item').each(function(): void {
-        jQuery(this).attr('data-groups', '["' + d.items[x].groups + '"]');
-        x++;
-      });
       this.shuffle = new Shuffle(this.$gallery, this.shuffleOptions);
       setTimeout(() => {
         this.activeGroupSelected('all')

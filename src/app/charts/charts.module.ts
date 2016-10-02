@@ -1,9 +1,9 @@
 import 'webpack-raphael';
 import 'morris.js/morris.js';
 import 'easy-pie-chart/dist/jquery.easypiechart.js';
-import 'jquery-flot/jquery.flot.js';
-import 'jquery-flot/jquery.flot.selection.js';
-import 'jquery-flot/jquery.flot.time.js';
+//import 'jquery-flot/jquery.flot.js';
+//import 'jquery-flot/jquery.flot.selection.js';
+//import 'jquery-flot/jquery.flot.time.js';
 import 'jquery.flot.animator/jquery.flot.animator.js';
 import 'flot-orderBars/js/jquery.flot.orderBars.js';
 import 'jquery.sparkline/jquery.sparkline.min';
@@ -32,7 +32,7 @@ export const routes = [
     MorrisChart,
     JqSparkline,
     Nvd3Chart,
-    
+
     Charts
   ]
 })

@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
-  <li>YOU ARE HERE</li>
-  <li class="active">Tables Dynamic</li>
+  <li class="breadcrumb-item">YOU ARE HERE</li>
+  <li class="breadcrumb-item active">Tables Dynamic</li>
 </ol>
 <h1 class="page-title">Dynamic - <span class="fw-semi-bold">Tables</span></h1>
 <section class="widget" widget>
@@ -19,12 +19,12 @@
     </p>
     <div class="mt">
       <div class="width-200 pull-xs-right">
-          <div class="input-group input-group-sm input-group-transparent input-group-rounded">
-            <span class="input-group-addon">
-              <i class="fa fa-search"></i>
-            </span>
-            <input class="form-control form-control-sm" id="table-search-input" [(ngModel)]="searchText" type="text" placeholder="Search Countries">
-          </div>
+        <div class="input-group input-group-sm input-group-transparent input-group-rounded">
+          <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+          </span>
+          <input class="form-control form-control-sm" id="table-search-input" [(ngModel)]="searchText" type="text" placeholder="Search Countries">
+        </div>
       </div>
       <table class="table table-striped table-hover" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
         <thead>
@@ -72,6 +72,11 @@
             </div>
           </td>
         </tr>
+        <tr *ngIf="(mf.data | SearchPipe : searchText).length === 0">
+          <td colspan="100">
+            No matches
+          </td>
+        </tr>
         </tbody>
         <tfoot>
         <tr>
@@ -83,4 +88,44 @@
       </table>
     </div>
   </div>
+</section>
+<section class="widget" widget>
+  <header>
+    <h4>Ng2 <span class="fw-semi-bold">Tables</span></h4>
+    <div class="widget-controls">
+      <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+      <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+      <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+    </div>
+  </header>
+  <div class="widget-body">
+    <p>
+      Simple table extension with sorting, filtering and pagination for Angular2 apps. Built with
+      <a href="http://valor-software.github.io/ng2-table/" target="_blank">ng2-table</a>
+    </p>
+    <p>
+      <input *ngIf="config.filtering"
+             [ngTableFiltering]="config.filtering"
+             (tableChanged)="onChangeTable(config)"
+             class="form-control input-no-border bg-gray-lighter"
+             placeholder="Filter Table" type="text">
+    </p>
+    <ng-table [config]="config.sorting"
+              (tableChanged)="onChangeTable(config)"
+              [rows]="rows" [columns]="columns">
+    </ng-table>
+    <pagination *ngIf="config.paging"
+                class="pagination-sm"
+                [(ngModel)]="page"
+                [totalItems]="length"
+                [itemsPerPage]="itemsPerPage"
+                [maxSize]="maxSize"
+                [boundaryLinks]="true"
+                [rotate]="false"
+                (pageChanged)="onChangeTable(config, $event)"
+                (numPages)="numPages = $event">
+    </pagination>
+    <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+  </div>
+
 </section>

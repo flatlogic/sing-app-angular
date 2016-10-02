@@ -4,12 +4,12 @@ declare var moment: any;
 
 @Component({
   selector: '[extra-calendar]',
-  template: require('./calendar.template.html'),
+  templateUrl: './calendar.template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./calendar.style.scss')]
+  styleUrls: ['./calendar.style.scss']
 })
 export class Calendar implements OnInit {
-  calendar: any;
+  calendarOptions: any;
   $calendar: any;
   dragOptions: Object = { zIndex: 999, revert: true, revertDuration: 0 };
   event: any = {};
@@ -21,7 +21,7 @@ export class Calendar implements OnInit {
     let m = date.getMonth();
     let y = date.getFullYear();
 
-    this.calendar = {
+    this.calendarOptions = {
       header: {
         left: '',
         center: '',
@@ -141,36 +141,33 @@ export class Calendar implements OnInit {
   };
 
   addEvent(event): void {
-     this.calendar.events.push(event);
+    this.calendarOptions.events.push(event);
   };
 
   changeView(view): void {
-     this.$calendar.fullCalendar('changeView', view);
+    this.$calendar.fullCalendar('changeView', view);
   };
 
   currentMonth(): string {
-     return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
+    return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
   };
 
   currentDay(): string {
-     return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
-
+    return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
   };
 
   prev(): void {
-     this.$calendar.fullCalendar('prev');
+    this.$calendar.fullCalendar('prev');
   };
 
   next(): void {
-     this.$calendar.fullCalendar('next');
+    this.$calendar.fullCalendar('next');
   };
 
   ngOnInit(): void {
-    setTimeout(function() {
-      this.$calendar = jQuery('#calendar');
-      this.$calendar.fullCalendar(this.calendar);
-      jQuery('.draggable').draggable(this.dragOptions);
-    });
+    this.$calendar = jQuery('#calendar');
+    this.$calendar.fullCalendar(this.calendarOptions);
+    jQuery('.draggable').draggable(this.dragOptions);
   }
 }
 
