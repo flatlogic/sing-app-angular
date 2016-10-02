@@ -277,7 +277,8 @@ module.exports = function(options) {
         "Tether": 'tether',
         "window.Tether": "tether",
         Hammer: 'hammerjs/hammer',
-        Shuffle: 'shufflejs/dist/shuffle.min.js'
+        Shuffle: 'shufflejs/dist/shuffle.min.js',
+        Rickshaw: 'rickshaw/rickshaw.min.js'
       }),
 
       /*
