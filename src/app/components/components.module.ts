@@ -5,7 +5,7 @@ import { JqSparkline } from './directives/sparkline/sparkline.directive';
 import { FlotChart } from './directives/flot/flot.directive';
 import { MorrisChart } from './directives/morris/morris.directive';
 import { Nvd3Chart } from './directives/nvd3/nvd3.directive';
-import {FlotChartAnimator} from "./directives/flot-chart-animator/flot-chart-animator.directive";
+import { FlotChartAnimator } from './directives/flot-chart-animator/flot-chart-animator.directive';
 
 
 

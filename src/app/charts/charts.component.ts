@@ -95,13 +95,13 @@ export class Charts {
        let a = [], i;
        for (i = 0; i < m; i++) { a[i] = o + o * Math.random(); }
        for (i = 0; i < 5; i++) { bump(a); }
-       return a.map(function(d, i): Object {
-         return {x: i, y: Math.max(0, d)};
+       return a.map(function(d, iItem): Object {
+         return {x: iItem, y: Math.max(0, d)};
        });
      });
    }
 
-   function testData(stream_names, pointCount): Array<any> {
+   function testData(streamNames, pointCount): Array<any> {
      let now = new Date().getTime(),
        day = 1000 * 60 * 60 * 24, // milliseconds
        daysAgoCount = 60,
@@ -109,9 +109,9 @@ export class Charts {
        daysAgoDate = now - daysAgo,
        pointsCount = pointCount || 45, // less for better performance
        daysPerPoint = daysAgoCount / pointsCount;
-     return _stream_layers(stream_names.length, pointsCount, .1).map(function(data, i): Object {
+     return _stream_layers(streamNames.length, pointsCount, .1).map(function(data, i): Object {
        return {
-         key: stream_names[i],
+         key: streamNames[i],
          values: data.map(function(d, j): Object {
            return {
              x: daysAgoDate + d.x * day * daysPerPoint,
@@ -159,7 +159,7 @@ export class Charts {
  };
 
  ngOnInit(): void {
-   //this.applyRickshawData();
+   // this.applyRickshawData();
 
    this.sparklineCompositeData = [
      [2, 4, 6, 2, 7, 5, 3, 7, 8, 3, 6],
@@ -247,14 +247,31 @@ export class Charts {
      size: 120
    });
 
-   let bar_customised_1 = [[1388534400000, 120], [1391212800000, 70],  [1393632000000, 100], [1396310400000, 60], [1398902400000, 35]];
-   let bar_customised_2 = [[1388534400000, 90], [1391212800000, 60], [1393632000000, 30], [1396310400000, 73], [1398902400000, 30]];
-   let bar_customised_3 = [[1388534400000, 80], [1391212800000, 40], [1393632000000, 47], [1396310400000, 22], [1398902400000, 24]];
-   //
+   let barCustomised1 = [
+     [1388534400000, 120],
+     [1391212800000, 70],
+     [1393632000000, 100],
+     [1396310400000, 60],
+     [1398902400000, 35]
+   ];
+   let barCustomised2 = [
+     [1388534400000, 90],
+     [1391212800000, 60],
+     [1393632000000, 30],
+     [1396310400000, 73],
+     [1398902400000, 30]
+   ];
+   let barCustomised3 = [
+     [1388534400000, 80],
+     [1391212800000, 40],
+     [1393632000000, 47],
+     [1396310400000, 22],
+     [1398902400000, 24]
+   ];
    this.flotBarsData = [
      {
        label: 'Apple',
-       data: bar_customised_1,
+       data: barCustomised1,
        bars: {
          show: true,
          barWidth: 12 * 24 * 60 * 60 * 300,
@@ -265,7 +282,7 @@ export class Charts {
      },
      {
        label: 'Google',
-       data: bar_customised_2,
+       data: barCustomised2,
        bars: {
          show: true,
          barWidth: 12 * 24 * 60 * 60 * 300,
@@ -276,7 +293,7 @@ export class Charts {
      },
      {
        label: 'Facebook',
-       data: bar_customised_3,
+       data: barCustomised3,
        bars: {
          show: true,
          barWidth: 12 * 24 * 60 * 60 * 300,
