@@ -7,6 +7,8 @@ declare var jQuery: any;
 
 export class GridDemo {
   render(): void {
+    jQuery.fn.widgster.Constructor.DEFAULTS.bodySelector = '.widget-body';
+
     let $widgets = jQuery('.widget'),
       $newsWidget = jQuery('#news-widget'),
       $sharesWidget = jQuery('#shares-widget'),
