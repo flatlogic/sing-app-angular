@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { TableData } from './tables-dynamic.data';
+import { tableData } from './tables-dynamic.data';
 declare var jQuery: any;
 
 const PEOPLE = [
@@ -298,7 +298,7 @@ export class TablesDynamic {
     filtering: {filterString: '', columnName: 'position'}
   };
 
-  ng2TableData: Array<any> = TableData;
+  ng2TableData: Array<any> = tableData;
 
   constructor() {
     this.length = this.ng2TableData.length;
