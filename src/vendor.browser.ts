@@ -33,10 +33,9 @@ import 'pace';
 
 // import 'rickshaw'
 
-import 'jquery-flot';
-import 'jquery.flot.animator/jquery.flot.animator';
 
-import 'jquery-sparkline';
+
+
 
 if ('production' === ENV) {
   // Production

@@ -281,6 +281,8 @@ module.exports = function(options) {
         Rickshaw: 'rickshaw',
         moment: 'moment',
         fullCalendar: 'fullcalendar',
+        d3: 'd3',
+        nv: 'nvd3/build/nv.d3.js',
         Raphael: 'webpack-raphael',
         'window.Raphael': 'webpack-raphael'
       }),

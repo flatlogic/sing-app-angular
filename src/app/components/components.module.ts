@@ -1,10 +1,11 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
-import { RickshawChart } from './directives/rickshaw/rickshaw.directive';
+// import { RickshawChart } from './directives/rickshaw/rickshaw.directive';
 import { JqSparkline } from './directives/sparkline/sparkline.directive';
 import { FlotChart } from './directives/flot/flot.directive';
 import { MorrisChart } from './directives/morris/morris.directive';
 import { Nvd3Chart } from './directives/nvd3/nvd3.directive';
+import {FlotChartAnimator} from "./directives/flot-chart-animator/flot-chart-animator.directive";
 
 
 
@@ -13,16 +14,18 @@ import { Nvd3Chart } from './directives/nvd3/nvd3.directive';
     CommonModule
   ],
   declarations: [
-    RickshawChart,
+    // RickshawChart,
     JqSparkline,
     FlotChart,
+    FlotChartAnimator,
     MorrisChart,
     Nvd3Chart
   ],
   exports: [
-    RickshawChart,
+    // RickshawChart,
     JqSparkline,
     FlotChart,
+    FlotChartAnimator,
     MorrisChart,
     Nvd3Chart
   ]

@@ -100,6 +100,7 @@
   },
   "napa": {
     "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js",
+    "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
     "jquery.nestable": "https://github.com/dbushell/Nestable.git#4f93032cfafe2002f24ed6bd7dc1510931498503",
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
     "flot-orderBars": "https://github.com/emmerich/flot-orderBars.git#98081459571f60f7d95cc79a848c4f558d077486",
