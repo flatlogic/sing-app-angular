@@ -15,8 +15,8 @@ export class MorrisChart {
     this.$el = jQuery(el.nativeElement);
   }
 
-  capitalise(string): string {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  capitalise(stringVar): string {
+    return stringVar.charAt(0).toUpperCase() + stringVar.slice(1).toLowerCase();
   }
 
   render(): void {

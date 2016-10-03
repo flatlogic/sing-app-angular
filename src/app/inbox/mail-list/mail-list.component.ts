@@ -1,9 +1,9 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
-import {Output, Input} from '@angular/core';
-import {EventEmitter, ElementRef} from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
+import { Output, Input } from '@angular/core';
+import { EventEmitter, ElementRef } from '@angular/core';
 declare var jQuery: any;
 
-const Mails = [
+const MAILS = [
   { id: 1,
     'sender': 'Philip Horbacheuski',
     'senderMail': 'philip.horbacheuski@example.com',
@@ -16,7 +16,18 @@ const Mails = [
     'folderId': 1,
     'selected': false,
     'attachments': ['assets/img/pictures/1.jpg', 'assets/img/pictures/2.jpg'],
-    'body': '<p>Projecting surrounded literature yet delightful alteration but bed men. Open are from long why cold. If must snug by upon sang loud left. As me do preference entreaties compliment motionless ye literature. Day behaviour explained law remainder.</p>    <p><strong>On then sake home</strong> is am leaf. Of suspicion do departure at extremely he believing. Do know said mind do rent they oh hope of. General enquire picture letters garrets on offices of no on.</p> <p>All the best,</p> <p>Vitaut the Great, CEO, <br>Fooby Inc.</p>'},
+    'body': '<p>Projecting surrounded literature ' +
+    'yet delightful alteration but bed men. Open are' +
+    ' from long why cold. If must snug by upon sang ' +
+    'loud left. As me do preference entreaties compliment ' +
+    'motionless ye literature. Day behaviour explained law' +
+    ' remainder.</p>    <p><strong>On then sake' +
+    ' home</strong> is am leaf. Of suspicion do' +
+    ' departure at extremely he believing. Do know ' +
+    'said mind do rent they oh hope of. General enquire' +
+    ' picture letters garrets on offices of no on.</p>' +
+    ' <p>All the best,</p> <p>Vitaut the Great, CEO,' +
+    ' <br>Fooby Inc.</p>'},
 
   { 'id': 2,
     'sender': 'StackExchange',
@@ -153,7 +164,7 @@ const Mails = [
 export class MailList  {
   @Output() replyMail = new EventEmitter();
   @Input() folderName: any;
-  mails = Mails;
+  mails = MAILS;
   $el: any;
   $toggleAll: any;
 

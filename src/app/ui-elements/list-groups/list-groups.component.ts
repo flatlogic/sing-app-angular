@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 declare var jQuery: any;
 
 @Component({
@@ -8,7 +8,10 @@ declare var jQuery: any;
   styles: [require('./list-groups.style.scss')]
 })
 export class ListGroups {
-  sortOptions: Object = { placeholder: 'list-group-item list-group-item-placeholder', forcePlaceholderSize: true };
+  sortOptions: Object = {
+    placeholder: 'list-group-item list-group-item-placeholder',
+    forcePlaceholderSize: true
+  };
   nest1Options: Object = { group: 1 };
   nest2Options: Object = { group: 1 };
 

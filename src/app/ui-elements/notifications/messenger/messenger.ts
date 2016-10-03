@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input} from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 declare var jQuery: any;
 declare var Messenger: any;
 
@@ -10,40 +10,40 @@ export class MessengerDemo {
   $el: any;
 
   initializationCode(): void {
+    /* tslint:disable */
     (function(): void {
-      let $, FlatMessage, spinner_template,
+      let $, flatMessage, spinnerTemplate,
         __hasProp = {}.hasOwnProperty,
         __extends = function(child, parent): any { for (let key in parent) { if (__hasProp.call(parent, key)) { child[key] = parent[key]; } } function ctor(): void { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
       $ = jQuery;
-      /* tslint:disable */
-      spinner_template = '<div class="messenger-spinner">\n    <span class="messenger-spinner-side messenger-spinner-side-left">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n    <span class="messenger-spinner-side messenger-spinner-side-right">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n</div>';
+      spinnerTemplate = '<div class="messenger-spinner">\n    <span class="messenger-spinner-side messenger-spinner-side-left">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n    <span class="messenger-spinner-side messenger-spinner-side-right">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n</div>';
       /* tslint:enable */
-      FlatMessage = (function(_super): any {
+      flatMessage = (function(_super): any {
 
-        __extends(FlatMessage, _super);
+        __extends(flatMessage, _super);
 
-        function FlatMessage(): any {
+        function flatMessage(): any {
           /* tslint:disable */
-          return FlatMessage['__super__'].constructor.apply(this, arguments);
+          return flatMessage['__super__'].constructor.apply(this, arguments);
           /* tslint:enable */
         }
 
-        FlatMessage.prototype.template = function(opts): any {
+        flatMessage.prototype.template = function(opts): any {
           let $message;
           /* tslint:disable */
-          $message = FlatMessage['__super__'].template.apply(this, arguments);
+          $message = flatMessage['__super__'].template.apply(this, arguments);
           /* tslint:enable */
-          $message.append(jQuery(spinner_template));
+          $message.append(jQuery(spinnerTemplate));
           return $message;
         };
 
-        return FlatMessage;
+        return flatMessage;
         /* tslint:disable */
       })(window['Messenger'].Message);
 
       window['Messenger'].themes.air = {
-        Message: FlatMessage
+        Message: flatMessage
       };
       /* tslint:enable */
     }).call(window);

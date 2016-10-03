@@ -13,7 +13,7 @@ import { Autosize } from 'angular2-autosize';
 import { WidgetModule } from '../layout/widget/widget.module';
 
 
-import {Elements} from './elements/elements.component'
+import { Elements } from './elements/elements.component';
 
 export const routes = [
   {path: '', redirectTo: 'elements', pathMatch: 'full'},

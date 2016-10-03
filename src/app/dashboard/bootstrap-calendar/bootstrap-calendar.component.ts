@@ -14,7 +14,20 @@ export class BootstrapCalendar {
   }
 
   render(): void {
-    let monthNames = ['January', 'February', 'March', 'April', 'May', 'June',  'July', 'August', 'September', 'October', 'November', 'December'];
+    let monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
 
     let dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -35,7 +48,9 @@ export class BootstrapCalendar {
       $calendar.find('.event').each(function(): void {
         let $this = jQuery(this),
           $eventIndicator = jQuery('<span></span>');
-        $eventIndicator.css('background-color', $this.css('background-color')).appendTo($this.find('a'));
+        $eventIndicator
+          .css('background-color', $this.css('background-color'))
+          .appendTo($this.find('a'));
         $this.css('background-color', '');
       });
     }

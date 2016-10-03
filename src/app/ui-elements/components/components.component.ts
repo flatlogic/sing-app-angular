@@ -8,7 +8,7 @@ declare var jQuery: any;
 })
 export class Components {
   alerts: Array<Object>;
-
+/* tslint:disable */
   constructor() {
     this.alerts = [
       {
@@ -31,7 +31,7 @@ export class Components {
       }
     ];
   }
-
+  /* tslint:enable */
   addAlert(): void {
     this.alerts.push({type: 'warning', msg: 'Another alert!'});
   };

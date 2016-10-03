@@ -55,11 +55,11 @@ export class Inbox {
 
   setFolderName(folderName: string): void {
     this.currentFolderName = folderName;
-    if(!this.mailListShow) {
+    if (!this.mailListShow) {
       this.changeEmailComponents('mailList');
     }
   }
-
+  /* tslint:disable */
   initMailboxAppDemo($el: any): void {
     let showAlert = function(): void {
       $el.find('#app-alert')
@@ -71,7 +71,7 @@ export class Inbox {
 
     setTimeout(() => showAlert(), 3000);
   }
-
+  /* tslint:enable */
   changeActiveItem(): void {
     this.$el.find('.nav a').on('click', function(): void {
       jQuery('.nav').find('.active').removeClass('active');

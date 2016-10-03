@@ -1,8 +1,8 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { TableData } from './tables-dynamic.data';
 declare var jQuery: any;
 
-const People = [
+const PEOPLE = [
   {
     'id': '1',
     'name': 'Algerd',
@@ -275,7 +275,7 @@ const People = [
   styleUrls: ['./tables-dynamic.style.scss']
 })
 export class TablesDynamic {
-  data: any[] = People;
+  data: any[] = PEOPLE;
 
   rows: Array<any> = [];
   columns: Array<any> = [
@@ -316,20 +316,20 @@ export class TablesDynamic {
     this.onChangeTable(this.config);
   }
 
-  changePage(page:any, data:Array<any> = this.ng2TableData):Array<any> {
+  changePage(page: any, data: Array<any> = this.ng2TableData): Array<any> {
     let start = (page.page - 1) * page.itemsPerPage;
     let end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
     return data.slice(start, end);
   }
 
-  changeSort(data:any, config:any):any {
+  changeSort(data: any, config: any): any {
     if (!config.sorting) {
       return data;
     }
 
     let columns = this.config.sorting.columns || [];
-    let columnName:string = void 0;
-    let sort:string = void 0;
+    let columnName: string = void 0;
+    let sort: string = void 0;
 
     for (let i = 0; i < columns.length; i++) {
       if (columns[i].sort !== '' && columns[i].sort !== false) {
@@ -343,7 +343,7 @@ export class TablesDynamic {
     }
 
     // simple sorting
-    return data.sort((previous:any, current:any) => {
+    return data.sort((previous: any, current: any) => {
       if (previous[columnName] > current[columnName]) {
         return sort === 'desc' ? -1 : 1;
       } else if (previous[columnName] < current[columnName]) {
@@ -353,18 +353,18 @@ export class TablesDynamic {
     });
   }
 
-  changeFilter(data:any, config:any): any {
+  changeFilter(data: any, config: any): any {
     if (!config.filtering) {
       return data;
     }
 
-    let filteredData:Array<any> = data.filter((item:any) =>
+    let filteredData: Array<any> = data.filter((item: any) =>
       item[config.filtering.columnName].match(this.config.filtering.filterString));
 
     return filteredData;
   }
 
-  onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
+  onChangeTable(config: any, page: any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
     if (config.filtering) {
       Object.assign(this.config.filtering, config.filtering);
     }

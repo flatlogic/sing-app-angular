@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, OnInit} from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 declare var jQuery: any;
 declare var moment: any;
 
@@ -71,7 +71,13 @@ export class Calendar implements OnInit {
           end: new Date(y, m, d + 18, 13, 0),
           backgroundColor: '#79A5F0',
           textColor: '#fff',
-          description: 'Node.js is a platform built on Chrome\'s JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.'
+          description: 'Node.js is a platform built ' +
+          'on Chrome\'s JavaScript runtime for easily' +
+          ' building fast, scalable network applications.' +
+          ' Node.js uses an event-driven, non-blocking' +
+          ' I/O model that makes it lightweight and' +
+          ' efficient, perfect for data-intensive real-time' +
+          ' applications that run across distributed devices.'
         },
         {
           title: 'Click for Flatlogic',
@@ -114,24 +120,27 @@ export class Calendar implements OnInit {
       editable: true,
       droppable: true,
 
-      drop: (date, event): void => { // this function is called when something is dropped
+      drop: (dateItem, event): void => { // this function is called when something is dropped
         // retrieve the dropped element's stored Event Object
         let originalEventObject = {
-          title: jQuery.trim(jQuery(event.target).text()) // use the element's text as the event title
+          // use the element's text as the event title
+          title: jQuery.trim(jQuery(event.target).text())
         };
 
         // we need to copy it, so that multiple events don't have a reference to the same object
         let copiedEventObject = jQuery.extend({}, originalEventObject);
 
         // assign it the date that was reported
-        copiedEventObject.start = date;
-        copiedEventObject.allDay = !date.hasTime();
+        copiedEventObject.start = dateItem;
+        copiedEventObject.allDay = !dateItem.hasTime();
 
         let $categoryClass = jQuery(event.target).data('event-class');
         if ($categoryClass) { copiedEventObject.className = [$categoryClass]; }
 
         // render the event on the calendar
-        // the last `true` argument determines if the event 'sticks' (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+        // the last `true` argument determines if
+        // the event 'sticks'
+        // http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
         this.$calendar.fullCalendar('renderEvent', copiedEventObject, true);
 
         jQuery(event.target).remove();

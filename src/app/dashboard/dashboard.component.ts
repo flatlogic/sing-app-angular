@@ -5,7 +5,7 @@ import { AppConfig } from '../app.config';
   selector: 'dashboard',
   templateUrl: './dashboard.template.html',
   styleUrls: ['./dashboard.style.scss'],
-  encapsulation: ViewEncapsulation.None 
+  encapsulation: ViewEncapsulation.None
 })
 export class Dashboard {
   config: any;

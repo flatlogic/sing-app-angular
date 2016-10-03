@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
-import {Router, NavigationEnd} from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { AppConfig } from '../app.config';
 
 declare var jQuery: any;

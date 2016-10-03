@@ -3,7 +3,10 @@ declare var Rickshaw: any;
 
 @Component({
   selector: '[marker-stats-widget]',
-  template: '<div class="chart-overflow-bottom" rickshaw-chart [series]="series" [height]="100" [seriesData]="seriesData" [random]="random" [realtime]="true">' +
+  template: '<div class="chart-overflow-bottom"' +
+  ' rickshaw-chart [series]="series" ' +
+  '[height]="100" [seriesData]="seriesData"' +
+  ' [random]="random" [realtime]="true">' +
   '</div>',
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['../../../../node_modules/rickshaw/rickshaw.css']

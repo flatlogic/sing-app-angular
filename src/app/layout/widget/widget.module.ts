@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Widget } from './widget.directive'
+import { Widget } from './widget.directive';
 
 @NgModule({
   imports: [CommonModule],

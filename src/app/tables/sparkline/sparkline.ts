@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input} from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 declare var jQuery: any;
 
 @Directive ({
@@ -15,7 +15,9 @@ export class JqSparkline {
   }
 
   render(): void {
-    let model = jQuery.type(this.data) === 'string' ? this.data.replace(/(^,)|(,$)/g, '') : this.data,
+    let model = jQuery.type(this.data) === 'string' ?
+      this.data.replace(/(^,)|(,$)/g, '')
+      : this.data,
       options = this.options;
     // enabling composite chart if array passed
     if (jQuery.type(model) === 'array' && jQuery.type(options) === 'array') {

@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 declare var jQuery: any;
 declare var Shuffle: any;
@@ -10,7 +10,11 @@ declare var Shuffle: any;
   styles: [require('./gallery.style.scss')]
 })
 export class Gallery {
-  magnificOptions: any = { delegate: '.img-thumbnail > a',  type: 'image', gallery: { enabled: true  } };
+  magnificOptions: any = {
+    delegate: '.img-thumbnail > a',
+    type: 'image',
+    gallery: { enabled: true  }
+  };
   items: Array<any> = [
   {
     'name': 'Mountains',
@@ -121,7 +125,11 @@ export class Gallery {
   order: boolean = false;
   $gallery: any;
   shuffle: any;
-  shuffleOptions: Object = { itemSelector: '.gallery-item', sizer: '.js-shuffle-sizer', delimeter: ','};
+  shuffleOptions: Object = {
+    itemSelector: '.gallery-item',
+    sizer: '.js-shuffle-sizer',
+    delimeter: ','
+  };
 
   activeGroupSelected(group): void {
     this.shuffle.filter(group);
@@ -147,7 +155,7 @@ export class Gallery {
     setTimeout(() => {
       this.shuffle = new Shuffle(this.$gallery, this.shuffleOptions);
       setTimeout(() => {
-        this.activeGroupSelected('all')
+        this.activeGroupSelected('all');
       });
     });
   }

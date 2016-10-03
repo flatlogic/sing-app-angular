@@ -4,12 +4,13 @@ import 'jvectormap-world/jquery-jvectormap-world-mill-en.js';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AlertModule, TooltipModule, ButtonsModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap'
+import { AlertModule, TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ButtonsModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
-import {MapsGoogle} from './google/maps-google.component';
-import {MapsVector} from './vector/maps-vector.component';
+import { MapsGoogle } from './google/maps-google.component';
+import { MapsVector } from './vector/maps-vector.component';
 
 export const routes = [
   {path: '', redirectTo: 'google', pathMatch: 'full'},
