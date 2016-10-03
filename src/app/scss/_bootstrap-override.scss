@@ -849,6 +849,11 @@ small, .small {
   padding: 6px;
 }
 
+.tag-pill {
+  color: $white;
+  font-weight: $font-weight-bold;
+}
+
 .help-block{
   margin-top: 5px;
   font-size: $font-size-smaller;
@@ -950,6 +955,11 @@ small, .small {
   }
 }
 
+a.list-group-item, button.list-group-item {
+  width: 100%;
+  color: #555;
+  text-align: inherit;
+}
 
 //
 // Tooltips

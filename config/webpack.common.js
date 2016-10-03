@@ -280,7 +280,9 @@ module.exports = function(options) {
         Shuffle: 'shufflejs',
         Rickshaw: 'rickshaw',
         moment: 'moment',
-        fullCalendar: 'fullcalendar'
+        fullCalendar: 'fullcalendar',
+        Raphael: 'webpack-raphael',
+        'window.Raphael': 'webpack-raphael'
       }),
 
       /*

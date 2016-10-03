@@ -1,0 +1,215 @@
+@import "../scss/variables";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+
+/*
+ * Bootstrap calendar
+ */
+
+.calendar{
+  font-size: $font-size-mini;
+  padding: $line-height-computed/2 0;
+}
+.calendar a{
+  text-decoration: none;
+  cursor: pointer;
+  color: $gray-dark !important;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.calendar td{
+  text-align: center;
+}
+.calendar .header{
+  padding: 10px 0 10px 0;
+  color: #666;
+  i{
+    cursor: pointer;
+  }
+}
+.calendar .prev_month{
+  float: left;
+}
+.calendar .next_month{
+  float: right;
+}
+.calendar .year{
+  text-align: center;
+  font-weight: 500;
+}
+.calendar .week_days{
+  color: $gray-light;
+}
+.calendar .event{
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+
+  &:hover{
+    > a{
+      background-color: $gray-lighter;
+    }
+  }
+
+  > a {
+    background-color: $white;
+    @include border-radius(50%);
+
+    > span{
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      @include border-radius(50%);
+    }
+  }
+
+  .popover{
+    color: $text-color;
+  }
+}
+.calendar .table td{
+  padding: 1px 0;
+  border-top: 0;
+}
+.calendar .table{
+  margin-bottom: 3px;
+  &.header{
+    margin-bottom: $line-height-computed/2;
+  }
+}
+.calendar .week_days td{
+}
+.calendar .visualmonthyear {
+  color: $gray-light;
+}
+.dropdown-menu .calendar td a {
+  padding: 0px;
+}
+
+/**
+ * Mapael
+ */
+
+.mapTooltip {
+  position : fixed;
+  padding : 2px;
+  z-index: 1000;
+  max-width: 200px;
+  display: none;
+  background-color : #fff;
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
+  font-size: $font-size-sm;
+  color: $text-color;
+}
+
+.zoomIn, .zoomOut {
+  position: absolute;
+  bottom: 10px;
+  left : 10px;
+  width: 20px;
+  height: 20px;
+
+  box-sizing: content-box;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: $text-color;
+  line-height: 20px;
+  text-align: center;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+
+  user-select: none;
+}
+
+.zoomOut {
+  left: 36px;
+
+}
+
+.mapael{
+  position: relative;
+  margin: (-$widget-padding-vertical) (-$widget-padding-horizontal) 0;
+  .map {
+    position:relative;
+  }
+  .stats{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin: 5% 10%;
+  }
+}
+
+// Checkbox
+
+.table td > .abc-checkbox,
+.table th > .abc-checkbox {
+  > label:before,
+  > label:after {
+    margin-left: -16px;
+  }
+}
+
+/***********************/
+/* Part:Progress Stats */
+/***********************/
+
+.progress-stats{
+  .name{
+    margin-bottom: 2px;
+  }
+  .description{
+    margin-bottom: 2px;
+  }
+  .status{
+    margin-top: 15px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    .description + .progress{
+      margin-bottom: 0;
+    }
+  }
+}
+
+/***********************/
+/*    Part:Stats Row   */
+/***********************/
+
+.stats-row{
+  margin-bottom: 15px;
+}
+
+.stat-item{
+  display: inline-block;
+  padding-right: 15px;
+
+  & + .stat-item{
+    padding-left: 15px;
+    border-left: 1px solid $hr-border-color;
+  }
+  .name{
+    margin-bottom: 2px;
+    margin-top: 10px;
+  }
+  .value{
+    font-weight: bold;
+  }
+
+  &.stat-item-mini-chart{
+    position: relative;
+    top: -12px;
+    padding-left: 0;
+    border-left: none;
+  }
+}

@@ -74,8 +74,6 @@
     "ie-shim": "0.1.0",
     "jquery": "3.1.0",
     "jquery-flot": "0.8.3",
-    "jquery-mapael": "2.0.0",
-    "jquery-mousewheel": "3.1.13",
     "jquery-slimscroll": "1.3.8",
     "jquery-sparkline": "2.3.2",
     "jquery-ui": "git://github.com/jquery/jquery-ui.git#1.11.4",
@@ -104,7 +102,8 @@
     "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js",
     "jquery.nestable": "https://github.com/dbushell/Nestable.git#4f93032cfafe2002f24ed6bd7dc1510931498503",
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
-    "flot-orderBars": "https://github.com/emmerich/flot-orderBars.git#98081459571f60f7d95cc79a848c4f558d077486"
+    "flot-orderBars": "https://github.com/emmerich/flot-orderBars.git#98081459571f60f7d95cc79a848c4f558d077486",
+    "jQuery-Mapael": "https://github.com/neveldo/jQuery-Mapael.git#0.7.1"
   },
   "devDependencies": {
     "@types/core-js": "0.9.34",

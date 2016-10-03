@@ -224,7 +224,7 @@
   <div class="col-lg-4 col-xs-12">
     <section widget class="widget">
       <header>
-        <h6><span class="label label-danger">New</span> Messages</h6>
+        <h6><span class="tag tag-danger">New</span> Messages</h6>
         <div class="widget-controls">
           <a href="#"><i class="fa fa-refresh"></i></a>
           <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
@@ -339,47 +339,47 @@
           <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
         </div>
       </header>
-      <!--<div class="widget-body no-padding">-->
-        <!--<div class="bg-primary-light" bootstrap-calendar [events]="[-->
-                <!--[-->
-                        <!--'2/'+month+'/'+year,-->
-                    <!--'The flower bed',-->
-                    <!--'#',-->
-                    <!--config.settings.colors['brand-primary'],-->
-                    <!--'Contents here'-->
-                <!--],-->
-                <!--[-->
-                        <!--'5/'+month+'/'+year,-->
-                    <!--'Stop world water pollution',-->
-                    <!--'#',-->
-                    <!--config.settings.colors['brand-warning'],-->
-                    <!--'Have a kick off meeting with .inc company'-->
-                <!--],-->
-                <!--[-->
-                        <!--'18/'+month+'/'+year,-->
-                    <!--'Light Blue 2.2 release',-->
-                    <!--'#',-->
-                    <!--config.settings.colors['brand-success'],-->
-                    <!--'Some contents here'-->
-                <!--],-->
-                <!--[-->
-                        <!--'29/'+month+'/'+year,-->
-                    <!--'A link',-->
-                    <!--'http://www.flatlogic.com',-->
-                    <!--config.settings.colors['brand-danger']-->
-                <!--]-->
-            <!--]"></div>-->
-        <!--<div class="list-group fs-mini">-->
-          <!--<a href="#" class="list-group-item text-ellipsis">-->
-            <!--<span class="label-pill label-warning pull-xs-right">6:45</span>-->
-            <!--Weed out the flower bed-->
-          <!--</a>-->
-          <!--<a href="#" class="list-group-item text-ellipsis">-->
-            <!--<span class="label-pill label-success pull-xs-right">9:41</span>-->
-            <!--Stop world water pollution-->
-          <!--</a>-->
-        <!--</div>-->
-      <!--</div>-->
+      <div class="widget-body no-padding">
+        <div class="bg-primary-light" bootstrap-calendar [events]="[
+                [
+                        '2/'+month+'/'+year,
+                    'The flower bed',
+                    '#',
+                    config.settings.colors['brand-primary'],
+                    'Contents here'
+                ],
+                [
+                        '5/'+month+'/'+year,
+                    'Stop world water pollution',
+                    '#',
+                    config.settings.colors['brand-warning'],
+                    'Have a kick off meeting with .inc company'
+                ],
+                [
+                        '18/'+month+'/'+year,
+                    'Light Blue 2.2 release',
+                    '#',
+                    config.settings.colors['brand-success'],
+                    'Some contents here'
+                ],
+                [
+                        '29/'+month+'/'+year,
+                    'A link',
+                    'http://www.flatlogic.com',
+                    config.settings.colors['brand-danger']
+                ]
+            ]"></div>
+        <div class="list-group fs-mini">
+          <a href="#" class="list-group-item text-ellipsis">
+            <span class="tag-pill tag-warning pull-xs-right">6:45</span>
+            Weed out the flower bed
+          </a>
+          <a href="#" class="list-group-item text-ellipsis">
+            <span class="tag-pill tag-success pull-xs-right">9:41</span>
+            Stop world water pollution
+          </a>
+        </div>
+      </div>
     </section>
   </div>
 </div>

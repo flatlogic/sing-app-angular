@@ -4,6 +4,7 @@ import { AppConfig } from '../app.config'
 
 declare var jQuery: any;
 declare var Hammer: any;
+declare var Raphael: any;
 
 @Component({
   selector: 'layout',
@@ -27,6 +28,8 @@ export class Layout {
   constructor(config: AppConfig,
               el: ElementRef,
               router: Router) {
+    Raphael.prototype.safari = function(): any { return; };
+    
     this.el = el;
     this.config = config.getConfig();
     this.configFn = config;

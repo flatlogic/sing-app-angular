@@ -6,6 +6,7 @@ import { Dashboard } from './dashboard.component.ts';
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
 import { GeoLocationsWidget } from './geo-locations-widget/geo-locations-widget.directive';
+import { BootstrapCalendar } from './bootstrap-calendar/bootstrap-calendar.component';
 
 export const routes = [
   { path: '', component: Dashboard, pathMatch: 'full' }
@@ -21,7 +22,8 @@ export const routes = [
   ],
   declarations: [
     Dashboard,
-    GeoLocationsWidget
+    GeoLocationsWidget,
+    BootstrapCalendar
   ]
 })
 export default class DashboardModule {
