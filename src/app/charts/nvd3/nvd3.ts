@@ -24,8 +24,7 @@ export class Nvd3Chart {
         .style('height', this.height || '300px')
         .datum(this.datum)
         .transition().duration(500)
-        .call(chart)
-      ;
+        .call(chart);
 
       jQuery(window).on('sn:resize', chart.update);
 

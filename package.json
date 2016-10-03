@@ -64,7 +64,7 @@
     "bootstrap-markdown": "2.10.0",
     "bootstrap-select": "1.11.2",
     "core-js": "2.4.1",
-    "d3": "3.5.17",
+    "d3": "3.5.5",
     "easy-pie-chart": "2.1.7",
     "font-awesome": "4.6.3",
     "fullcalendar": "3.0.1",
@@ -73,9 +73,11 @@
     "http-server": "0.9.0",
     "ie-shim": "0.1.0",
     "jquery": "3.1.0",
+    "jquery-flot": "0.8.3",
     "jquery-mapael": "2.0.0",
     "jquery-mousewheel": "3.1.13",
     "jquery-slimscroll": "1.3.8",
+    "jquery-sparkline": "2.3.2",
     "jquery-ui": "git://github.com/jquery/jquery-ui.git#1.11.4",
     "jquery.animate-number": "0.0.13",
     "jvectormap": "2.0.4",
@@ -99,7 +101,6 @@
     "zone.js": "0.6.25"
   },
   "napa": {
-    "jquery.sparkline": "http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js",
     "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js",
     "jquery.nestable": "https://github.com/dbushell/Nestable.git#4f93032cfafe2002f24ed6bd7dc1510931498503",
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",

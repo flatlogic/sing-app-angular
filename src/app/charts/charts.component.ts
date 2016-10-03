@@ -1,80 +1,81 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component} from '@angular/core';
 
 declare var jQuery: any;
-// declare var Rickshaw: any;
+declare var Rickshaw: any;
 const d3 = require('d3/d3.js');
 const nv = require('nvd3/build/nv.d3.js');
 
 @Component({
-  selector: '[charts]',
-  template: require('./charts.template.html'),
-  encapsulation: ViewEncapsulation.None,
-  styles: [require('./charts.style.scss')]
+  selector: 'charts',
+  templateUrl: './charts.template.html',
+  styleUrls: ['./charts.style.scss']
 })
 export class Charts {
- // seriesData: Array<any> = [ [], [] ];
- // random: any;
- // series: Array<any>;
+ seriesData: Array<any> = [ [], [] ];
+ random: any;
+ series: Array<any>;
  // flotBarsData: Array<any>;
  // flotBarsOptions: any;
- // sparklineCompositeData: Array<any>;
- // sparklineCompositeOptions: Array<any>;
- // sparklinePieData: Array<any>;
- // sparklinePieOptions: any;
+ sparklineCompositeData: Array<any>;
+ sparklineCompositeOptions: Array<any>;
+ sparklinePieData: Array<any>;
+ sparklinePieOptions: any;
  // morris1Options: any;
  // morris2Options: any;
  // morris3Options: any;
  // nvd31Chart: any;
- // nvd32Chart: any;
  // nvd31Data: any;
+ // nvd32Chart: any;
+
  // nvd32Data: any;
  //
- // data1: Array<any> = [
- //   [1, 20],
- //   [2, 20],
- //   [3, 40],
- //   [4, 30],
- //   [5, 40],
- //   [6, 35],
- //   [7, 47]
- // ];
- // data2: Array<any> = [
- //   [1, 13],
- //   [2, 8],
- //   [3, 17],
- //   [4, 10],
- //   [5, 17],
- //   [6, 15],
- //   [7, 16]
- // ];
- // data3: Array<any> = [
- //   [1, 23],
- //   [2, 13],
- //   [3, 33],
- //   [4, 16],
- //   [5, 32],
- //   [6, 28],
- //   [7, 31]
- // ];
- //
- //applyRickshawData(): void {
- //  this.random = new Rickshaw.Fixtures.RandomData(30);
- //  for (let i = 0; i < 30; i++) {
- //    this.random.addData(this.seriesData);
- //  }
- //  this.series = [
- //    {
- //      color: '#96E593',
- //      data: this.seriesData[0],
- //      name: 'Uploads'
- //    }, {
- //      color: '#ecfaec',
- //      data: this.seriesData[1],
- //      name: 'Downloads'
- //    }
- //  ];
- //};
- //
+ data1: Array<any> = [
+   [1, 20],
+   [2, 20],
+   [3, 40],
+   [4, 30],
+   [5, 40],
+   [6, 35],
+   [7, 47]
+ ];
+ data2: Array<any> = [
+   [1, 13],
+   [2, 8],
+   [3, 17],
+   [4, 10],
+   [5, 17],
+   [6, 15],
+   [7, 16]
+ ];
+ data3: Array<any> = [
+   [1, 23],
+   [2, 13],
+   [3, 33],
+   [4, 16],
+   [5, 32],
+   [6, 28],
+   [7, 31]
+ ];
+
+ applyRickshawData(): void {
+     console.log(Rickshaw);
+  this.random = new Rickshaw.Fixtures.RandomData(30);
+  for (let i = 0; i < 30; i++) {
+    this.random.addData(this.seriesData);
+  }
+  this.series = [
+    {
+      color: '#96E593',
+      data: this.seriesData[0],
+      name: 'Uploads'
+    }, {
+      color: '#ecfaec',
+      data: this.seriesData[1],
+      name: 'Downloads'
+    }
+  ];
+ };
+
  // applyNvd3Data(): void {
  //   /* Inspired by Lee Byron's test data generator. */
  //   function _stream_layers(n, m, o): Array<any> {
@@ -155,40 +156,40 @@ export class Charts {
  //   });
  // };
  //
- // ngOnInit(): void {
- //   //this.applyRickshawData();
- //
- //   this.sparklineCompositeData = [
- //     [2, 4, 6, 2, 7, 5, 3, 7, 8, 3, 6],
- //     [5, 3, 7, 8, 3, 6, 2, 4, 6, 2, 7]
- //   ];
- //   this.sparklineCompositeOptions = [{
- //     width: '99%',
- //     fillColor: '#ddd',
- //     height: '100px',
- //     lineColor: 'transparent',
- //     spotColor: '#c0d0f0',
- //     minSpotColor: null,
- //     maxSpotColor: null,
- //     highlightSpotColor: '#ddd',
- //     highlightLineColor: '#ddd'
- //   }, {
- //     lineColor: 'transparent',
- //     spotColor: '#c0d0f0',
- //     fillColor: 'rgba(192, 208, 240, 0.76)',
- //     minSpotColor: null,
- //     maxSpotColor: null,
- //     highlightSpotColor: '#ddd',
- //     highlightLineColor: '#ddd'
- //   }];
- //
- //   this.sparklinePieData = [2, 4, 6];
- //   this.sparklinePieOptions = {
- //     type: 'pie',
- //     width: '100px',
- //     height: '100px',
- //     sliceColors: ['#F5CB7B', '#FAEEE5', '#f0f0f0']
- //   };
+ ngOnInit(): void {
+   this.applyRickshawData();
+
+   this.sparklineCompositeData = [
+     [2, 4, 6, 2, 7, 5, 3, 7, 8, 3, 6],
+     [5, 3, 7, 8, 3, 6, 2, 4, 6, 2, 7]
+   ];
+   this.sparklineCompositeOptions = [{
+     width: '99%',
+     fillColor: '#ddd',
+     height: '100px',
+     lineColor: 'transparent',
+     spotColor: '#c0d0f0',
+     minSpotColor: null,
+     maxSpotColor: null,
+     highlightSpotColor: '#ddd',
+     highlightLineColor: '#ddd'
+   }, {
+     lineColor: 'transparent',
+     spotColor: '#c0d0f0',
+     fillColor: 'rgba(192, 208, 240, 0.76)',
+     minSpotColor: null,
+     maxSpotColor: null,
+     highlightSpotColor: '#ddd',
+     highlightLineColor: '#ddd'
+   }];
+
+   this.sparklinePieData = [2, 4, 6];
+   this.sparklinePieOptions = {
+     type: 'pie',
+     width: '100px',
+     height: '100px',
+     sliceColors: ['#F5CB7B', '#FAEEE5', '#f0f0f0']
+   };
  //
  //   this.applyNvd3Data();
  //
@@ -328,5 +329,5 @@ export class Charts {
  //     },
  //     colors: ['#64bd63', '#f0b518', '#F7653F']
  //   };
- // }
+ }
 }

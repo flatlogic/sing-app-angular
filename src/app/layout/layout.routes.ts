@@ -6,6 +6,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: 'dashboard', loadChildren: () => System.import('../dashboard/dashboard.module') },
     { path: 'inbox', loadChildren: () => System.import('../inbox/inbox.module') },
+    { path: 'charts', loadChildren: () => System.import('../charts/charts.module') },
     { path: 'profile', loadChildren: () => System.import('../profile/profile.module') },
     { path: 'forms', loadChildren: () => System.import('../forms/forms.module') },
     { path: 'ui', loadChildren: () => System.import('../ui-elements/ui-elements.module') },
