@@ -55,6 +55,9 @@ export class Inbox {
 
   setFolderName(folderName: string): void {
     this.currentFolderName = folderName;
+    if(!this.mailListShow) {
+      this.changeEmailComponents('mailList');
+    }
   }
 
   initMailboxAppDemo($el: any): void {
