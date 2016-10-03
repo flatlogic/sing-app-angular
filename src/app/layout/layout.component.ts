@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
-import { AppConfig } from '../app.config'
+import { AppConfig } from '../app.config';
 
 declare var jQuery: any;
 declare var Hammer: any;
@@ -29,7 +29,6 @@ export class Layout {
               el: ElementRef,
               router: Router) {
     Raphael.prototype.safari = function(): any { return; };
-    
     this.el = el;
     this.config = config.getConfig();
     this.configFn = config;

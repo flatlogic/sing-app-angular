@@ -277,8 +277,8 @@ const People = [
 export class TablesDynamic {
   data: any[] = People;
 
-  rows:Array<any> = [];
-  columns:Array<any> = [
+  rows: Array<any> = [];
+  columns: Array<any> = [
     {title: 'Name', name: 'name'},
     {title: 'Position', name: 'position', sort: false},
     {title: 'Office', name: 'office', sort: 'asc'},
@@ -286,19 +286,19 @@ export class TablesDynamic {
     {title: 'Start date', name: 'startDate'},
     {title: 'Salary ($)', name: 'salary'}
   ];
-  page:number = 1;
-  itemsPerPage:number = 10;
-  maxSize:number = 5;
-  numPages:number = 1;
-  length:number = 0;
+  page: number = 1;
+  itemsPerPage: number = 10;
+  maxSize: number = 5;
+  numPages: number = 1;
+  length: number = 0;
 
-  config:any = {
+  config: any = {
     paging: true,
     sorting: {columns: this.columns},
     filtering: {filterString: '', columnName: 'position'}
   };
 
-  ng2TableData:Array<any> = TableData;
+  ng2TableData: Array<any> = TableData;
 
   constructor() {
     this.length = this.ng2TableData.length;
@@ -353,7 +353,7 @@ export class TablesDynamic {
     });
   }
 
-  changeFilter(data:any, config:any):any {
+  changeFilter(data:any, config:any): any {
     if (!config.filtering) {
       return data;
     }
@@ -364,7 +364,7 @@ export class TablesDynamic {
     return filteredData;
   }
 
-  onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
+  onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}): any {
     if (config.filtering) {
       Object.assign(this.config.filtering, config.filtering);
     }

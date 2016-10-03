@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input} from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 declare var jQuery: any;
 declare var Rickshaw: any;
 
