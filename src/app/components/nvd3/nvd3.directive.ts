@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 declare var jQuery: any;
-const d3 = require('d3/d3.js');
-const nv = require('nvd3/build/nv.d3.js');
+declare var nv: any;
+declare var d3: any;
 
 @Directive ({
   selector: '[nvd3-chart]'

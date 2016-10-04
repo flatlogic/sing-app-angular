@@ -2,17 +2,17 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { ComponentsModule } from '../components/components.module';
+import 'webpack-raphael';
+import 'easy-pie-chart/dist/jquery.easypiechart.js';
+
+import { WidgetModule } from '../layout/widget/widget.module';
+import { FlotChartModule } from '../components/flot/flot.module';
+import { MorrisChartModule } from '../components/morris/morris.module';
+import { Nvd3ChartModule } from '../components/nvd3/nvd3.module';
+import { JqSparklineModule } from '../components/sparkline/sparkline.module';
+import { FlotChartAnimator } from './flot-chart-animator/flot-chart-animator.directive';
 
 import { Charts } from './charts.component';
-
-import 'jquery-flot';
-import 'jquery.flot.animator/jquery.flot.animator';
-import 'jquery-flot/jquery.flot.time.js';
-import 'jquery-sparkline';
-import 'webpack-raphael';
-import 'morris.js/morris.js';
-import 'easy-pie-chart/dist/jquery.easypiechart.js';
 
 export const routes = [
   { path: '', component: Charts, pathMatch: 'full' }
@@ -21,11 +21,16 @@ export const routes = [
 @NgModule({
   imports: [
     CommonModule,
-    ComponentsModule,
+    WidgetModule,
+    FlotChartModule,
+    MorrisChartModule,
+    Nvd3ChartModule,
+    JqSparklineModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
-    Charts
+    Charts,
+    FlotChartAnimator
   ]
 })
 export default class ChartsModule {

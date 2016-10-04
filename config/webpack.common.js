@@ -283,8 +283,6 @@ module.exports = function(options) {
         nv: 'nvd3',
         moment: 'moment',
         fullCalendar: 'fullcalendar',
-        d3: 'd3',
-        nv: 'nvd3/build/nv.d3.js',
         Raphael: 'webpack-raphael',
         'window.Raphael': 'webpack-raphael'
       }),

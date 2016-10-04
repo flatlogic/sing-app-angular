@@ -9,7 +9,7 @@ import { Ng2TableModule } from 'ng2-table';
 
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
-import { ComponentsModule } from '../components/components.module';
+import { JqSparklineModule } from '../components/sparkline/sparkline.module';
 
 
 import { TablesBasic } from './basic/tables-basic.component';
@@ -32,7 +32,7 @@ export const routes = [
   ],
   imports: [
     CommonModule,
-    ComponentsModule,
+    JqSparklineModule,
     FormsModule,
     AlertModule,
     TooltipModule,
