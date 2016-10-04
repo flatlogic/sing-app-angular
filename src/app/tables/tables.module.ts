@@ -9,8 +9,8 @@ import { Ng2TableModule } from 'ng2-table';
 
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
+import { ComponentsModule } from '../components/components.module';
 
-import { JqSparkline } from '../components/directives/sparkline/sparkline.directive';
 
 import { TablesBasic } from './basic/tables-basic.component';
 import { TablesDynamic } from './dynamic/tables-dynamic.component';
@@ -25,7 +25,6 @@ export const routes = [
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    JqSparkline,
     DataTableDirectives,
     TablesBasic,
     TablesDynamic,
@@ -33,6 +32,7 @@ export const routes = [
   ],
   imports: [
     CommonModule,
+    ComponentsModule,
     FormsModule,
     AlertModule,
     TooltipModule,
