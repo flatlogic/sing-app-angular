@@ -12,6 +12,7 @@ export class Navbar implements OnInit {
   @Output() toggleChatEvent: EventEmitter<any> = new EventEmitter();
   $el: any;
   config: any;
+  router: Router;
 
   constructor(el: ElementRef, config: AppConfig, router: Router) {
     this.$el = jQuery(el.nativeElement);

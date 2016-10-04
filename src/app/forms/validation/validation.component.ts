@@ -1,5 +1,5 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {Widget} from '../core/widget/widget';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Widget } from '../core/widget/widget';
 declare var jQuery: any;
 
 @Component({
