@@ -36,7 +36,7 @@ export class Sidebar implements OnInit {
   }
 
   changeActiveNavigationItem(location): void {
-    let $newActiveLink = this.$el.find('a[href="#' + location.path() + '"]');
+    let $newActiveLink = this.$el.find('a[href="#' + location.path().split('?')[0] + '"]');
 
     // collapse .collapse only if new and old active links belong to different .collapse
     if (!$newActiveLink.is('.active > .collapse > li > a')) {
@@ -48,7 +48,7 @@ export class Sidebar implements OnInit {
       .parents('li').addClass('active');
 
     // uncollapse parent
-    $newActiveLink.closest('.collapse').addClass('in')
+    $newActiveLink.closest('.collapse').addClass('in').css('height', '')
       .siblings('a[data-toggle=collapse]').removeClass('collapsed');
   }
 

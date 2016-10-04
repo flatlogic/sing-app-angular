@@ -18,6 +18,6 @@ export class ErrorComponent {
   }
 
   searchResult(): void {
-    this.router.navigate(['/app', 'dashboard']);
+    this.router.navigate(['/app', 'extra', 'search']);
   }
 }
