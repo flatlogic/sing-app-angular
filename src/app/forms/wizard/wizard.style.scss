@@ -125,6 +125,15 @@ html[dir="rtl"] .select2-search input {
     @include box-shadow(none);
   }
 
+  .pager {
+    padding-left: 0;
+    margin-top: 1rem;
+
+    li {
+      display: inline;
+    }
+  }
+
   //fix conflict with MODAL WIZARD
   .pager.wizard{
     display: block;
@@ -154,6 +163,10 @@ html[dir="rtl"] .select2-search input {
 .wizard-nav-item .already-visited .active{
   background-color: $brand-info;
   color: $white;
+}
+
+.wizard-dialog {
+  max-width: none;
 }
 
 .wizard-dialog .popover.error-popover .arrow {

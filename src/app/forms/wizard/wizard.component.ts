@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 declare var jQuery: any;
 
 @Component({
