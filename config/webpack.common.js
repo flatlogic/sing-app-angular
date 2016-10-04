@@ -45,7 +45,7 @@ module.exports = function(options) {
      *
      * See: http://webpack.github.io/docs/configuration.html#cache
      */
-     //cache: false,
+    //cache: false,
 
     /*
      * The entry point for the bundle
@@ -172,7 +172,7 @@ module.exports = function(options) {
         },
 
         /* File loader for supporting images, for example, in CSS files.
-        */
+         */
         {
           test: /\.(jpg|png|gif)$/,
           loader: 'file'
@@ -223,13 +223,13 @@ module.exports = function(options) {
         name: ['polyfills', 'vendor'].reverse()
       }),
 
-      /**
-       * Plugin: ContextReplacementPlugin
-       * Description: Provides context to Angular's use of System.import
-       *
-       * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
-       * See: https://github.com/angular/angular/issues/11580
-       */
+    /**
+     * Plugin: ContextReplacementPlugin
+     * Description: Provides context to Angular's use of System.import
+     *
+     * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
+     * See: https://github.com/angular/angular/issues/11580
+     */
       new ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
         /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
@@ -278,7 +278,9 @@ module.exports = function(options) {
         "window.Tether": "tether",
         Hammer: 'hammerjs/hammer',
         Shuffle: 'shufflejs',
+        d3: 'd3',
         Rickshaw: 'rickshaw',
+        nv: 'nvd3',
         moment: 'moment',
         fullCalendar: 'fullcalendar',
         d3: 'd3',
@@ -325,9 +327,14 @@ module.exports = function(options) {
       global: 'window',
       crypto: 'empty',
       process: true,
-      module: false,
+      module: true,
       clearImmediate: false,
       setImmediate: false
+    },
+    externals: {
+      fs: '{}',
+      tls: '{}',
+      net: '{}'
     }
 
   };

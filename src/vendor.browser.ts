@@ -18,12 +18,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
 import 'jquery';
-import 'jquery.animate-number/jquery.animateNumber.js';
-import 'jquery-mousewheel/jquery.mousewheel.js';
-import 'jquery-mapael/js/jquery.mapael.js';
-import 'jquery-mapael/js/maps/usa_states';
-import 'jquery-mapael/js/jquery.mapael.js';
-import 'bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.js';
 import 'tether';
 import 'bootstrap';
 import 'widgster';
@@ -31,11 +25,7 @@ import 'bootstrap-select';
 import 'select2';
 import 'pace';
 
-// import 'rickshaw'
-
-
-
-
+import 'jquery-sparkline';
 
 if ('production' === ENV) {
   // Production

@@ -10,7 +10,7 @@ import { Ng2TableModule } from 'ng2-table';
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
 
-import { JqSparkline } from './sparkline/sparkline';
+import { JqSparkline } from '../components/directives/sparkline/sparkline.directive';
 
 import { TablesBasic } from './basic/tables-basic.component';
 import { TablesDynamic } from './dynamic/tables-dynamic.component';
