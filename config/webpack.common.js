@@ -328,11 +328,6 @@ module.exports = function(options) {
       module: true,
       clearImmediate: false,
       setImmediate: false
-    },
-    externals: {
-      fs: '{}',
-      tls: '{}',
-      net: '{}'
     }
 
   };
