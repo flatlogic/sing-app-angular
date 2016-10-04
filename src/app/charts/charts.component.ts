@@ -6,7 +6,7 @@ declare var d3: any;
 declare var nv: any;
 
 @Component({
-  selector: 'charts',
+  selector: '[charts]',
   templateUrl: './charts.template.html',
   styleUrls: ['./charts.style.scss'],
   encapsulation: ViewEncapsulation.None

@@ -89,6 +89,7 @@
     "ng2-table": "^1.1.0",
     "nvd3": "1.8.4",
     "pace": "git://github.com/HubSpot/pace.git#v0.7.7",
+    "parsleyjs": "2.4.4",
     "rickshaw": "1.5.1",
     "rxjs": "5.0.0-beta.12",
     "select2": "4.0.3",
