@@ -1,4 +1,4 @@
-# Sing Dashboard App (3.2.0 Seed version) with Angular 2.0 Final Release support
+# Sing Dashboard App (3.2.0 Full version) with Angular 2.0 Final Release support
 
 
 > An Angular 2 application featuring [Angular 2](https://angular.io)
@@ -30,6 +30,9 @@ This seed repo serves as an Angular 2 starter for anyone looking to get up and r
 ```bash
 # change directory to our repo
 cd sing/angular2-final-seed
+
+# makesure typings are installed globally
+npm install -g typings
 
 # install the repo with npm
 npm install

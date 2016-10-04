@@ -12,11 +12,30 @@ export class MessengerDemo {
   initializationCode(): void {
     /* tslint:disable */
     (function(): void {
-      let $, flatMessage, spinnerTemplate,
+      let $, flatMessage, spinnerTemplate, LocationSelector,
         __hasProp = {}.hasOwnProperty,
         __extends = function(child, parent): any { for (let key in parent) { if (__hasProp.call(parent, key)) { child[key] = parent[key]; } } function ctor(): void { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-      $ = jQuery;
+      LocationSelector = function($el) {
+        this.$el = $el;
+        this.$el.on('click', '.bit', this.handleClick.bind(this));
+      };
+
+      LocationSelector.prototype.className = 'location-selector';
+
+      LocationSelector.prototype.handleClick = function(e) {
+        var $bit;
+        $bit = jQuery(e.target);
+        return this.$el.trigger('update', [$bit.attr('data-position').split(' ')]);
+      };
+
+      jQuery.fn.locationSelector = function() {
+        var loc;
+        loc = new LocationSelector(this);
+        jQuery(this).addClass(loc.className);
+        return jQuery(this);
+      };
+
       spinnerTemplate = '<div class="messenger-spinner">\n    <span class="messenger-spinner-side messenger-spinner-side-left">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n    <span class="messenger-spinner-side messenger-spinner-side-right">\n        <span class="messenger-spinner-fill"></span>\n    </span>\n</div>';
       /* tslint:enable */
       flatMessage = (function(_super): any {
@@ -74,7 +93,7 @@ export class MessengerDemo {
     update();
 
     $lsel.locationSelector()
-      .on('update', (pos) => {
+      .on('update', (e, pos) => {
         loc = pos;
 
         update();

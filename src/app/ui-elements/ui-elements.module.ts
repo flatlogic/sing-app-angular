@@ -16,18 +16,18 @@ import { WidgetModule } from '../layout/widget/widget.module';
 import { ModalComponent } from './components/modal-window/modal.component';
 import { Buttons } from './buttons/buttons.component';
 import { Notifications } from './notifications/notifications.component';
-// import { Icons } from './icons/icons.component';
+import { Icons } from './icons/icons.component';
 import { TabsAccordion } from './tabs-accordion/tabs-accordion.component';
 import { ListGroups } from './list-groups/list-groups.component';
 
-import { MessengerDemo } from './notifications/messenger/messenger';
+import { MessengerDemo } from './notifications/messenger/messenger.directive';
 
 export const routes = [
   {path: '', redirectTo: 'components', pathMatch: 'full'},
   {path: 'components', component: Components},
   {path: 'buttons', component: Buttons},
   {path: 'notifications', component: Notifications},
-  // {path: 'icons', component: Icons},
+  {path: 'icons', component: Icons},
   {path: 'tabs-accordion', component: TabsAccordion},
   {path: 'list-groups', component: ListGroups},
 ];
@@ -40,7 +40,7 @@ export const routes = [
     ModalComponent,
     Notifications,
     MessengerDemo,
-    // Icons,
+    Icons,
     TabsAccordion,
     ListGroups
   ],
