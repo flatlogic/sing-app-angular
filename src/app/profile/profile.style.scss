@@ -2,38 +2,6 @@
 @import "../../../node_modules/bootstrap/scss/_variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
 
-/***********************/
-/*    Part:Stats Row   */
-/***********************/
-
-.stats-row{
-  margin-bottom: 15px;
-}
-
-.stat-item{
-  display: inline-block;
-  padding-right: 15px;
-
-  & + .stat-item{
-    padding-left: 15px;
-    border-left: 1px solid $hr-border-color;
-  }
-  .name{
-    margin-bottom: 2px;
-    margin-top: 10px;
-  }
-  .value{
-    font-weight: bold;
-  }
-
-  &.stat-item-mini-chart{
-    position: relative;
-    top: -12px;
-    padding-left: 0;
-    border-left: none;
-  }
-}
-
 /***********************************/
 /**          Post Links           **/
 /***********************************/
