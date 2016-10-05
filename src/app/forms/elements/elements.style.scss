@@ -3,8 +3,8 @@
 //@import "../../../node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker";
 @import "../../../../node_modules/bootstrap-markdown/css/bootstrap-markdown.min";
 @import "../../../../node_modules/bootstrap-select/dist/css/bootstrap-select";
-//@import "../../../node_modules/select2/select2";
-//@import "../../../node_modules/select2-bootstrap-css/select2-bootstrap";
+@import "../../../../node_modules/select2/select2";
+@import "../../../../node_modules/select2-bootstrap-css/select2-bootstrap";
 //@import "../../../node_modules/jasny-bootstrap/dist/css/jasny-bootstrap";
 //@import "../../../node_modules/dropzone/dist/dropzone";
 @import "../../scss/variables";
@@ -406,6 +406,21 @@ html[dir="rtl"] .select2-search input {
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
   background: #fff url('assets/select2/select2-spinner.gif') no-repeat 100% !important;
 }
+
+
+
+
+/* Retina-ize icons */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx)  {
+  .select2-search input,
+  .select2-search-choice-close,
+  .select2-container .select2-choice abbr,
+  .select2-container .select2-choice .select2-arrow b {
+    background-image: url('assets/select2/select2x2.png') !important;
+  }
+}
+
 
 /**
  * Bootstrap select
