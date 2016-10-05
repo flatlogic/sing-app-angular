@@ -8,10 +8,13 @@ declare var jQuery: any;
   encapsulation: ViewEncapsulation.None,
 })
 export class Elements {
+  date: Date = new Date(2016, 5, 10);
+  colorOptions: Object = {color: '#f0b518'};
 
   ngOnInit(): void {
     jQuery('.select2').select2();
     // jQuery('#markdown').markdown();
+    jQuery('#colorpicker').colorpicker(this.colorOptions);
     jQuery('.selectpicker').selectpicker();
   }
 }

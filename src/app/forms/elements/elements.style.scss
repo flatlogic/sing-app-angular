@@ -1,6 +1,6 @@
-//@import "../../../node_modules/ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker3.min";
-//@import "../../../node_modules/ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min";
-//@import "../../../node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker";
+@import "../../../../node_modules/ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker3.min";
+@import "../../../../node_modules/ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min";
+@import "../../../../node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker";
 @import "../../../../node_modules/bootstrap-markdown/css/bootstrap-markdown.min";
 @import "../../../../node_modules/bootstrap-select/dist/css/bootstrap-select";
 @import "../../../../node_modules/select2/select2";
@@ -495,4 +495,15 @@ html[dir="rtl"] .select2-search input {
 .autogrow {
   overflow: hidden;
   resize: none;
+}
+
+
+/**
+* datetime
+**/
+.input-group {
+  width: auto;
+  .input-group-addon {
+    padding: .375rem .75rem .375rem .75rem;
+  }
 }

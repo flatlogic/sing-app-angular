@@ -1302,6 +1302,52 @@ Enjoy!
     <section class="widget" widget>
       <header>
         <h6>
+          Pickers
+        </h6>
+        <div class="widget-controls">
+          <a class="bg-gray-transparent" href="#"><i class="glyphicon glyphicon-cog text-white"></i></a>
+          <a href="#"><i class="fa fa-refresh"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <form role="form">
+          <fieldset>
+            <legend>
+              Date & Time
+            </legend>
+            <div class="form-group">
+              <label for="datetimepicker2i">
+                Time-enabled
+              </label>
+              <datetime [(ngModel)]="date" name="datetime" id="datetimepicker2i"></datetime>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              Colors
+            </legend>
+            <div class="form-group">
+              <label for="colorpickeri">
+                Simple select
+                <span class="help-block">
+                  Colorpicker plugin for Twitter Bootstrap, originally written by Stefan Petre
+                </span>
+              </label>
+              <div id="colorpicker" class="input-group">
+                <input type="text" value="" class="form-control" id="colorpickeri"/>
+                <span class="input-group-addon"><i></i></span>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-6 col-xs-12">
+    <section class="widget" widget>
+      <header>
+        <h6>
           Input <strong>Masks</strong>
         </h6>
         <div class="widget-controls">

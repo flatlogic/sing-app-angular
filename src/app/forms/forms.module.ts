@@ -17,8 +17,9 @@ import 'select2';
 import 'jasny-bootstrap/docs/assets/js/vendor/holder.js';
 import 'jasny-bootstrap/js/fileinput.js';
 import 'jasny-bootstrap/js/inputmask.js';
-// import 'ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js';
-// import 'ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js';
+import 'ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js';
+import 'ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js';
+import 'bootstrap-colorpicker';
 
 import { TooltipModule, AlertModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Autosize } from 'angular2-autosize';
@@ -26,7 +27,7 @@ import { WidgetModule } from '../layout/widget/widget.module';
 /* tslint:disable */
 import { BootstrapWizardModule } from '../components/wizard/wizard.module';
 import { BootstrapApplicationWizard } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.directive';
-// import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
+import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 /* tslint:enable */
 import { Elements } from './elements/elements.component';
 import { Validation } from './validation/validation.component';
@@ -44,7 +45,6 @@ export const routes = [
     Autosize,
     Elements,
     Validation,
-    // NKDatetime,
     BootstrapApplicationWizard,
     Wizard
   ],
@@ -56,8 +56,7 @@ export const routes = [
     DropdownModule,
     WidgetModule,
     BootstrapWizardModule,
-    // NKDatetime,
-    // NKDatetimeModule,
+    NKDatetimeModule,
     RouterModule.forChild(routes),
   ]
 })
