@@ -368,11 +368,11 @@
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-md-3  col-form-label text-md-right" for="markdown">
+              <label class="col-md-3  col-form-label text-md-right" for="markdown-editor">
                 Markdown Editor
               </label>
               <div class="col-md-9 ">
-                  <textarea class="form-control" id="markdown" data-provide="markdown" rows="6">### Hello there
+                  <textarea class="form-control" id="markdown-editor" data-provide="markdown" rows="6">### Hello there
 How are you?
 
 I have bellow task for you :
@@ -389,6 +389,234 @@ Enjoy!
               </div>
             </div>
           </fieldset>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-xs-12">
+    <section class="widget" widget>
+      <header>
+        <h6>
+          Checkbox <strong>Controls</strong>
+        </h6>
+        <div class="widget-controls">
+          <a class="bg-gray-transparent" href="#"><i class="glyphicon glyphicon-cog text-white"></i></a>
+          <a href="#"><i class="fa fa-refresh"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <form role="form">
+          <div class="row">
+            <div class="col-lg-4 col-xs-12">
+              <fieldset>
+                <legend>
+                  Basic
+                </legend>
+                <p>
+                  Supports bootstrap brand colors: <code>.checkbox-primary</code>, <code>.checkbox-info</code> etc.
+                  Pure <abbr title="Cascading Style Sheet">css</abbr> solution with no javascript.
+                  Let your checkboxes shine!
+                </p>
+                <div class="abc-checkbox">
+                  <input id="checkbox1" type="checkbox">
+                  <label for="checkbox1">
+                    Default
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-primary">
+                  <input id="checkbox2" type="checkbox" checked>
+                  <label for="checkbox2">
+                    Primary
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-success">
+                  <input id="checkbox3" type="checkbox">
+                  <label for="checkbox3">
+                    Success
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-info">
+                  <input id="checkbox4" type="checkbox" checked>
+                  <label for="checkbox4">
+                    Info
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-warning">
+                  <input id="checkbox5" type="checkbox">
+                  <label for="checkbox5">
+                    Warning
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-danger">
+                  <input id="checkbox6" type="checkbox" checked>
+                  <label for="checkbox6">
+                    Check me out
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-4 col-xs-12">
+              <fieldset>
+                <legend>
+                  Circled
+                </legend>
+                <p>
+                  <code>.checkbox-circle</code> for roundness. No more sad controls controls.
+                  Check out this brand-new rounded checkboxes!
+                </p>
+                <div class="abc-checkbox abc-checkbox-circle">
+                  <input id="checkbox7" type="checkbox">
+                  <label for="checkbox7">
+                    Simply Rounded
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-info abc-checkbox-circle">
+                  <input id="checkbox8" type="checkbox" checked>
+                  <label for="checkbox8">
+                    Me too
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-4 col-xs-12">
+              <fieldset>
+                <legend>
+                  Disabled
+                </legend>
+                <p>
+                  Disabled state also supported. Full stack checkbox functionality.
+                </p>
+                <div class="abc-checkbox">
+                  <input id="checkbox9" type="checkbox" disabled>
+                  <label for="checkbox9">
+                    Can't check this
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-success">
+                  <input id="checkbox10" type="checkbox" disabled checked>
+                  <label for="checkbox10">
+                    This too
+                  </label>
+                </div>
+                <div class="abc-checkbox abc-checkbox-warning abc-checkbox-circle">
+                  <input id="checkbox11" type="checkbox" disabled checked>
+                  <label for="checkbox11">
+                    And this
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <p class="fs-mini">Built with <a href="https://github.com/flatlogic/awesome-bootstrap-checkbox" target="_blank">awesome-bootstrap-checkbox</a>.</p>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-xs-12">
+    <section class="widget" widget>
+      <header>
+        <h6>
+          Radio <strong>Controls</strong>
+        </h6>
+        <div class="widget-controls">
+          <a class="bg-gray-transparent" href="#"><i class="glyphicon glyphicon-cog text-white"></i></a>
+          <a href="#"><i class="fa fa-refresh"></i></a>
+          <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <form role="form">
+          <div class="row">
+            <div class="col-lg-4 col-xs-12">
+              <fieldset>
+                <legend>
+                  Basic
+                </legend>
+                <p>
+                  Supports bootstrap brand colors: <code>.radio-primary</code>, <code>.radio-danger</code> etc.
+                  Pure css solution with no javascript. Let your radios shine!
+                </p>
+                <div class="row">
+                  <div class="col-md-6 col-xs-12">
+                    <div class="abc-radio">
+                      <input type="radio" name="radio1" id="radio1" value="option1" checked>
+                      <label for="radio1">
+                        Small
+                      </label>
+                    </div>
+                    <div class="abc-radio">
+                      <input type="radio" name="radio1" id="radio2" value="option2">
+                      <label for="radio2">
+                        Big
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xs-12">
+                    <div class="abc-radio abc-radio-danger">
+                      <input type="radio" name="radio2" id="radio3" value="option1">
+                      <label for="radio3">
+                        Next
+                      </label>
+                    </div>
+                    <div class="abc-radio abc-radio-danger">
+                      <input type="radio" name="radio2" id="radio4" value="option2" checked>
+                      <label for="radio4">
+                        One
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-4 col-xs-12">
+              <fieldset>
+                <legend>
+                  Disabled
+                </legend>
+                <p>
+                  Disabled state also supported. Full stack radios functionality.
+                </p>
+                <div class="abc-radio">
+                  <input type="radio" name="radio3" id="radio5" value="option1" disabled>
+                  <label for="radio5">
+                    Next
+                  </label>
+                </div>
+                <div class="abc-radio abc-radio-warning">
+                  <input type="radio" name="radio3" id="radio6" value="option2" checked disabled>
+                  <label for="radio6">
+                    One
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-lg-4 col-xs-12">
+              <fieldset>
+                <legend>
+                  Cool iOS-like switches
+                </legend>
+                <p>
+                  Simple component that helps you turn your default HTML checkbox inputs into
+                  beautiful iOS 7 style switches in just few simple steps.
+                </p>
+                <div class="display-inline-block checkbox-ios">
+                  <label for="checkbox-ios1" class="switch">
+                    <input type="checkbox" class="ios" checked id="checkbox-ios1"><i></i>
+                  </label>
+                </div>
+                <div class="display-inline-block checkbox-ios ml">
+                  <label for="checkbox-ios2" class="switch">
+                    <input type="checkbox" class="ios" id="checkbox-ios2"><i></i>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
         </form>
       </div>
     </section>
