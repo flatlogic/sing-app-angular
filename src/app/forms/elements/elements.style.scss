@@ -5,8 +5,8 @@
 @import "../../../../node_modules/bootstrap-select/dist/css/bootstrap-select";
 @import "../../../../node_modules/select2/select2";
 @import "../../../../node_modules/select2-bootstrap-css/select2-bootstrap";
-//@import "../../../node_modules/jasny-bootstrap/dist/css/jasny-bootstrap";
-//@import "../../../node_modules/dropzone/dist/dropzone";
+@import "../../../../node_modules/jasny-bootstrap/dist/css/jasny-bootstrap";
+@import "../../../../node_modules/dropzone/dist/dropzone";
 @import "../../scss/variables";
 @import "../../scss/mixins";
 @import "../../../../node_modules/bootstrap/scss/_variables";
@@ -506,4 +506,8 @@ html[dir="rtl"] .select2-search input {
   .input-group-addon {
     padding: .375rem .75rem .375rem .75rem;
   }
+}
+
+.fileinput .input-group-addon {
+  border-right: 1px solid $btn-secondary-border;
 }
