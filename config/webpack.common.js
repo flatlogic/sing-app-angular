@@ -285,7 +285,6 @@ module.exports = function(options) {
         fullCalendar: 'fullcalendar',
         Raphael: 'webpack-raphael',
         'window.Raphael': 'webpack-raphael',
-        markdown: 'markdown',
         Skycons: 'skycons/skycons'
       }),
 

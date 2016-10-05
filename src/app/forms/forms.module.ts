@@ -3,8 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+
+declare var global: any;
 // libs
-import 'markdown';
+var markdown = require('markdown').markdown;
+global.markdown = markdown;
 import 'bootstrap-markdown/js/bootstrap-markdown.js';
 import 'bootstrap-select/dist/js/bootstrap-select.js';
 import 'parsleyjs';
