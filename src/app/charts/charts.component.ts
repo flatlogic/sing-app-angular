@@ -157,7 +157,7 @@ export class Charts {
   };
 
   ngOnInit(): void {
-    // this.applyRickshawData();
+    this.applyRickshawData();
 
     this.sparklineCompositeData = [
       [2, 4, 6, 2, 7, 5, 3, 7, 8, 3, 6],
