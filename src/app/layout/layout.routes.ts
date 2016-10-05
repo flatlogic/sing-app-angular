@@ -15,6 +15,7 @@ const routes: Routes = [
     { path: 'maps', loadChildren: () => System.import('../maps/maps.module') },
     { path: 'grid', loadChildren: () => System.import('../grid/grid.module') },
     { path: 'charts', loadChildren: () => System.import('../charts/charts.module') },
+    { path: 'widgets', loadChildren: () => System.import('../widgets/widgets.module') },
   ]}
 ];
 

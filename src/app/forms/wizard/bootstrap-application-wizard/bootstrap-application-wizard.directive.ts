@@ -1,4 +1,4 @@
-import {Directive, ElementRef} from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 declare var jQuery: any;
 declare var Tether: any;
 
@@ -77,10 +77,10 @@ export class BootstrapApplicationWizard {
     });
 
     jQuery('#btn-fqdn').find('button').on('click', this.lookup);
-
+    /* tslint:disable */
     let pattern = /\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/;
     let x = 46;
-
+    /* tslint:enable */
     jQuery('#ip').on('input', () => {
       if (jQuery(this).val().length !== 0) {
         jQuery('#fqdn').val('').attr('disabled', 'disabled');
@@ -127,7 +127,7 @@ export class BootstrapApplicationWizard {
       wizard.modal.find('#fqdn').data('is-valid', 0).data('lookup', 0);
     });
 
-    wizard.on('submit', function(wizard): void {
+    wizard.on('submit', function(wizardItem): void {
       let submit = {
         'hostname': jQuery('#new-server-fqdn').val()
       };
@@ -140,11 +140,11 @@ export class BootstrapApplicationWizard {
       /* tslint:enable */
 
       setTimeout(() => {
-        wizard.trigger('success');
-        wizard.hideButtons();
-        wizard._submitting = false;
-        wizard.showSubmitCard('success');
-        wizard.updateProgressBar(0);
+        wizardItem.trigger('success');
+        wizardItem.hideButtons();
+        wizardItem._submitting = false;
+        wizardItem.showSubmitCard('success');
+        wizardItem.updateProgressBar(0);
       }, 2000);
     });
 
@@ -159,10 +159,10 @@ export class BootstrapApplicationWizard {
     wizard.el.find('.wizard-success .create-another-server').click(() => {
       wizard.reset();
     });
-
+    /* tslint:disable */
     wizard.el.find('.wizard-progress-container').empty()
       .append('<div class="bg-gray-lighter"><progress class="progress progress-primary progress-xs" style="width: 0%" value="100" max="100"></progress></div>');
-
+    /* tslint:enable */
     wizard.progress = wizard.modal.find('progress');
 
     jQuery('.wizard-group-list').click(() => {

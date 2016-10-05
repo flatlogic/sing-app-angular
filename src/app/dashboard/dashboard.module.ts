@@ -4,10 +4,8 @@ import { CommonModule }  from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import 'jquery.animate-number/jquery.animateNumber.js';
-import 'jquery-mousewheel/jquery.mousewheel.js';
-import 'jquery-mapael/js/jquery.mapael.js';
-import 'jquery-mapael/js/maps/usa_states';
-import 'jquery-mapael/js/jquery.mapael.js';
+import 'jQuery-Mapael/js/jquery.mapael.js';
+import 'jQuery-Mapael/js/maps/usa_states';
 import 'bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.js';
 
 import { Dashboard } from './dashboard.component.ts';
