@@ -274,8 +274,8 @@ module.exports = function(options) {
         $: 'jquery',
         jquery: 'jquery',
         'window.jQuery': 'jquery',
-        "Tether": 'tether',
-        "window.Tether": "tether",
+        Tether: 'tether',
+        'window.Tether': 'tether',
         Hammer: 'hammerjs/hammer',
         Shuffle: 'shufflejs',
         d3: 'd3',
@@ -284,7 +284,8 @@ module.exports = function(options) {
         moment: 'moment',
         fullCalendar: 'fullcalendar',
         Raphael: 'webpack-raphael',
-        'window.Raphael': 'webpack-raphael'
+        'window.Raphael': 'webpack-raphael',
+        markdown: 'markdown'
       }),
 
       /*
