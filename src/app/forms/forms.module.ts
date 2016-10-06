@@ -13,7 +13,6 @@ import 'bootstrap-select/dist/js/bootstrap-select.js';
 import 'parsleyjs';
 import 'bootstrap-application-wizard/src/bootstrap-wizard.js';
 import 'twitter-bootstrap-wizard/jquery.bootstrap.wizard.js';
-import 'select2';
 import 'jasny-bootstrap/docs/assets/js/vendor/holder.js';
 import 'jasny-bootstrap/js/fileinput.js';
 import 'jasny-bootstrap/js/inputmask.js';
@@ -28,6 +27,7 @@ import 'jasny-bootstrap/js/inputmask.js';
 
 import { TooltipModule, AlertModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { Autosize } from 'angular2-autosize';
+import { Select2Module } from 'ng2-select2';
 import { WidgetModule } from '../layout/widget/widget.module';
 /* tslint:disable */
 import { BootstrapWizardModule } from '../components/wizard/wizard.module';
@@ -62,6 +62,7 @@ export const routes = [
     WidgetModule,
     BootstrapWizardModule,
     NKDatetimeModule,
+    Select2Module,
     RouterModule.forChild(routes),
   ]
 })

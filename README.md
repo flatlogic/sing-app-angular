@@ -8,7 +8,7 @@
   [@types](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjgjdrR7u_NAhUQ7GMKHXgpC4EQFggnMAI&url=https%3A%2F%2Fwww.npmjs.com%2F~types&usg=AFQjCNG2PFhwEo88JKo12mrw_4d0w1oNiA&sig2=N69zbO0yN8ET7v4KVCUOKA), 
   [TsLint](http://palantir.github.io/tslint/), 
   [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html), a
-  nd [Webpack 2](http://webpack.github.io/) by [Flatlogic](http://flatlogic.com).
+  nd [Webpack 2](http://webpack.github.io/) by [Flatlogic](https://flatlogic.com).
   
 > This is a seed version of Sing App with Angular Final Release support. Full version release date is set to October 2, 2016.
 Till then you can use a version of Sing App with Angular rc4 support available in seed and full versions.
