@@ -154,7 +154,7 @@ module.exports = function(env) {
 
 
         beautify: false, //prod
-        mangle: { screw_ie8 : true, keep_fnames: true }, //prod
+        mangle: { screw_ie8 : true, keep_fnames: true, except: ['$super'] }, //prod
         compress: { screw_ie8: true }, //prod
         comments: false //prod
       }),

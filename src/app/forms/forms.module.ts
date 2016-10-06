@@ -32,6 +32,7 @@ import { WidgetModule } from '../layout/widget/widget.module';
 /* tslint:disable */
 import { BootstrapWizardModule } from '../components/wizard/wizard.module';
 import { BootstrapApplicationWizard } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.directive';
+import { DropzoneDemo } from '../components/dropzone/dropzone.directive';
 import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 /* tslint:enable */
 import { Elements } from './elements/elements.component';
@@ -51,7 +52,8 @@ export const routes = [
     Elements,
     Validation,
     BootstrapApplicationWizard,
-    Wizard
+    Wizard,
+    DropzoneDemo
   ],
   imports: [
     CommonModule,
