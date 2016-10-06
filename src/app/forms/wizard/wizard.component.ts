@@ -10,6 +10,6 @@ declare var jQuery: any;
 export class Wizard {
 
   ngOnInit(): void {
-    jQuery('.chzn-select').select2();
+    jQuery('.select2').select2();
   }
 }

@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation, Injector } from '@angular/core';
-import { Router } from '@angular/router';
 import { Select2OptionData } from 'ng2-select2';
 import { __platform_browser_private__ } from '@angular/platform-browser'
 import * as data from './elements.data';
@@ -34,6 +33,7 @@ export class Elements {
   }
 
   ngOnInit(): void {
+    jQuery('#markdown-editor').markdown();
     jQuery('.js-slider').slider();
     jQuery('#colorpicker').colorpicker(this.colorOptions);
     jQuery('.selectpicker').selectpicker();
