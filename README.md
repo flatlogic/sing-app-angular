@@ -1,4 +1,4 @@
-# Sing Dashboard App (3.2.0 Full version) with Angular 2.0 Final Release support
+# Sing Dashboard App (3.3.0 Full version) with Angular 2.0 Final Release support
 
 
 > An Angular 2 application featuring [Angular 2](https://angular.io)
@@ -10,16 +10,15 @@
   [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html), a
   nd [Webpack 2](http://webpack.github.io/) by [Flatlogic](https://flatlogic.com).
   
-> This is a seed version of Sing App with Angular Final Release support. Full version release date is set to October 2, 2016.
-Till then you can use a version of Sing App with Angular rc4 support available in seed and full versions.
+> This is a full version of Sing App with Angular Final Release support. Seed version is also available.
 
-This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast.
+This project serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast.
  Using a [Webpack 2](http://webpack.github.io/) for building our files and assisting with boilerplate. 
 * Best practices in file and application organization for Angular 2.
 * Unique to admin templates stylish and unobtrusive design
 * Ready to go build system using Webpack for working with TypeScript.
 * Angular 2 examples that are ready to go when experimenting with Angular 2.
-* A great Angular 2 seed repo for anyone who wants to start their project.
+* A great Angular 2 template for anyone who wants to start their project.
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
 
@@ -29,7 +28,7 @@ This seed repo serves as an Angular 2 starter for anyone looking to get up and r
 
 ```bash
 # change directory to our repo
-cd sing/angular2-final-seed
+cd sing/angular2
 
 # makesure typings are installed globally
 npm install -g typings
@@ -66,7 +65,7 @@ to ensure maintainable code by encapsulation of our behavior logic. A component 
 app usually in a single file or a folder with each concern as a file: style, template, specs, e2e, and component class.
  Here's how it looks:
 ```
-sing/angular2-final-seed/
+sing/angular2/
  ├──config/                    * our configuration
  |   ├──helpers.js             * helper functions for our configuration files
  │   ├──webpack.dev.js         * our development webpack config
@@ -202,4 +201,4 @@ import * as _ from 'lodash';
 # License
 [Wrapbootstrap licence](http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses).
 
-Sing App 3.2.0 is based on [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
+Sing App 3.3.0 is based on [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
