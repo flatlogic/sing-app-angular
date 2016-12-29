@@ -4,8 +4,8 @@ import 'jvectormap-world/jquery-jvectormap-world-mill-en.js';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AlertModule, TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { ButtonsModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule, TooltipModule } from 'ng2-bootstrap';
+import { ButtonsModule, DropdownModule } from 'ng2-bootstrap';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -27,10 +27,10 @@ export const routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    AlertModule,
-    TooltipModule,
-    ButtonsModule,
-    DropdownModule,
+    AlertModule.forRoot(),
+    TooltipModule.forRoot(),
+    ButtonsModule.forRoot(),
+    DropdownModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE'
     })

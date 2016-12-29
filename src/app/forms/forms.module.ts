@@ -25,7 +25,7 @@ import 'jasny-bootstrap/docs/assets/js/vendor/holder.js';
 import 'jasny-bootstrap/js/fileinput.js';
 import 'jasny-bootstrap/js/inputmask.js';
 
-import { TooltipModule, AlertModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TooltipModule, AlertModule, DropdownModule } from 'ng2-bootstrap';
 import { Autosize } from 'angular2-autosize';
 import { Select2Module } from 'ng2-select2';
 import { WidgetModule } from '../layout/widget/widget.module';
@@ -58,9 +58,9 @@ export const routes = [
   imports: [
     CommonModule,
     FormsModule,
-    TooltipModule,
-    AlertModule,
-    DropdownModule,
+    TooltipModule.forRoot(),
+    AlertModule.forRoot(),
+    DropdownModule.forRoot(),
     WidgetModule,
     BootstrapWizardModule,
     NKDatetimeModule,

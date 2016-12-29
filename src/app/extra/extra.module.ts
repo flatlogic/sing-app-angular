@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AlertModule, TooltipModule,
-  ButtonsModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+  ButtonsModule, DropdownModule } from 'ng2-bootstrap';
 import { ModalModule } from 'ng2-modal';
 
 import { Calendar } from './calendar/calendar.component';
@@ -42,11 +42,11 @@ export const routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    AlertModule,
-    TooltipModule,
+    AlertModule.forRoot(),
+    TooltipModule.forRoot(),
     ModalModule,
-    ButtonsModule,
-    DropdownModule,
+    ButtonsModule.forRoot(),
+    DropdownModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE'
     })

@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AlertModule, TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { ButtonsModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TabsModule, AccordionModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule, TooltipModule } from 'ng2-bootstrap';
+import { ButtonsModule, DropdownModule } from 'ng2-bootstrap';
+import { TabsModule, AccordionModule } from 'ng2-bootstrap';
 import { ModalModule } from 'ng2-modal';
 
 import { Components } from './components/components.component';
@@ -48,14 +48,14 @@ export const routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    AlertModule,
+    AlertModule.forRoot(),
     WidgetModule,
-    TooltipModule,
+    TooltipModule.forRoot(),
     ModalModule,
-    ButtonsModule,
-    DropdownModule,
-    TabsModule,
-    AccordionModule
+    ButtonsModule.forRoot(),
+    DropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    AccordionModule.forRoot()
   ]
 })
 export default class UiElementsModule {

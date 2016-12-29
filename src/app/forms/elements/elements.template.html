@@ -40,7 +40,7 @@
               <label class="col-md-4  col-form-label text-md-right" for="tooltip-enabled">Tooltip enabled</label>
               <div class="col-md-7 ">
                 <input type="text" id="tooltip-enabled" class="form-control"
-                       tooltipPlacement="top" tooltip="Some explanation text here"
+                       [placement]="top" tooltip="Some explanation text here"
                        placeholder="Hover over me..">
               </div>
             </div>
@@ -57,7 +57,7 @@
                 <input type="text" id="max-length" maxlength="3"
                        class="form-control"
                        placeholder="Max length 3 characters"
-                       tooltipPlacement="top" tooltip="You cannot write more than 3 characters.">
+                       [placement]="top" tooltip="You cannot write more than 3 characters.">
               </div>
             </div>
             <div class="form-group row">
@@ -415,7 +415,7 @@ Enjoy!
               <div class="col-md-8 ">
                 <select2 id="default-select"
                          (valueChanged)="select2Changed($event)"
-                         [data]="getSelect2DefaultList()" [width]="250" [theme]="'bootstrap'"></select2>
+                         [data]="getSelect2DefaultList()" [options]="select2Options" [width]="250"></select2>
                 <p *ngIf="selected" class="help-block mb-0">Selected value in select 2: <b>{{selected}}</b>.</p>
               </div>
             </div>
@@ -423,7 +423,7 @@ Enjoy!
               <label class="col-md-4 col-form-label" for="grouped-select">Select with search & groups</label>
               <div class="col-md-8 ">
                 <select2 id="grouped-select"
-                         [data]="getSelect2GroupedList()" [width]="250" [theme]="'bootstrap'"></select2>
+                         [data]="getSelect2GroupedList()" [options]="select2Options" [width]="250"></select2>
               </div>
             </div>
           </fieldset>

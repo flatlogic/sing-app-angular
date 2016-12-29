@@ -16,6 +16,9 @@ export class Elements {
   injector: Injector;
   domSharedStylesHost: any;
   selected: any;
+  select2Options: any = {
+    theme: 'bootstrap'
+  };
 
   constructor(injector: Injector) {
     //
