@@ -10,7 +10,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AlertModule, TooltipModule,
   ButtonsModule, DropdownModule } from 'ng2-bootstrap';
-import { ModalModule } from 'ng2-modal';
+import { ModalModule } from 'ng2-bootstrap';
 
 import { Calendar } from './calendar/calendar.component';
 import { Invoice } from './invoice/invoice.component';

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Injector } from '@angular/core';
 import { Select2OptionData } from 'ng2-select2';
-import { __platform_browser_private__ } from '@angular/platform-browser'
+import { __platform_browser_private__ } from '@angular/platform-browser';
 import * as data from './elements.data';
 declare var jQuery: any;
 
@@ -20,6 +20,27 @@ export class Elements {
     theme: 'bootstrap'
   };
 
+  phoneMask = {
+    mask: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  };
+
+  interPhoneMask = {
+    mask: ['+', /[1-9]/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]
+  };
+
+  dateMask = {
+    mask: [/\d/, /\d/, '-', /\d/, /\d/, '-', /[1-9]/, /\d/, /\d/, /\d/]
+  };
+
+  timeMask = {
+    mask: [/\d/, /\d/, ':', /\d/, /\d/]
+  };
+
+  phoneValue = '';
+  interPhoneValue = '';
+  dateValue = '';
+  timeValue = '';
+
   constructor(injector: Injector) {
     //
     // This is a hack on angular style loader to prevent ng2-select2 from adding its styles.
@@ -29,10 +50,10 @@ export class Elements {
     this.domSharedStylesHost.__onStylesAdded__ = this.domSharedStylesHost.onStylesAdded;
     this.domSharedStylesHost.onStylesAdded = (additions) => {
       const style = additions[0];
-      if (!style || !style.trim().startsWith(".select2-container")) {
+      if (!style || !style.trim().startsWith('.select2-container')) {
         this.domSharedStylesHost.__onStylesAdded__(additions);
       }
-    }
+    };
   }
 
   ngOnInit(): void {
@@ -40,6 +61,10 @@ export class Elements {
     jQuery('.js-slider').slider();
     jQuery('#colorpicker').colorpicker(this.colorOptions);
     jQuery('.selectpicker').selectpicker();
+  }
+
+  unmask(event) {
+    return event.replace(/\D+/g, '');
   }
 
   getSelect2DefaultList(): Select2OptionData[] {

@@ -9,11 +9,10 @@ import { RouterModule } from '@angular/router';
 import { AlertModule, TooltipModule } from 'ng2-bootstrap';
 import { ButtonsModule, DropdownModule } from 'ng2-bootstrap';
 import { TabsModule, AccordionModule } from 'ng2-bootstrap';
-import { ModalModule } from 'ng2-modal';
+import { ModalModule } from 'ng2-bootstrap';
 
 import { Components } from './components/components.component';
 import { WidgetModule } from '../layout/widget/widget.module';
-import { ModalComponent } from './components/modal-window/modal.component';
 import { Buttons } from './buttons/buttons.component';
 import { Notifications } from './notifications/notifications.component';
 import { Icons } from './icons/icons.component';
@@ -37,7 +36,6 @@ export const routes = [
     // Components / Directives/ Pipes
     Components,
     Buttons,
-    ModalComponent,
     Notifications,
     MessengerDemo,
     Icons,

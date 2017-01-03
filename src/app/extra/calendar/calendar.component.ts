@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ng2-bootstrap';
 declare var jQuery: any;
 declare var moment: any;
 
@@ -14,6 +15,9 @@ export class Calendar implements OnInit {
   dragOptions: Object = { zIndex: 999, revert: true, revertDuration: 0 };
   event: any = {};
   createEvent: any;
+  calendarEvent: string = null;
+
+  @ViewChild('modalWindow') public modalWindow: ModalDirective;
 
   constructor() {
     let date = new Date();
@@ -108,14 +112,16 @@ export class Calendar implements OnInit {
             );
           }
           this.$calendar.fullCalendar('unselect');
-          jQuery('#create-event-modal').modal('hide');
+          this.calendarEvent = null;
+          this.modalWindow.hide();
         };
-
-        jQuery('#create-event-modal').modal('show');
+        this.calendarEvent = 'create';
+        this.modalWindow.show();
       },
       eventClick: (event): void => {
         this.event = event;
-        jQuery('#show-event-modal').modal('show');
+        this.calendarEvent = 'show';
+        this.modalWindow.show();
       },
       editable: true,
       droppable: true,

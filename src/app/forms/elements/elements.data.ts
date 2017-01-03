@@ -1,4 +1,4 @@
-import {Select2OptionData} from "ng2-select2/ng2-select2";
+import { Select2OptionData } from 'ng2-select2/ng2-select2';
 
 export const select2DefaultData: Select2OptionData[] = [{
   id: 'Magellanic',
@@ -35,7 +35,7 @@ export const select2GroupedData: Select2OptionData[] = [{
       text: 'Washington Redskins'
     }
   ]
-},{
+}, {
   id: '2',
   text: 'NFC NORTH',
   children: [
@@ -56,7 +56,7 @@ export const select2GroupedData: Select2OptionData[] = [{
       text: 'Minnesota Vikings'
     }
   ]
-},{
+}, {
   id: '3',
   text: 'NFC SOUTH',
   children: [

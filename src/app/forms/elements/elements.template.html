@@ -799,7 +799,7 @@ Enjoy!
                 <span class="help-block">(123) 456-7890</span>
               </label>
               <div class="col-md-7 col-xs-12">
-                <input id="mask-phone" type="text" data-mask="(999) 999-9999" class="form-control">
+                <input id="mask-phone" name="mask-phone" class="form-control" [textMask]="phoneMask" [ngModel]="phoneValue" (ngModelChange)="phoneValue = unmask($event)" type="text"/>
               </div>
             </div>
             <div class="form-group row">
@@ -808,7 +808,7 @@ Enjoy!
                 <span class="help-block">+375 123 456 789</span>
               </label>
               <div class="col-md-7 col-xs-12">
-                <input id="mask-int-phone" data-mask="+999 999 999 999" type="text" class="form-control">
+                <input id="mask-int-phone" name="mask-phone" class="form-control" [textMask]="interPhoneMask" [ngModel]="phoneValue" (ngModelChange)="interPhoneValue = unmask($event)" type="text"/>
               </div>
             </div>
             <div class="form-group row">
@@ -817,7 +817,7 @@ Enjoy!
                 <span class="help-block">07-03-2013</span>
               </label>
               <div class="col-md-7 col-xs-12">
-                <input id="mask-date" data-mask="99-99-999" type="text" class="form-control">
+                <input id="mask-date" name="mask-phone" class="form-control" [textMask]="dateMask" [(ngModel)]="dateValue" type="text"/>
               </div>
             </div>
             <div class="form-group row">
@@ -826,7 +826,7 @@ Enjoy!
                 <span class="help-block">13:43</span>
               </label>
               <div class="col-md-7 col-xs-12">
-                <input id="mask-time" data-mask="99:99" type="text" class="form-control">
+                <input id="mask-time" name="mask-phone" class="form-control" [textMask]="timeMask" [(ngModel)]="timeValue" type="text"/>
               </div>
             </div>
           </fieldset>
@@ -995,7 +995,7 @@ Enjoy!
         </div>
       </header>
       <div class="widget-body">
-        <form class="dropzone" dropzone-demo action="#" id="my-awesome-dropzone"></form>
+        <form class="dropzone" action="#" id="my-awesome-dropzone"></form>
       </div>
     </section>
   </div>

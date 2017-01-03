@@ -4,7 +4,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AlertModule, TooltipModule } from 'ng2-bootstrap';
 import { ButtonsModule, DropdownModule, PaginationModule  } from 'ng2-bootstrap';
-import { DataTableDirectives } from 'angular2-datatable/datatable';
+import { DataTableModule } from 'angular2-datatable';
 import { Ng2TableModule } from 'ng2-table';
 
 import { WidgetModule } from '../layout/widget/widget.module';
@@ -25,7 +25,6 @@ export const routes = [
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    DataTableDirectives,
     TablesBasic,
     TablesDynamic,
     SearchPipe
@@ -42,6 +41,7 @@ export const routes = [
     WidgetModule,
     UtilsModule,
     Ng2TableModule,
+    DataTableModule,
     RouterModule.forChild(routes)
   ],
   schemas:  [ CUSTOM_ELEMENTS_SCHEMA ]
