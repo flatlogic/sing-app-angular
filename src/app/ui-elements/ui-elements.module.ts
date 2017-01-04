@@ -56,6 +56,6 @@ export const routes = [
     AccordionModule.forRoot()
   ]
 })
-export default class UiElementsModule {
+export class UiElementsModule {
   static routes = routes;
 }

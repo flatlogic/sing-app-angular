@@ -71,6 +71,6 @@ export const routes = [
     RouterModule.forChild(routes),
   ]
 })
-export default class FormModule {
+export class FormModule {
   static routes = routes;
 }

@@ -4,18 +4,17 @@ import { Layout } from './layout.component';
 const routes: Routes = [
   { path: '', component: Layout, children: [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-    { path: 'dashboard', loadChildren: () => System.import('../dashboard/dashboard.module') },
-    { path: 'inbox', loadChildren: () => System.import('../inbox/inbox.module') },
-    { path: 'charts', loadChildren: () => System.import('../charts/charts.module') },
-    { path: 'profile', loadChildren: () => System.import('../profile/profile.module') },
-    { path: 'forms', loadChildren: () => System.import('../forms/forms.module') },
-    { path: 'ui', loadChildren: () => System.import('../ui-elements/ui-elements.module') },
-    { path: 'extra', loadChildren: () => System.import('../extra/extra.module') },
-    { path: 'tables', loadChildren: () => System.import('../tables/tables.module') },
-    { path: 'maps', loadChildren: () => System.import('../maps/maps.module') },
-    { path: 'grid', loadChildren: () => System.import('../grid/grid.module') },
-    { path: 'charts', loadChildren: () => System.import('../charts/charts.module') },
-    { path: 'widgets', loadChildren: () => System.import('../widgets/widgets.module') },
+    { path: 'dashboard', loadChildren: '../dashboard/dashboard.module#DashboardModule' },
+    { path: 'inbox', loadChildren: '../inbox/inbox.module#InboxModule' },
+    { path: 'charts', loadChildren: '../charts/charts.module#ChartsModule' },
+    { path: 'profile', loadChildren: '../profile/profile.module#ProfileModule' },
+    { path: 'forms', loadChildren: '../forms/forms.module#FormModule' },
+    { path: 'ui', loadChildren: '../ui-elements/ui-elements.module#UiElementsModule' },
+    { path: 'extra', loadChildren: '../extra/extra.module#ExtraModule' },
+    { path: 'tables', loadChildren: '../tables/tables.module#TablesModule' },
+    { path: 'maps', loadChildren: '../maps/maps.module#MapsModule' },
+    { path: 'grid', loadChildren: '../grid/grid.module#GridModule' },
+    { path: 'widgets', loadChildren: '../widgets/widgets.module#WidgetsModule' },
   ]}
 ];
 

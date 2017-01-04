@@ -46,6 +46,6 @@ export const routes = [
   ],
   schemas:  [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export default class UiElementsModule {
+export class TablesModule {
   static routes = routes;
 }

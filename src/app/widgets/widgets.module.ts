@@ -42,6 +42,6 @@ export const routes = [
   ],
   providers: [FakeWorldData]
 })
-export default class WidgetsModule {
+export class WidgetsModule {
   static routes = routes;
 }

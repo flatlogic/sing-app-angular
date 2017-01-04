@@ -16,6 +16,6 @@ export const routes = [
   imports: [ CommonModule, RouterModule.forChild(routes) ],
   declarations: [ GridComponent, GridDemo ]
 })
-export default class GridModule {
+export class GridModule {
   static routes = routes;
 }

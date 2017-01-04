@@ -35,6 +35,6 @@ export const routes = [
     FlotChartAnimator
   ]
 })
-export default class ChartsModule {
+export class ChartsModule {
   static routes = routes;
 }

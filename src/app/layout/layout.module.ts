@@ -34,5 +34,5 @@ import { Notifications } from './notifications/notifications.component';
     ChatMessage
   ]
 })
-export default class LayoutModule {
+export class LayoutModule {
 }

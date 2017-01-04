@@ -36,6 +36,6 @@ export const routes = [
     })
   ]
 })
-export default class UiElementsModule {
+export class MapsModule {
   static routes = routes;
 }
