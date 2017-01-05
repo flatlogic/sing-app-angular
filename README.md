@@ -18,6 +18,8 @@ This project serves as an Angular 2 starter for anyone looking to get up and run
 * Unique to admin templates stylish and unobtrusive design
 * Ready to go build system using Webpack for working with TypeScript.
 * Angular 2 examples that are ready to go when experimenting with Angular 2.
+* Ahead of Time (AoT) compile for rapid page loads of your production builds.
+* Tree shaking to automatically remove unused code from your production bundle.
 * A great Angular 2 template for anyone who wants to start their project.
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
@@ -128,6 +130,8 @@ npm run server:prod
 npm run build:dev
 # production
 npm run build:prod
+# AoT
+npm run build:aot
 ```
 
 ### hot module replacement
@@ -142,6 +146,16 @@ npm run watch
 
 # Configuration
 Configuration files live in `config/`. We are currently using webpack.
+
+# AoT  Don'ts
+The following are some things that will make AoT compile fail.
+
+- Don’t use require statements for your templates or styles, use styleUrls and templateUrls, the angular2-template-loader plugin will change it to require at build time.
+- Don’t use default exports.
+- Don’t use form.controls.controlName, use form.get(‘controlName’)
+- Don’t use control.errors?.someError, use control.hasError(‘someError’)
+- Don’t use functions in your providers, routes or declarations, export a function and then reference that function name
+- Inputs, Outputs, View or Content Child(ren), Hostbindings, and any field you use from the template or annotate for Angular should be public
 
 # Types
 > When you include a module that doesn't include Type Definitions inside of the module you can include external 
