@@ -21,7 +21,6 @@ import 'ng2-datetime/src/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js
 import 'ng2-datetime/src/vendor/bootstrap-timepicker/bootstrap-timepicker.min.js';
 import 'bootstrap-colorpicker';
 import 'bootstrap-slider/dist/bootstrap-slider.js';
-import 'dropzone/dist/dropzone.js';
 import 'jasny-bootstrap/docs/assets/js/vendor/holder.js';
 import 'jasny-bootstrap/js/fileinput.js';
 import 'jasny-bootstrap/js/inputmask.js';
