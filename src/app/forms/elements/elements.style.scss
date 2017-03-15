@@ -483,7 +483,6 @@ html[dir="rtl"] .select2-search input {
         cursor: $cursor-disabled;
         background-color: transparent;
         background-image: none; // Remove CSS gradient
-        @include reset-filter();
       }
     }
   }
