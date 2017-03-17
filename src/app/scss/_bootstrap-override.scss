@@ -957,6 +957,10 @@ a.list-group-item, button.list-group-item {
 // Tooltips
 // --------------------------------------------------
 
+.tooltip.in {
+  opacity: 1;
+}
+
 .tooltip-inner{
   @include border-radius(3px);
 }
