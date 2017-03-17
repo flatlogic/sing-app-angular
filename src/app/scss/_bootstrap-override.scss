@@ -198,13 +198,6 @@ label {
   font-weight: $font-weight-normal;
 }
 
-.help-block{
-  margin-top: 5px;
-  font-size: $font-size-smaller;
-  color: $text-muted;
-  display: block;
-}
-
 legend {
   display: block;
   width: 100%;
@@ -861,6 +854,10 @@ small, .small {
 .btn-toolbar{
   margin-top: $line-height-computed/2;
   margin-bottom: $line-height-computed/2;
+
+  .btn {
+    margin-left: .5rem;
+  }
 }
 
 //
