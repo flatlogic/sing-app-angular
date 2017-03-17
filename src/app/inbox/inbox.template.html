@@ -13,7 +13,7 @@
     <ul class="nav nav-pills nav-stacked nav-email-folders mt" id="folders-list">
       <li class="nav-item active">
         <a class="nav-link" (click)="setFolderName('Inbox')">
-          <span class="badge badge-pill badge-white float-xs-right">2</span>
+          <span class="badge badge-pill badge-white float-right">2</span>
           Inbox
         </a>
       </li>
@@ -21,7 +21,7 @@
       <li class="nav-item"><a class="nav-link" (click)="setFolderName('Sent Mail')">Sent Mail</a></li>
       <li class="nav-item">
         <a class="nav-link" (click)="setFolderName('Draft')">
-          <span class="badge badge-pill badge-danger float-xs-right">3</span>
+          <span class="badge badge-pill badge-danger float-right">3</span>
           Draft
         </a>
       </li>
@@ -29,9 +29,9 @@
     </ul>
     <h6 class="mt">QUICK VIEW</h6>
     <ul class="nav nav-pills nav-stacked nav-email-folders mb-lg fs-mini">
-      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-danger float-xs-right"></i> Work </a></li>
-      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-white float-xs-right"></i> Private </a></li>
-      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-gray-light float-xs-right"></i> Saved </a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-danger float-right"></i> Work </a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-white float-right"></i> Private </a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-circle text-gray-light float-right"></i> Saved </a></li>
     </ul>
   </div>
   <div *ngIf="mailListShow" mail-list [folderName]="currentFolderName" (replyMail)="onReplyMail($event)" class="col-lg-9 col-xl-10 col-12"></div>

@@ -21,7 +21,7 @@
       <alert *ngFor="let alert of alerts; let i = index" [type]="alert.type + ' alert-sm'" (close)="closeAlert(i)" dismissible="true">
         <div [innerHTML]="alert.msg"></div>
       </alert>
-      <button class='btn btn-secondary btn-sm float-xs-right' (click)="addAlert()">Add Alert</button>
+      <button class='btn btn-secondary btn-sm float-right' (click)="addAlert()">Add Alert</button>
     </div>
   </section>
   <div class="row">
