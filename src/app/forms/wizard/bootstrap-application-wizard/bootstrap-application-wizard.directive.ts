@@ -161,7 +161,7 @@ export class BootstrapApplicationWizard {
     });
     /* tslint:disable */
     wizard.el.find('.wizard-progress-container').empty()
-      .append('<div class="bg-gray-lighter"><progress class="progress progress-primary progress-xs" style="width: 0%" value="100" max="100"></progress></div>');
+      .append('<div class="bg-gray-lighter progress progress-xs"><div class="progress-bar bg-primary progress-xs" style="width: 0%"></div></div>');
     /* tslint:enable */
     wizard.progress = wizard.modal.find('progress');
 

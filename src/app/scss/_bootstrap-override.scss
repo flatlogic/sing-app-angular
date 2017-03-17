@@ -868,13 +868,12 @@ small, .small {
 // --------------------------------------------------
 
 .js-progress-animate {
-  transition: width 0.6s ease;
+  transition: width 0.6s ease !important;
 }
 
 .progress{
   @include box-shadow(none);
   transition: width 0.6s ease;
-  height: 1.3rem;
 }
 
 .progress-bar{
@@ -893,15 +892,15 @@ small, .small {
 }
 
 
-.progress-bar-gray {
+.bg-bar-gray {
   background-color: $gray;
 }
 
-.progress-bar-gray-light {
+.bg-bar-gray-light {
   background-color: $gray-light;
 }
 
-.progress-primary {
+.bg-primary {
   background-color: $brand-primary;
 }
 

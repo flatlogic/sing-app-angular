@@ -67,8 +67,8 @@
           <td class="hidden-sm-down"><a href="#">{{person.description}}</a></td>
           <td class="hidden-sm-down">{{person.date}}</td>
           <td class="width-150">
-            <div class="bg-gray-lighter progress-bar mt-xs">
-              <progress class="progress progress-sm progress-{{person.status.type}}" value="100" max="100" [ngStyle]="{ 'width': person.status.progress}"></progress>
+            <div class="bg-gray-lighter progress progress-sm">
+              <div class="progress-bar progress-sm bg-{{person.status.type}}" [ngStyle]="{ 'width': person.status.progress}"></div>
             </div>
           </td>
         </tr>
