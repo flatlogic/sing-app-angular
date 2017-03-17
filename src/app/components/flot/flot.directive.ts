@@ -43,7 +43,7 @@ export class FlotChart {
       });
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(()=> {this.render()});
   }
 }
