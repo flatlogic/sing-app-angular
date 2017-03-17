@@ -35,7 +35,7 @@ const METADATA = {
 module.exports = function(options) {
   isProd = options.env === 'production';
   return {
-
+    performance: { hints: false },
     /*
      * Cache generated modules and chunks to improve performance for multiple incremental builds.
      * This is enabled by default in watch mode.

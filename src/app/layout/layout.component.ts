@@ -1,5 +1,12 @@
-import { Component, ViewEncapsulation, ElementRef } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, ViewEncapsulation, ElementRef, Renderer, NgZone, ViewChild } from '@angular/core';
+import {
+  Router,
+  Event as RouterEvent,
+  NavigationStart,
+  NavigationEnd,
+  NavigationCancel,
+  NavigationError
+} from '@angular/router';
 import { AppConfig } from '../app.config';
 
 declare var jQuery: any;
@@ -24,10 +31,14 @@ export class Layout {
   el: ElementRef;
   router: Router;
   chatOpened: boolean = false;
+  @ViewChild('spinnerElement') spinnerElement: ElementRef;
+  @ViewChild('routerComponent') routerComponent: ElementRef;
 
   constructor(config: AppConfig,
               el: ElementRef,
-              router: Router) {
+              router: Router,
+              private renderer: Renderer,
+              private ngZone: NgZone) {
     Raphael.prototype.safari = function(): any { return; };
     this.el = el;
     this.config = config.getConfig();
@@ -161,6 +172,63 @@ export class Layout {
     }
   }
 
+  private _navigationInterceptor(event: RouterEvent): void {
+
+    if (event instanceof NavigationStart) {
+      // We wanna run this function outside of Angular's zone to
+      // bypass change detection
+      this.ngZone.runOutsideAngular(() => {
+
+        // For simplicity we are going to turn opacity on / off
+        // you could add/remove a class for more advanced styling
+        // and enter/leave animation of the spinner
+        this.renderer.setElementStyle(
+          this.spinnerElement.nativeElement,
+          'display',
+          'block'
+        );
+        this.renderer.setElementStyle(
+          this.routerComponent.nativeElement,
+          'display',
+          'none'
+        );
+      });
+    }
+    if (event instanceof NavigationEnd) {
+      this._hideSpinner();
+    }
+
+    // Set loading state to false in both of the below events to
+    // hide the spinner in case a request fails
+    if (event instanceof NavigationCancel) {
+      this._hideSpinner();
+    }
+    if (event instanceof NavigationError) {
+      this._hideSpinner();
+    }
+  }
+
+  private _hideSpinner(): void {
+    // We wanna run this function outside of Angular's zone to
+    // bypass change detection,
+    this.ngZone.runOutsideAngular(() => {
+
+      // For simplicity we are going to turn opacity on / off
+      // you could add/remove a class for more advanced styling
+      // and enter/leave animation of the spinner
+      this.renderer.setElementStyle(
+        this.spinnerElement.nativeElement,
+        'display',
+        'none'
+      );
+      this.renderer.setElementStyle(
+        this.routerComponent.nativeElement,
+        'display',
+        'block'
+      );
+    });
+  }
+
   ngOnInit(): void {
 
     if (localStorage.getItem('nav-static') === 'true') {
@@ -171,6 +239,7 @@ export class Layout {
     this.$sidebar = $el.find('[sidebar]');
 
     this.router.events.subscribe((event) => {
+      this._navigationInterceptor(event);
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           this.collapseNavIfSmallScreen();
@@ -192,11 +261,6 @@ export class Layout {
       if (jQuery('layout').is('.nav-collapsed')) {
         this.expandNavigation();
       }
-    });
-
-    this.router.events.subscribe(() => {
-      this.collapseNavIfSmallScreen();
-      window.scrollTo(0, 0);
     });
 
     if ('ontouchstart' in window) {
