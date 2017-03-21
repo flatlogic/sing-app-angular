@@ -86,7 +86,7 @@ export class MapsVector {
     };
   }
 
-  ngOnInit(): void {
-    jQuery('.vector-map').vectorMap(this.data);
+  ngAfterViewInit(): void {
+    setTimeout(()=> {jQuery('.vector-map').vectorMap(this.data);});
   }
 }
