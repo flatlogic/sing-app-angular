@@ -219,6 +219,10 @@ legend {
   }
 }
 
+.input-group-btn {
+  flex-direction: row;
+}
+
 .input-group-addon{
   &.bg-primary{
     border-color: darken($brand-primary, 10%);
@@ -303,7 +307,6 @@ legend {
 
 .radio,
 .checkbox {
-  padding-left: 20px;
 
   label {
     margin-bottom: 5px;
