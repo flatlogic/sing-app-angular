@@ -195,6 +195,8 @@ export class BootstrapApplicationWizard {
       };
       jQuery('.dropdown-menu > li > a').addClass('dropdown-item');
     });
+
+    wizard.el.find('.wizard-nav-list').addClass('flex-column');
   }
 
   ngOnInit(): void {
