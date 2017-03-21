@@ -19,7 +19,7 @@ export class BootstrapWizard {
         let $current = index + 1;
         let $percent = ($current / $total) * 100;
         let $wizard = this.$el;
-        $wizard.find('.progress').css({width: $percent + '%'});
+        $wizard.find('#bar').css({width: $percent + '%'});
 
         if ($current >= $total) {
           $wizard.find('.pager .next').hide();
