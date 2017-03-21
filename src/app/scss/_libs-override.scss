@@ -78,3 +78,24 @@ button.list-group-item:hover {
 .select2-container--bootstrap .select2-selection--single {
   height: 35px !important;
 }
+
+/**
+ * Bootstrap select
+ */
+
+.selectpicker.form-control {
+  height: auto;
+}
+
+.bootstrap-select {
+  z-index: 1;
+
+  &.show .dropdown-menu.inner {
+    display: block;
+  }
+
+  &.show {
+    z-index: 3;
+    display: inline-block !important;
+  }
+}
