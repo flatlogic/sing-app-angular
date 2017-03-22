@@ -99,3 +99,10 @@ button.list-group-item:hover {
     display: inline-block !important;
   }
 }
+
+/**
+ * ng2-bootstrap
+ */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
