@@ -412,7 +412,7 @@
     border: 0;
 
     & + .list-group-item{
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .thumb,
@@ -442,8 +442,8 @@
     &.on-right{
       .thumb,
       .thumb-sm{
-        float: right;
-        margin-left: 15px;
+        order: 1;
+        margin-left: auto;
         margin-right: 0;
       }
 
