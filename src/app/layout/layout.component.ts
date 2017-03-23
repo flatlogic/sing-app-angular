@@ -239,7 +239,9 @@ export class Layout {
     this.$sidebar = $el.find('[sidebar]');
 
     this.router.events.subscribe((event) => {
-      this._navigationInterceptor(event);
+      setTimeout(() => {
+        this._navigationInterceptor(event);
+      });
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           this.collapseNavIfSmallScreen();
