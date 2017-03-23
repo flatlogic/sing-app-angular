@@ -58,7 +58,9 @@ export class RickshawChart {
     }
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(()=> {
+      this.render();
+    })
   }
 }

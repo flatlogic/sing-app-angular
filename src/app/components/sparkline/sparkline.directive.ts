@@ -37,7 +37,9 @@ export class JqSparkline {
     }
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(()=> {
+      this.render();
+    })
   }
 }
