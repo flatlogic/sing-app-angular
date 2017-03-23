@@ -858,9 +858,10 @@ small, .small {
 .btn-toolbar{
   margin-top: $line-height-computed/2;
   margin-bottom: $line-height-computed/2;
+  margin-left: -$line-height-computed/2;
 
-  .btn {
-    margin-left: .5rem;
+  .btn, .btn-group {
+    margin-left: $line-height-computed/2;
   }
 }
 
