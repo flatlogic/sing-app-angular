@@ -65,9 +65,7 @@ export class FlotChartAnimator {
     resize();
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(()=> {
-      this.render();
-    })
+  ngOnInit(): void {
+    this.render();
   }
 }

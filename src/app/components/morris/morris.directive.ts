@@ -28,9 +28,7 @@ export class MorrisChart {
     /* tslint:enable */
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(()=> {
+  ngOnInit(): void {
       this.render();
-    })
   }
 }
