@@ -197,6 +197,7 @@ export class BootstrapApplicationWizard {
     });
 
     wizard.el.find('.wizard-nav-list').addClass('flex-column');
+    wizard.el.find('.wizard-close').addClass('flex-last');
   }
 
   ngOnInit(): void {
