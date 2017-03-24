@@ -276,7 +276,7 @@ export class Layout {
 
       let $triggerLink = jQuery(this).prev('[data-toggle=collapse]');
       jQuery($triggerLink.data('parent'))
-        .find('.collapse.in').not(jQuery(this)).collapse('hide');
+        .find('.collapse.show').not(jQuery(this)).collapse('hide');
     })
     /* adding additional classes to navigation link li-parent
      for several purposes. see navigation styles */
