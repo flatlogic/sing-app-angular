@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 
-declare var global: any;
+declare let global: any;
 // libs
 /* tslint:disable */
-var markdown = require('markdown').markdown;
+let markdown = require('markdown').markdown;
 /* tslint:enable */
 global.markdown = markdown;
 import 'bootstrap-markdown/js/bootstrap-markdown.js';

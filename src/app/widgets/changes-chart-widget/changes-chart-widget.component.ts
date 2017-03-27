@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AppConfig } from '../../app.config';
-declare var jQuery: any;
-declare var Rickshaw: any;
+declare let jQuery: any;
+declare let Rickshaw: any;
 
 @Component({
   selector: '[changes-chart-widget]',

@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ng2-bootstrap';
-declare var jQuery: any;
-declare var moment: any;
+declare let jQuery: any;
+declare let moment: any;
 
 @Component({
   selector: '[extra-calendar]',

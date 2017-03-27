@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppConfig } from '../../app.config';
 import { FakeWorldData } from './fake-world-data.service';
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Component({
   selector: '[years-map-widget]',

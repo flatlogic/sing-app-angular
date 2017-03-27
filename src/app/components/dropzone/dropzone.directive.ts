@@ -1,6 +1,6 @@
 import { Directive, ElementRef } from '@angular/core';
-declare var jQuery: any;
-declare var Dropzone: any;
+declare let jQuery: any;
+declare let Dropzone: any;
 
 Dropzone.autoDiscover = false;
 

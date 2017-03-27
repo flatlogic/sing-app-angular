@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, ElementRef, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConfig } from '../../app.config';
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Component({
   selector: '[navbar]',

@@ -1,6 +1,6 @@
 import { Directive, ElementRef } from '@angular/core';
 import { AppConfig } from '../../app.config';
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Directive({
   selector: '[geo-locations-widget]'

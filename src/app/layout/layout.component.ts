@@ -15,9 +15,9 @@ import {
 } from '@angular/router';
 import { AppConfig } from '../app.config';
 
-declare var jQuery: any;
-declare var Hammer: any;
-declare var Raphael: any;
+declare let jQuery: any;
+declare let Hammer: any;
+declare let Raphael: any;
 
 @Component({
   selector: 'layout',

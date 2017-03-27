@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-declare var Rickshaw: any;
+declare let Rickshaw: any;
 
 @Component({
   selector: '[market-stats-widget]',

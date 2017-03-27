@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { tableData } from './tables-dynamic.data';
-declare var jQuery: any;
+declare let jQuery: any;
 
 const PEOPLE = [
   {

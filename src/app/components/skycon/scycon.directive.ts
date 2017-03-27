@@ -1,6 +1,6 @@
 import { Directive, ElementRef, Input } from '@angular/core';
-declare var jQuery: any;
-declare var Skycons: any;
+declare let jQuery: any;
+declare let Skycons: any;
 
 @Directive ({
   selector: '[skycon]'

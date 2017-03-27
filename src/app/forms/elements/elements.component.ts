@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, Injector } from '@angular/core';
 import { Select2OptionData } from 'ng2-select2';
 import { __platform_browser_private__ } from '@angular/platform-browser';
 import * as data from './elements.data';
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Component({
   selector: '[elements]',

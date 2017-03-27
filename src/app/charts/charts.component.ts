@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-declare var jQuery: any;
-declare var Rickshaw: any;
-declare var d3: any;
-declare var nv: any;
+declare let jQuery: any;
+declare let Rickshaw: any;
+declare let d3: any;
+declare let nv: any;
 
 @Component({
   selector: '[charts]',

@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AppConfig } from '../../app.config';
-declare var Rickshaw: any;
+declare let Rickshaw: any;
 
 @Component({
   selector: '[realtime-traffic-widget]',

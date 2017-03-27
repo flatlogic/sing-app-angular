@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-declare var jQuery: any;
+declare let jQuery: any;
 
 @Component({
   selector: '[ui-tabs-accordion]',
