@@ -34,8 +34,6 @@ export class Nvd3Chart {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.render();
-    });
+    setTimeout(() => {this.render();}, 100);
   }
 }

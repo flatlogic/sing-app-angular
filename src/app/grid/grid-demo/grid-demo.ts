@@ -95,7 +95,7 @@ export class GridDemo {
     jQuery('.widget-controls > a').tooltip({placement: 'bottom'});
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(() => {this.render();}, 100);
   }
 }

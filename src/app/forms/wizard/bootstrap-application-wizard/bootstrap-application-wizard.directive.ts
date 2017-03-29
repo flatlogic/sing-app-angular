@@ -200,7 +200,7 @@ export class BootstrapApplicationWizard {
     wizard.el.find('.wizard-close').addClass('flex-last');
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(() => {this.render();}, 100);
   }
 }

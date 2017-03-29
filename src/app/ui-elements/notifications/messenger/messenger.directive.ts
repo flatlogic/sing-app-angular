@@ -154,7 +154,7 @@ export class MessengerDemo {
     });
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(() => {this.render();}, 100);
   }
 }

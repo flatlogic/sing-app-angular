@@ -29,7 +29,7 @@ export class MapaelLayersMap {
     }
   }
 
-  ngOnInit(): void {
-    this.render();
+  ngAfterViewInit(): void {
+    setTimeout(() => {this.render();}, 100);
   }
 }
