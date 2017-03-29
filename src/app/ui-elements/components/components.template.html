@@ -182,14 +182,14 @@
     </div>
   </section>
 </div>
-<div bsModal #modalWindow="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div bsModal #modalWindow="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button (click)="modalWindow.hide()" aria-label="Close" class="close" type="button">
+      <div class="modal-header flex-column">
+        <button (click)="modalWindow.hide()" aria-label="Close" class="close ml-auto" type="button">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title text-center fw-bold mt" id="myModalLabel18">One more step</h4>
+        <h4 class="modal-title text-center fw-bold" id="myModalLabel18">One more step</h4>
         <p class="text-center fs-mini text-muted mt-sm">
           We need a bit of your detailed information to proceed. US ticketing system requires
           us to process and check your personal infromation before we can go.
