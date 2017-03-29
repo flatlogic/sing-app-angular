@@ -9,7 +9,7 @@ declare let moment: any;
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./calendar.style.scss']
 })
-export class Calendar implements OnInit {
+export class Calendar {
   calendarOptions: any;
   $calendar: any;
   dragOptions: Object = { zIndex: 999, revert: true, revertDuration: 0 };
@@ -181,8 +181,13 @@ export class Calendar implements OnInit {
 
   ngOnInit(): void {
     this.$calendar = jQuery('#calendar');
-    this.$calendar.fullCalendar(this.calendarOptions);
-    jQuery('.draggable').draggable(this.dragOptions);
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.$calendar.fullCalendar(this.calendarOptions);
+      jQuery('.draggable').draggable(this.dragOptions);
+    })
   }
 }
 
