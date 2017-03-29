@@ -1020,6 +1020,18 @@ a.list-group-item, button.list-group-item {
   }
 }
 
+.modal-backdrop.fade.in {
+    opacity: 0.5;
+}
+
+.modal.fade.in {
+  opacity: 1;
+
+  .modal-dialog {
+    transform: translate(0, 0);
+  }
+}
+
 //
 // Pagination
 // --------------------------------------------------
