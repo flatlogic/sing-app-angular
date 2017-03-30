@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Injector } from '@angular/core';
 import { Select2OptionData } from 'ng2-select2';
-import { __platform_browser_private__ } from '@angular/platform-browser';
+import {ɵDomSharedStylesHost} from "@angular/platform-browser";
 import * as data from './elements.data';
 declare let jQuery: any;
 
@@ -54,7 +54,7 @@ export class Elements {
     // This is a hack on angular style loader to prevent ng2-select2 from adding its styles.
     // They are hard-coded into the component, so there are no other way to get rid of them
     //
-    this.domSharedStylesHost = injector.get(__platform_browser_private__.DomSharedStylesHost);
+    this.domSharedStylesHost = injector.get(ɵDomSharedStylesHost);
     this.domSharedStylesHost.__onStylesAdded__ = this.domSharedStylesHost.onStylesAdded;
     this.domSharedStylesHost.onStylesAdded = (additions) => {
       const style = additions[0];
