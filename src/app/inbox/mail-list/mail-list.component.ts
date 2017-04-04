@@ -170,6 +170,7 @@ export class MailList  {
 
   constructor(el: ElementRef) {
     this.$el = jQuery(el.nativeElement);
+    this.$toggleAll = jQuery();
   }
 
   openMail(mail: any): void {
