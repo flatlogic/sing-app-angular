@@ -1,7 +1,7 @@
-# Sing Dashboard App (3.2.0 Seed version) with Angular 2.0 Final Release support
+# Sing Dashboard App (3.6.0 Seed version) with Angular 4.0 Final Release support
 
 
-> An Angular 2 application featuring [Angular 2](https://angular.io)
+> An Angular 4 application featuring [Angular 2](https://angular.io)
  ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
 [Http](https://angular.io/docs/js/latest/api/http/),
  [TypeScript](http://www.typescriptlang.org/),
@@ -13,13 +13,13 @@
 > This is a seed version of Sing App with Angular Final Release support. Full version release date is set to October 2, 2016.
 Till then you can use a version of Sing App with Angular rc4 support available in seed and full versions.
 
-This seed repo serves as an Angular 2 starter for anyone looking to get up and running with Angular 2 and TypeScript fast.
+This seed repo serves as an Angular 4 starter for anyone looking to get up and running with Angular 4 and TypeScript fast.
  Using a [Webpack 2](http://webpack.github.io/) for building our files and assisting with boilerplate. 
-* Best practices in file and application organization for Angular 2.
+* Best practices in file and application organization for Angular 4.
 * Unique to admin templates stylish and unobtrusive design
 * Ready to go build system using Webpack for working with TypeScript.
-* Angular 2 examples that are ready to go when experimenting with Angular 2.
-* A great Angular 2 seed repo for anyone who wants to start their project.
+* Angular 4 examples that are ready to go when experimenting with Angular 4.
+* A great Angular 4 seed repo for anyone who wants to start their project.
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
 
@@ -191,7 +191,7 @@ import * as _ from 'lodash';
 ```
 
 # Support, Questions, or Feedback
-> Contact us anytime for anything about this Sing App or Angular 2 consulting.
+> Contact us anytime for anything about this Sing App or Angular 4 consulting.
 
 * [Twitter: @Flatlogic](https://twitter.com/Flatlogic)
 * [Email: contact@flatlogic.com](mailto:contact@flatlogic.com)
