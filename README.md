@@ -1,7 +1,7 @@
 # Sing Dashboard App (3.6.0 Full version) with Angular 4.0 Final Release support
 
 
-> An Angular 4 application featuring [Angular 2](https://angular.io)
+> An Angular 4 application featuring [Angular 4](https://angular.io)
  ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
 [Http](https://angular.io/docs/js/latest/api/http/),
  [TypeScript](http://www.typescriptlang.org/),
