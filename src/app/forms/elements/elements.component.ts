@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Injector } from '@angular/core';
 import { Select2OptionData } from 'ng2-select2';
-import {ɵDomSharedStylesHost} from "@angular/platform-browser";
+import { ɵDomSharedStylesHost } from '@angular/platform-browser';
 import * as data from './elements.data';
 declare let jQuery: any;
 

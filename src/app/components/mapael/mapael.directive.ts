@@ -30,6 +30,6 @@ export class MapaelLayersMap {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {this.render();}, 100);
+    this.render();
   }
 }

@@ -187,7 +187,7 @@ export class Calendar {
     setTimeout(() => {
       this.$calendar.fullCalendar(this.calendarOptions);
       jQuery('.draggable').draggable(this.dragOptions);
-    })
+    });
   }
 }
 

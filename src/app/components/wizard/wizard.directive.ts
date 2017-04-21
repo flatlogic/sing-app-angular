@@ -57,6 +57,6 @@ export class BootstrapWizard {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {this.render();}, 100);
+    this.render();
   }
 }

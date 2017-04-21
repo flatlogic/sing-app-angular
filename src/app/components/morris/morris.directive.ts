@@ -29,6 +29,6 @@ export class MorrisChart {
   }
 
   ngAfterViewInit(): void {
-      setTimeout(() => {this.render();}, 100);
+      this.render();
   }
 }

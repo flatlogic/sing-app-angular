@@ -11,48 +11,10 @@ export class BootstrapApplicationWizard {
 
   constructor(el: ElementRef) {
     this.$el = jQuery(el.nativeElement);
-    /* tslint:disable */
-    (<any>window).validateServerLabel = function(el) {
-      let name = el.val();
-      let retValue = {};
-
-      if (name === '') {
-        retValue['status'] = false;
-        retValue['msg'] = 'Please enter a label';
-      } else {
-        retValue['status'] = true;
-      }
-
-      return retValue;
-    };
-
-    (<any>window).validateFQDN = function(el) {
-      let $this = jQuery(el);
-      let retValue = {};
-
-      if ($this.is(':disabled')) {
-        // FQDN Disabled
-        retValue['status'] = true;
-      } else {
-        if ($this.data('lookup') === 0) {
-          retValue['status'] = false;
-          retValue['msg'] = 'Preform lookup first';
-        } else {
-          if ($this.data('is-valid') === 0) {
-            retValue['status']= false;
-            retValue['msg'] = 'Lookup Failed';
-          } else {
-            retValue['status'] = true;
-          }
-        }
-      }
-
-      return retValue;
-    };
-    /* tslint:enable */
   }
 
   lookup(): void {
+    console.log(123);
     // Normally a ajax call to the server to preform a lookup
     jQuery('#fqdn').data('lookup', 1);
     jQuery('#fqdn').data('is-valid', 1);
@@ -76,7 +38,11 @@ export class BootstrapApplicationWizard {
       }
     });
 
-    jQuery('#btn-fqdn').find('button').on('click', this.lookup);
+    document.getElementById('btn-fqdn').removeEventListener('click');
+    document.getElementById('btn-fqdn').addEventListener('click', () => {
+      console.log('works', this);
+      this.lookup();
+    });
     /* tslint:disable */
     let pattern = /\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/;
     let x = 46;
@@ -200,7 +166,47 @@ export class BootstrapApplicationWizard {
     wizard.el.find('.wizard-close').addClass('flex-last');
   }
 
+  ngOnInit() {
+    (<any>window).validateServerLabel = function(el) {
+      let name = el.val();
+      let retValue = {};
+
+      if (name === '') {
+        retValue['status'] = false;
+        retValue['msg'] = 'Please enter a label';
+      } else {
+        retValue['status'] = true;
+      }
+
+      return retValue;
+    };
+
+    (<any>window).validateFQDN = function(el) {
+      let $this = jQuery(el);
+      let retValue = {};
+
+      if ($this.is(':disabled')) {
+        // FQDN Disabled
+        retValue['status'] = true;
+      } else {
+        if ($this.data('lookup') === 0) {
+          retValue['status'] = false;
+          retValue['msg'] = 'Preform lookup first';
+        } else {
+          if ($this.data('is-valid') === 0) {
+            retValue['status'] = false;
+            retValue['msg'] = 'Lookup Failed';
+          } else {
+            retValue['status'] = true;
+          }
+        }
+      }
+
+      return retValue;
+    };
+  }
+
   ngAfterViewInit(): void {
-    setTimeout(() => {this.render();}, 100);
+    this.render();
   }
 }

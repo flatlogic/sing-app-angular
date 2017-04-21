@@ -96,6 +96,6 @@ export class GridDemo {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {this.render();}, 100);
+    this.render();
   }
 }

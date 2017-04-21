@@ -59,6 +59,6 @@ export class BootstrapCalendar {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {this.render();}, 100);
+    this.render();
   }
 }
