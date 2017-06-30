@@ -676,6 +676,7 @@ legend {
 }
 
 .progress-bar{
+  height: 100%;
   border-radius: $border-radius;
   @include box-shadow(none);
 }
