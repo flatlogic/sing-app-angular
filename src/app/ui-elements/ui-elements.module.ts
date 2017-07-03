@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AlertModule, TooltipModule } from 'ng2-bootstrap';
-import { ButtonsModule, DropdownModule } from 'ng2-bootstrap';
-import { TabsModule, AccordionModule } from 'ng2-bootstrap';
-import { ModalModule } from 'ng2-bootstrap';
+import { AlertModule, TooltipModule } from 'ngx-bootstrap';
+import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
+import { TabsModule, AccordionModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { Components } from './components/components.component';
 import { WidgetModule } from '../layout/widget/widget.module';
@@ -51,7 +51,7 @@ export const routes = [
     TooltipModule.forRoot(),
     ModalModule,
     ButtonsModule.forRoot(),
-    DropdownModule.forRoot(),
+    BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     AccordionModule.forRoot()
   ]
