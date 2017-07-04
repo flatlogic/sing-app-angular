@@ -17,7 +17,7 @@ export class ChatMessage {
     this.chatMessageClosed.emit('');
   }
 
-  addMessage(message): void {
+  addMessage(): void {
     if (this.newMessage) {
       (this.conversation.messages || (this.conversation.messages = [])).push({
         text: this.newMessage,
