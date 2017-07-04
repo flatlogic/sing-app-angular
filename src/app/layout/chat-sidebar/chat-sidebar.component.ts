@@ -13,6 +13,7 @@ export class ChatSidebar implements OnInit {
   activeConversation: any;
   chatMessageOpened: boolean = false;
   $el: any;
+  searchText: string = '';
 
   constructor(el: ElementRef) {
     this.conversations = new ChatService();
