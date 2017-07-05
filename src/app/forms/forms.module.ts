@@ -32,7 +32,7 @@ import { WidgetModule } from '../layout/widget/widget.module';
 import { TextMaskModule } from 'angular2-text-mask';
 /* tslint:disable */
 import { BootstrapWizardModule } from '../components/wizard/wizard.module';
-import { BootstrapApplicationWizard } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.directive';
+import { BootstrapApplicationWizard } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.component';
 import { DropzoneDemo } from '../components/dropzone/dropzone.directive';
 import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 /* tslint:enable */

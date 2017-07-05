@@ -1,20 +1,22 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 declare let jQuery: any;
 declare let Tether: any;
 
-@Directive ({
-  selector: '[bootstrap-application-wizard]'
+@Component ({
+  selector: '[bootstrap-application-wizard]',
+  templateUrl: './bootstrap-application-wizard.template.html'
 })
 
 export class BootstrapApplicationWizard {
   $el: any;
 
-  constructor(el: ElementRef) {
-    this.$el = jQuery(el.nativeElement);
+  @ViewChild('wizard') wizard: ElementRef;
+
+  constructor() {
+    debugger;
   }
 
   lookup(): void {
-    console.log(123);
     // Normally a ajax call to the server to preform a lookup
     jQuery('#fqdn').data('lookup', 1);
     jQuery('#fqdn').data('is-valid', 1);
@@ -22,7 +24,7 @@ export class BootstrapApplicationWizard {
   }
 
   render(): void {
-    let wizard = this.$el.wizard({
+    let wizard = jQuery(this.wizard.nativeElement).wizard({
       keyboard : false,
       contentHeight : 400,
       contentWidth : 700,
@@ -38,10 +40,12 @@ export class BootstrapApplicationWizard {
       }
     });
 
-    document.getElementById('btn-fqdn').removeEventListener('click');
-    document.getElementById('btn-fqdn').addEventListener('click', () => {
-      console.log('works', this);
-      this.lookup();
+    let $modalWizard = jQuery('.modal.wizard');
+    $modalWizard.on('show.bs.modal', () => {
+      jQuery('#btn-fqdn').find('button').on('click', this.lookup);
+    });
+    $modalWizard.on('hide.bs.modal', () => {
+      jQuery('#btn-fqdn').find('button').off('click', this.lookup);
     });
     /* tslint:disable */
     let pattern = /\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/;
@@ -55,7 +59,6 @@ export class BootstrapApplicationWizard {
       }
     }).keypress(function(e): boolean {
       if (e.which !== 8 && e.which !== 0 && e.which !== x && (e.which < 48 || e.which > 57)) {
-        console.log(e.which);
         return false;
       }
     }).keyup(function(): void {
