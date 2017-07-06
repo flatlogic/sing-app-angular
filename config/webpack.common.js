@@ -26,7 +26,7 @@ const ngcWebpack = require('ngc-webpack');
 const HMR = helpers.hasProcessFlag('hot');
 const AOT = process.env.BUILD_AOT || helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Sing App 3.6.0 with Angular 4.0 Final Release support by Flatlogic',
+  title: 'Sing App 3.7.0 with Angular 4.0 Final Release support by Flatlogic',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: HMR
