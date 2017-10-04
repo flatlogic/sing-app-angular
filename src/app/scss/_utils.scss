@@ -15,7 +15,7 @@
 }
 
 .btn-default {
-  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+  @include button-variant($btn-secondary-bg, $btn-secondary-border);
 }
 
 .badge-white {
@@ -59,17 +59,17 @@
 .circle-o{
   border: #{$line-height-base/5}em solid transparent;
 
-  &.circle-o-danger{ border-color: $brand-danger };
-  &.circle-o-warning{ border-color: $brand-warning };
-  &.circle-o-success{ border-color: $brand-success };
-  &.circle-o-info{ border-color: $brand-info };
-  &.circle-o-primary{ border-color: $brand-primary };
+  &.circle-o-danger{ border-color: theme-color('danger') };
+  &.circle-o-warning{ border-color: theme-color('warning') };
+  &.circle-o-success{ border-color: theme-color('success') };
+  &.circle-o-info{ border-color: theme-color('info') };
+  &.circle-o-primary{ border-color: theme-color('primary') };
   &.circle-o-black{ border-color: $black };
-  &.circle-o-gray-darker{ border-color: $gray-darker };
-  &.circle-o-gray-dark{ border-color: $gray-dark };
-  &.circle-o-gray{ border-color: $gray };
+  &.circle-o-gray-darker{ border-color: $gray-900 };
+  &.circle-o-gray-dark{ border-color: $gray-800 };
+  &.circle-o-gray{ border-color: $gray-300 };
   &.circle-o-gray-light{ border-color: $gray-light };
-  &.circle-o-gray-lighter{ border-color: $gray-lighter };
+  &.circle-o-gray-lighter{ border-color: $gray-200 };
   &.circle-o-white{ border-color: $white };
 }
 
@@ -123,9 +123,9 @@
 .input-dark{
   background-color: rgba(0,0,0,.4);
   border: 0;
-  color: $gray;
+  color: $gray-300;
   &:focus{
-    background-color: $gray-lighter
+    background-color: $gray-200
   }
 }
 
@@ -134,14 +134,14 @@
   .form-control{
     background-color: rgba(0,0,0,.4);
     border: 0;
-    color: $gray;
+    color: $gray-300;
     @include transition(background-color .15s ease-in-out);
   }
 
   .form-control:focus,
   .form-control:focus + .input-group-addon,
   &.focus .input-group-addon{
-    background-color: $gray-lighter
+    background-color: $gray-200
   }
 }
 
@@ -266,10 +266,10 @@
 
 @include keyframes('bg-attention'){
   0%{
-    background-color: lighten($brand-warning, 43%);
+    background-color: lighten(theme-color('warning'), 43%);
   }
   5%{
-    background-color: lighten($brand-warning, 33%);
+    background-color: lighten(theme-color('warning'), 33%);
   }
   0%{
     background-color: rgba(0,0,0,0);
@@ -281,7 +281,7 @@
 }
 
 /* .h* + .fw-bold */
-$font-sizes: 54px, $font-size-h1, $font-size-h2, $font-size-h3, $font-size-h4, $font-size-h5, $font-size-h6;
+$font-sizes: 54px, $h1-font-size, $h2-font-size, $h3-font-size, $h4-font-size, $h5-font-size, $h6-font-size;
 $i: 0;
 @each $font-size in $font-sizes{
 
@@ -294,7 +294,7 @@ $i: 0;
 }
 
 .help{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
 }
 
@@ -307,7 +307,7 @@ $i: 0;
   margin: 0;
 }
 
-$margin-vertical-variants: (xlg: 40px, lg: $line-height-computed*3/2, md: $line-height-computed, sm: $line-height-computed/2, xs: $line-height-computed/4, 0: 0);
+$margin-vertical-variants: (xlg: 40px, lg: $spacer*3/2, md: $spacer, sm: $spacer/2, xs: $spacer/4, 0: 0);
 $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 
 @include property-variants('.mt', 'margin-top', $margin-vertical-variants);
@@ -345,10 +345,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   border: none;
 }
 
-.bt{ border-top: 1px solid $gray-semi-lighter }
-.br{ border-right: 1px solid $gray-semi-lighter }
-.bb{ border-bottom: 1px solid $gray-semi-lighter }
-.bl{ border-left: 1px solid $gray-semi-lighter }
+.bt{ border-top: 1px solid $gray-light }
+.br{ border-right: 1px solid $gray-light }
+.bb{ border-bottom: 1px solid $gray-light }
+.bl{ border-left: 1px solid $gray-light }
 
 .overflow-hidden{
   overflow: hidden;
@@ -388,7 +388,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 /* small + .text-muted*/
 .deemphasize{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
 }
 
@@ -397,26 +397,20 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 //copy bg classes after bootstrap so it's possible to overload other bootstrap classes
 
-@include bg-variant('.bg-primary', $brand-primary);
-@include bg-variant('.bg-success', $brand-success);
-@include bg-variant('.bg-info', $brand-info);
-@include bg-variant('.bg-warning', $brand-warning);
-@include bg-variant('.bg-danger', $brand-danger);
-
-@include bg-variant('.bg-primary-light', $brand-primary-light);
-@include bg-variant('.bg-success-light', $brand-success-light);
-@include bg-variant('.bg-info-light', $brand-info-light);
-@include bg-variant('.bg-warning-light', $brand-warning-light);
-@include bg-variant('.bg-danger-light', $brand-danger-light);
+@include bg-variant('.bg-primary', theme-color('primary'));
+@include bg-variant('.bg-success', theme-color('success'));
+@include bg-variant('.bg-info', theme-color('info'));
+@include bg-variant('.bg-warning', theme-color('warning'));
+@include bg-variant('.bg-danger', theme-color('danger'));
 
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
-@include bg-variant('.bg-gray', $gray);
-@include bg-variant('.bg-gray-transparent', rgba($gray, .6));
-@include bg-variant('.bg-gray-dark', $gray-dark);
+@include bg-variant('.bg-gray', $gray-300);
+@include bg-variant('.bg-gray-transparent', rgba($gray-300, .6));
+@include bg-variant('.bg-gray-dark', $gray-800);
 @include bg-variant('.bg-black', $black);
 @include bg-variant('.bg-gray-light', $gray-light);
-@include bg-variant('.bg-gray-lighter', $gray-lighter);
+@include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
 
@@ -429,25 +423,25 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 //override bs .text-* classes so they use $brand-* variables
 
-@include text-emphasis-variant('.text-primary', $brand-primary);
+@include text-emphasis-variant('.text-primary', theme-color('primary'));
 
-@include text-emphasis-variant('.text-success', $brand-success);
+@include text-emphasis-variant('.text-success', theme-color('success'));
 
-@include text-emphasis-variant('.text-info', $brand-info);
+@include text-emphasis-variant('.text-info', theme-color('info'));
 
-@include text-emphasis-variant('.text-warning', $brand-warning);
+@include text-emphasis-variant('.text-warning', theme-color('warning'));
 
-@include text-emphasis-variant('.text-danger', $brand-danger);
+@include text-emphasis-variant('.text-danger', theme-color('danger'));
 
 @include text-emphasis-variant('.text-link', $link-color);
 
 @include text-emphasis-variant('.text-white', $white);
-@include text-emphasis-variant('.text-gray', $gray);
-@include text-emphasis-variant('.text-gray-dark', $gray-dark);
+@include text-emphasis-variant('.text-gray', $gray-300);
+@include text-emphasis-variant('.text-gray-dark', $gray-800);
 @include text-emphasis-variant('.text-gray-light', $gray-light);
-@include text-emphasis-variant('.text-semi-muted', $gray-semi-light);
-@include text-emphasis-variant('.text-gray-darker', $gray-darker);
-@include text-emphasis-variant('.text-gray-lighter', $gray-lighter);
+@include text-emphasis-variant('.text-semi-muted', $gray-light);
+@include text-emphasis-variant('.text-gray-darker', $gray-900);
+@include text-emphasis-variant('.text-gray-lighter', $gray-200);
 @include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
 
 
@@ -460,7 +454,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .fs-smaller{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
 }
 
 .fs-sm{

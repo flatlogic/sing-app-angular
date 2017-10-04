@@ -26,7 +26,7 @@
  * Pace
  */
 .pace .pace-progress{
-  background: $brand-primary;
+  background: theme-color('primary');
   position: absolute;
   top: $navbar-height;
 }
@@ -39,8 +39,8 @@
   right: auto;
   width: 18px;
   height: 18px;
-  border-top-color: $brand-primary;
-  border-left-color: $brand-primary;
+  border-top-color: theme-color('primary');
+  border-left-color: theme-color('primary');
 }
 
 

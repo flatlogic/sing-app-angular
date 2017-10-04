@@ -36,16 +36,11 @@ h1, h2, h3, h4, h5, h6,
 
 // Base class
 .card {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
   background-color: $card-bg;
   border: none;
 }
 
-// card contents
-.card-body {
-  padding: $card-body-padding;
-  @include clearfix;
-}
 
 // Optional heading
 .card-header {
@@ -55,8 +50,6 @@ h1, h2, h3, h4, h5, h6,
   > .dropdown .dropdown-toggle {
     color: inherit;
   }
-
-
 
   +.list-group .list-group-item:first-child {
     border-top-width: 0;
@@ -104,7 +97,7 @@ small, .small {
 // the help of our collapse JavaScript plugin.
 
 .card-group {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
 
   // Tighten up margin so it's only between cards
   .card {
@@ -149,11 +142,6 @@ small, .small {
 }
 
 
-// Contextual variations
-.card-default {
-  @include card-variant($card-default-heading-bg, $card-default-border);
-}
-
 //
 // Forms
 // --------------------------------------------------
@@ -186,36 +174,25 @@ small, .small {
   padding-bottom: $padding-base-vertical;
 }
 
-.btn-lg, .btn-group-lg>.btn {
- padding: $btn-padding-y-lg $btn-padding-x-lg !important;
-}
-
 label {
   font-weight: $font-weight-normal;
 }
 
 .help-block{
   margin-top: 5px;
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
   display: block;
 }
 
 legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: $line-height-computed;
-  line-height: inherit;
   color: $legend-color;
-  border: 0;
   border-bottom: 1px solid #e5e5e5;
-  font-size: 15px;
   font-weight: $font-weight-normal;
 }
 
 .form-group {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
 
   .input-group-addon{
     line-height: inherit;
@@ -224,19 +201,20 @@ legend {
 
 .input-group-addon{
   &.bg-primary{
-    border-color: darken($brand-primary, 10%);
+    color: #ecfaec;
+    border-color: darken(theme-color('primary'), 10%);
   }
   &.bg-success{
-    border-color: darken($state-success-bg, 10%);
+    border-color: darken(theme-color('success-light'), 10%);
   }
   &.bg-info{
-    border-color: darken($state-info-bg, 10%);
+    border-color: darken(theme-color('info-light'), 10%);
   }
   &.bg-warning{
-    border-color: darken($state-warning-bg, 10%);
+    border-color: darken(theme-color('warning-light'), 10%);
   }
   &.bg-danger{
-    border-color: darken($state-danger-bg, 10%);
+    border-color: darken(theme-color('danger-light'), 10%);
   }
 }
 
@@ -250,17 +228,6 @@ legend {
 
 .form-inline .input-group-addon {
   display: table-cell;
-}
-
-// Feedback states
-.has-success {
-  @include form-control-validation($brand-success);
-}
-.has-warning {
-  @include form-control-validation($brand-warning);
-}
-.has-error {
-  @include form-control-validation($brand-danger);
 }
 
 //turn off shadow
@@ -316,7 +283,7 @@ legend {
 }
 
 .table-bordered th{
-  background-color: $gray-lighter;
+  background-color: $gray-200;
 }
 
 .table-lg {
@@ -402,14 +369,14 @@ legend {
 
 .navbar {
   border: none;
-  font-size: $navbar-font-size;
+  flex-wrap: nowrap;
+  font-size: $font-size-base;
   font-weight: 500;
   min-height: 50px;
   margin-bottom: 0;
-  padding: 0;
 
   h5{
-    font-size: $navbar-font-size;
+    font-size: $font-size-base;
   }
 
   .deemphasize{
@@ -419,7 +386,7 @@ legend {
 
 .navbar-form{
   .form-control{
-    font-size: $navbar-font-size;
+    font-size: $font-size-base;
     padding: 0.6rem 0.85rem;
 
   }
@@ -435,57 +402,6 @@ legend {
 
 .container {
   position: static;
-}
-
-.container,
-.container-fluid {
-  > .navbar-header,
-  > .navbar-collapse {
-    @media (min-width: map_get($grid-breakpoints, md)) {
-      margin-right: -$navbar-padding-x;
-      margin-left:  -$navbar-padding-x;
-    }
-  }
-}
-
-.navbar-header > .navbar-nav{
-  float: left;
-
-  &.navbar-right{
-    float: right;
-
-    @include media-breakpoint-down(sm) {
-
-      > li > a {
-        padding-right: 0;
-      }
-    }
-  }
-
-  margin-left: calc(#{$navbar-padding-x} + 10px);
-  margin-right: $navbar-padding-x;
-
-  @include media-breakpoint-down(sm) {
-    margin-left: $navbar-padding-y;
-
-    + .navbar-brand{
-      height: 60px;
-      line-height: 30px;
-    }
-  }
-
-  > li {
-    float: left;
-    > a {
-      padding: 16px $navbar-padding-y $navbar-padding-x $navbar-padding-y;
-
-
-    }
-  }
-
-  li:nth-child(3){
-    margin-left: 0;
-  }
 }
 
 @media (min-width: map_get($grid-breakpoints, md)) {
@@ -513,7 +429,7 @@ legend {
 
     &.collapse {
       display: block !important;
-      height: auto !important;
+      height: $navbar-height !important;
       padding-bottom: 0; // Override default setting
       overflow: visible !important;
     }
@@ -531,29 +447,6 @@ legend {
       padding-right: 0;
     }
   }
-
-  .nav.navbar-nav > li {
-    margin-left: 0;
-  }
-
-  .nav.navbar-nav > li > a {
-    padding: 17px 14px 14px 14px;
-  }
-
-  .nav.navbar-nav > li:first-child .dropdown-toggle {
-
-    .circle {
-      margin: -1px 0;
-    }
-  }
-
-  .nav.navbar-nav li:nth-child(2) > a:after {
-    content: none;
-  }
-
-  .nav.navbar-nav a[data-toggle="chat-sidebar"] {
-    position: relative;
-  }
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -567,7 +460,7 @@ legend {
 
 .breadcrumb {
   color: $gray-light;
-  margin-bottom: $spacer-y*1.5;
+  margin-bottom: $spacer*1.5;
 
   > .active {
     font-weight: $font-weight-semi-bold;
@@ -609,7 +502,7 @@ legend {
 }
 
 .btn-gray{
-  @include button-variant($text-color, $gray-semi-lighter, darken($gray-semi-lighter, 5%));
+  @include button-variant($text-color, $gray-light, darken($gray-light, 5%));
 }
 
 .btn-outline{
@@ -647,7 +540,7 @@ legend {
 // --------------------------------------------------
 .help-block{
   margin-top: 5px;
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
   display: block;
 }
@@ -657,8 +550,8 @@ legend {
 // --------------------------------------------------
 
 .btn-toolbar{
-  margin-top: $line-height-computed/2;
-  margin-bottom: $line-height-computed/2;
+  margin-top: $spacer/2;
+  margin-bottom: $spacer/2;
 }
 
 //
@@ -683,17 +576,17 @@ legend {
 
 .progress-sm{
   height: 10px;
-  margin-bottom: $line-height-computed/2;
+  margin-bottom: $spacer/2;
 }
 
 .progress-xs{
   height: 5px;
-  margin-bottom: $line-height-computed/2;
+  margin-bottom: $spacer/2;
 }
 
 
 .progress-bar-gray {
-  background-color: $gray;
+  background-color: $gray-300;
 }
 
 .progress-bar-gray-light {
@@ -701,7 +594,7 @@ legend {
 }
 
 .progress-primary {
-  background-color: $brand-primary;
+  background-color: theme-color('primary');
 }
 
 
@@ -867,7 +760,7 @@ legend {
 // our navbars.
 
 .navbar-form {
-  padding: 6px 0 6px $navbar-padding-x;
+  padding: 6px 0 6px $spacer*2;
 
   .form-group {
     margin-bottom: 0;
@@ -907,6 +800,8 @@ legend {
   }
 
   .navbar-nav {
+    height: $navbar-height;
+
     > li > a {
       color: $navbar-dashboard-link-color;
 
@@ -1002,7 +897,7 @@ legend {
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     background-color: $color !important;
-    color: $gray !important;
+    color: $gray-300 !important;
   }
   a#{$parent} {
     @include hover-focus {
@@ -1016,27 +911,13 @@ legend {
 // -----------------
 
 pre {
-  display: block;
   padding: 6.5px;
-  margin: 0 0 ($line-height-computed / 2);
-  font-size: 13px;
-  line-height: $line-height-computed;
+  margin: 0 0 ($spacer / 2);
+  line-height: $spacer;
   word-break: break-all;
   word-wrap: break-word;
-  color: $pre-color;
   background-color: $pre-bg;
-  border: 1px solid $pre-border-color;
   border-radius: $border-radius;
-
-  // Account for some code outputs that place code tags in pre tags
-  code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
-  }
 }
 
 

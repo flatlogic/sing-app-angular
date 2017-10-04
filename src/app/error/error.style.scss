@@ -1,13 +1,11 @@
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../scss/variables";
+@import "../scss/helpers";
 
 /***********************************/
 /**          ERROR PAGE           **/
 /***********************************/
 
 .error-page{
-  background-color: $gray-semi-lighter;
+  background-color: $gray-light;
 }
 
 .error-container{
@@ -24,7 +22,7 @@
   margin: 20px;
   font-size: 80px;
   font-weight: $font-weight-normal;
-  color: $gray-dark;
+  color: $gray-800;
   @include media-breakpoint-up(md){
     font-size: 180px;
   }
@@ -32,7 +30,7 @@
 
 .error-info{
   font-size: 20px;
-  color: $gray-dark;
+  color: $gray-800;
 }
 
 .error-help{
