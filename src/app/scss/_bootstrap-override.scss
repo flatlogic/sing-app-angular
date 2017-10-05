@@ -404,53 +404,14 @@ legend {
   position: static;
 }
 
-@media (min-width: map_get($grid-breakpoints, md)) {
-  .navbar-nav.navbar-right:last-child {
-    margin-right: 0;
-  }
-}
+.navbar-nav {
+  .nav-item {
 
-.navbar-collapse {
-  overflow-x: visible;
-  padding-right: $navbar-padding-x;
-  padding-left:  $navbar-padding-x;
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
-  @include clearfix;
-
-  &.in {
-    overflow-y: auto;
-  }
-
-  @media (min-width: map_get($grid-breakpoints, md)) {
-    width: auto;
-    border-top: 0;
-    box-shadow: none;
-
-    &.collapse {
-      display: block !important;
-      height: $navbar-height !important;
-      padding-bottom: 0; // Override default setting
-      overflow: visible !important;
-    }
-
-    &.in {
-      overflow-y: visible;
-    }
-
-    // Undo the collapse side padding for navbars with containers to ensure
-    // alignment of right-aligned contents.
-    .navbar-fixed-top &,
-    .navbar-static-top &,
-    .navbar-fixed-bottom & {
-      padding-left: 0;
-      padding-right: 0;
+    .dropdown-menu {
+      position: absolute;
+      margin-top: 0;
     }
   }
-}
-
-.navbar-nav .nav-item .nav-link {
-    margin-left: 0;
 }
 
 //
@@ -785,8 +746,6 @@ legend {
 
   .navbar-brand {
     color: $navbar-dashboard-brand-color;
-    margin-right: 0;
-    padding-top: 10px;
     font-size: $font-size-lg;
     &:hover,
     &:focus {
@@ -799,9 +758,11 @@ legend {
     color: $navbar-dashboard-color;
   }
 
-  .navbar-nav {
-    height: $navbar-height;
+  .navbar-nav > .nav-item > .nav-link {
+    padding: $nav-link-padding-y $nav-link-padding-x;
+  }
 
+  .navbar-nav {
     > li > a {
       color: $navbar-dashboard-link-color;
 
@@ -897,7 +858,7 @@ legend {
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     background-color: $color !important;
-    color: $gray-300 !important;
+    color: $gray-700 !important;
   }
   a#{$parent} {
     @include hover-focus {

@@ -436,7 +436,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-link', $link-color);
 
 @include text-emphasis-variant('.text-white', $white);
-@include text-emphasis-variant('.text-gray', $gray-300);
+@include text-emphasis-variant('.text-gray', $gray-600);
 @include text-emphasis-variant('.text-gray-dark', $gray-800);
 @include text-emphasis-variant('.text-gray-light', $gray-light);
 @include text-emphasis-variant('.text-semi-muted', $gray-light);
@@ -483,9 +483,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 .hide {
   display: none !important;
-}
-.show {
-  display: block !important;
 }
 
 // Animations for angular views
