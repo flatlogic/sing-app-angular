@@ -134,7 +134,7 @@
   .form-control{
     background-color: rgba(0,0,0,.4);
     border: 0;
-    color: $gray-300;
+    color: $gray-700;
     @include transition(background-color .15s ease-in-out);
   }
 
@@ -405,7 +405,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
-@include bg-variant('.bg-gray', $gray-300);
+@include bg-variant('.bg-gray', $gray-700);
 @include bg-variant('.bg-gray-transparent', rgba($gray-300, .6));
 @include bg-variant('.bg-gray-dark', $gray-800);
 @include bg-variant('.bg-black', $black);
@@ -436,7 +436,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-link', $link-color);
 
 @include text-emphasis-variant('.text-white', $white);
-@include text-emphasis-variant('.text-gray', $gray-600);
+@include text-emphasis-variant('.text-gray', $gray-700);
 @include text-emphasis-variant('.text-gray-dark', $gray-800);
 @include text-emphasis-variant('.text-gray-light', $gray-light);
 @include text-emphasis-variant('.text-semi-muted', $gray-light);

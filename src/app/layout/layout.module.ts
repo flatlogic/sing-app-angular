@@ -3,7 +3,7 @@ import 'jquery-slimscroll';
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule }  from '@angular/forms';
-import { TooltipModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TooltipModule } from 'ngx-bootstrap';
 
 import { ROUTES }       from './layout.routes';
 
@@ -20,6 +20,7 @@ import { Notifications } from './notifications/notifications.component';
   imports: [
     CommonModule,
     TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
     ROUTES,
     FormsModule],
   declarations: [

@@ -4,18 +4,18 @@
       Turn on/off <br> sidebar <br>collapsing
     </ng-template>
     <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
-    <a (click)="toggleSidebar('static')"  class="nav-link d-none d-lg-flex" [tooltip]="sidebarToggleTooltip"
+    <a (click)="toggleSidebar('static')"  class="nav-link d-none ml-3 d-lg-flex" [tooltip]="sidebarToggleTooltip"
       placement="bottom">
       <i class="fa fa-bars fa-lg"></i>
     </a>
     <!-- shown on xs & sm screen. collapses and expands navigation -->
     <a (click)="toggleSidebar('collapse')" class="d-lg-none nav-link" href="#" data-html="true" title="Show/hide<br>sidebar" data-placement="bottom">
       <span class="rounded rounded-lg bg-gray text-white d-md-none"><i class="fa fa-bars fa-lg"></i></span>
-      <i class="fa fa-bars fa-lg d-none d-md-block d-lg-none"></i>
+      <i class="ml-3 fa fa-bars fa-lg d-none d-md-block d-lg-none"></i>
     </a>
   </li>
   <li class="nav-item d-none d-md-block"><a class="nav-link" href="#"><i class="fa fa-refresh fa-lg"></i></a></li>
-  <li class="nav-item d-none d-md-block"><a class="nav-link" href="#"><i class="fa fa-times fa-lg"></i></a></li>
+  <li class="nav-item d-none d-md-block"><a class="nav-link pl-1" href="#"><i class="fa fa-times fa-lg"></i></a></li>
 </ul>
 <ul class="navbar-nav flex-row d-md-none">
   <li class="nav-item">
@@ -47,9 +47,9 @@
   </div>
 </form>
 <ul class="navbar-nav mr-3 d-none d-md-flex flex-row" (click)="$event.preventDefault()">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle dropdown-toggle-notifications"
-         id="notifications-dropdown-toggle" data-toggle="dropdown">
+    <li class="nav-item dropdown" dropdown placement="bottom right" [autoClose]="false">
+      <a href="#" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-notifications"
+         id="notifications-dropdown-toggle">
               <span class="thumb-sm avatar float-left">
                   <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="...">
               </span>
@@ -64,14 +64,14 @@
                    consists of three components:
                    notifications, messages, progress. leave or add what's important for you.
                    uses Sing's ajax-load plugin for async content loading. See #load-notifications-btn -->
-      <div notifications class="dropdown-menu dropdown-menu-right animated animated-fast fadeInUp"
+      <div notifications *dropdownMenu class="dropdown-menu dropdown-menu-right animated animated-fast fadeInUp"
         ></div>
     </li>
-    <li class="nav-item dropdown">
-      <a href class="nav-link dropdown-toggle" data-toggle="dropdown">
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a href="#" class="nav-link dropdown-toggle" dropdownToggle>
         <i class="fa fa-cog fa-lg"></i>
       </a>
-      <ul class="dropdown-menu dropdown-menu-right">
+      <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
         <li><a class="dropdown-item" href="#"><i class="glyphicon glyphicon-user"></i> &nbsp; My Account</a></li>
         <li class="dropdown-divider"></li>
         <li><a class="dropdown-item" [routerLink]=" ['/error'] ">Calendar</a></li>

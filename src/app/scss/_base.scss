@@ -451,7 +451,7 @@ app, .app {
   }
 
   .dropdown-menu{
-    position: fixed;
+    position: absolute;
     top: 57px;
     left: 0;
     margin: 0 20px;
@@ -960,7 +960,7 @@ app, .app {
 
   a.list-group-item {
     text-decoration: none;
-    color: $gray-300;
+    color: $text-color;
   }
 
   .btn-notifications-reload{
