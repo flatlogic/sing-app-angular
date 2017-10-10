@@ -2,9 +2,7 @@ body{
   overflow-x: visible;
 }
 
-@import "../../scss/variables";
-@import "../../../../node_modules/bootstrap/scss/_variables";
-@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../scss/helpers";
 
 /**
  * Nestable
