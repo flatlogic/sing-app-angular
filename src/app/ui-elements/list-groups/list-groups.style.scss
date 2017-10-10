@@ -242,7 +242,7 @@ body{
     border-radius: $border-radius;
 
     + .list-group-item{
-      margin-top: $line-height-computed/2;
+      margin-top: $spacer/2;
     }
   }
 

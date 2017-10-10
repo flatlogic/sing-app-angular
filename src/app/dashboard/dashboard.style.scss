@@ -7,7 +7,7 @@
 
 .calendar{
   font-size: $font-size-mini;
-  padding: $line-height-computed/2 0;
+  padding: $spacer/2 0;
 }
 .calendar a{
   text-decoration: none;
@@ -79,7 +79,7 @@
 .calendar .table{
   margin-bottom: 3px;
   &.header{
-    margin-bottom: $line-height-computed/2;
+    margin-bottom: $spacer/2;
   }
 }
 .calendar .week_days td{

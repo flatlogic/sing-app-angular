@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6,
 
 // Base class
 .card {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
   background-color: $card-bg;
   border: none;
 }
@@ -108,7 +108,7 @@ small, .small {
 // the help of our collapse JavaScript plugin.
 
 .card-group {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
 
   // Tighten up margin so it's only between cards
   .card {
@@ -203,7 +203,7 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
   line-height: inherit;
   color: $legend-color;
   border: 0;
@@ -213,7 +213,7 @@ legend {
 }
 
 .form-group {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
 
   .input-group-addon{
     line-height: inherit;
@@ -281,8 +281,8 @@ legend {
 }
 
 .form-actions{
-  margin: $line-height-computed 0 0;
-  padding: $line-height-computed;
+  margin: $spacer 0 0;
+  padding: $spacer;
   background-color: #f5f5f5;
 
   .form-horizontal & .row{
@@ -481,7 +481,7 @@ legend {
   z-index: 1;
   background-color: $white;
   > .tab-pane {
-    padding: $line-height-computed*2 $line-height-computed*2;
+    padding: $spacer*2 $spacer*2;
   }
 }
 
@@ -728,7 +728,7 @@ legend {
 
 // Base class
 .panel {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
   background-color: $panel-bg;
   border: none;
 }
@@ -791,7 +791,7 @@ small, .small {
 // the help of our collapse JavaScript plugin.
 
 .panel-group {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $spacer;
 
   // Tighten up margin so it's only between panels
   .panel {
@@ -857,11 +857,11 @@ small, .small {
 // --------------------------------------------------
 
 .btn-toolbar{
-  margin-top: $line-height-computed/2;
-  margin-bottom: $line-height-computed/2;
+  margin-top: $spacer/2;
+  margin-bottom: $spacer/2;
 
   .btn {
-    margin-left: $line-height-computed/2;
+    margin-left: $spacer/2;
   }
 }
 
@@ -885,12 +885,12 @@ small, .small {
 
 .progress-sm{
   height: 10px;
-  margin-bottom: $line-height-computed/2;
+  margin-bottom: $spacer/2;
 }
 
 .progress-xs{
   height: 5px;
-  margin-bottom: $line-height-computed/2;
+  margin-bottom: $spacer/2;
 }
 
 
@@ -1239,9 +1239,9 @@ a.list-group-item, button.list-group-item {
 pre {
   display: block;
   padding: 6.5px;
-  margin: 0 0 ($line-height-computed / 2);
+  margin: 0 0 ($spacer / 2);
   font-size: 13px;
-  line-height: $line-height-computed;
+  line-height: $spacer;
   word-break: break-all;
   word-wrap: break-word;
   color: $pre-color;

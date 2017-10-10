@@ -106,7 +106,7 @@ mfDefaultSorter > a {
     font-weight: $font-weight-normal;
     display: inline-block;
     padding-left: 0;
-    margin: $line-height-computed 0;
+    margin: $spacer 0;
     border-radius: $border-radius;
 
     > li {
@@ -176,7 +176,7 @@ mfDefaultSorter > a {
     > li > a {
       padding: $padding-small-vertical $padding-small-horizontal;
       font-size: $font-size-sm;
-      line-height: $line-height-computed;
+      line-height: $spacer;
     }
 
     > li {

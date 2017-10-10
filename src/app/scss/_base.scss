@@ -402,13 +402,13 @@ app, .app {
     &:before{
       content: "";
       display: block;
-      padding-top: $line-height-computed/2;
+      padding-top: $spacer/2;
     }
 
     &:after{
       content: "";
       display: block;
-      padding-bottom: $line-height-computed/2;
+      padding-bottom: $spacer/2;
     }
   }
 }
@@ -574,7 +574,7 @@ app, .app {
     }
 
     + li {
-      margin-top: $line-height-computed/2;
+      margin-top: $spacer/2;
     }
   }
 }
@@ -596,7 +596,7 @@ app, .app {
   }
   .alert{
     margin-bottom: 0;
-    padding: $line-height-computed/2 $sidebar-padding-horizontal;
+    padding: $spacer/2 $sidebar-padding-horizontal;
     padding-right: $sidebar-padding-horizontal + $sidebar-slim-scroll-width;
 
     .close{
@@ -706,7 +706,7 @@ app, .app {
   .message-list{
     list-style: none;
     padding-left: 0;
-    padding-top: $line-height-computed/2;
+    padding-top: $spacer/2;
   }
 
   .message{
@@ -926,7 +926,7 @@ app, .app {
 }
 
 .page-title{
-  margin: 0 0 calc(#{$line-height-computed} + 6px);
+  margin: 0 0 calc(#{$spacer} + 6px);
 }
 
 .notifications{

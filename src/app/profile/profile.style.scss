@@ -47,7 +47,7 @@
   @include clearfix();
 
   .post-links + &{
-    margin-top: $line-height-computed / 2;
+    margin-top: $spacer / 2;
   }
 
   > li {
@@ -177,7 +177,7 @@
 }
 .event{
   .activities &{
-    margin-top: $line-height-computed;
+    margin-top: $spacer;
     width: 100%;
   }
 }
