@@ -226,7 +226,7 @@ legend {
 
 .input-group-addon{
   &.bg-primary{
-    border-color: darken($brand-primary, 10%);
+    border-color: darken(theme-color('primary'), 10%);
   }
   &.bg-success{
     border-color: darken($state-success-bg, 10%);
@@ -256,13 +256,13 @@ legend {
 
 // Feedback states
 .has-success {
-  @include form-control-validation($brand-success);
+  @include form-control-validation(theme-color('success'));
 }
 .has-warning {
-  @include form-control-validation($brand-warning);
+  @include form-control-validation(theme-color('warning'));
 }
 .has-error {
-  @include form-control-validation($brand-danger);
+  @include form-control-validation(theme-color('danger'));
 }
 
 //turn off shadow
@@ -847,7 +847,7 @@ small, .small {
 // --------------------------------------------------
 .help-block{
   margin-top: 5px;
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
   display: block;
 }
@@ -903,7 +903,7 @@ small, .small {
 }
 
 .bg-primary {
-  background-color: $brand-primary;
+  background-color: theme-color('primary');
 }
 
 

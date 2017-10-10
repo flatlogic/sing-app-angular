@@ -59,11 +59,11 @@
 .circle-o{
   border: #{$line-height-base/5}em solid transparent;
 
-  &.circle-o-danger{ border-color: $brand-danger };
-  &.circle-o-warning{ border-color: $brand-warning };
-  &.circle-o-success{ border-color: $brand-success };
-  &.circle-o-info{ border-color: $brand-info };
-  &.circle-o-primary{ border-color: $brand-primary };
+  &.circle-o-danger{ border-color: theme-color('danger') };
+  &.circle-o-warning{ border-color: theme-color('warning') };
+  &.circle-o-success{ border-color: theme-color('success') };
+  &.circle-o-info{ border-color: theme-color('info') };
+  &.circle-o-primary{ border-color: theme-color('primary') };
   &.circle-o-black{ border-color: $black };
   &.circle-o-gray-darker{ border-color: $gray-darker };
   &.circle-o-gray-dark{ border-color: $gray-dark };
@@ -266,10 +266,10 @@
 
 @include keyframes('bg-attention'){
   0%{
-    background-color: lighten($brand-warning, 43%);
+    background-color: lighten(theme-color('warning'), 43%);
   }
   5%{
-    background-color: lighten($brand-warning, 33%);
+    background-color: lighten(theme-color('warning'), 33%);
   }
   0%{
     background-color: rgba(0,0,0,0);
@@ -294,7 +294,7 @@ $i: 0;
 }
 
 .help{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
 }
 
@@ -388,7 +388,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 /* small + .text-muted*/
 .deemphasize{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   color: $text-muted;
 }
 
@@ -397,17 +397,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 //copy bg classes after bootstrap so it's possible to overload other bootstrap classes
 
-@include bg-variant('.bg-primary', $brand-primary);
-@include bg-variant('.bg-success', $brand-success);
-@include bg-variant('.bg-info', $brand-info);
-@include bg-variant('.bg-warning', $brand-warning);
-@include bg-variant('.bg-danger', $brand-danger);
-
-@include bg-variant('.bg-primary-light', $brand-primary-light);
-@include bg-variant('.bg-success-light', $brand-success-light);
-@include bg-variant('.bg-info-light', $brand-info-light);
-@include bg-variant('.bg-warning-light', $brand-warning-light);
-@include bg-variant('.bg-danger-light', $brand-danger-light);
+@include bg-variant('.bg-primary', theme-color('primary'));
+@include bg-variant('.bg-success', theme-color('success'));
+@include bg-variant('.bg-info', theme-color('info'));
+@include bg-variant('.bg-warning', theme-color('warning'));
+@include bg-variant('.bg-danger', theme-color('danger'));
 
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
@@ -429,15 +423,15 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 //override bs .text-* classes so they use $brand-* variables
 
-@include text-emphasis-variant('.text-primary', $brand-primary);
+@include text-emphasis-variant('.text-primary', theme-color('primary'));
 
-@include text-emphasis-variant('.text-success', $brand-success);
+@include text-emphasis-variant('.text-success', theme-color('success'));
 
-@include text-emphasis-variant('.text-info', $brand-info);
+@include text-emphasis-variant('.text-info', theme-color('info'));
 
-@include text-emphasis-variant('.text-warning', $brand-warning);
+@include text-emphasis-variant('.text-warning', theme-color('warning'));
 
-@include text-emphasis-variant('.text-danger', $brand-danger);
+@include text-emphasis-variant('.text-danger', theme-color('danger'));
 
 @include text-emphasis-variant('.text-link', $link-color);
 
@@ -460,7 +454,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .fs-smaller{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
 }
 
 .fs-sm{

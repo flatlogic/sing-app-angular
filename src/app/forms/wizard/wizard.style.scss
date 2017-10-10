@@ -10,18 +10,18 @@
 
 
 input.parsley-error{
-  border-color: $brand-danger;
-  @include box-shadow(inset 0 1px 1px rgba($brand-danger,.075));
+  border-color: theme-color('danger');
+  @include box-shadow(inset 0 1px 1px rgba(theme-color('danger'),.075));
 }
 
 .parsley-errors-list{
-  font-size: $font-size-smaller;
+  font-size: $small-font-size;
   padding-left: 0;
   margin-bottom: 5px;
 
   li{
     list-style: none;
-    color: $brand-danger;
+    color: theme-color('danger');
   }
 }
 
@@ -100,11 +100,11 @@ html[dir="rtl"] .select2-search input {
     }
 
     > li.active > a{
-      background-color: $brand-primary;
+      background-color: theme-color('primary');
       color: $white;
     }
     > li.done > a {
-      background-color: lighten($brand-primary, 28%);
+      background-color: lighten(theme-color('primary'), 28%);
       color: $white;
       cursor: pointer;
     }
@@ -171,7 +171,7 @@ html[dir="rtl"] .select2-search input {
 
 .wizard-nav-list li.active > a,
 .wizard-nav-item .already-visited .active{
-  background-color: $brand-info;
+  background-color: theme-color('info');
   color: $white;
 }
 

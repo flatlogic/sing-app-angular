@@ -749,13 +749,13 @@ app, .app {
   .chat-sidebar-chat .message.from-me &{
     margin-left: 0;
     margin-right: 50px;
-    background-color: $brand-warning;
+    background-color: theme-color('warning');
     color: $gray-dark;
     &:before{
       right: auto;
       left: 100%;
       border-right-color: rgba(0,0,0,0);
-      border-left-color: $brand-warning;
+      border-left-color: theme-color('warning');
     }
   }
 }
@@ -794,11 +794,11 @@ app, .app {
       &:focus,
       &:hover{
         background-color: rgba(255,255,255, .1);
-        color: $brand-warning;
+        color: theme-color('warning');
       }
 
       .badge{
-        background-color: $brand-danger;
+        background-color: theme-color('danger');
         color: $white;
       }
 
@@ -841,7 +841,7 @@ app, .app {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: $font-size-smaller;
+    font-size: $small-font-size;
     color: $text-muted;
   }
 
@@ -922,7 +922,7 @@ app, .app {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: $brand-danger;
+  background-color: theme-color('danger');
 }
 
 .page-title{

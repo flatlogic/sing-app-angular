@@ -235,11 +235,11 @@
       top: 11px;
     }
 
-    &.event-icon-danger{ background-color: $brand-danger; border-color: lighten($brand-danger, 7%)}
-    &.event-icon-warning{ background-color: $brand-warning; border-color: lighten($brand-warning, 7%)}
-    &.event-icon-success{ background-color: $brand-success; border-color: lighten($brand-success, 7%)}
-    &.event-icon-info{ background-color: $brand-info; border-color: lighten($brand-info, 7%)}
-    &.event-icon-primary{ background-color: $brand-primary; border-color: lighten($brand-primary, 7%)}
+    &.event-icon-danger{ background-color: theme-color('danger'); border-color: lighten(theme-color('danger'), 7%)}
+    &.event-icon-warning{ background-color: theme-color('warning'); border-color: lighten(theme-color('warning'), 7%)}
+    &.event-icon-success{ background-color: theme-color('success'); border-color: lighten(theme-color('success'), 7%)}
+    &.event-icon-info{ background-color: theme-color('info'); border-color: lighten(theme-color('info'), 7%)}
+    &.event-icon-primary{ background-color: theme-color('primary'); border-color: lighten(theme-color('primary'), 7%)}
 
     &.event-icon-danger,
     &.event-icon-warning,
