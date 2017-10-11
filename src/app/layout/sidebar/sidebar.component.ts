@@ -56,6 +56,11 @@ export class Sidebar implements OnInit {
     this.changeActiveNavigationItem(this.location);
   }
 
+  toggleSidebarOverflow($event) {
+    jQuery('#sidebar').css('z-index', $event ? '2' : '0' );
+    jQuery('.js-sidebar-content, .slimScrollDiv').css('overflow', $event ? 'visible' : 'hidden');
+  }
+
   ngOnInit(): void {
     jQuery(window).on('sn:resize', this.initSidebarScroll.bind(this));
     this.initSidebarScroll();

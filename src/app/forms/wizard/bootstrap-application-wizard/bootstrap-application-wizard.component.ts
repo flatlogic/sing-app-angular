@@ -13,7 +13,6 @@ export class BootstrapApplicationWizard {
   @ViewChild('wizard') wizard: ElementRef;
 
   constructor() {
-    debugger;
   }
 
   lookup(): void {

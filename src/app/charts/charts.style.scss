@@ -62,7 +62,7 @@ svg .title {
   height: 120px;
   width: 120px;
   text-align: center;
-  color: $gray-light;
+  color: $gray-600;
   canvas{
     position: absolute;
     top: 0;
@@ -79,7 +79,7 @@ svg .title {
 .chart-tooltip{
   position: fixed;
   padding: $padding-small-vertical $padding-small-horizontal;
-  border: 1px solid $gray-light;
+  border: 1px solid $gray-600;
   font-size: $font-size-mini;
   background-color: $white;
 }

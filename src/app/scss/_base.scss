@@ -900,7 +900,7 @@ app, .app {
   .text{
     margin-top: 5px;
     margin-bottom: 0;
-    color: $gray-light;
+    color: $gray-600;
   }
 }
 
@@ -1280,7 +1280,7 @@ app, .app {
 
 .widget-placeholder{
   background:  rgba($white, .4);
-  border: 1px dashed $gray-light;
+  border: 1px dashed $gray-600;
   margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
 }
 
@@ -1289,7 +1289,7 @@ app, .app {
 /***********************/
 
 .btn-inverse {
-  @include button-variant($white, $gray-700, darken($gray-700, 10%));
+  @include button-variant($gray-700, darken($gray-700, 10%));
 }
 
 .btn-xs {

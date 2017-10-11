@@ -6,10 +6,10 @@
 
 .search-result-categories{
   > li > a {
-    color: $gray-light;
+    color: $gray-600;
     font-weight: $font-weight-normal;
     &:hover{
-      background-color: $gray-light;
+      background-color: $gray-600;
       color: $text-color;
     }
   }
