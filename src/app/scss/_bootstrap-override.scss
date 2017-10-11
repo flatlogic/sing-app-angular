@@ -45,12 +45,6 @@ h1, h2, h3, h4, h5, h6,
   border: none;
 }
 
-// card contents
-.card-body {
-  padding: $card-body-padding;
-  @include clearfix;
-}
-
 // Optional heading
 .card-header {
   padding: 13px 15px;
@@ -59,8 +53,6 @@ h1, h2, h3, h4, h5, h6,
   > .dropdown .dropdown-toggle {
     color: inherit;
   }
-
-
 
   +.list-group .list-group-item:first-child {
     border-top-width: 0;
@@ -152,12 +144,6 @@ small, .small {
   }
 }
 
-
-// Contextual variations
-.card-default {
-  @include card-variant($card-default-heading-bg, $card-default-border);
-}
-
 //
 // Forms
 // --------------------------------------------------
@@ -191,10 +177,6 @@ small, .small {
   padding-bottom: $padding-base-vertical;
 }
 
-.btn-lg, .btn-group-lg>.btn {
- padding: $btn-padding-y-lg $btn-padding-x-lg !important;
-}
-
 label {
   font-weight: $font-weight-normal;
 }
@@ -226,19 +208,20 @@ legend {
 
 .input-group-addon{
   &.bg-primary{
+    color: #ecfaec;
     border-color: darken(theme-color('primary'), 10%);
   }
   &.bg-success{
-    border-color: darken($state-success-bg, 10%);
+    border-color: darken(theme-color('success-light'), 10%);
   }
   &.bg-info{
-    border-color: darken($state-info-bg, 10%);
+    border-color: darken(theme-color('info-light'), 10%);
   }
   &.bg-warning{
-    border-color: darken($state-warning-bg, 10%);
+    border-color: darken(theme-color('warning-light'), 10%);
   }
   &.bg-danger{
-    border-color: darken($state-danger-bg, 10%);
+    border-color: darken(theme-color('danger-light'), 10%);
   }
 }
 
@@ -255,15 +238,16 @@ legend {
 }
 
 // Feedback states
-.has-success {
-  @include form-control-validation(theme-color('success'));
-}
-.has-warning {
-  @include form-control-validation(theme-color('warning'));
-}
-.has-error {
-  @include form-control-validation(theme-color('danger'));
-}
+// TODO: check this
+//.has-success {
+//  @include form-control-validation(theme-color('success'));
+//}
+//.has-warning {
+//  @include form-control-validation(theme-color('warning'));
+//}
+//.has-error {
+//  @include form-control-validation(theme-color('danger'));
+//}
 
 //turn off shadow
 .has-success,
@@ -491,14 +475,14 @@ legend {
 
 .navbar {
   border: none;
-  font-size: $navbar-font-size;
+  font-size: $font-size-base;
   font-weight: 500;
   min-height: 50px;
   margin-bottom: 0;
   padding: 0;
 
   h5{
-    font-size: $navbar-font-size;
+    font-size: $font-size-base;
   }
 
   .deemphasize{
@@ -508,7 +492,7 @@ legend {
 
 .navbar-form{
   .form-control{
-    font-size: $navbar-font-size;
+    font-size: $font-size-base;
     padding: 0.6rem 0.85rem;
 
   }
@@ -722,124 +706,126 @@ legend {
   }
 }
 
+
+// TODO: Check this
 //
 // Panels
 // --------------------------------------------------
 
 // Base class
-.panel {
-  margin-bottom: $spacer;
-  background-color: $panel-bg;
-  border: none;
-}
-
-// Panel contents
-.panel-body {
-  padding: $panel-body-padding;
-  @include clearfix;
-}
-
-// Optional heading
-.panel-heading {
-  padding: 13px 15px;
-  border-bottom: 1px solid transparent;
-  @include border-top-radius(($border-radius));
-
-  > .dropdown .dropdown-toggle {
-    color: inherit;
-  }
-}
-
-
-accordion-group .panel-title a.accordion-toggle i {
-  transform: rotate(180deg);
-  transition: transform 0.35s ease;
-}
-
-accordion-group.panel-open .panel-title a.accordion-toggle i {
-  transform: rotate(0deg);
-  transition: transform 0.35s ease;
-}
-
-.panel-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: $font-size-base;
-  color: inherit;
-
-  > a,
-  > small,
-  > .small,
-  > small > a,
-  > .small > a {
-    color: inherit;
-    display: block;
-  }
-
-  > a:focus {
-    outline: none;
-  }
-}
-
-small, .small {
-  font-size: 85%;
-}
-
-// Collapsable panels (aka, accordion)
+//.panel {
+//  margin-bottom: $spacer;
+//  background-color: transparent;
+//  border: none;
+//}
 //
-// Wrap a series of panels in `.panel-group` to turn them into an accordion with
-// the help of our collapse JavaScript plugin.
-
-.panel-group {
-  margin-bottom: $spacer;
-
-  // Tighten up margin so it's only between panels
-  .panel {
-    margin-bottom: 0;
-    border-radius: $border-radius;
-  }
-
-  accordion-group.panel-open .panel-title a {
-    &,
-    & i {
-      opacity: 1;
-    }
-  }
-
-  accordion-group .panel-title a {
-    &,
-    & i {
-      opacity: 0.6;
-    }
-
-    &:hover,
-    &:hover i {
-      opacity: 1;
-    }
-  }
-
-  accordion-group + accordion-group {
-    .panel {
-      margin-top: 5px;
-    }
-  }
-
-  .panel-heading {
-    border-bottom: 0;
-
-    + .panel-collapse > .panel-body,
-    + .panel-collapse > .list-group {
-      border-top: 1px solid $list-group-border-color;
-    }
-
-  }
-}
-
-
-// Contextual variations
-.panel-default {
-  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
-}
+//// Panel contents
+//.panel-body {
+//  padding: $spacer;
+//  @include clearfix;
+//}
+//
+//// Optional heading
+//.panel-heading {
+//  padding: 13px 15px;
+//  border-bottom: 1px solid transparent;
+//  @include border-top-radius(($border-radius));
+//
+//  > .dropdown .dropdown-toggle {
+//    color: inherit;
+//  }
+//}
+//
+//
+//accordion-group .panel-title a.accordion-toggle i {
+//  transform: rotate(180deg);
+//  transition: transform 0.35s ease;
+//}
+//
+//accordion-group.panel-open .panel-title a.accordion-toggle i {
+//  transform: rotate(0deg);
+//  transition: transform 0.35s ease;
+//}
+//
+//.panel-title {
+//  margin-top: 0;
+//  margin-bottom: 0;
+//  font-size: $font-size-base;
+//  color: inherit;
+//
+//  > a,
+//  > small,
+//  > .small,
+//  > small > a,
+//  > .small > a {
+//    color: inherit;
+//    display: block;
+//  }
+//
+//  > a:focus {
+//    outline: none;
+//  }
+//}
+//
+//small, .small {
+//  font-size: 85%;
+//}
+//
+//// Collapsable panels (aka, accordion)
+////
+//// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+//// the help of our collapse JavaScript plugin.
+//
+//.panel-group {
+//  margin-bottom: $spacer;
+//
+//  // Tighten up margin so it's only between panels
+//  .panel {
+//    margin-bottom: 0;
+//    border-radius: $border-radius;
+//  }
+//
+//  accordion-group.panel-open .panel-title a {
+//    &,
+//    & i {
+//      opacity: 1;
+//    }
+//  }
+//
+//  accordion-group .panel-title a {
+//    &,
+//    & i {
+//      opacity: 0.6;
+//    }
+//
+//    &:hover,
+//    &:hover i {
+//      opacity: 1;
+//    }
+//  }
+//
+//  accordion-group + accordion-group {
+//    .panel {
+//      margin-top: 5px;
+//    }
+//  }
+//
+//  .panel-heading {
+//    border-bottom: 0;
+//
+//    + .panel-collapse > .panel-body,
+//    + .panel-collapse > .list-group {
+//      border-top: 1px solid $list-group-border-color;
+//    }
+//
+//  }
+//}
+//
+//
+//// Contextual variations
+//.panel-default {
+//  @include panel-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+//}
 
 
 //
@@ -1237,27 +1223,13 @@ a.list-group-item, button.list-group-item {
 // -----------------
 
 pre {
-  display: block;
   padding: 6.5px;
   margin: 0 0 ($spacer / 2);
-  font-size: 13px;
   line-height: $spacer;
   word-break: break-all;
   word-wrap: break-word;
-  color: $pre-color;
   background-color: $pre-bg;
-  border: 1px solid $pre-border-color;
   border-radius: $border-radius;
-
-  // Account for some code outputs that place code tags in pre tags
-  code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
-  }
 }
 
 

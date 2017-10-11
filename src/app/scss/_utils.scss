@@ -439,7 +439,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-gray', $gray-700);
 @include text-emphasis-variant('.text-gray-dark', $gray-800);
 @include text-emphasis-variant('.text-gray-light', $gray-light);
-@include text-emphasis-variant('.text-semi-muted', $gray-semi-light);
+@include text-emphasis-variant('.text-semi-muted', $gray-light);
 @include text-emphasis-variant('.text-gray-darker', $gray-900);
 @include text-emphasis-variant('.text-gray-lighter', $gray-200);
 @include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
