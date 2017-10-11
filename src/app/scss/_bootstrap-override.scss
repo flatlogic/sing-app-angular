@@ -339,7 +339,7 @@ legend {
 }
 
 .table-bordered th{
-  background-color: $gray-lighter;
+  background-color: $gray-200;
 }
 
 .table-lg {
@@ -433,7 +433,7 @@ legend {
 .nav-tabs {
   & .nav-item+.nav-item { margin-left: 0}
   border-bottom: none;
-  background-color: $gray-semi-lighter;
+  background-color: $gray-light;
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   > .nav-item {
@@ -652,7 +652,7 @@ legend {
 
 .breadcrumb {
   color: $gray-light;
-  margin-bottom: $spacer-y*1.5;
+  margin-bottom: $spacer*1.5;
 
   > .active {
     font-weight: $font-weight-semi-bold;
@@ -690,7 +690,7 @@ legend {
 }
 
 .btn-gray{
-  @include button-variant($text-color, $gray-semi-lighter, darken($gray-semi-lighter, 5%));
+  @include button-variant($text-color, $gray-light, darken($gray-light, 5%));
 }
 
 .btn-outline{
@@ -895,7 +895,7 @@ small, .small {
 
 
 .bg-bar-gray {
-  background-color: $gray;
+  background-color: $gray-700;
 }
 
 .bg-bar-gray-light {

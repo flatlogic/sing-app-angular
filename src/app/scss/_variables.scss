@@ -205,6 +205,8 @@ $legend-color: lighten($text-color, 15%) !default;
 
 $pre-bg: #f5f5f5 !default;
 
+$cursor-disabled: not-allowed !default;
+
 //*  Popover  */
 $popover-bg: #ebeff1 !default;
 $popover-arrow-outer-color: $popover-bg !default;

@@ -1,10 +1,10 @@
 @import "../../scss/helpers";
 
 mfDefaultSorter > a {
-  color: $gray;
+  color: $gray-700;
 
   &:hover {
-    color: $gray;
+    color: $gray-700;
     text-decoration: none;
   }
 }
@@ -12,8 +12,8 @@ mfDefaultSorter > a {
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin-top: $spacer-y;
-  margin-bottom: $spacer-y;
+  margin-top: $spacer;
+  margin-bottom: $spacer;
   @include border-radius();
 
   > li {

@@ -159,7 +159,7 @@
   .chart-value-change{
     color: rgba($white, .7);
     font-size: $small-font-size;
-    margin-bottom: $chart-spacer-y;
+    margin-bottom: $spacer;
   }
 }
 
@@ -198,7 +198,7 @@
 /***********************/
 
 .chart-stats{
-  border-top: 1px solid $gray-lighter;
+  border-top: 1px solid $gray-200;
 }
 
 /***********************/
@@ -211,7 +211,7 @@
   left: 0;
   right: 0;
   border-top: 1px solid #bbb;
-  background-color: $gray-semi-lighter;
+  background-color: $gray-light;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
 
@@ -219,17 +219,17 @@
     border-radius: 0;
     padding: 0.7143rem 0 0.7143rem 0;
 
-    color: $gray;
+    color: $gray-700;
     &:hover{
-      background-color: $gray-lighter;
-      color: $gray
+      background-color: $gray-200;
+      color: $gray-700;
     }
   }
 
   > .nav-item.active > .nav-link{
     &, &:hover{
       background-color: $white;
-      color: $gray;
+      color: $gray-700;
       font-weight: $font-weight-bold;
     }
   }

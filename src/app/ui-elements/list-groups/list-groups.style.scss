@@ -105,7 +105,7 @@ body{
   margin: 5px 0;
   padding: 0;
   min-height: 30px;
-  background: $gray-semi-lighter;
+  background: $gray-light;
   border: 1px dashed $gray-light;
   box-sizing: border-box;
   border-radius: $border-radius;
@@ -248,7 +248,7 @@ body{
 
   > .list-group-item-placeholder{
     border: 1px dashed $gray-light;
-    background-color: $gray-semi-lighter;
+    background-color: $gray-light;
   }
 
   &:last-of-type > .list-group-item:last-child{

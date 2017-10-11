@@ -455,12 +455,12 @@ ul.messenger-theme-air .messenger-message{
   background-color: $white;
   position: relative; }
 .location-selector .bit {
-  background-color: $gray-lighter;
+  background-color: $gray-200;
   @include transition(background-color .15s ease-in-out);
   cursor: pointer;
   position: absolute; }
 .location-selector .bit:hover {
-  background-color: $gray-semi-lighter; }
+  background-color: $gray-light; }
 .location-selector .bit.top, .location-selector .bit.bottom {
   height: 25%;
   width: 40%;

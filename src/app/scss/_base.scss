@@ -456,7 +456,7 @@ app, .app {
   > a{
     display: block;
     line-height: 40px;
-    color: $gray-lighter;
+    color: $gray-200;
     text-decoration: none;
   }
 
@@ -514,7 +514,7 @@ app, .app {
   font-size: $font-size-mini;
   > li{
     > a{
-      color: $gray-lighter;
+      color: $gray-200;
       text-decoration: none;
       font-weight: normal;
 
@@ -694,7 +694,7 @@ app, .app {
       display: block;
       padding: $padding-large-vertical $padding-large-horizontal;
       background-color: rgba(255,255,255, .1);
-      color: $gray-lighter;
+      color: $gray-200;
       text-decoration: none;
     }
 
@@ -730,7 +730,7 @@ app, .app {
     padding: 10px;
     font-size: $font-size-mini;
     font-weight: $font-weight-normal;
-    background-color: $gray-lighter;
+    background-color: $gray-200;
     color: $text-color;
     border-radius: $border-radius;
 
@@ -742,7 +742,7 @@ app, .app {
       width: 0;
       position: absolute;
       border: 10px solid rgba(0,0,0,0);
-      border-right-color: $gray-lighter;
+      border-right-color: $gray-200;
     }
   }
 
@@ -750,7 +750,7 @@ app, .app {
     margin-left: 0;
     margin-right: 50px;
     background-color: theme-color('warning');
-    color: $gray-dark;
+    color: $gray-800;
     &:before{
       right: auto;
       left: 100%;
@@ -782,7 +782,7 @@ app, .app {
     margin-bottom: 0;
     padding: 10px 20px;
     border: 0;
-    color: $gray-lighter;
+    color: $gray-200;
     border-radius: 0;
 
     &:hover {
@@ -831,7 +831,7 @@ app, .app {
   }
 
   a.list-group-item:hover{
-    color: $gray-lighter;
+    color: $gray-200;
     background-color: rgba(0,0,0,.15);
   }
 
@@ -883,7 +883,7 @@ app, .app {
     height: 0;
     border-left: 5px solid rgba(0, 0, 0, 0);
     border-right: 5px solid rgba(0, 0, 0, 0);
-    border-bottom: 5px solid $gray-dark;
+    border-bottom: 5px solid $gray-800;
   }
 }
 
@@ -893,7 +893,7 @@ app, .app {
   font-size: 12px;
   border-radius: $border-radius;
   text-decoration: none;
-  background-color: $gray-dark;
+  background-color: $gray-800;
   color: $white;
 
   .title{
@@ -970,7 +970,7 @@ app, .app {
 
   a.list-group-item {
     text-decoration: none;
-    color: $gray;
+    color: $gray-700;
   }
 
   .btn-notifications-reload{
@@ -1299,7 +1299,7 @@ app, .app {
 /***********************/
 
 .btn-inverse {
-  @include button-variant($white, $gray, darken($gray, 10%));
+  @include button-variant($white, $gray-700, darken($gray-700, 10%));
 }
 
 .btn-xs {
@@ -1398,7 +1398,7 @@ app, .app {
     margin: 0 auto;
     width: 15%;
     height: 15%;
-    background-color: $gray-dark;
+    background-color: $gray-800;
     border-radius: 100%;
     -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
     animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;

@@ -65,11 +65,11 @@
   &.circle-o-info{ border-color: theme-color('info') };
   &.circle-o-primary{ border-color: theme-color('primary') };
   &.circle-o-black{ border-color: $black };
-  &.circle-o-gray-darker{ border-color: $gray-darker };
-  &.circle-o-gray-dark{ border-color: $gray-dark };
+  &.circle-o-gray-darker{ border-color: $gray-900 };
+  &.circle-o-gray-dark{ border-color: $gray-800 };
   &.circle-o-gray{ border-color: $gray };
   &.circle-o-gray-light{ border-color: $gray-light };
-  &.circle-o-gray-lighter{ border-color: $gray-lighter };
+  &.circle-o-gray-lighter{ border-color: $gray-200 };
   &.circle-o-white{ border-color: $white };
 }
 
@@ -123,9 +123,9 @@
 .input-dark{
   background-color: rgba(0,0,0,.4);
   border: 0;
-  color: $gray;
+  color: $gray-700;
   &:focus{
-    background-color: $gray-lighter
+    background-color: $gray-200
   }
 }
 
@@ -134,14 +134,14 @@
   .form-control{
     background-color: rgba(0,0,0,.4);
     border: 0;
-    color: $gray;
+    color: $gray-700;
     @include transition(background-color .15s ease-in-out);
   }
 
   .form-control:focus,
   .form-control:focus + .input-group-addon,
   &.focus .input-group-addon{
-    background-color: $gray-lighter
+    background-color: $gray-200
   }
 }
 
@@ -345,10 +345,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   border: none;
 }
 
-.bt{ border-top: 1px solid $gray-semi-lighter }
-.br{ border-right: 1px solid $gray-semi-lighter }
-.bb{ border-bottom: 1px solid $gray-semi-lighter }
-.bl{ border-left: 1px solid $gray-semi-lighter }
+.bt{ border-top: 1px solid $gray-light }
+.br{ border-right: 1px solid $gray-light }
+.bb{ border-bottom: 1px solid $gray-light }
+.bl{ border-left: 1px solid $gray-light }
 
 .overflow-hidden{
   overflow: hidden;
@@ -405,12 +405,12 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
-@include bg-variant('.bg-gray', $gray);
-@include bg-variant('.bg-gray-transparent', rgba($gray, .6));
-@include bg-variant('.bg-gray-dark', $gray-dark);
+@include bg-variant('.bg-gray', $gray-700);
+@include bg-variant('.bg-gray-transparent', rgba($gray-700, .6));
+@include bg-variant('.bg-gray-dark', $gray-800);
 @include bg-variant('.bg-black', $black);
 @include bg-variant('.bg-gray-light', $gray-light);
-@include bg-variant('.bg-gray-lighter', $gray-lighter);
+@include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
 
@@ -436,12 +436,12 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-link', $link-color);
 
 @include text-emphasis-variant('.text-white', $white);
-@include text-emphasis-variant('.text-gray', $gray);
-@include text-emphasis-variant('.text-gray-dark', $gray-dark);
+@include text-emphasis-variant('.text-gray', $gray-700);
+@include text-emphasis-variant('.text-gray-dark', $gray-800);
 @include text-emphasis-variant('.text-gray-light', $gray-light);
 @include text-emphasis-variant('.text-semi-muted', $gray-semi-light);
-@include text-emphasis-variant('.text-gray-darker', $gray-darker);
-@include text-emphasis-variant('.text-gray-lighter', $gray-lighter);
+@include text-emphasis-variant('.text-gray-darker', $gray-900);
+@include text-emphasis-variant('.text-gray-lighter', $gray-200);
 @include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
 
 

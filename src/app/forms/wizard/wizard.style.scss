@@ -93,7 +93,7 @@ html[dir="rtl"] .select2-search input {
     > li > a{
       padding-top: 15px;
       padding-bottom: 15px;
-      background-color: $gray-lighter;
+      background-color: $gray-200;
       color: $gray-light;
       @include border-radius(3px);
       cursor: default;
@@ -166,7 +166,7 @@ html[dir="rtl"] .select2-search input {
 }
 
 .wizard-nav-item:not(.active) > .wizard-nav-link:hover {
-  background-color: $gray-lighter;
+  background-color: $gray-200;
 }
 
 .wizard-nav-list li.active > a,

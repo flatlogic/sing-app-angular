@@ -5,7 +5,7 @@
 /***********************************/
 
 .login-page{
-  background-color: $gray-semi-lighter;
+  background-color: $gray-light;
 }
 
 .login-page .page-footer {
@@ -63,9 +63,9 @@
   .form-control{
     font-size: $font-size-mini;
     border: none;
-    background-color: $gray-lighter;
+    background-color: $gray-200;
     &:focus{
-      background-color: $gray-semi-lighter;
+      background-color: $gray-light;
     }
   }
 }
