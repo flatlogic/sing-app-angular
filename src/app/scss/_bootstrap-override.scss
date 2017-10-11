@@ -238,16 +238,15 @@ legend {
 }
 
 // Feedback states
-// TODO: check this
-//.has-success {
-//  @include form-control-validation(theme-color('success'));
-//}
-//.has-warning {
-//  @include form-control-validation(theme-color('warning'));
-//}
-//.has-error {
-//  @include form-control-validation(theme-color('danger'));
-//}
+.has-success {
+  @include form-control-validation(theme-color('success'));
+}
+.has-warning {
+  @include form-control-validation(theme-color('warning'));
+}
+.has-error {
+  @include form-control-validation(theme-color('danger'));
+}
 
 //turn off shadow
 .has-success,
@@ -1209,7 +1208,7 @@ a.list-group-item, button.list-group-item {
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     background-color: $color !important;
-    color: $gray !important;
+    color: $gray-700 !important;
   }
   a#{$parent} {
     @include hover-focus {

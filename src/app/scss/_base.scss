@@ -1,10 +1,6 @@
 /***********************/
 /*        Layout       */
 /***********************/
-html {
-  font-size: $font-size-root;
-}
-
 app, .app {
   height: 100%;
   display: block;
@@ -35,8 +31,8 @@ app, .app {
   @include transition(left $sidebar-transition-time ease-in-out);
 
   @include media-breakpoint-up(md) {
-    margin-left: $sidebar-icon-state-width;
-    left: $sidebar-width - $sidebar-icon-state-width;
+    margin-left: $sidebar-width-closed;
+    left: $sidebar-width - $sidebar-width-closed;
   }
 
   .nav-collapsed &{
@@ -54,9 +50,6 @@ app, .app {
 
 .page-controls {
   .dropdown-toggle-notifications {
-    .rounded-circle {
-      margin-top: -1px;
-    }
 
     .circle {
       width: #{$line-height-base}rem;
@@ -112,21 +105,17 @@ app, .app {
 
   .avatar{
     width: 30px;
-    margin-top: -5px;
-    &.float-xs-left,
-    &.pull-left{
-      margin-right: 5px;
-    }
-    &.float-xs-right,
-    &.pull-right{
-      margin-left: 5px;
-    }
   }
 
-  .navbar-nav > li > a {
-    .rounded.rounded-lg,
-    .circle.circle.lg{
-      margin: -7px -7px -8px;
+  .navbar-nav {
+    &,
+    & .nav-item .nav-link {
+      height: $navbar-height;
+    }
+
+    & > .nav-item > .nav-link {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -177,7 +166,7 @@ app, .app {
 
 .content{
   min-height: 100%;
-  padding: $content-padding-top $content-padding-horizontal $content-padding-vertical;
+  padding: $content-padding-top $content-padding $content-padding;
   background-color: $body-bg;
 
   @include media-breakpoint-down(sm) {
@@ -203,7 +192,7 @@ app, .app {
   }
 
   .nav-collapsed &{
-    width: $sidebar-icon-state-width;
+    width: $sidebar-width-closed;
   }
 
   .nav-static &{
@@ -291,6 +280,7 @@ app, .app {
       }
 
       .glyphicon{
+        left: -1px;
         top: 6px;
       }
 
@@ -461,7 +451,7 @@ app, .app {
   }
 
   .dropdown-menu{
-    position: fixed;
+    position: absolute;
     top: 57px;
     left: 0;
     margin: 0 20px;
@@ -819,9 +809,9 @@ app, .app {
     }
 
     .badge{
-      margin-left: auto;
+      margin-top: 8px;
+      margin-right: 5px;
       padding: 3px 5px;
-      margin-left: auto;
     }
   }
 
@@ -867,7 +857,7 @@ app, .app {
 
 .chat-notification{
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 35px;
   z-index: 20;
   margin-top: 3px;
@@ -970,7 +960,7 @@ app, .app {
 
   a.list-group-item {
     text-decoration: none;
-    color: $gray-700;
+    color: $text-color;
   }
 
   .btn-notifications-reload{

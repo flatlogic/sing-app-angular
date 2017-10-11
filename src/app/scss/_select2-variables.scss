@@ -1,3 +1,4 @@
+@import "../../../node_modules/bootstrap-select/sass/variables";
 // Select 2 bootstrap theme
 
 $s2bs-border-radius-base: $border-radius;
@@ -26,7 +27,7 @@ $s2bs-line-height-base: $line-height-base;
 $s2bs-line-height-large: $line-height-lg;
 $s2bs-line-height-small: $line-height-sm;
 $s2bs-input-bg: $input-bg;
-$s2bs-input-bg-disabled: $input-bg-disabled;
+$s2bs-input-bg-disabled: $input-disabled-bg;
 $s2bs-input-color: $input-color;
 $s2bs-input-color-placeholder: $input-color-placeholder;
 $s2bs-input-border: $input-border-color;

@@ -169,7 +169,7 @@
   > .md-header, .md-footer {
     display: block;
     padding: 6px 4px;
-    background: $card-default-heading-bg;
+    background: $gray-light;
   }
 
   > .md-header {
@@ -201,7 +201,7 @@
     border-top: 1px dashed $table-border-color;
     border-radius: 0;
     box-shadow: none;
-    background: $input-bg-disabled;
+    background: $input-disabled-bg;
     &:focus {
       box-shadow: none;
       background: $input-bg;
@@ -506,7 +506,7 @@ html[dir="rtl"] .select2-search input {
 }
 
 .fileinput .input-group-addon {
-  border-right: 1px solid $btn-secondary-border;
+  border-right: 1px solid $btn-default-border;
 }
 
 /* Awesome Bootstrap Checkbox */
