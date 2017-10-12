@@ -44,17 +44,6 @@ app, .app {
   }
 }
 
-.page-controls {
-  .dropdown-toggle-notifications {
-
-    .circle {
-      width: #{$line-height-base}rem;
-      height: #{$line-height-base}rem;
-      line-height: #{$line-height-base}rem;
-    }
-  }
-}
-
 .page-controls{
   @include transition(
           left $sidebar-transition-time ease-in-out,
@@ -79,7 +68,7 @@ app, .app {
   height: $navbar-height;
 
   @include media-breakpoint-down(sm) {
-    font-size: 16px;
+    font-size: $font-size-lg;
 
     .navbar-brand{
       position: absolute;
@@ -89,7 +78,7 @@ app, .app {
       text-align: center;
 
       > .fa-circle{
-        font-size: 10px;
+        font-size: $font-size-sm;
       }
     }
 
@@ -113,36 +102,9 @@ app, .app {
       display: flex;
       align-items: center;
     }
-  }
 
-  .navbar-form.navbar-left{
-    @include media-breakpoint-up(md) {
-      padding-right: 0;
-    }
-  }
-
-  .navbar-form.navbar-left{
-    @include media-breakpoint-down(md) {
-      padding-right: 0;
-    }
-  }
-  .navbar-nav .fa-times{
-    font-size: 20px;
-    vertical-align: -2px;
-  }
-
-  .navbar-form {
-
-    .input-group-addon {
-      line-height: 1.5;
-
-      .fa {
-        vertical-align: -1px;
-      }
-    }
-
-    .form-control {
-      line-height: 1.7;
+    .fa-times{
+      font-size: 20px;
     }
   }
 }

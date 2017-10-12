@@ -910,18 +910,10 @@ legend {
 // our navbars.
 
 .navbar-form {
-  padding: 6px 0 6px $spacer*2;
+  padding-left: $spacer*2;
 
   .form-group {
     margin-bottom: 0;
-  }
-
-  // Undo 100% width for pull classes
-  @media (min-width: map_get($grid-breakpoints, md)) {
-    width: auto;
-    border: 0;
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 
