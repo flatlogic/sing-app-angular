@@ -211,7 +211,7 @@
   left: 0;
   right: 0;
   border-top: 1px solid #bbb;
-  background-color: $gray-600;
+  background-color: $gray-light;
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
 
@@ -408,6 +408,12 @@
     margin-right: $widget-padding-horizontal;
     padding: 0;
     border: 0;
+
+    display: flex;
+
+    &:hover {
+      background: none;
+    }
 
     & + .list-group-item{
       margin-top: 20px;

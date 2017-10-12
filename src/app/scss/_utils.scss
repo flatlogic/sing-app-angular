@@ -345,10 +345,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   border: none;
 }
 
-.bt{ border-top: 1px solid $gray-600 }
-.br{ border-right: 1px solid $gray-600 }
-.bb{ border-bottom: 1px solid $gray-600 }
-.bl{ border-left: 1px solid $gray-600 }
+.bt{ border-top: 1px solid $gray-light }
+.br{ border-right: 1px solid $gray-light }
+.bb{ border-bottom: 1px solid $gray-light }
+.bl{ border-left: 1px solid $gray-light }
 
 .overflow-hidden{
   overflow: hidden;
