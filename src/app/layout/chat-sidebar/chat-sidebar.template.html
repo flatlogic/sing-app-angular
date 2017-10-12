@@ -16,14 +16,14 @@
       <a *ngFor="let conversation of conversations.todayConversations | SearchPipe : searchText"
          (click)="deactivateLink($event); openConversation(conversation)"
          class="list-group-item">
-        <i class="fa fa-circle text-{{conversation.status}} float-right"></i>
-          <span class="thumb-sm float-left mr">
-              <img class="rounded-circle" src="{{conversation.image}}" alt="...">
-          </span>
-        <div>
+        <span class="thumb-sm mr">
+            <img class="rounded-circle" src="{{conversation.image}}" alt="...">
+        </span>
+        <div class="mr-auto">
           <h6 class="message-sender">{{conversation.name}}</h6>
           <p class="message-preview">{{conversation.lastMessage}}</p>
         </div>
+        <i class="fa fa-circle ml-1 text-{{conversation.status}}"></i>
       </a>
     </div>
 
@@ -32,14 +32,14 @@
       <a *ngFor="let conversation of conversations.lastWeekConversations | SearchPipe : searchText"
          (click)="deactivateLink($event); openConversation(conversation)"
          class="list-group-item">
-        <i class="fa fa-circle text-{{conversation.status}} float-right"></i>
-          <span class="thumb-sm pull-left mr">
-              <img class="rounded-circle" src="{{conversation.image}}" alt="...">
-          </span>
-        <div>
+        <span class="thumb-sm mr">
+            <img class="rounded-circle" src="{{conversation.image}}" alt="...">
+        </span>
+        <div class="mr-auto">
           <h6 class="message-sender">{{conversation.name}}</h6>
           <p class="message-preview">{{conversation.lastMessage}}</p>
         </div>
+        <i class="fa fa-circle ml-1 text-{{conversation.status}} float-right"></i>
       </a>
     </div>
   </div>

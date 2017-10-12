@@ -515,7 +515,7 @@ legend {
   margin-bottom: $spacer*1.5;
 
   > .active {
-    color: $gray-700;
+    color: $text-color;
     font-weight: $font-weight-semi-bold;
   }
 
@@ -783,6 +783,8 @@ legend {
 }
 
 .list-group-item {
+  @include transition(background .15s ease-in-out);
+
   &:first-child {
     border-radius: 0;
   }
@@ -797,7 +799,7 @@ legend {
 
   &,
   &:hover {
-    color: $gray-700;
+    color: $text-color;
   }
 
   border-left: none;
@@ -878,7 +880,7 @@ legend {
   }
 
   .page-link {
-    color: $gray-700;
+    color: $text-color;
     border: none;
   }
 
@@ -1045,7 +1047,7 @@ legend {
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     background-color: $color !important;
-    color: $gray-700 !important;
+    color: $text-color !important;
   }
   a#{$parent} {
     @include hover-focus {
@@ -1088,7 +1090,7 @@ code {
 }
 
 .badge-pill {
-  padding: 2px 8px;
+  padding: 2px 6px;
 }
 
 .badge-default {

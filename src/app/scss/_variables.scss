@@ -88,14 +88,23 @@ $body-bg-light: lighten($body-bg, 3%);
 //== Components
 //
 
-$padding-base-vertical:     6px !default;
-$padding-base-horizontal:   12px !default;
+$padding-base-vertical:     0.5rem !default;
+$padding-base-horizontal:   1rem !default;
 
-$padding-large-vertical:    10px !default;
-$padding-large-horizontal:  16px !default;
+$padding-large-vertical:    0.75rem !default;
+$padding-large-horizontal:  1.25rem !default;
 
-$padding-small-vertical:    5px !default;
-$padding-small-horizontal:  10px !default;
+$padding-small-vertical:    0.25rem !default;
+$padding-small-horizontal:  0.75rem !default;
+
+$margin-base-vertical:     0.5rem !default;
+$margin-base-horizontal:   1rem !default;
+
+$margin-large-vertical:    0.75rem !default;
+$margin-large-horizontal:  1.25rem !default;
+
+$margin-small-vertical:    0.25rem !default;
+$margin-small-horizontal:  0.75rem !default;
 
 $border-radius:          .25rem !default;
 $border-radius-lg:       .3rem !default;

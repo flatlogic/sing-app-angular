@@ -71,7 +71,7 @@ export class Layout {
         '.list-group-item:first-child:not(.js-notification-added)')
         .addClass('active js-notification-added')
         .find('.fa-circle')
-        .after('<span class="badge badge-danger badge-pill ' +
+        .before('<span class="badge badge-danger badge-pill ' +
           'float-right animated bounceInDown">3</span>');
     }, 1000);
   }

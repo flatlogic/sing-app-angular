@@ -123,7 +123,7 @@
 .input-dark{
   background-color: rgba(0,0,0,.4);
   border: 0;
-  color: $gray-700;
+  color: $text-color;
   &:focus{
     background-color: $gray-200
   }
@@ -134,7 +134,7 @@
   .form-control{
     background-color: rgba(0,0,0,.4);
     border: 0;
-    color: $gray-700;
+    color: $text-color;
     @include transition(background-color .15s ease-in-out);
   }
 

@@ -219,17 +219,17 @@
     border-radius: 0;
     padding: 0.7143rem 0 0.7143rem 0;
 
-    color: $gray-700;
+    color: $text-color;
     &:hover{
       background-color: $gray-200;
-      color: $gray-700;
+      color: $text-color;
     }
   }
 
   > .nav-item.active > .nav-link{
     &, &:hover{
       background-color: $white;
-      color: $gray-700;
+      color: $text-color;
       font-weight: $font-weight-bold;
     }
   }
