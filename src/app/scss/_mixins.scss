@@ -160,3 +160,13 @@
     background-color: lighten($color, 40%);
   }
 }
+
+@mixin btn-border-color($color) {
+  .btn-#{$color} {
+    border-color: theme-color($color);
+
+    &:hover {
+      border-color: darken(theme-color($color), 10%);
+    }
+  }
+}

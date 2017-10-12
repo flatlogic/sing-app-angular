@@ -7,14 +7,12 @@
   font-size: $font-size-base;
 }
 
-blockquote{
+.blockquote{
   font-size: $font-size-lg;
 
-  footer {
-    font-size: 80%;
-    &:after {
-      content: '\00A0 \2014';
-    }
+  &.text-right {
+    padding-right: $spacer;
+    border-right: 0.25rem solid $gray-200;
   }
 }
 // Headings
@@ -156,6 +154,14 @@ small, .small {
 .input-group-btn>.btn {
   padding-top: $padding-base-vertical;
   padding-bottom: $padding-base-vertical;
+}
+
+.input-group-btn {
+  @include btn-border-color('success');
+  @include btn-border-color('primary');
+  @include btn-border-color('info');
+  @include btn-border-color('danger');
+  @include btn-border-color('warning');
 }
 
 .btn-group.bootstrap-select > .btn {
@@ -544,6 +550,10 @@ legend {
 .btn-sm {
   padding-top: .35rem;
   padding-bottom: .35rem;
+}
+
+.btn-lg, .btn-group-lg>.btn, .btn-group-lg>.btn {
+  padding: 0.75rem 1.5rem !important;
 }
 
 .btn-rounded{
