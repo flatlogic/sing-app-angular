@@ -134,7 +134,7 @@ app, .app {
 }
 
 .logo{
-  margin: 11px 0 19px;
+  margin: 0.8rem 0 1.6rem;
   height: $navbar-height;
   width: 100%;
   line-height: $navbar-height;
@@ -162,11 +162,11 @@ app, .app {
 }
 
 .sidebar-nav{
-  padding: 10px 0;
-  font-size: 14px;
+  padding: $padding-large-vertical 0;
+  font-size: $font-size-larger;
 
   @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-    font-size: 16px;
+    font-size: $font-size-lg;
   }
 
   li a{
@@ -190,7 +190,7 @@ app, .app {
       line-height: 8px;
       margin-top: 7px;
       margin-right: $sidebar-padding-horizontal + $sidebar-slim-scroll-width;
-      padding: 7px;
+      padding: $padding-base-vertical;
       border-radius: $border-radius-sm;
 
       @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
