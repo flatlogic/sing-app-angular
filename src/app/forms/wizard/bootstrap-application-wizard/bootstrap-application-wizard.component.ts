@@ -1,6 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 declare let jQuery: any;
-declare let Tether: any;
 
 @Component ({
   selector: '[bootstrap-application-wizard]',
@@ -155,7 +154,6 @@ export class BootstrapApplicationWizard {
         jQuery('.popover').addClass('popover-body-error');
         jQuery('.popover-content').addClass('popover-content-error');
         jQuery('.popover-arrow').addClass('popover-arrow-error');
-        Tether.position();
         /* tslint:disable */
         this['popovers'].push(el);
         /* tslint:enable */
@@ -165,7 +163,6 @@ export class BootstrapApplicationWizard {
     });
 
     wizard.el.find('.wizard-nav-list').addClass('flex-column');
-    wizard.el.find('.wizard-close').addClass('flex-last');
   }
 
   ngOnInit() {
