@@ -164,13 +164,13 @@
 
 .progress-stats{
   .name{
-    margin-bottom: 2px;
+    margin-bottom: 0.25rem;
   }
   .description{
-    margin-bottom: 2px;
+    margin-bottom: 0.25rem;
   }
   .status{
-    margin-top: 15px;
+    margin-top: 1.25rem;
   }
 
   @include media-breakpoint-down(lg) {

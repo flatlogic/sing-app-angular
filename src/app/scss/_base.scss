@@ -1026,12 +1026,12 @@ app, .app {
     }
 
     + .widget-body,
-    + .widget-body.no-padding{
+    + .widget-body.p-0{
       margin-top: $widget-padding-vertical;
     }
   }
 
-  > .widget-body.no-padding{
+  > .widget-body.p-0{
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
 
     + footer{
@@ -1320,19 +1320,20 @@ app, .app {
 /***********************/
 
 .stats-row{
-  margin-bottom: 15px;
+  margin-bottom: 1.25rem;
 }
 
 .stat-item{
   display: inline-block;
-  padding-right: 15px;
+  padding-right: 1.25rem;
 
   & + .stat-item{
-    padding-left: 15px;
+    padding-left: 1.25rem;
     border-left: 1px solid $hr-border-color;
   }
   .name{
-    margin-bottom: 2px;
+    margin-bottom: 0.25rem;
+    font-size: $font-size-sm;
   }
   .value{
     font-weight: bold;
@@ -1340,7 +1341,7 @@ app, .app {
 
   &.stat-item-mini-chart{
     position: relative;
-    top: -12px;
+    top: -1rem;
     padding-left: 0;
     border-left: none;
   }

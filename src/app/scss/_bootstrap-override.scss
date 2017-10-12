@@ -45,20 +45,6 @@ h1, h2, h3, h4, h5, h6,
   border: none;
 }
 
-// Optional heading
-.card-header {
-  padding: 13px 15px;
-  @include border-top-radius(($border-radius));
-
-  > .dropdown .dropdown-toggle {
-    color: inherit;
-  }
-
-  +.list-group .list-group-item:first-child {
-    border-top-width: 0;
-  }
-}
-
 
 accordion-group .card-title a.accordion-toggle i {
   transform: rotate(180deg);
@@ -790,42 +776,32 @@ legend {
 // List groups
 // --------------------------------------------------
 
-.card {
-  margin-bottom: 0;
-  border: none;
+.list-group-lg {
+  .list-group-item {
+    padding: 1.25rem;
+  }
 }
 
-.card-footer {
-  border-top: none;
-}
-
-.card > .list-group > .list-group-item {
-  border-width: 1px 0;
-
+.list-group-item {
   &:first-child {
     border-radius: 0;
   }
-}
 
-.list-group{
-  .widget-body.no-padding > &{
-    margin: 0;
-
-    .list-group-item{
-      border-width: 1px 0;
-    }
-  }
-}
-
-.list-group-item{
-
-  .list-group-lg & {
-    padding: 15px 15px;
+  &:last-child {
+    border-bottom: none;
   }
 
-  .list-group:last-of-type &:last-child{
-    border-bottom: 0;
+  &:hover {
+    background: $gray-100;
   }
+
+  &,
+  &:hover {
+    color: $gray-700;
+  }
+
+  border-left: none;
+  border-right: none;
 }
 
 

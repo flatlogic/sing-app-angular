@@ -73,7 +73,7 @@
   &.circle-o-white{ border-color: $white };
 }
 
-@include thumb('.thumb-xlg', 100px);
+@include thumb('.thumb-xl', 100px);
 @include thumb('.thumb-lg', 60px);
 @include thumb('.thumb', 48px);
 @include thumb('.thumb-sm', 34px);
@@ -82,7 +82,7 @@
 .thumb-xs,
 .thumb-sm,
 .thumb-lg,
-.thumb-xlg,
+.thumb-xl,
 .thumb{
   position: relative;
   display: inline-block;
@@ -315,7 +315,7 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 @include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
 @include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
 
-.no-padding{
+.p-0{
   padding: 0;
 }
 
@@ -402,6 +402,12 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-info', theme-color('info'));
 @include bg-variant('.bg-warning', theme-color('warning'));
 @include bg-variant('.bg-danger', theme-color('danger'));
+
+@include bg-variant('.bg-primary-light', theme-color('primary-light'));
+@include bg-variant('.bg-success-light', theme-color('success-light'));
+@include bg-variant('.bg-info-light', theme-color('info-light'));
+@include bg-variant('.bg-warning-light', theme-color('warning-light'));
+@include bg-variant('.bg-danger-light', theme-color('danger-light'));
 
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
