@@ -58,7 +58,6 @@ export class Charts {
   ];
 
   applyRickshawData(): void {
-    console.log(Rickshaw);
     this.random = new Rickshaw.Fixtures.RandomData(30);
     for (let i = 0; i < 30; i++) {
       this.random.addData(this.seriesData);
