@@ -46,7 +46,7 @@
     </div>
   </div>
 </form>
-<ul class="navbar-nav mr-3 d-none d-md-flex flex-row">
+<ul class="navbar-nav mr-3 d-none d-md-flex flex-row" (click)="$event.preventDefault()">
     <li class="nav-item dropdown" dropdown placement="bottom right" [autoClose]="false">
       <a href="#" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-notifications"
          id="notifications-dropdown-toggle">
