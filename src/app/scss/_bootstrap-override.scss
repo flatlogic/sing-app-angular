@@ -7,14 +7,12 @@
   font-size: $font-size-base;
 }
 
-blockquote{
+.blockquote{
   font-size: $font-size-lg;
 
-  footer {
-    font-size: 80%;
-    &:after {
-      content: '\00A0 \2014';
-    }
+  &.text-right {
+    padding-right: $spacer;
+    border-right: 0.25rem solid $gray-200;
   }
 }
 // Headings
@@ -30,6 +28,10 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+.h4, .h5, .h6, h4, h5, h6 {
+  margin-top: 10px;
+}
+
 //
 // cards
 // --------------------------------------------------
@@ -39,21 +41,6 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: $spacer;
   background-color: $card-bg;
   border: none;
-}
-
-
-// Optional heading
-.card-header {
-  padding: 13px 15px;
-  @include border-top-radius(($border-radius));
-
-  > .dropdown .dropdown-toggle {
-    color: inherit;
-  }
-
-  +.list-group .list-group-item:first-child {
-    border-top-width: 0;
-  }
 }
 
 
@@ -141,7 +128,6 @@ small, .small {
   }
 }
 
-
 //
 // Forms
 // --------------------------------------------------
@@ -149,6 +135,7 @@ small, .small {
 
 .form-control {
   font-family: $font-family-sans-serif;
+  font-weight: $font-weight-normal;
   padding: $padding-base-vertical $padding-base-horizontal;
   @include box-shadow(none);
   &:focus{
@@ -169,6 +156,14 @@ small, .small {
   padding-bottom: $padding-base-vertical;
 }
 
+.input-group-btn {
+  @include btn-border-color('success');
+  @include btn-border-color('primary');
+  @include btn-border-color('info');
+  @include btn-border-color('danger');
+  @include btn-border-color('warning');
+}
+
 .btn-group.bootstrap-select > .btn {
   padding-top: $padding-base-vertical;
   padding-bottom: $padding-base-vertical;
@@ -178,16 +173,16 @@ label {
   font-weight: $font-weight-normal;
 }
 
-.help-block{
-  margin-top: 5px;
-  font-size: $small-font-size;
-  color: $text-muted;
-  display: block;
-}
-
 legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $spacer;
+  line-height: inherit;
   color: $legend-color;
+  border: 0;
   border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
   font-weight: $font-weight-normal;
 }
 
@@ -197,6 +192,10 @@ legend {
   .input-group-addon{
     line-height: inherit;
   }
+}
+
+.input-group-btn {
+  flex-direction: row;
 }
 
 .input-group-addon{
@@ -230,6 +229,17 @@ legend {
   display: table-cell;
 }
 
+// Feedback states
+.has-success {
+  @include form-control-validation(theme-color('success'));
+}
+.has-warning {
+  @include form-control-validation(theme-color('warning'));
+}
+.has-error {
+  @include form-control-validation(theme-color('danger'));
+}
+
 //turn off shadow
 .has-success,
 .has-warning,
@@ -245,13 +255,34 @@ legend {
   border-radius: $border-radius;
 }
 
+.form-actions{
+  margin: $spacer 0 0;
+  padding: $spacer;
+  background-color: #f5f5f5;
+
+  .form-horizontal & .row{
+    margin-left: ($grid-gutter-width/-2) - 20px;
+    margin-right: ($grid-gutter-width/-2) - 20px;
+
+  }
+}
+
 
 // Checkboxes and radios
 //
 
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-top: .25rem;
+  // margin-top: 4px \9;
+  margin-left: -1.25rem;
+}
+
 .radio,
 .checkbox {
-  padding-left: 20px;
 
   label {
     margin-bottom: 5px;
@@ -266,10 +297,10 @@ legend {
 .table td > .abc-checkbox,
 .table th > .abc-checkbox{
   position: relative;
-  top: -8px;
   margin-top: 0;
   margin-bottom: 0;
   margin-right: -16px;
+  padding-left: 20px;
 }
 
 .table > thead > tr > th {
@@ -358,9 +389,75 @@ legend {
 //
 // Navs
 // --------------------------------------------------
+//
+// Navs
+// --------------------------------------------------
 .nav-item .nav-link {
   position: relative;
   cursor: pointer;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+.nav-pills .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.nav-tabs {
+  & .nav-item+.nav-item { margin-left: 0}
+  border-bottom: none;
+  background-color: $gray-600;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  > .nav-item {
+    margin-bottom: -2px;
+    > .nav-link {
+      padding: 12px 18px;
+      border: none;
+      color: $text-muted;
+
+      .label {
+        margin-bottom: -2px;
+      }
+
+      @include transition(color .15s ease-in-out);
+      &:hover {
+        background-color: transparent;
+        color: $text-color;
+      }
+    }
+
+    .nav-link.open {
+      &,
+      &:hover,
+      &:focus{
+        background-color: $nav-tabs-active-link-hover-bg;
+        color: $nav-tabs-active-link-hover-color;
+      }
+    }
+
+    .nav-link.active {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $nav-tabs-active-link-hover-bg;
+        color: $nav-tabs-active-link-hover-color;
+        border: none;
+        @include box-shadow(1px 1px 2px #ccc);
+      }
+    }
+  }
+}
+
+.tab-content {
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+  > .tab-pane {
+    padding: $spacer*2 $spacer*2;
+  }
 }
 
 //
@@ -420,10 +517,11 @@ legend {
 
 
 .breadcrumb {
-  color: $gray-light;
+  color: $gray-600;
   margin-bottom: $spacer*1.5;
 
   > .active {
+    color: $text-color;
     font-weight: $font-weight-semi-bold;
   }
 
@@ -431,10 +529,6 @@ legend {
     padding-top: 0;
     padding-bottom: 0;
   }
-}
-
-.breadcrumb>li+li::before {
-  content: ">";
 }
 //
 // Buttons
@@ -458,16 +552,20 @@ legend {
   padding-bottom: .35rem;
 }
 
+.btn-lg, .btn-group-lg>.btn, .btn-group-lg>.btn {
+  padding: 0.75rem 1.5rem !important;
+}
+
 .btn-rounded{
   @include border-radius(6px);
 }
 
 .btn-gray{
-  @include button-variant($text-color, $gray-light, darken($gray-light, 5%));
+  @include button-variant($gray-light, darken($gray-light, 5%));
 }
 
 .btn-outline{
-  @include button-variant($white, transparent, $white);
+  @include button-variant(transparent, $white);
 
   &:hover,
   &:focus {
@@ -513,6 +611,10 @@ legend {
 .btn-toolbar{
   margin-top: $spacer/2;
   margin-bottom: $spacer/2;
+
+  .btn {
+    margin-left: $spacer/2;
+  }
 }
 
 //
@@ -551,7 +653,7 @@ legend {
 }
 
 .progress-bar-gray-light {
-  background-color: $gray-light;
+  background-color: $gray-600;
 }
 
 .progress-primary {
@@ -563,42 +665,34 @@ legend {
 // List groups
 // --------------------------------------------------
 
-.card {
-  margin-bottom: 0;
-  border: none;
+.list-group-lg {
+  .list-group-item {
+    padding: 1.25rem;
+  }
 }
 
-.card-footer {
-  border-top: none;
-}
-
-.card > .list-group > .list-group-item {
-  border-width: 1px 0;
+.list-group-item {
+  @include transition(background .15s ease-in-out);
 
   &:first-child {
     border-radius: 0;
   }
-}
 
-.list-group{
-  .widget-body.no-padding > &{
-    margin: 0;
-
-    .list-group-item{
-      border-width: 1px 0;
-    }
-  }
-}
-
-.list-group-item{
-
-  .list-group-lg & {
-    padding: 15px 15px;
+  &:last-child {
+    border-bottom: none;
   }
 
-  .list-group:last-of-type &:last-child{
-    border-bottom: 0;
+  &:hover {
+    background: $gray-100;
   }
+
+  &,
+  &:hover {
+    color: $text-color;
+  }
+
+  border-left: none;
+  border-right: none;
 }
 
 
@@ -667,38 +761,22 @@ legend {
 // Pagination
 // --------------------------------------------------
 
-.pagination{
-  font-weight: $font-weight-normal;
-
-  > .page-item {
-    display: inline; // Remove list-style and block-level defaults
-    > .page-link,
-    > span{
-      border-radius: $border-radius;
-      margin: 0 2px;
-    }
-
-    >.page-link {
-      text-decoration: none;
-      border: none;
-    }
+.page-item {
+  .page-link,
+  > span{
+    border-radius: $border-radius;
+    margin: 0 2px;
   }
-}
 
-.pagination{
-  font-weight: $font-weight-normal;
+  .page-link {
+    color: $text-color;
+    border: none;
+  }
 
-  > li {
-    display: inline; // Remove list-style and block-level defaults
-    > a,
-    > span{
-      border-radius: $border-radius;
-      margin: 0 2px;
-    }
-
-    > a {
-      text-decoration: none;
-      border: none;
+  &.active {
+    .page-link {
+      background: $gray-200;
+      color: $gray-800;
     }
   }
 }
@@ -721,18 +799,10 @@ legend {
 // our navbars.
 
 .navbar-form {
-  padding: 6px 0 6px $spacer*2;
+  padding-left: $spacer*2;
 
   .form-group {
     margin-bottom: 0;
-  }
-
-  // Undo 100% width for pull classes
-  @media (min-width: map_get($grid-breakpoints, md)) {
-    width: auto;
-    border: 0;
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 
@@ -858,7 +928,7 @@ legend {
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     background-color: $color !important;
-    color: $gray-700 !important;
+    color: $text-color !important;
   }
   a#{$parent} {
     @include hover-focus {
@@ -881,12 +951,74 @@ pre {
   border-radius: $border-radius;
 }
 
+code {
+  background: theme-color('danger-light');
+}
+
 
 //
 // Badges
 // --------------------------------------------------
 
+.label,
+.badge {
+  display: inline-block;
+  padding: 2px 4px;
+  line-height: 14px; // ensure proper line-height if floated
+  text-shadow: none;
+  font-weight: $font-weight-bold;
+  font-size: 11px;
+}
 
-.badge.badge-pill {
-  font-size: 100%;
+.badge-pill {
+  padding: 2px 6px;
+}
+
+.badge-default {
+  @include badge-variant(theme-color('default'));
+  color: $text-color;
+}
+
+.badge-primary {
+  @include badge-variant(theme-color('primary'));
+}
+
+.badge-success {
+  @include badge-variant(theme-color('success'));
+
+  color: $white;
+
+  &[href] {
+    @include hover-focus {
+      color: $white;
+    }
+  }
+}
+
+.badge-info {
+  @include badge-variant(theme-color('info'));
+}
+
+.badge-warning {
+  @include badge-variant(theme-color('warning'));
+
+  color: $white;
+
+  &[href] {
+    @include hover-focus {
+      color: $white;
+    }
+  }
+}
+
+.badge-danger {
+  @include badge-variant(theme-color('danger'));
+}
+
+.badge-important {
+  @include badge-variant(theme-color('danger'));
+}
+
+.badge-inverse {
+  @include badge-variant($gray-400);
 }

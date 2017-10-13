@@ -69,7 +69,7 @@ export class Layout {
         '.list-group-item:first-child:not(.js-notification-added)')
         .addClass('active js-notification-added')
         .find('.fa-circle')
-        .after('<span class="badge badge-danger badge-pill ' +
+        .before('<span class="badge badge-danger badge-pill ' +
           'float-right animated bounceInDown">3</span>');
     }, 1000);
   }
@@ -217,7 +217,7 @@ export class Layout {
 
       let $triggerLink = jQuery(this).prev('[data-toggle=collapse]');
       jQuery($triggerLink.data('parent'))
-        .find('.collapse.in').not(jQuery(this)).collapse('hide');
+        .find('.collapse.show').not(jQuery(this)).collapse('hide');
     })
     /* adding additional classes to navigation link li-parent
      for several purposes. see navigation styles */

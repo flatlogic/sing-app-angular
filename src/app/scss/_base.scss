@@ -6,10 +6,6 @@ app, .app {
   display: block;
 }
 
-.chat-sidebar-container {
-  color: $text-color;
-}
-
 .sidebar{
   position: fixed;
   z-index: 0;
@@ -48,17 +44,6 @@ app, .app {
   }
 }
 
-.page-controls {
-  .dropdown-toggle-notifications {
-
-    .circle {
-      width: #{$line-height-base}rem;
-      height: #{$line-height-base}rem;
-      line-height: #{$line-height-base}rem;
-    }
-  }
-}
-
 .page-controls{
   @include transition(
           left $sidebar-transition-time ease-in-out,
@@ -83,7 +68,7 @@ app, .app {
   height: $navbar-height;
 
   @include media-breakpoint-down(sm) {
-    font-size: 16px;
+    font-size: $font-size-lg;
 
     .navbar-brand{
       position: absolute;
@@ -93,7 +78,7 @@ app, .app {
       text-align: center;
 
       > .fa-circle{
-        font-size: 10px;
+        font-size: $font-size-sm;
       }
     }
 
@@ -117,36 +102,9 @@ app, .app {
       display: flex;
       align-items: center;
     }
-  }
 
-  .navbar-form.navbar-left{
-    @include media-breakpoint-up(md) {
-      padding-right: 0;
-    }
-  }
-
-  .navbar-form.navbar-left{
-    @include media-breakpoint-down(md) {
-      padding-right: 0;
-    }
-  }
-  .navbar-nav .fa-times{
-    font-size: 20px;
-    vertical-align: -2px;
-  }
-
-  .navbar-form {
-
-    .input-group-addon {
-      line-height: 1.5;
-
-      .fa {
-        vertical-align: -1px;
-      }
-    }
-
-    .form-control {
-      line-height: 1.7;
+    .fa-times{
+      font-size: 20px;
     }
   }
 }
@@ -176,7 +134,7 @@ app, .app {
 }
 
 .logo{
-  margin: 11px 0 19px;
+  margin: 0.8rem 0 1.6rem;
   height: $navbar-height;
   width: 100%;
   line-height: $navbar-height;
@@ -204,11 +162,11 @@ app, .app {
 }
 
 .sidebar-nav{
-  padding: 10px 0;
-  font-size: 14px;
+  padding: $padding-large-vertical 0;
+  font-size: $font-size-larger;
 
   @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-    font-size: 16px;
+    font-size: $font-size-lg;
   }
 
   li a{
@@ -232,7 +190,7 @@ app, .app {
       line-height: 8px;
       margin-top: 7px;
       margin-right: $sidebar-padding-horizontal + $sidebar-slim-scroll-width;
-      padding: 7px;
+      padding: $padding-base-vertical;
       border-radius: $border-radius-sm;
 
       @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
@@ -439,60 +397,22 @@ app, .app {
 }
 
 .sidebar-status{
-  position: relative;
-  margin: 10px 0 20px;
+  margin: 1rem 0 1.5rem;
   padding: 0 ($sidebar-padding-horizontal + $sidebar-slim-scroll-width) 0 $sidebar-padding-horizontal;
 
   > a{
-    display: block;
-    line-height: 40px;
+    line-height: 3rem;
     color: $gray-200;
     text-decoration: none;
   }
 
   .dropdown-menu{
-    position: absolute;
-    top: 57px;
-    left: 0;
-    margin: 0 20px;
-    width: 320px;
-    color: $text-color;
+    position: fixed;
+    top: 5rem !important;
+
     @media (max-width: 380px) {
       margin: 0;
-      width: 100%;
-    }
-  }
-
-  /* fix notifications dropdown when there is no enough vertical space*/
-
-  @media (max-height: 500px) {
-    .dropdown-menu{
-      bottom: 20px;
-    }
-
-    .notifications{
-      .card-header{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-      }
-
-      .list-group{
-        position: absolute;
-        top: 85px;
-        left: 0;
-        right: 0;
-        bottom: 43px;
-        height: auto;
-      }
-
-      .card-footer{
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        right: 0;
-      }
+      right: $sidebar-width !important;
     }
   }
 }
@@ -614,12 +534,17 @@ app, .app {
 
 /* body tag is given this class */
 .chat-sidebar-container{
+  color: $text-color;
   position: relative;
+
   &, .sidebar{
     left: 0;
+
     @include transition(left $sidebar-transition-time ease-in-out);
   }
+
   &.chat-sidebar-opened{
+
     &, .sidebar{
       left: -$chat-sidebar-width;
     }
@@ -634,7 +559,7 @@ app, .app {
   width: 100%;
   position: absolute;
   top: 0;
-  padding: 10px;
+  padding: 1rem;
   z-index: 3;
   background-color: $sidebar-bg-color;
 
@@ -649,15 +574,17 @@ app, .app {
 
 
 .chat-sidebar-contacts{
-  padding: 20px 0;
+  padding: 1.5rem 0;
   left: -100%;
   @include transition(left .4s ease-in-out);
+
   &.open{
     left: 0;
   }
+
   .sidebar-nav-title{
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 
     &:first-child{
       margin-top: 0;
@@ -671,25 +598,22 @@ app, .app {
 
 .chat-sidebar-chat{
   right: -100%;
-  padding-bottom: 54px; /*footer height*/
   background-color: $sidebar-bg-color;
+
   @include transition(right .2s ease-in-out);
+
   &.open{
     right: 0;
   }
 
   .title{
     margin-bottom: 0;
+
     > a{
       display: block;
       padding: $padding-large-vertical $padding-large-horizontal;
       background-color: rgba(255,255,255, .1);
       color: $gray-200;
-      text-decoration: none;
-    }
-
-    &:hover {
-      cursor: pointer;
     }
   }
 
@@ -700,8 +624,8 @@ app, .app {
   }
 
   .message{
-    padding: 10px 20px;
-    @include clearfix();
+    padding: $padding-large-vertical $padding-large-horizontal;
+
     > .thumb-sm{
       float: left;
     }
@@ -714,10 +638,11 @@ app, .app {
 }
 
 .message-body{
+
   .chat-sidebar-chat & {
     position: relative;
-    margin-left: 50px;
-    padding: 10px;
+    margin-left: 4rem;
+    padding: $padding-large-vertical;
     font-size: $font-size-mini;
     font-weight: $font-weight-normal;
     background-color: $gray-200;
@@ -726,21 +651,22 @@ app, .app {
 
     &:before{
       right: 100%;
-      top: 8px;
+      top: 0.65rem;
       content: " ";
       height: 0;
       width: 0;
       position: absolute;
-      border: 10px solid rgba(0,0,0,0);
+      border: 0.75rem solid rgba(0,0,0,0);
       border-right-color: $gray-200;
     }
   }
 
   .chat-sidebar-chat .message.from-me &{
     margin-left: 0;
-    margin-right: 50px;
+    margin-right: 4rem;
     background-color: theme-color('warning');
     color: $gray-800;
+
     &:before{
       right: auto;
       left: 100%;
@@ -755,28 +681,35 @@ app, .app {
   top: 0;
   bottom: 0;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 8rem;
 }
 
 .chat-sidebar-title{
-  margin: 10px;
+  margin: $margin-large-vertical;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: $font-size-lg;
   font-weight: $font-weight-normal;
 }
 
 .chat-sidebar-user-group{
-  margin-top: 10px;
+  margin-top: $margin-large-vertical;
+
   .list-group-item{
     background-color: transparent;
     margin-bottom: 0;
-    padding: 10px 20px;
+    padding: $padding-large-vertical $padding-large-horizontal;
     border: 0;
     color: $gray-200;
     border-radius: 0;
+    display: flex;
+    align-items: center;
 
     &:hover {
-      cursor: pointer;
+      background-color: rgba(0,0,0,.15);
+
+      .message-sender{
+        color: white;
+      }
     }
 
     &.active{
@@ -784,7 +717,6 @@ app, .app {
       &:focus,
       &:hover{
         background-color: rgba(255,255,255, .1);
-        color: theme-color('warning');
       }
 
       .badge{
@@ -794,35 +726,18 @@ app, .app {
 
       .message-sender{
         font-weight: $font-weight-semi-bold;
+        color: theme-color('warning');
       }
     }
 
-    .circle-o{
-      margin-top: 13px;
-      font-size: 8px;
-    }
-
-    .fa-circle{
-      font-size: 11px;
-      line-height: 37px;
-      margin-left: auto;
-    }
-
-    .badge{
-      margin-top: 8px;
-      margin-right: 5px;
-      padding: 3px 5px;
+    .fa-circle {
+      font-size: $font-size-sm;
     }
   }
 
   .thumb .status,
   .thumb-sm .status{
     border-color: $sidebar-bg-color;
-  }
-
-  a.list-group-item:hover{
-    color: $gray-200;
-    background-color: rgba(0,0,0,.15);
   }
 
   .message-preview{
@@ -836,6 +751,7 @@ app, .app {
   }
 
   .message-sender{
+    @include transition(color .15s ease-in-out);
     margin: 0 0 5px;
   }
 }
@@ -846,7 +762,7 @@ app, .app {
   right: -100%;
   width: 100%;
   margin-bottom: 0;
-  padding: 10px;
+  padding: $padding-large-vertical;
   background-color: #3a3a3a;
 
   @include transition(right .2s ease-in-out);
@@ -900,7 +816,7 @@ app, .app {
   .text{
     margin-top: 5px;
     margin-bottom: 0;
-    color: $gray-light;
+    color: $gray-600;
   }
 }
 
@@ -916,7 +832,7 @@ app, .app {
 }
 
 .page-title{
-  margin: 0 0 calc(#{$spacer} + 6px);
+  margin-bottom: $spacer * 1.5;
 }
 
 .notifications{
@@ -924,47 +840,17 @@ app, .app {
     width: 333px;
   }
 
-  .card-header {
-    background-color: #fff;
+  .btn-group {
+    display: flex;
 
-    .btn-group-justified {
-      display: flex;
-
-      label {
-        flex: 1;
-        padding-top: 5px;
-        padding-bottom: 5px;
-      }
+    .btn {
+      flex: 1;
     }
-
   }
-
-  height: 100%;
 
   .list-group{
     height: 320px;
     overflow-y: scroll;
-  }
-  .list-group-item{
-    @include transition(background-color .15s ease-in-out);
-    &:hover{
-      background-color: $list-group-hover-bg;
-      .progress-bar{
-        background-color: $white !important;
-      }
-    }
-    .progress{
-      @include transition(background-color .15s ease-in-out);
-    }
-  }
-
-  a.list-group-item {
-    text-decoration: none;
-    color: $text-color;
-  }
-
-  .btn-notifications-reload{
-    color: $navbar-dashboard-link-color;
   }
 }
 
@@ -1026,12 +912,12 @@ app, .app {
     }
 
     + .widget-body,
-    + .widget-body.no-padding{
+    + .widget-body.p-0{
       margin-top: $widget-padding-vertical;
     }
   }
 
-  > .widget-body.no-padding{
+  > .widget-body.p-0{
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
 
     + footer{
@@ -1166,7 +1052,7 @@ app, .app {
 /***********************/
 
 .btn-inverse {
-  @include button-variant($white, $gray-300, darken($gray-300, 10%));
+  @include button-variant($gray-700, darken($gray-700, 10%));
 }
 
 .btn-xs {
@@ -1179,8 +1065,6 @@ app, .app {
 ////// Loader animation ////////
 
 .loading-overlay {
-  width: 100%;
-  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -1335,4 +1219,3 @@ app, .app {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; }
 }
-

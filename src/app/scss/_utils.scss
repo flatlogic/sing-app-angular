@@ -15,7 +15,7 @@
 }
 
 .btn-default {
-  @include button-variant($btn-secondary-bg, $btn-secondary-border);
+  @include button-variant($btn-default-bg, $btn-default-border);
 }
 
 .badge-white {
@@ -67,13 +67,13 @@
   &.circle-o-black{ border-color: $black };
   &.circle-o-gray-darker{ border-color: $gray-900 };
   &.circle-o-gray-dark{ border-color: $gray-800 };
-  &.circle-o-gray{ border-color: $gray-300 };
-  &.circle-o-gray-light{ border-color: $gray-light };
+  &.circle-o-gray{ border-color: $gray-700 };
+  &.circle-o-gray-light{ border-color: $gray-600 };
   &.circle-o-gray-lighter{ border-color: $gray-200 };
   &.circle-o-white{ border-color: $white };
 }
 
-@include thumb('.thumb-xlg', 100px);
+@include thumb('.thumb-xl', 100px);
 @include thumb('.thumb-lg', 60px);
 @include thumb('.thumb', 48px);
 @include thumb('.thumb-sm', 34px);
@@ -82,7 +82,7 @@
 .thumb-xs,
 .thumb-sm,
 .thumb-lg,
-.thumb-xlg,
+.thumb-xl,
 .thumb{
   position: relative;
   display: inline-block;
@@ -123,7 +123,7 @@
 .input-dark{
   background-color: rgba(0,0,0,.4);
   border: 0;
-  color: $gray-300;
+  color: $text-color;
   &:focus{
     background-color: $gray-200
   }
@@ -134,7 +134,7 @@
   .form-control{
     background-color: rgba(0,0,0,.4);
     border: 0;
-    color: $gray-700;
+    color: $text-color;
     @include transition(background-color .15s ease-in-out);
   }
 
@@ -260,7 +260,7 @@
     @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, .1));
   }
   &::-webkit-scrollbar-thumb:hover {
-    background-color: $gray-light;
+    background-color: $gray-600;
   }
 }
 
@@ -315,7 +315,7 @@ $margin-horizontal-variants: (lg: 20px, md: 15px, sm: 10px, xs: 5px, 0: 0);
 @include property-variants('.ml', 'margin-left', $margin-horizontal-variants);
 @include property-variants('.mr', 'margin-right', $margin-horizontal-variants);
 
-.no-padding{
+.p-0{
   padding: 0;
 }
 
@@ -403,13 +403,19 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-warning', theme-color('warning'));
 @include bg-variant('.bg-danger', theme-color('danger'));
 
+@include bg-variant('.bg-primary-light', theme-color('primary-light'));
+@include bg-variant('.bg-success-light', theme-color('success-light'));
+@include bg-variant('.bg-info-light', theme-color('info-light'));
+@include bg-variant('.bg-warning-light', theme-color('warning-light'));
+@include bg-variant('.bg-danger-light', theme-color('danger-light'));
+
 @include bg-variant('.bg-body', $body-bg);
 @include bg-variant('.bg-body-light', $body-bg-light);
 @include bg-variant('.bg-gray', $gray-700);
-@include bg-variant('.bg-gray-transparent', rgba($gray-300, .6));
+@include bg-variant('.bg-gray-transparent', rgba($gray-700, .6));
 @include bg-variant('.bg-gray-dark', $gray-800);
 @include bg-variant('.bg-black', $black);
-@include bg-variant('.bg-gray-light', $gray-light);
+@include bg-variant('.bg-gray-light', $gray-600);
 @include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
@@ -438,8 +444,8 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-white', $white);
 @include text-emphasis-variant('.text-gray', $gray-700);
 @include text-emphasis-variant('.text-gray-dark', $gray-800);
-@include text-emphasis-variant('.text-gray-light', $gray-light);
-@include text-emphasis-variant('.text-semi-muted', $gray-light);
+@include text-emphasis-variant('.text-gray-light', $gray-600);
+@include text-emphasis-variant('.text-semi-muted', $gray-600);
 @include text-emphasis-variant('.text-gray-darker', $gray-900);
 @include text-emphasis-variant('.text-gray-lighter', $gray-200);
 @include text-emphasis-variant('.text-bg-sidebar', $sidebar-bg-color);
@@ -484,6 +490,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 .hide {
   display: none !important;
 }
+
 
 // Animations for angular views
 // ----------------------------

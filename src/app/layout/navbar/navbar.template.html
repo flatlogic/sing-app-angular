@@ -1,4 +1,4 @@
-<ul class="navbar-nav flex-row">
+<ul class="navbar-nav flex-row" (click)="$event.preventDefault()">
   <li class="nav-item">
     <ng-template #sidebarToggleTooltip>
       Turn on/off <br> sidebar <br>collapsing
@@ -55,7 +55,7 @@
               </span>
         &nbsp;
         Philip <strong>Smith</strong>&nbsp;
-              <span class="circle bg-warning fw-bold">
+              <span class="fw-bold badge badge-pill badge-warning p-1 text-gray">
                   13
               </span>
         <b class="caret"></b>
