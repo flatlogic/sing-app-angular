@@ -1096,7 +1096,7 @@ code {
 }
 
 .badge-default {
-  @include badge-variant($gray-400);
+  @include badge-variant(theme-color('default'));
   color: $text-color;
 }
 

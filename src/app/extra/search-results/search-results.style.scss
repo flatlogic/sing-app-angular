@@ -5,11 +5,11 @@
 /***********************************/
 
 .search-result-categories{
-  > li > a {
+  > .nav-item > .nav-link {
     color: $gray-600;
     font-weight: $font-weight-normal;
     &:hover{
-      background-color: $gray-600;
+      background-color: $gray-light;
       color: $text-color;
     }
   }
