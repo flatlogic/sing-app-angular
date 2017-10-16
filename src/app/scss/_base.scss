@@ -410,7 +410,7 @@ app, .app {
     position: fixed;
     top: 5rem !important;
 
-    @media (max-width: 380px) {
+    @include media-breakpoint-down(sm){
       margin: 0;
       right: $sidebar-width !important;
     }
@@ -851,6 +851,23 @@ app, .app {
   .list-group{
     height: 320px;
     overflow-y: scroll;
+  }
+
+  .btn-link {
+    color: $navbar-dashboard-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-dashboard-link-hover-color;
+      outline: none;
+      text-decoration: none;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-dashboard-link-disabled-color;
+      }
+    }
   }
 }
 
