@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 declare let jQuery: any;
 
 @Component({
   selector: '[ui-tabs-accordion]',
-  template: require('./tabs-accordion.template.html')
+  template: require('./tabs-accordion.template.html'),
+  styleUrls: ['./tabs-accordion.style.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TabsAccordion {
   ngOnInit(): void {
