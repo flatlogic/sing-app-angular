@@ -66,6 +66,7 @@ app, .app {
   position: absolute;
   z-index: 1;
   height: $navbar-height;
+  font-size: 13px;
 
   @include media-breakpoint-down(sm) {
     font-size: $font-size-lg;
@@ -97,6 +98,10 @@ app, .app {
     & > .nav-item > .nav-link {
       display: flex;
       align-items: center;
+    }
+
+    .fa-times.fa-lg {
+      font-size: 1.4rem;
     }
   }
 }
@@ -155,10 +160,9 @@ app, .app {
 
 .sidebar-nav{
   padding: $padding-large-vertical 0;
-  font-size: $font-size-larger;
 
   @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-    font-size: $font-size-lg;
+    font-size: $font-size-larger;
   }
 
   li a{

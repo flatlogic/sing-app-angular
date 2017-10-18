@@ -492,17 +492,14 @@ legend {
 // Breadcrumbs
 // --------------------------------------------------
 .breadcrumb {
+  padding-left: 0;
+  padding-right: 0;
   color: $gray-600;
   margin-bottom: $spacer*1.5;
 
   > .active {
     color: $text-color;
     font-weight: $font-weight-semi-bold;
-  }
-
-  .content &{
-    padding-top: 0;
-    padding-bottom: 0;
   }
 }
 
