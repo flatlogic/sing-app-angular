@@ -58,44 +58,46 @@
           <div id="calendar"></div>
         </div>
       </section>
-      <div bsModal #modalWindow="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-          <div *ngIf="calendarEvent === 'create'" class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" (click)="modalWindow.hide()" aria-hidden="true">×</button>
-              <h5 class="modal-title">New Event</h5>
-              <p class="fs-mini text-muted mt-sm">
-                Just enter event name to create a new one
-              </p>
-            </div>
-            <div class="modal-body bg-gray-lighter">
-              <div class="form-group">
-                <input type="text" [(ngModel)]="event.title" class="form-control input-no-border"
-                       placeholder="Name">
-              </div>
-            </div>
-            <div class="modal-footer no-border">
-              <button (click)="modalWindow.hide()" class="btn btn-default">Cancel</button>
-              <button (click)="createEvent()" class="btn btn-success">OK</button>
-            </div>
-          </div>
-          <div *ngIf="calendarEvent === 'show'" class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" (click)="modalWindow.hide()" aria-hidden="true">×</button>
-              <h5 *ngIf="event.title" class="modal-title">{{ event.title }}</h5>
-            </div>
-            <div class="modal-body fs-mini">
-              <p><i class="fa fa-calendar text-muted fs-sm"></i> &nbsp; {{ event.start }}
-              <p *ngIf="event.end">
-                <i class="fa fa-clock-o text-muted fs-sm"></i> &nbsp; {{ event.end }}
-              </p>
-              <p *ngIf="event.description">{{ event.description }}</p>
-            </div>
-            <div class="modal-footer no-border">
-              <button type="button" class="btn btn-default btn-sm" (click)="modalWindow.hide()">OK</button>
-            </div>
-          </div>
+    </div>
+  </div>
+</div>
+<div bsModal #modalWindow="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div *ngIf="calendarEvent === 'create'" class="modal-content">
+      <div class="modal-header align-items-stretch flex-column">
+        <div class="d-flex">
+          <h5 class="modal-title">New Event</h5>
+          <button type="button" class="close" (click)="modalWindow.hide()" aria-hidden="true">×</button>
         </div>
+        <p class="fs-mini text-muted mt-sm">
+          Just enter event name to create a new one
+        </p>
+      </div>
+      <div class="modal-body bg-gray-lighter">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="event.title" class="form-control input-no-border"
+                 placeholder="Name">
+        </div>
+      </div>
+      <div class="modal-footer no-border">
+        <button (click)="modalWindow.hide()" class="btn btn-default">Cancel</button>
+        <button (click)="createEvent()" class="btn btn-success">OK</button>
+      </div>
+    </div>
+    <div *ngIf="calendarEvent === 'show'" class="modal-content">
+      <div class="modal-header">
+        <h5 *ngIf="event.title" class="modal-title">{{ event.title }}</h5>
+        <button type="button" class="close" (click)="modalWindow.hide()" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body fs-mini">
+        <p><i class="fa fa-calendar text-muted fs-sm"></i> &nbsp; {{ event.start }}
+        <p *ngIf="event.end">
+          <i class="fa fa-clock-o text-muted fs-sm"></i> &nbsp; {{ event.end }}
+        </p>
+        <p *ngIf="event.description">{{ event.description }}</p>
+      </div>
+      <div class="modal-footer no-border">
+        <button type="button" class="btn btn-default btn-sm" (click)="modalWindow.hide()">OK</button>
       </div>
     </div>
   </div>
