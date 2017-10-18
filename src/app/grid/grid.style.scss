@@ -37,6 +37,10 @@
     border-radius: 50%;
     text-align: center;
     font-size: 28px;
+
+    .fa {
+      vertical-align: baseline;
+    }
   }
 
   .news-item-info{
@@ -51,6 +55,19 @@
       &:hover{
         color: $link-color;
       }
+    }
+  }
+}
+
+/***********************************/
+/**          SHARES LIST          **/
+/**********************************/
+
+.shares-widget {
+  .list-group {
+    .list-group-item {
+      display: flex;
+      align-items: center;
     }
   }
 }
