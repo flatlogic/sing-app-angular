@@ -11,6 +11,12 @@ accordion {
     }
   }
 
+  [accordion-heading] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .panel-open {
     .fa-angle-down {
       transform: rotate(180deg);

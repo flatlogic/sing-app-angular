@@ -231,10 +231,6 @@
     border-radius: 50%;
     text-align: center;
 
-    .glyphicon {
-      top: 11px;
-    }
-
     &.event-icon-danger{ background-color: theme-color('danger'); border-color: lighten(theme-color('danger'), 7%)}
     &.event-icon-warning{ background-color: theme-color('warning'); border-color: lighten(theme-color('warning'), 7%)}
     &.event-icon-success{ background-color: theme-color('success'); border-color: lighten(theme-color('success'), 7%)}

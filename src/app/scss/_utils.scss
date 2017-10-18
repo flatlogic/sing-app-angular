@@ -4,12 +4,6 @@
 
 // Util Components
 // ----------------------------
-
-.nav-justified {
-  @include nav-justified;
-  @include nav-tabs-justified;
-}
-
 .transition-height{
   @include transition(height .15s ease-in-out);
 }
@@ -489,16 +483,4 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
 .hide {
   display: none !important;
-}
-
-
-// Animations for angular views
-// ----------------------------
-
-.fade-up.ng-enter {
-  animation: fadeInUp 0.5s;
-}
-
-.fade-up.ng-leave {
-  animation: fadeOutUp 0.5s;
 }

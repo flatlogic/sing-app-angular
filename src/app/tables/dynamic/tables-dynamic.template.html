@@ -35,13 +35,13 @@
           <th>
             <mfDefaultSorter by="name">Name</mfDefaultSorter>
           </th>
-          <th class="no-sort hidden-sm-down">
+          <th class="no-sort d-none d-md-block">
             <mfDefaultSorter by="info">Info</mfDefaultSorter>
           </th>
-          <th class="hidden-sm-down">
+          <th class="d-none d-md-block">
             <mfDefaultSorter by="description">Description</mfDefaultSorter>
           </th>
-          <th class="hidden-sm-down">
+          <th class="d-none d-md-block">
             <mfDefaultSorter by="date">Date</mfDefaultSorter>
           </th>
           <th class="no-sort">
@@ -53,7 +53,7 @@
         <tr *ngFor="let person of mf.data">
           <td>{{person.id}}</td>
           <td><span class="fw-semi-bold">{{person.name}}</span></td>
-          <td class="hidden-sm-down">
+          <td class="d-none d-md-block">
             <small>
               <span class="fw-semi-bold">Type:</span>
               &nbsp; {{person.info.type}}
@@ -64,8 +64,8 @@
               &nbsp; {{person.info.dimensions}}
             </small>
           </td>
-          <td class="hidden-sm-down"><a href="#">{{person.description}}</a></td>
-          <td class="hidden-sm-down">{{person.date}}</td>
+          <td class="d-none d-md-block"><a href="#">{{person.description}}</a></td>
+          <td class="d-none d-md-block">{{person.date}}</td>
           <td class="width-150">
             <div class="bg-gray-lighter progress progress-sm">
               <div class="progress-bar progress-sm bg-{{person.status.type}}" [ngStyle]="{ 'width': person.status.progress}"></div>

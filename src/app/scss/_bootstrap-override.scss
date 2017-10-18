@@ -1,7 +1,6 @@
 //
 // Typography
 // --------------------------------------------------
-
 .blockquote-sm{
   padding: 3px 15px;
   font-size: $font-size-base;
@@ -19,9 +18,11 @@
 .close {
   opacity: 0.2;
 }
+
+
+//
 // Headings
 // -------------------------
-
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
   small,
@@ -36,11 +37,10 @@ h1, h2, h3, h4, h5, h6,
   margin-top: 10px;
 }
 
+
 //
 // cards
 // --------------------------------------------------
-
-// Base class
 .card {
   margin-bottom: $spacer;
   background-color: $card-bg;
@@ -81,11 +81,6 @@ accordion-group.card-open .card-title a.accordion-toggle i {
 small, .small {
   font-size: 85%;
 }
-
-// Collapsable cards (aka, accordion)
-//
-// Wrap a series of cards in `.card-group` to turn them into an accordion with
-// the help of our collapse JavaScript plugin.
 
 .card-group {
   margin-bottom: $spacer;
@@ -132,11 +127,10 @@ small, .small {
   }
 }
 
+
 //
 // Forms
 // --------------------------------------------------
-
-
 .form-control {
   font-family: $font-family-sans-serif;
   font-weight: $font-weight-normal;
@@ -233,7 +227,10 @@ legend {
   display: table-cell;
 }
 
+
+//
 // Feedback states
+// --------------------------------------------------
 .has-success {
   @include form-control-validation(theme-color('success'));
 }
@@ -244,7 +241,6 @@ legend {
   @include form-control-validation(theme-color('danger'));
 }
 
-//turn off shadow
 .has-success,
 .has-warning,
 .has-error {
@@ -272,32 +268,9 @@ legend {
 }
 
 
-// Checkboxes and radios
-//
-
-.radio input[type="radio"],
-.radio-inline input[type="radio"],
-.checkbox input[type="checkbox"],
-.checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-top: .25rem;
-  // margin-top: 4px \9;
-  margin-left: -1.25rem;
-}
-
-.radio,
-.checkbox {
-
-  label {
-    margin-bottom: 5px;
-    min-height: 0;
-  }
-}
-
 //
 // Tables
 // --------------------------------------------------
-
 .table td > .abc-checkbox,
 .table th > .abc-checkbox{
   position: relative;
@@ -355,10 +328,10 @@ legend {
   padding: 0.55rem;
 }
 
+
 //
 // Dropdown menus
 // --------------------------------------------------
-
 .dropdown-toggle {
   &:after {
     content: none;
@@ -463,10 +436,10 @@ legend {
   }
 }
 
+
 //
 // Navbars
 // --------------------------------------------------
-
 .navbar {
   border: none;
   flex-wrap: nowrap;
@@ -514,11 +487,10 @@ legend {
   }
 }
 
+
 //
 // Breadcrumbs
 // --------------------------------------------------
-
-
 .breadcrumb {
   color: $gray-600;
   margin-bottom: $spacer*1.5;
@@ -533,15 +505,13 @@ legend {
     padding-bottom: 0;
   }
 }
+
+
 //
 // Buttons
 // --------------------------------------------------
-
 .btn {
   font-family: $font-family-sans-serif;
-  .glyphicon {
-    top: 3px;
-  }
 }
 
 .btn, .btn-inverse, .btn-gray {
@@ -555,6 +525,13 @@ legend {
   padding-bottom: .35rem;
 }
 
+.btn-xs {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
 .btn-lg, .btn-group-lg>.btn, .btn-group-lg>.btn {
   padding: 0.75rem 1.5rem !important;
 }
@@ -565,6 +542,10 @@ legend {
 
 .btn-gray{
   @include button-variant($gray-light, darken($gray-light, 5%));
+}
+
+.btn-inverse {
+  @include button-variant($gray-700, darken($gray-700, 10%));
 }
 
 .btn-outline{
@@ -596,6 +577,7 @@ legend {
   }
 }
 
+
 //
 // Labels
 // --------------------------------------------------
@@ -606,10 +588,10 @@ legend {
   display: block;
 }
 
+
 //
 // Button groups
 // --------------------------------------------------
-
 .btn-toolbar{
   margin-top: $spacer/2;
   margin-bottom: $spacer/2;
@@ -619,10 +601,10 @@ legend {
   }
 }
 
+
 //
 // Progress bars
 // --------------------------------------------------
-
 .js-progress-animate {
   transition: width 0.6s ease;
 }
@@ -666,7 +648,6 @@ legend {
 //
 // List groups
 // --------------------------------------------------
-
 .list-group-lg {
   .list-group-item {
     padding: 1.25rem;
@@ -703,16 +684,14 @@ legend {
 //
 // Tooltips
 // --------------------------------------------------
-
 .tooltip-inner{
   @include border-radius(3px);
 }
 
+
 //
 // Alerts
 // --------------------------------------------------
-
-
 .alert-sm{
   padding: 10px 12px;
   font-size: $font-size-mini;
@@ -722,9 +701,10 @@ legend {
   }
 }
 
+
 //
 // Popovers
-
+// --------------------------------------------------
 .popover{
   border: none;
   @include box-shadow(none);
@@ -734,11 +714,10 @@ legend {
   padding: 20px;
 }
 
+
 //
 // Modals
 // --------------------------------------------------
-
-// z-index fix. modal doesn't show up properly when .content-wrap is relative
 .modal-open{
   &, &.nav-collapsed, &.nav-static{
     .content-wrap{
@@ -754,10 +733,10 @@ legend {
   }
 }
 
+
 //
 // Pagination
 // --------------------------------------------------
-
 .page-item {
   .page-link,
   > span{
@@ -778,10 +757,10 @@ legend {
   }
 }
 
+
 //
 // Jumbotron
 // --------------------------------------------------
-
 .jumbotron {
   @include media-breakpoint-up(md){
     padding-left: $jumbotron-padding;
@@ -792,9 +771,7 @@ legend {
 
 // Navbar form
 //
-// Extension of the `.form-inline` with some extra flavor for optimum display in
-// our navbars.
-
+// --------------------------------------------------
 .navbar-form {
   padding-left: $spacer*2;
 
@@ -803,10 +780,10 @@ legend {
   }
 }
 
+
 //
 // Navbar Dasboard
 // --------------------------------------------------
-
 .navbar-dashboard {
   background-color: $navbar-dashboard-bg;
   border-color: $navbar-dashboard-border;
@@ -934,10 +911,10 @@ legend {
   }
 }
 
+
 //
 // Code
 // -----------------
-
 pre {
   padding: 6.5px;
   margin: 0 0 ($spacer / 2);
@@ -956,7 +933,6 @@ code {
 //
 // Badges
 // --------------------------------------------------
-
 .label,
 .badge {
   display: inline-block;

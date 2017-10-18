@@ -72,9 +72,9 @@
           </div>
         </td>
         <td><span class="starred"><i class="fa" [ngClass]="{'fa-star': mail.starred, 'fa-star-o': !mail.starred}" (click)="changeStarStatus(mail)"></i></span></td>
-        <td class="name hidden-xs-down" (click)="openMail(mail)">{{mail.sender}}</td>
+        <td class="name d-none d-md-block" (click)="openMail(mail)">{{mail.sender}}</td>
         <td class="subject" (click)="openMail(mail)">{{mail.subject}}</td>
-        <td class="hidden-xs-down">
+        <td class="d-none d-md-block">
           <i [ngClass]="{'fa fa-paperclip': mail.paperclip}"></i>
         </td>
         <td class="date">{{mail.date}}</td>

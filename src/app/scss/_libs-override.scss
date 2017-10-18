@@ -1,30 +1,14 @@
-/*
- * Font Awesome 2x spin
- */
-
-.#{$fa-css-prefix}-spin-fast {
-  -webkit-animation: fa-spin 1s infinite linear;
-  -moz-animation: fa-spin 1s infinite linear;
-  -o-animation: fa-spin 1s infinite linear;
-  animation: fa-spin 1s infinite linear;
-}
-
-
-.fa-lg {
-  vertical-align: -15%;
-}
-
-/**
- * Animate.css
- */
+/***********************/
+/*    Animate.css      */
+/***********************/
 
 .animated{
   animation-duration: .5s;
 }
 
-/**
- * Pace
- */
+/***********************/
+/*       Pace          */
+/***********************/
 .pace .pace-progress{
   background: theme-color('primary');
   position: absolute;
@@ -54,16 +38,52 @@
 /*glyphicons-halflings */
 /***********************/
 
+.glyphicon {
+  top: auto;
+  vertical-align: middle;
+}
+
 .glyphicon-comment:before {
   content:"\E111";
 }
 
-.glyphicon-chevron-up {
-  top: 2px;
+/***********************/
+/*    Font Awesome     */
+/***********************/
+
+.fa {
+  vertical-align: middle;
+}
+
+.fa-sm {
+  font-size: $font-size-sm;
+}
+
+.btn > .fa, .circle > .fa {
+  vertical-align: baseline;
+}
+
+.#{$fa-css-prefix}-spin-fast {
+  -webkit-animation: fa-spin 1s infinite linear;
+  -moz-animation: fa-spin 1s infinite linear;
+  -o-animation: fa-spin 1s infinite linear;
+  animation: fa-spin 1s infinite linear;
+}
+
+/***********************/
+/*    NG2 DateTime     */
+/***********************/
+
+datetime {
+  .fa-clock-o {
+    margin-top: 4px;
+  }
 }
 
 
-/* ng2-select2 */
+/***********************/
+/*    NG2 Select2      */
+/***********************/
 
 .select2-container--bootstrap .select2-selection--single {
   height: 35px !important;
@@ -75,9 +95,9 @@
   }
 }
 
-/**
- * Bootstrap select
- */
+/***********************/
+/*  Bootstrap Select   */
+/***********************/
 
 .selectpicker.form-control {
   height: auto;
@@ -96,9 +116,9 @@
   }
 }
 
-/**
- * select2
- */
+/***********************/
+/*     Select 2        */
+/***********************/
 
 .select2-container .select2-choice abbr {
   background: url('assets/select2/select2.png') right top no-repeat;
@@ -144,7 +164,9 @@ html[dir="rtl"] .select2-search input {
   background: #fff url('assets/select2/select2-spinner.gif') no-repeat 100% !important;
 }
 
-/* Retina-ize icons */
+/***********************/
+/*  Retina-ize icons   */
+/***********************/
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx)  {
   .select2-search input,
@@ -153,11 +175,4 @@ html[dir="rtl"] .select2-search input {
   .select2-container .select2-choice .select2-arrow b {
     background-image: url('assets/select2/select2x2.png') !important;
   }
-}
-
-/**
- * ngx-bootstrap
- */
-.dropdown.open .dropdown-menu {
-  display: block;
 }

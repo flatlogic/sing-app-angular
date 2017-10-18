@@ -24,23 +24,10 @@
     margin-right: 10px;
   }
 
-  .glyphicon {
-    top: 10px;
-  }
-
   &:hover{
     .glyphicon,
     .fa{
       font-size: 28px;
-      top: 2px;
-    }
-
-    .fa{
-      vertical-align: -5px;
-    }
-
-    .glyphicon{
-      vertical-align: -6px;
     }
   }
 }
