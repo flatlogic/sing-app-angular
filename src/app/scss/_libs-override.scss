@@ -1,6 +1,21 @@
-/*
- * Font Awesome 2x spin
- */
+/***********************/
+/*    Font Awesome     */
+/***********************/
+.fa {
+  vertical-align: middle;
+}
+
+.fa-sm {
+  font-size: $font-size-sm;
+}
+
+.fa-lg {
+  font-size: 1.2rem;
+}
+
+.btn > .fa, .circle > .fa {
+  vertical-align: baseline;
+}
 
 .#{$fa-css-prefix}-spin-fast {
   -webkit-animation: fa-spin 1s infinite linear;
@@ -10,21 +25,30 @@
 }
 
 
-.fa-lg {
-  vertical-align: -15%;
+/***********************/
+/*glyphicons-halflings */
+/***********************/
+.glyphicon {
+  top: auto;
+  vertical-align: middle;
 }
 
-/**
- * Animate.css
- */
+.glyphicon-comment:before {
+  content:"\E111";
+}
 
+
+/***********************/
+/*    Animate.css      */
+/***********************/
 .animated{
   animation-duration: .5s;
 }
 
-/**
- * Pace
- */
+
+/***********************/
+/*       Pace          */
+/***********************/
 .pace .pace-progress{
   background: theme-color('primary');
   position: absolute;
@@ -43,21 +67,7 @@
   border-left-color: theme-color('primary');
 }
 
-
-
 .pace .pace-progress-inner{
   right: -10px;
   width: 10px;
-}
-
-/***********************/
-/*glyphicons-halflings */
-/***********************/
-
-.glyphicon-comment:before {
-  content:"\E111";
-}
-
-.glyphicon-chevron-up {
-  top: 2px;
 }

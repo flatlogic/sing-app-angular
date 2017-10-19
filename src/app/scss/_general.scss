@@ -7,12 +7,12 @@
   width: auto;
 }
 
-html {
-  font-size: $font-size-initial;
-}
-
 html, body{
   height: 100%;
+}
+
+html {
+  font-size: $font-size-initial;
 }
 
 body{
@@ -38,6 +38,7 @@ strong, b {
 
 abbr[title] {
   text-decoration: none;
+  border-bottom: 1px dotted #999;
 }
 
 button {
