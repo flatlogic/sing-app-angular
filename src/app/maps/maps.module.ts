@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { MapsGoogle } from './google/maps-google.component';
 import { MapsVector } from './vector/maps-vector.component';

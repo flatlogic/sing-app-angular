@@ -187,18 +187,8 @@ export class Layout {
     let $el = jQuery(this.el.nativeElement);
     this.$sidebar = $el.find('[sidebar]');
 
-    this.router.events.subscribe((event) => {
-      this._navigationInterceptor(event);
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          this.collapseNavIfSmallScreen();
-          window.scrollTo(0, 0);
-
-          $el.find('a[href="#"]').on('click', (e) => {
-            e.preventDefault();
-          });
-        });
-      }
+    $el.find('a[href="#"]').on('click', (e) => {
+      e.preventDefault();
     });
 
     this.$sidebar.on('mouseenter', this._sidebarMouseEnter.bind(this));
@@ -210,6 +200,12 @@ export class Layout {
       if (jQuery('layout').is('.nav-collapsed')) {
         this.expandNavigation();
       }
+    });
+
+    this.router.events.subscribe((event) => {
+      this._navigationInterceptor(event);
+      this.collapseNavIfSmallScreen();
+      window.scrollTo(0, 0);
     });
 
     if ('ontouchstart' in window) {

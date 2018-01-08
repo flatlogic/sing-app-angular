@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: '[maps-google]',
   template: require('./maps-google.template.html'),
-  styles: ['sebm-google-map { height: 100% }']
+  styles: ['agm-map { height: 100% }']
 })
 export class MapsGoogle {
   lat: number = -37.813179;

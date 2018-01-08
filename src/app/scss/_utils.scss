@@ -30,9 +30,9 @@
  */
 .circle, .rounded, .circle-o{
   display: inline-block;
-  width: 1.428571429em;
-  height: 1.428571429em;
-  line-height: 1.428571429em;
+  width: #{$line-height-base}em;
+  height: #{$line-height-base}em;
+  line-height: #{$line-height-base}em;
   text-align: center;
 }
 

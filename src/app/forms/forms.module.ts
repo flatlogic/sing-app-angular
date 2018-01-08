@@ -26,7 +26,7 @@ import 'jasny-bootstrap/js/fileinput.js';
 import 'jasny-bootstrap/js/inputmask.js';
 
 import { TooltipModule, AlertModule, BsDropdownModule } from 'ngx-bootstrap';
-import { Autosize } from 'angular2-autosize';
+import { Autosize } from 'ng-autosize';
 import { Select2Module } from 'ng2-select2';
 import { WidgetModule } from '../layout/widget/widget.module';
 import { TextMaskModule } from 'angular2-text-mask';

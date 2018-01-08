@@ -18,7 +18,7 @@ import { SearchResults } from './search-results/search-results.component';
 import { TimeLine } from './time-line/time-line.component';
 import { Gallery } from './gallery/gallery.component';
 
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core';
 
 export const routes = [
   {path: '', redirectTo: 'calendar', pathMatch: 'full'},

@@ -16,9 +16,6 @@ npm-debug.log*
 /dist
 /dist/**
 
-# AoT #
-/compiled/
-
 # Doc #
 /doc/
 
