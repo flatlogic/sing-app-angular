@@ -27,8 +27,6 @@
   border-left-color: theme-color('primary');
 }
 
-
-
 .pace .pace-progress-inner{
   right: -10px;
   width: 10px;
@@ -63,7 +61,9 @@
   font-size: 1.2rem;
 }
 
-.btn > .fa, .circle > .fa {
+.btn > .fa,
+.circle > .fa,
+.input-group-text > .fa {
   vertical-align: baseline;
 }
 
@@ -73,17 +73,6 @@
   -o-animation: fa-spin 1s infinite linear;
   animation: fa-spin 1s infinite linear;
 }
-
-/***********************/
-/*    NG2 DateTime     */
-/***********************/
-
-datetime {
-  .fa-clock-o {
-    margin-top: 4px;
-  }
-}
-
 
 /***********************/
 /*    NG2 Select2      */
@@ -118,6 +107,16 @@ datetime {
     z-index: 3;
     display: inline-block !important;
   }
+}
+
+.input-group-append .bootstrap-select .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-prepend .bootstrap-select .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /***********************/
