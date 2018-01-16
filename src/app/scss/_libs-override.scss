@@ -1,50 +1,10 @@
 /***********************/
-/*    Font Awesome     */
-/***********************/
-.fa {
-  vertical-align: middle;
-}
-
-.fa-sm {
-  font-size: $font-size-sm;
-}
-
-.fa-lg {
-  font-size: 1.2rem;
-}
-
-.btn > .fa, .circle > .fa {
-  vertical-align: baseline;
-}
-
-.#{$fa-css-prefix}-spin-fast {
-  -webkit-animation: fa-spin 1s infinite linear;
-  -moz-animation: fa-spin 1s infinite linear;
-  -o-animation: fa-spin 1s infinite linear;
-  animation: fa-spin 1s infinite linear;
-}
-
-
-/***********************/
-/*glyphicons-halflings */
-/***********************/
-.glyphicon {
-  top: auto;
-  vertical-align: middle;
-}
-
-.glyphicon-comment:before {
-  content:"\E111";
-}
-
-
-/***********************/
 /*    Animate.css      */
 /***********************/
+
 .animated{
   animation-duration: .5s;
 }
-
 
 /***********************/
 /*       Pace          */
@@ -70,4 +30,46 @@
 .pace .pace-progress-inner{
   right: -10px;
   width: 10px;
+}
+
+/***********************/
+/*glyphicons-halflings */
+/***********************/
+
+.glyphicon {
+  top: auto;
+  vertical-align: middle;
+}
+
+.glyphicon-comment:before {
+  content:"\E111";
+}
+
+/***********************/
+/*    Font Awesome     */
+/***********************/
+
+.fa {
+  vertical-align: middle;
+}
+
+.fa-sm {
+  font-size: $font-size-sm;
+}
+
+.fa-lg {
+  font-size: 1.2rem;
+}
+
+.btn > .fa,
+.circle > .fa,
+.input-group-text > .fa {
+  vertical-align: baseline;
+}
+
+.#{$fa-css-prefix}-spin-fast {
+  -webkit-animation: fa-spin 1s infinite linear;
+  -moz-animation: fa-spin 1s infinite linear;
+  -o-animation: fa-spin 1s infinite linear;
+  animation: fa-spin 1s infinite linear;
 }

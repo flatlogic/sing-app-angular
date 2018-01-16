@@ -19,6 +19,10 @@
   opacity: 0.2;
 }
 
+.text-light {
+  color: inherit !important;
+}
+
 
 //
 // Headings
@@ -141,6 +145,14 @@ small, .small {
   }
 }
 
+.input-group-text,
+.input-group-addon,
+.input-group-append > .btn,
+.input-group-prepend > .btn {
+  padding-top: $padding-base-vertical;
+  padding-bottom: $padding-base-vertical;
+}
+
 .form-control-lg {
   padding: $padding-large-vertical $padding-large-horizontal;
 }
@@ -149,17 +161,16 @@ small, .small {
   padding: $padding-small-vertical $padding-small-horizontal;
 }
 
-.input-group-btn>.btn {
-  padding-top: $padding-base-vertical;
-  padding-bottom: $padding-base-vertical;
+//
+// Deprecated class is used by ng2-datetime and bootstrap-colorpicker
+//
+.input-group-addon {
+  @extend .input-group-text;
 }
 
-.input-group-btn {
-  @include btn-border-color('success');
-  @include btn-border-color('primary');
-  @include btn-border-color('info');
-  @include btn-border-color('danger');
-  @include btn-border-color('warning');
+.form-control + .input-group-addon {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .btn-group.bootstrap-select > .btn {
@@ -187,7 +198,7 @@ legend {
 .form-group {
   margin-bottom: $spacer;
 
-  .input-group-addon{
+  .input-group-text{
     line-height: inherit;
   }
 }
@@ -223,7 +234,16 @@ legend {
   }
 }
 
-.form-inline .input-group-addon {
+[data-toggle="buttons"]>.btn input[type="radio"],
+[data-toggle="buttons"]>.btn input[type="checkbox"],
+[data-toggle="buttons"]>.btn-group>.btn input[type="radio"],
+[data-toggle="buttons"]>.btn-group>.btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.form-inline .input-group-text {
   display: table-cell;
 }
 
@@ -282,6 +302,7 @@ legend {
 
 .table > thead > tr > th {
   border-top: none;
+  border-bottom: none;
 }
 
 .table > thead > tr > th{
@@ -458,18 +479,29 @@ legend {
 }
 
 .navbar-form{
-  .form-control{
-    font-size: $font-size-base;
-    padding: 0.6rem 0.85rem;
-
-  }
-
   .input-group{
     width: 245px;
-  }
+    display: flex;
 
-  .input-group-addon{
-    color: $navbar-dashboard-link-color;
+    .form-control {
+      order: 2;
+      font-size: $font-size-base;
+      padding: 0.6rem 0.85rem 0.6rem 0;
+      border-top-right-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .input-group-text{
+      order: 1;
+      color: $navbar-dashboard-link-color;
+      padding: 0.6rem 0.85rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+    }
   }
 }
 
@@ -509,6 +541,7 @@ legend {
 // --------------------------------------------------
 .btn {
   font-family: $font-family-sans-serif;
+  color: $white;
 }
 
 .btn, .btn-inverse, .btn-gray {
@@ -920,6 +953,10 @@ pre {
   word-wrap: break-word;
   background-color: $pre-bg;
   border-radius: $border-radius;
+
+  code {
+    background: transparent;
+  }
 }
 
 code {
