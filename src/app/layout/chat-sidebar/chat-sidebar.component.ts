@@ -31,20 +31,6 @@ export class ChatSidebar implements OnInit {
     jQuery(e.currentTarget).removeClass('active').find('.badge').remove();
   }
 
-  initChatSidebarScroll(): void {
-    let $sidebarContent = jQuery('.chat-sidebar-contacts', this.$el);
-    if (this.$el.find('.slimScrollDiv').length !== 0) {
-      $sidebarContent.slimscroll({
-        destroy: true
-      });
-    }
-    $sidebarContent.slimscroll({
-      height: window.innerHeight,
-      width: '',
-      size: '4px'
-    });
-  }
-
   enableSwipeCollapsing(): void {
     let $chatContainer = jQuery('layout');
     let chatSidebarSwipe = new Hammer(document.getElementById('content-wrap'));
@@ -70,9 +56,6 @@ export class ChatSidebar implements OnInit {
     if ('ontouchstart' in window) {
       this.enableSwipeCollapsing();
     }
-
-    jQuery(window).on('sn:resize', this.initChatSidebarScroll.bind(this));
-    this.initChatSidebarScroll();
   }
 
 }
