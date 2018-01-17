@@ -25,6 +25,11 @@ import 'jasny-bootstrap/docs/assets/js/vendor/holder.js';
 import 'jasny-bootstrap/js/fileinput.js';
 import 'jasny-bootstrap/js/inputmask.js';
 
+import  'tinymce/themes/modern/theme.js';
+import  'tinymce/plugins/link/plugin.js';
+import  'tinymce/plugins/paste/plugin.js';
+import  'tinymce/plugins/table/plugin.js';
+
 import { TooltipModule, AlertModule, BsDropdownModule } from 'ngx-bootstrap';
 import { Autosize } from 'ng-autosize';
 import { Select2Module } from 'ng2-select2';

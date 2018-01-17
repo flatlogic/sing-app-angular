@@ -271,7 +271,8 @@ module.exports = function (options) {
         Raphael: 'webpack-raphael',
         'window.Raphael': 'webpack-raphael',
         Skycons: 'skycons/skycons',
-        Dropzone: 'dropzone'
+        Dropzone: 'dropzone',
+        tinymce: 'tinymce/tinymce.js'
       }),
 
       /*

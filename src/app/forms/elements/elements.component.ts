@@ -2,7 +2,8 @@ import { Component, ViewEncapsulation, Injector } from '@angular/core';
 import { Select2OptionData } from 'ng2-select2';
 import { ɵDomSharedStylesHost } from '@angular/platform-browser';
 import * as data from './elements.data';
-declare let jQuery: any;
+declare const jQuery: any;
+declare const tinymce: any;
 
 @Component({
   selector: '[elements]',
@@ -69,6 +70,13 @@ export class Elements {
     jQuery('.js-slider').slider();
     jQuery('#colorpicker').colorpicker(this.colorOptions);
     jQuery('.selectpicker').selectpicker();
+  }
+
+  ngAfterViewInit() {
+    tinymce.init({
+      selector: '#tinymce',
+      skin_url: 'assets/tinymce/skins/lightgray'
+    });
   }
 
   unmask(event) {
