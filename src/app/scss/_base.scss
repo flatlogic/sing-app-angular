@@ -530,6 +530,7 @@ app, .app {
 
 
 .chat-sidebar-contacts{
+  overflow-y: auto;
   padding: 1.5rem 0;
   left: -100%;
   @include transition(left .4s ease-in-out);
@@ -553,6 +554,8 @@ app, .app {
 }
 
 .chat-sidebar-chat{
+  display: flex;
+  flex-direction: column;
   right: -100%;
   background-color: $sidebar-bg-color;
 
@@ -574,8 +577,11 @@ app, .app {
   }
 
   .message-list{
+    flex: 1;
+    overflow-y: auto;
     list-style: none;
     padding-left: 0;
+    margin-bottom: 0;
     padding-top: $spacer/2;
   }
 
@@ -709,18 +715,9 @@ app, .app {
 }
 
 .chat-sidebar-footer{
-  position: absolute;
-  bottom: 0;
-  right: -100%;
   width: 100%;
-  margin-bottom: 0;
   padding: $padding-large-vertical;
   background-color: #3a3a3a;
-
-  @include transition(right .2s ease-in-out);
-  &.open{
-    right: 0;
-  }
 }
 
 .chat-notification{
