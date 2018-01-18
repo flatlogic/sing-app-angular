@@ -1,26 +1,26 @@
-# Sing Dashboard App (3.6.0 Full version) with Angular 4.0 Final Release support
+# Sing Dashboard App (3.9.0 Full version) with Angular 5.0 Final Release support
 
 
-> An Angular 4 application featuring [Angular 4](https://angular.io)
+> An Angular 5 application featuring [Angular 5](https://angular.io)
  ([Router](https://angular.io/docs/js/latest/api/router/), [Forms](https://angular.io/docs/js/latest/api/forms/),
 [Http](https://angular.io/docs/js/latest/api/http/),
  [TypeScript](http://www.typescriptlang.org/),
   [@types](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&uact=8&ved=0ahUKEwjgjdrR7u_NAhUQ7GMKHXgpC4EQFggnMAI&url=https%3A%2F%2Fwww.npmjs.com%2F~types&usg=AFQjCNG2PFhwEo88JKo12mrw_4d0w1oNiA&sig2=N69zbO0yN8ET7v4KVCUOKA), 
   [TsLint](http://palantir.github.io/tslint/), 
   [Hot Module Replacement](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html), a
-  nd [Webpack 2](http://webpack.github.io/) by [Flatlogic](https://flatlogic.com).
+  nd [webpack 3](http://webpack.github.io/) by [Flatlogic](https://flatlogic.com).
   
-> This is a full version of Sing App with Angular 4.0 Final Release support. Seed version is also available.
+> This is a full version of Sing App with Angular 5.0 Final Release support. Seed version is also available.
 
-This project serves as an Angular 4 starter for anyone looking to get up and running with Angular 4 and TypeScript fast.
- Using a [Webpack 2](http://webpack.github.io/) for building our files and assisting with boilerplate. 
-* Best practices in file and application organization for Angular 4.
+This project serves as an Angular 5 starter for anyone looking to get up and running with Angular 5 and TypeScript fast.
+ Using a [webpack 3](http://webpack.github.io/) for building our files and assisting with boilerplate. 
+* Best practices in file and application organization for Angular 5.
 * Unique to admin templates stylish and unobtrusive design
 * Ready to go build system using Webpack for working with TypeScript.
-* Angular 4 examples that are ready to go when experimenting with Angular 4.
+* Angular 5 examples that are ready to go when experimenting with Angular 5.
 * Ahead of Time (AoT) compile for rapid page loads of your production builds.
 * Tree shaking to automatically remove unused code from your production bundle.
-* A great Angular 4 template for anyone who wants to start their project.
+* A great Angular 5 template for anyone who wants to start their project.
 * Type manager with @types
 * Hot Module Replacement with Webpack and [@angularclass/hmr](https://github.com/angularclass/angular2-hmr) and [@angularclass/hmr-loader](https://github.com/angularclass/angular2-hmr-loader)
 
@@ -204,7 +204,7 @@ import * as _ from 'lodash';
 ```
 
 # Support, Questions, or Feedback
-> Contact us anytime for anything about this Sing App or Angular 4 consulting.
+> Contact us anytime for anything about this Sing App or Angular 5 consulting.
 
 * [Twitter: @Flatlogic](https://twitter.com/Flatlogic)
 * [Email: contact@flatlogic.com](mailto:contact@flatlogic.com)
@@ -212,4 +212,4 @@ import * as _ from 'lodash';
 # License
 [Wrapbootstrap licence](http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses).
 
-Sing App 3.6.0 is based on [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
+Sing App 3.9.0 is based on [angular-starter](https://github.com/gdi2290/angular-starter).
