@@ -8,7 +8,7 @@ import 'jQuery-Mapael/js/jquery.mapael.js';
 import 'jQuery-Mapael/js/maps/usa_states';
 import 'bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.js';
 
-import { Dashboard } from './dashboard.component.ts';
+import { Dashboard } from './dashboard.component';
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
 import { RickshawChartModule } from '../components/rickshaw/rickshaw.module';
