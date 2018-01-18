@@ -204,8 +204,12 @@ export class Layout {
 
     this.router.events.subscribe((event) => {
       this._navigationInterceptor(event);
-      this.collapseNavIfSmallScreen();
-      window.scrollTo(0, 0);
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => {
+          this.collapseNavIfSmallScreen();
+          window.scrollTo(0, 0);
+        })
+      }
     });
 
     if ('ontouchstart' in window) {
