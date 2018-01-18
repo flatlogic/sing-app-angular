@@ -1004,6 +1004,14 @@ code {
 
 .badge-info {
   @include badge-variant(theme-color('info'));
+
+  color: $white;
+
+  &[href] {
+    @include hover-focus {
+      color: $white;
+    }
+  }
 }
 
 .badge-warning {

@@ -26,7 +26,7 @@ export class Components {
       {
         type: 'danger',
         msg: '<span class="fw-semi-bold">Danger:</span> Change this and that and try again.  ' +
-        '<a class="btn btn-default btn-xs float-right mr" href="#">Ignore</a>  ' +
+        '<a class="btn btn-default btn-xs float-right mr-5" href="#">Ignore</a>  ' +
         '<a class="btn btn-danger btn-xs float-right mr-xs" href="#">Take this action</a>'
       }
     ];
