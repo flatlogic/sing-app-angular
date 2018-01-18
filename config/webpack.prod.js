@@ -22,25 +22,26 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 
-function getUglifyOptions (supportES2015) {
-  const uglifyCompressOptions = {
-    pure_getters: true, /* buildOptimizer */
-    // PURE comments work best with 3 passes.
-    // See https://github.com/webpack/webpack/issues/2899#issuecomment-317425926.
-    passes: 3         /* buildOptimizer */
-  };
-
+function getUglifyOptions () {
   return {
-    ecma: supportES2015 ? 6 : 5,
-    warnings: false,    // TODO verbose based on option?
-    ie8: false,
+    beautify: false,
     mangle: {
       // Warning: This config is using for stable Rickshaw lib working
       reserved: ['$super']
     },
-    compress: uglifyCompressOptions,
+    compress: {
+      warnings: false,
+      conditionals: true,
+      unused: true,
+      comparisons: true,
+      sequences: true,
+      dead_code: true,
+      evaluate: true,
+      if_return: true,
+      join_vars: true,
+      negate_iife: false // we need this for lazy v8
+    },
     output: {
-      ascii_only: true,
       comments: false
     }
   };
@@ -140,7 +141,7 @@ module.exports = function (env) {
        */
       new UglifyJsPlugin({
         sourceMap: true,
-        uglifyOptions: getUglifyOptions(supportES2015)
+        uglifyOptions: getUglifyOptions()
       })
 
     ],
