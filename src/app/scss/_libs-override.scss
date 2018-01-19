@@ -172,7 +172,7 @@ ngx-loading-bar {
 
 #loading-bar .bar {
   transition: width 350ms;
-  background: #29d;
+  background: theme-color('primary');
   position: absolute;
   z-index: 1049;
   top: 0;
@@ -196,4 +196,5 @@ ngx-loading-bar {
 
 #loading-bar-spinner {
   position: absolute;
+  color: theme-color('primary');
 }
