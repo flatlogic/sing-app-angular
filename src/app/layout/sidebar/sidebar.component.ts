@@ -12,12 +12,14 @@ declare let jQuery: any;
 export class Sidebar implements OnInit {
   $el: any;
   config: any;
+  configFn: any;
   router: Router;
   location: Location;
 
   constructor(config: AppConfig, el: ElementRef, router: Router, location: Location) {
     this.$el = jQuery(el.nativeElement);
     this.config = config.getConfig();
+    this.configFn = config;
     this.router = router;
     this.location = location;
   }
@@ -70,5 +72,9 @@ export class Sidebar implements OnInit {
         this.changeActiveNavigationItem(this.location);
       }
     });
+  }
+
+  logout() {
+    this.router.navigate(['/login']);
   }
 }
