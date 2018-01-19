@@ -16,13 +16,16 @@ import { SearchPipe } from './pipes/search.pipe';
 import { NotificationLoad } from './notifications/notifications-load.directive';
 import { Notifications } from './notifications/notifications.component';
 
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+
 @NgModule({
   imports: [
     CommonModule,
     TooltipModule.forRoot(),
     ROUTES,
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    LoadingBarRouterModule
   ],
   declarations: [
     Layout,
