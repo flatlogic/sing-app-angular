@@ -15,6 +15,7 @@ const routes: Routes = [
     { path: 'maps', loadChildren: '../maps/maps.module#MapsModule' },
     { path: 'grid', loadChildren: '../grid/grid.module#GridModule' },
     { path: 'widgets', loadChildren: '../widgets/widgets.module#WidgetsModule' },
+    { path: 'package', loadChildren: '../package/package.module#PackageModule' },
   ]}
 ];
 
