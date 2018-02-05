@@ -24,7 +24,8 @@ $font-size-index:         0.7rem;
 
 $small-font-size: 85% !default;
 
-$font-family-base: 'Open Sans', sans-serif;
+$font-family-base: 'Montserrat', sans-serif;
+$font-family-sans-serif: 'Montserrat', sans-serif;
 
 // Color system
 //
@@ -81,7 +82,7 @@ $headings-font-weight: $font-weight-thin !default;
 
 $addition-bg: #f8f8f8 !default;
 
-$body-bg: #eee !default;
+$body-bg: #f6f9fc !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 //== Components
@@ -120,12 +121,12 @@ $sidebar-transition-time: 0.3s !default;
 $sidebar-slim-scroll-width: 4px;
 $sidebar-width: $sidebar-width-open + $sidebar-slim-scroll-width !default;
 
-$sidebar-bg-color: #242424;
-$sidebar-color: #aaa;
+$sidebar-bg-color: #363f4e;
+$sidebar-color: #babdc2;
 
-$sidebar-item-border-color: #2d2d2d;
+$sidebar-item-border-color: transparent;
 $sidebar-item-active-color: #f2be35;
-$sidebar-item-hover-bg-color: #111;
+$sidebar-item-hover-bg-color: #465060;
 
 $chat-sidebar-bg-color: $gray-900 !default;
 $chat-sidebar-width: 250px + $sidebar-slim-scroll-width !default;

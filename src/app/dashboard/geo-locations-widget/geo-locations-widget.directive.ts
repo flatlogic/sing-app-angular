@@ -19,8 +19,12 @@ export class GeoLocationsWidget {
       map: {
         name : 'usa_states',
         defaultArea : {
-          attrsHover : {
-            fill : '#242424',
+          attrs: {
+            fill: '#465060',
+            stroke: '#878a8e',
+          },
+          attrsHover: {
+            fill: '#242424',
             animDuration : 100
           },
           tooltip: {
