@@ -4,7 +4,7 @@ const fs = require('fs');
 const helpers = require('./helpers');
 
 const DEFAULT_METADATA = {
-  title: 'Sing App 4.0.0 with Angular 5.0 Final Release support by Flatlogic',
+  title: 'Sing App 4.0.0 - Angular 5.0 Dashboard by Flatlogic',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer(),
   HMR: helpers.hasProcessFlag('hot'),
