@@ -67,6 +67,7 @@ app, .app {
   z-index: 1;
   height: $navbar-height;
   font-size: 13px;
+  box-shadow: $widget-shadow;
 
   @include media-breakpoint-down(sm) {
     font-size: $font-size-lg;
@@ -270,7 +271,7 @@ app, .app {
   > li ul{
     padding: 0;
     font-size: 13px;
-    background-color: saturate(darken($sidebar-item-hover-bg-color, 5%), 10%);
+    background-color: lighten($sidebar-bg-color, 5%);
     list-style: none;
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
@@ -280,6 +281,7 @@ app, .app {
     > li{
       > a{
         padding: 5px 0 5px 40px;
+        font-size: $font-size-base*0.95;
         &:hover{
           background-color: lighten($sidebar-item-hover-bg-color, 5%);
         }
@@ -826,6 +828,8 @@ app, .app {
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
   border-radius: $border-radius-sm;
+  box-shadow: $widget-shadow;
+
   > header{
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
     padding: $widget-padding-vertical $widget-padding-horizontal;
@@ -920,6 +924,10 @@ app, .app {
     td:last-child {
       padding-right: $widget-padding-horizontal;
     }
+  }
+
+  &.bg-transparent {
+    box-shadow: none;
   }
 }
 

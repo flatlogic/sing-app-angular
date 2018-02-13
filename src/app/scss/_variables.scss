@@ -82,7 +82,7 @@ $headings-font-weight: $font-weight-thin !default;
 
 $addition-bg: #f8f8f8 !default;
 
-$body-bg: #f6f9fc !default;
+$body-bg: #f5f5f5 !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 //== Components
@@ -106,9 +106,9 @@ $margin-large-horizontal:  1.25rem !default;
 $margin-small-vertical:    0.25rem !default;
 $margin-small-horizontal:  0.75rem !default;
 
-$border-radius:          .25rem !default;
-$border-radius-lg:       .3rem !default;
-$border-radius-sm:       .2rem !default;
+$border-radius:          .3rem !default;
+$border-radius-lg:       .35rem !default;
+$border-radius-sm:       .25rem !default;
 
 $nav-link-padding: 14px;
 
@@ -121,12 +121,12 @@ $sidebar-transition-time: 0.3s !default;
 $sidebar-slim-scroll-width: 4px;
 $sidebar-width: $sidebar-width-open + $sidebar-slim-scroll-width !default;
 
-$sidebar-bg-color: #363f4e;
-$sidebar-color: #babdc2;
+$sidebar-bg-color: #242424;
+$sidebar-color: #aaa;
 
-$sidebar-item-border-color: transparent;
+$sidebar-item-border-color: #2d2d2d;
 $sidebar-item-active-color: #f2be35;
-$sidebar-item-hover-bg-color: #465060;
+$sidebar-item-hover-bg-color: #111;
 
 $chat-sidebar-bg-color: $gray-900 !default;
 $chat-sidebar-width: 250px + $sidebar-slim-scroll-width !default;
@@ -139,6 +139,8 @@ $badge-font-weight: 600;
 
 $widget-bg: #fff;
 $widget-title-color: #444;
+$widget-shadow: 0 0 10px darken($body-bg, 5%);
+
 
 $input-btn-line-height: 1.5;
 
