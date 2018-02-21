@@ -125,6 +125,7 @@ app, .app {
 }
 
 .content{
+  position: relative;
   min-height: 100%;
   padding: $content-padding-top $content-padding $content-padding;
   background-color: $body-bg;
@@ -132,6 +133,12 @@ app, .app {
   @include media-breakpoint-down(sm) {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .content-footer {
+    position: absolute;
+    bottom: 10px;
+    color: $text-muted;
   }
 }
 
