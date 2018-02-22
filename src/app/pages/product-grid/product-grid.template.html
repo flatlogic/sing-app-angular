@@ -1,123 +1,40 @@
-<ol class="breadcrumb">
-  <li class="breadcrumb-item">YOU ARE HERE</li>
-  <li class="active breadcrumb-item">E-commerce</li>
-</ol>
-<h1 class="page-title">E-commerce > <span class="fw-semi-bold">Product Grid</span></h1>
-<div class="product-grid">
-  <div class="product-grid__filters">
-
-    <div class="product-grid__filters-group">
-      Type
-      <div class="btn-group dropdown" dropdown>
-        <button id="dropdown-btn-one" class="btn btn-default dropdown-toggle" dropdownToggle>
-          &nbsp; Shoes &nbsp;
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-btn-one">
-          <li role="menuitem"><a class="dropdown-item">Shoes</a></li>
-          <li role="menuitem"><a class="dropdown-item">Boots</a></li>
-          <li role="menuitem"><a class="dropdown-item">Trainers</a></li>
-        </ul>
-      </div>
+<div *ngIf="!activeModalFilter">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">YOU ARE HERE</li>
+    <li class="active breadcrumb-item">E-commerce</li>
+  </ol>
+  <h1 class="page-title">E-commerce > <span class="fw-semi-bold">Product Grid</span></h1>
+  <div class="product-grid">
+    <filter class="product-grid__filters" [filters]="filters"></filter>
+    <div class="product-grid__mobile-filters">
+      <button class="btn btn-transparent btn-lg" (click)="openModal(1)" >
+        Sort <i class="fa fa-2x fa-angle-down"></i>
+      </button>
+      <button class="btn btn-transparent btn-lg" (click)="openModal(2)" >
+        Filter <i class="fa fa-2x fa-angle-down"></i>
+      </button>
     </div>
-
-    <div class="product-grid__filters-group">
-      Brands
-      <div class="btn-group dropdown" dropdown>
-        <button id="dropdown-btn-one" class="btn btn-default dropdown-toggle" dropdownToggle>
-          &nbsp; All &nbsp;
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-btn-one">
-          <li role="menuitem"><a class="dropdown-item">Nike</a></li>
-          <li role="menuitem"><a class="dropdown-item">Adidas</a></li>
-        </ul>
+    <div class="product-grid__products row">
+      <div *ngFor="let product of products" class="product-grid__element product-card">
+        <div class="product-card__photo" [ngStyle]="{'background-image': 'url(' + product.image + ')'}">
+          <div class="photo-label" *ngIf="product.label" [ngClass]="product.label === 'Sale' ? 'red' : 'green'">{{product.label}}</div>
+          <div class="star" [ngClass]="product.starred && 'star--fill'" (click)="changeItem(product.id)">
+            <i class="fa" [ngClass]="product.starred ? 'fa-star' : 'fa-star-o'"></i>
+          </div>
+        </div>
+        <h5 class="product-card__title">{{product.title}}</h5>
+        <div class="product-card__description">{{product.subtitle}}</div>
+        <div class="price" *ngIf="!product.isSale">
+          ${{product.price}}
+        </div>
+        <div class="price price--sale" *ngIf="product.isSale">
+          <span class="old">${{product.price.old}}</span>
+          {{product.price.percents}}% off
+          <span class="new"> ${{product.price.new}}</span>
+        </div>
       </div>
-    </div>
-
-    <div class="product-grid__filters-group">
-      Size
-      <div class="btn-group dropdown" dropdown>
-        <button id="dropdown-btn-one" class="btn btn-default dropdown-toggle" dropdownToggle>
-          &nbsp; All &nbsp;
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-btn-one">
-          <li role="menuitem"><a class="dropdown-item">7</a></li>
-          <li role="menuitem"><a class="dropdown-item">8</a></li>
-          <li role="menuitem"><a class="dropdown-item">9</a></li>
-          <li role="menuitem"><a class="dropdown-item">10</a></li>
-          <li role="menuitem"><a class="dropdown-item">11</a></li>
-          <li role="menuitem"><a class="dropdown-item">12</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="product-grid__filters-group">
-      Colour
-      <div class="btn-group dropdown" dropdown>
-        <button id="dropdown-btn-one" class="btn btn-default dropdown-toggle" dropdownToggle>
-          &nbsp; All &nbsp;
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-btn-one">
-          <li role="menuitem"><a class="dropdown-item">White</a></li>
-          <li role="menuitem"><a class="dropdown-item">Black</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="product-grid__filters-group">
-      Range
-      <div class="btn-group dropdown" dropdown>
-        <button id="dropdown-btn-one" class="btn btn-default dropdown-toggle" dropdownToggle>
-          &nbsp; All &nbsp;
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-btn-one">
-          <li role="menuitem"><a class="dropdown-item">0 - 49</a></li>
-          <li role="menuitem"><a class="dropdown-item">50 - 149</a></li>
-          <li role="menuitem"><a class="dropdown-item">150 - 499</a></li>
-          <li role="menuitem"><a class="dropdown-item">500+</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="product-grid__filters-group">
-      Sort
-      <div class="btn-group dropdown" dropdown>
-        <button id="dropdown-btn-one" class="btn btn-default dropdown-toggle" dropdownToggle>
-          &nbsp; Favourite &nbsp;
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-btn-one">
-          <li role="menuitem"><a class="dropdown-item">Price</a></li>
-          <li role="menuitem"><a class="dropdown-item">Popular</a></li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="product-grid__products row">
-    <div *ngFor="let product of products" class="col-md-3 product-grid__element product-card">
-      <div class="product-card__photo" [ngStyle]="{'background-image': 'url(' + product.image + ')'}">
-       <div class="photo-label" *ngIf="product.label" [ngClass]="product.label === 'Sale' ? 'red' : 'green'">{{product.label}}</div>
-       <div class="star" [ngClass]="product.starred && 'star--fill'" (click)="changeItem(product.id)">
-         <i class="fa" [ngClass]="product.starred ? 'fa-star' : 'fa-star-o'"></i>
-       </div>
-     </div>
-     <h5 class="product-card__title">{{product.title}}</h5>
-     <div class="product-card__description">{{product.subtitle}}</div>
-     <div class="price" *ngIf="!product.isSale">
-       ${{product.price}}
-     </div>
-     <div class="price price--sale" *ngIf="product.isSale">
-       <span class="old">${{product.price.old}}</span>
-       {{product.price.percents}}% off
-       <span class="new"> ${{product.price.new}}</span>
-     </div>
     </div>
   </div>
 </div>
+<filter-modal [title]="'Sort'" (onClose)="closeModal()" [data]="filters.sortFilter" *ngIf="activeModalFilter === 1"></filter-modal>
+<filter-modal [title]="'Filters'" (onClose)="closeModal()" [data]="filters.mainFilters" *ngIf="activeModalFilter === 2"></filter-modal>

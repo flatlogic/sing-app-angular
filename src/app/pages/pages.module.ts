@@ -8,6 +8,9 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FilterComponent } from './product-grid/components/filter/filter.component';
+import { FilterDropdownComponent } from './product-grid/components/filterDropdown/filter-dropdown.component';
+import { FilterModalComponent } from './product-grid/components/filterModal/filter-modal.component';
 
 export const routes = [
   {path: 'product-grid', component: ProductGridComponent, pathMatch: 'full'},
@@ -17,7 +20,10 @@ export const routes = [
 @NgModule({
   declarations: [
     ProductGridComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    FilterComponent,
+    FilterDropdownComponent,
+    FilterModalComponent
   ],
   imports: [
     Ng2CarouselamosModule,

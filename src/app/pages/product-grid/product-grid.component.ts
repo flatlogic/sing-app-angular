@@ -1,17 +1,28 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import mock, { toggle } from '../mock';
+import mockFilters from './filters.mock';
 
 @Component({
   selector: '[product-grid]',
   templateUrl: './product-grid.template.html',
-  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./product-grid.style.scss']
 })
 export class ProductGridComponent {
   public products = mock;
+  public filters = mockFilters;
+  public activeModalFilter: number = null;
 
   public changeItem = function(id) {
     toggle.call(this, id);
   };
+
+  public openModal(id) {
+    this.activeModalFilter = id;
+    console.log(this.activeModalFilter);
+  }
+
+  public closeModal() {
+    this.activeModalFilter = null;
+  }
 }
