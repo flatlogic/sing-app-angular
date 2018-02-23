@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import mock, { toggle } from '../mock';
+import mock, { toggle } from './products.mock';
 import mockFilters from './filters.mock';
 
 @Component({
