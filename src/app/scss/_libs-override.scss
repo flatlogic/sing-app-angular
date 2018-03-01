@@ -92,3 +92,14 @@ ngx-loading-bar {
   position: absolute;
   color: theme-color('primary');
 }
+
+/*************************************/
+/*           ngx-bootstrap           */
+/*************************************/
+
+.tab-container {
+  display: block;
+  background: none;
+  border-radius: $border-radius;
+  box-shadow: $widget-shadow;
+}
