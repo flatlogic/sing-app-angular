@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 import mock, { toggle } from './products.mock';
 import mockFilters from './filters.mock';
@@ -6,7 +6,7 @@ import mockFilters from './filters.mock';
 @Component({
   selector: '[product-grid]',
   templateUrl: './product-grid.template.html',
-  styleUrls: ['./product-grid.style.scss', './product-card.style.scss']
+  styleUrls: ['./product-grid.style.scss']
 })
 export class ProductGridComponent {
   public products = mock;

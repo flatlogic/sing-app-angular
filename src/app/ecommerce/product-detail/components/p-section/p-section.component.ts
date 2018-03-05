@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PSectionComponent {
   @Input() title: string = '';
-  @Input() isMobileTitleHidden: boolean = false;
+  @Input() h: boolean = false;
 }

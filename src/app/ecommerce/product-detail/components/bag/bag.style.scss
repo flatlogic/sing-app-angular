@@ -1,26 +1,48 @@
-@import "../../../../scss/helpers";
-
 .bag {
   display: flex;
+  height: 50px;
 }
 
-.btn-add {
+.add {
+  width: 100%;
+  background-color: #363f4e;
   text-transform: uppercase;
-  flex-grow: 1;
+  color: #fff;
+  border: none;
+  margin-right: 7.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   img {
     height: 20px;
-    margin-left: $spacer;
+    margin-left: 10px;
   }
 }
 
-.btn-star {
+.star {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 55px;
-  border: 2px solid $border-color;
+  border: 2px solid #d8dfe5;
   background: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   img {
     height: 20px;

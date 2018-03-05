@@ -8,34 +8,40 @@
 ></div>
 
 <ng-template #prevTemplate>
-  <button class="carousel-btn carousel-btn-left">
+  <button class="carousel-btn carousel-btn--left">
     <i class="fa fa-angle-left fa-2x"></i>
   </button>
 </ng-template>
 
 <ng-template #nextTemplate>
-  <button class="carousel-btn carousel-btn-right">
+  <button class="carousel-btn carousel-btn--right">
     <i class="fa fa-angle-right fa-2x"></i>
   </button>
 </ng-template>
 
-<ng-template let-card #itemTemplate>
-  <div class="product-card col-md-3 col-6">
-    <div class="card-photo" [ngStyle]="{'background-image': 'url(' + card.image + ')'}">
-      <div class="badge" *ngIf="card.label" [ngClass]="card.label === 'Sale' ? 'badge-danger' : 'badge-success'">{{card.label}}</div>
-      <a role="button" class="star" (click)="toggleSliderProductStarred(card.id)">
-        <i class="fa" [ngClass]="card.starred ? 'fa-star' : 'fa-star-o'"></i>
-      </a>
+<ng-template let-item #itemTemplate>
+  <div class="col-md-3 col-6 product-card">
+    <div class="product-card__photo" [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+      <div class="photo-label" *ngIf="item.label" [ngClass]="item.label === 'Sale' ? 'red' : 'green'">{{item.label}}</div>
+      <div class="star" [ngClass]="item.starred && 'star--fill'" (click)="toggleSliderProductStarred(item.id)">
+        <i class="fa" [ngClass]="item.starred ? 'fa-star' : 'fa-star-o'"></i>
+      </div>
     </div>
-    <h5 class="card-title">{{card.title}}</h5>
-    <div class="card-description">{{card.subtitle}}</div>
-    <div class="price" *ngIf="!card.isSale">
-      ${{card.price}}
-    </div>
-    <div class="price price-sale" *ngIf="card.isSale">
-      <span class="old">${{card.price.old}}</span>
-      {{card.price.percents}}% off
-      <span class="new"> ${{card.price.new}}</span>
+    <h6 class="product-card__title">{{item.title}}</h6>
+    <div class="product-card__description">{{item.subtitle}}</div>
+    <div class="product-card__price-wrapper">
+      <div class="price" *ngIf="!item.isSale">
+        ${{item.price}}
+      </div>
+      <div class="price price--sale" *ngIf="item.isSale">
+        <span class="old">${{item.price.old}}</span>
+        {{item.price.percents}}% off
+        <span class="new"> ${{item.price.new}}</span>
+      </div>
+      <div class="rating rating--reverce">
+        {{item.rating}}
+        <i class="fa fa-star"></i>
+      </div>
     </div>
   </div>
 </ng-template>

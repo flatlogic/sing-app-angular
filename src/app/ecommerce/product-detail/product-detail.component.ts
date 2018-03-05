@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import mock from '../product-grid/products.mock';
+import mock, { toggle } from '../product-grid/products.mock';
 import DescriptionMock from './description.mock';
 
 @Component({

@@ -3,7 +3,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'slider',
   templateUrl: './slider.template.html',
-  styleUrls: ['./slider.style.scss', '../../../product-grid/product-card.style.scss'],
+  styleUrls: ['./slider.style.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class SliderComponent {

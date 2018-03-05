@@ -1,13 +1,13 @@
 export default [
   {
     id: 0,
-    extraClass: 'description-info',
+    extraClass: 'product-description-info',
     title: 'PRODUCT DESCRIPTION',
     body: `
-    <p class="info-article">Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) 
+    <p>Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) 
     are shoes primarily designed for sports or other forms of physical exercise, but which are 
     now also often used for everyday wear.</p>
-    <p class="info-article">The term generally describes a type of footwear with a flexible sole made of rubber or 
+    <p>The term generally describes a type of footwear with a flexible sole made of rubber or 
     synthetic material and an upper part made of leather or synthetic materials.</p>`,
   },
   {
@@ -20,30 +20,18 @@ export default [
     title: 'SHARE',
     body: `<div>
       Share photo with a tag <a href="#">#whitetrainers</a>
-      <ul class="description-social">
-        <li>
-          <a class="social-link facebook-link" href="#">
-            <i class="fa fa-facebook-f"></i>
-          </a>
-        </li>
-        <li>
-          <a class="social-link instagram-link" href="#">
-            <i class="fa fa-instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a class="social-link twitter-link" href="#">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </li>
-    </ul>
+      <div class="social-list">
+        <div><i class="fa fa-facebook"></i></div>
+        <div><i class="fa fa-instagram"></i></div>
+        <div><i class="fa fa-twitter"></i></div>
+      </div>
     </div>
     `,
   },
   {
     id: 3,
     title: 'TECHNOLOGY',
-    body: `<ul class="description-list">
+    body: `<ul>
       <li>Ollie patch</li>
       <li>Cup soles</li>
       <li>Vulcanized rubber soles</li>
@@ -56,7 +44,7 @@ export default [
       <div class="rating">
         4.8 <i class="fa fa-star"></i>
       </div>
-      <p>32 Reviews</p>
+      32 Reviews
       <a href="#">Read all</a>
     </div>
     `,

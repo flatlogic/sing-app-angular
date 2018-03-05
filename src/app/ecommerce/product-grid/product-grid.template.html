@@ -5,8 +5,8 @@
   </ol>
   <h1 class="page-title">E-commerce - <span class="fw-semi-bold">Product Grid</span></h1>
   <div class="product-grid">
-    <filter class="product-filters" [filters]="filters"></filter>
-    <div class="product-mobile-filters">
+    <filter class="product-grid__filters" [filters]="filters"></filter>
+    <div class="product-grid__mobile-filters">
       <button class="btn btn-transparent btn-lg" (click)="openModal(1)" >
         Sort <i class="fa fa-2x fa-angle-down"></i>
       </button>
@@ -14,20 +14,20 @@
         Filter <i class="fa fa-2x fa-angle-down"></i>
       </button>
     </div>
-    <div class="products">
-      <div *ngFor="let product of products" class="product-card">
-        <div class="card-photo" [ngStyle]="{'background-image': 'url(' + product.image + ')'}">
-          <div class="badge" *ngIf="product.label" [ngClass]="product.label === 'Sale' ? 'badge-danger' : 'badge-success'">{{product.label}}</div>
-          <a role="button" class="star" (click)="changeItem(product.id)">
+    <div class="product-grid__products row">
+      <div *ngFor="let product of products" class="product-grid__element product-card">
+        <div class="product-card__photo" [ngStyle]="{'background-image': 'url(' + product.image + ')'}">
+          <div class="photo-label" *ngIf="product.label" [ngClass]="product.label === 'Sale' ? 'red' : 'green'">{{product.label}}</div>
+          <div class="star" [ngClass]="product.starred && 'star--fill'" (click)="changeItem(product.id)">
             <i class="fa" [ngClass]="product.starred ? 'fa-star' : 'fa-star-o'"></i>
-          </a>
+          </div>
         </div>
-        <h5 class="card-title">{{product.title}}</h5>
-        <div class="card-description">{{product.subtitle}}</div>
+        <h5 class="product-card__title">{{product.title}}</h5>
+        <div class="product-card__description">{{product.subtitle}}</div>
         <div class="price" *ngIf="!product.isSale">
           ${{product.price}}
         </div>
-        <div class="price price-sale" *ngIf="product.isSale">
+        <div class="price price--sale" *ngIf="product.isSale">
           <span class="old">${{product.price.old}}</span>
           {{product.price.percents}}% off
           <span class="new"> ${{product.price.new}}</span>
