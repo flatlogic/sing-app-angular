@@ -5,75 +5,63 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  box-shadow: $widget-shadow;
-  border-radius: $border-radius;
 
   @include media-breakpoint-down(sm) {
     display: none;
   }
 
-  & > div {
-    padding: 30px 20px;
+  .description-section {
+    padding: $widget-padding-vertical $widget-padding-horizontal;
     font-weight: $font-weight-normal;
-    display: flex;
-    flex-direction: column;
-
-    &:nth-child(n + 4) {
-      padding-top: 0;
-    }
   }
 
-  h3 {
-    font-size: 1.4rem;
+  .description-title {
     font-weight: $font-weight-normal;
-    margin-bottom: 15px;
     color: theme-color('dark');
   }
 
-  ul {
+  .description-list {
     list-style-type: none;
     padding-left: 0;
   }
 
-  p,
-  li {
-    margin: 3px 0;
-
+  .description-info .info-article,
+  .description-list li {
     &::before {
       content: '•';
-      margin-right: 7.5px;
+      margin-right: $spacer / 2;
     }
   }
 
-  a {
-    color: $link-color;
-  }
-
-  & .product-description-info {
+  & .description-info {
     grid-row: 1 / 3;
     grid-column: 1;
   }
 
-  .social-list {
+  .description-social {
     display: flex;
-    margin-top: 15px;
+    margin: $spacer 0 0;
+    list-style-type: none;
+    padding-left: 0;
 
-    div {
-      transition: 0.3s;
+    li + li {
+      margin-left: $spacer / 2;
+    }
+
+    .social-link {
       height: 25px;
       width: 25px;
       border-radius: 50%;
-      margin-right: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: $white;
 
       &:hover {
-        cursor: pointer;
+        text-decoration: none;
       }
 
-      &:nth-child(1) {
+      &.facebook-link {
         background-color: #3b5998;
 
         &:hover {
@@ -81,7 +69,7 @@
         }
       }
 
-      &:nth-child(2) {
+      &.instagram-link {
         background-color: #8a3ab9;
 
         &:hover {
@@ -89,7 +77,7 @@
         }
       }
 
-      &:nth-child(3) {
+      &.twitter-link {
         background-color: #1dcaff;
 
         &:hover {
@@ -102,47 +90,18 @@
   & .rating {
     font-weight: $font-weight-semi-bold;
     color: theme-color('warning');
-    margin-bottom: 5px;
+    margin-bottom: $spacer / 2;
 
     i {
       margin-left: 7.5px;
     }
-  }
-
-  & .reviews {
-    display: flex;
-    flex-direction: column;
-
-    a {
-      margin-top: 5px;
-    }
-  }
-
-  & .panel-header {
-    margin: auto 20px;
-    background-color: #fff;
-    border-top: 1px solid;
-    color: #adb5bd;
-  }
-
-  & .card-header {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  & .card-body {
-    padding-top: 0;
-  }
-
-  & .panel-first {
-    border-top: none;
   }
 }
 
 .product-description-mobile {
   display: none;
   font-weight: normal;
-  padding: 5px 0 10px;
+  padding: $padding-small-vertical 0 $padding-large-vertical;
 
   @include media-breakpoint-down(sm) {
     display: block;
@@ -154,7 +113,7 @@
     justify-content: space-between;
 
     .fa {
-      transition: .3s;
+      transition: $transition-base;
 
       &.expanded {
         transform: rotate(180deg);
@@ -165,9 +124,23 @@
 
   .card {
     margin-bottom: 0;
+    border-radius: 0;
 
-    .card-header {
+    & .card-header {
+      margin: auto 20px;
+      background-color: $white;
+      color: $text-muted;
+      padding-left: 0;
+      padding-right: 0;
       border-bottom: none;
     }
+
+    & .card-body {
+      padding-top: 0;
+    }
+  }
+
+  .card + .card {
+    border-top: 1px solid $border-color;
   }
 }

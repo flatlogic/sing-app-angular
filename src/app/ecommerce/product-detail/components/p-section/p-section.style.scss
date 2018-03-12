@@ -1,15 +1,11 @@
 @import '../../../../scss/helpers';
 
 .section {
-  margin-bottom: 75px;
+  margin-bottom: $spacer * 6;
 
   @include media-breakpoint-down(sm) {
-    background-color: #fff;
-    margin: 0 -20px;
-
-    & .hideon-sm {
-      display: none;
-    }
+    background-color: $white;
+    margin: 0 (-$content-padding / 2);
   }
 }
 
@@ -21,7 +17,7 @@
   color: theme-color('dark');
 
   @include media-breakpoint-down(sm) {
-    font-size: 20px;
+    font-size: $h4-font-size;
     margin-bottom: 20px;
   }
 }

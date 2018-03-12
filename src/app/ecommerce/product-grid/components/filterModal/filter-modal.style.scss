@@ -3,7 +3,7 @@
 .filter-modal {
   min-height: calc(100vh - 50px);
   background: white;
-  margin: -40px -20px;
+  margin: (-$content-padding) (-$content-padding / 2);
 
   .filter-modal-title {
     position: relative;
@@ -14,12 +14,13 @@
     align-items: center;
     background-color: theme-color('default');
 
-    button {
-      left: 35px;
+    .close {
+      left: $spacer * 2.5;
       padding: 0;
       border: none;
       position: absolute;
       background: transparent;
+      opacity: 1;
 
       &:focus {
         outline: none;
@@ -36,7 +37,7 @@
 
     h5 {
       margin: 0;
-      font-weight: 400;
+      font-weight: $font-weight-normal;
     }
   }
 }
@@ -44,43 +45,42 @@
 .filter-modal-body {
   min-height: calc(100vh - 100px);
   background-color: white;
-  padding-left: 35px;
+  padding-left: $spacer * 2.5;
 
-  li {
+  .filter-item {
     display: flex;
     align-items: center;
     height: 50px;
-    border-bottom: 2px solid #f8f8f8;
+    border-bottom: 1px solid $border-color;
     font-weight: 400;
 
-    span {
-      margin: 0 20px 0 -10px;
-      transition: 0.3s;
+    &.option {
+      border-bottom: none;
+    }
+
+    .option-radio {
+      margin-right: $spacer;
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      border: 2px solid #f8f8f8;
+      border: 1px solid $border-color;
       display: flex;
       align-items: center;
       justify-content: center;
 
       img {
-        transition: 0.3s;
+        transition: $transition-base;
         width: 15px;
         opacity: 0;
       }
     }
 
     &.active {
-      span {
+      .option-radio {
         img {
           opacity: 1;
         }
       }
-    }
-
-    &.option {
-      border-bottom: none;
     }
   }
 }

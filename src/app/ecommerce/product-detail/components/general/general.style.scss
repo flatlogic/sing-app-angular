@@ -6,7 +6,6 @@
 }
 
 .title {
-  margin-top: 20px;
   font-weight: $font-weight-normal;
   text-transform: uppercase;
   font-size: $font-size-lg;
@@ -18,14 +17,19 @@
   font-weight: $font-weight-normal;
   color: $text-muted;
   text-transform: capitalize;
-  margin: 5px 0 25px;
 }
 
 .price {
   font-weight: $font-weight-semi-bold;
   font-size: $font-size-lg;
-  margin-bottom: 25px;
   color: theme-color('dark');
+}
+
+.rating-wrapper,
+.title,
+.subtitle,
+.price {
+  margin-bottom: $spacer;
 }
 
 .rating-wrapper {
@@ -42,11 +46,10 @@
 
   @include media-breakpoint-down(sm) {
     flex-direction: column-reverse;
-    margin-top: -31px;
+    margin-top: -$spacer * 2;
 
     & .title {
-      margin-bottom: 25px;
-      margin-top: 5px;
+      margin-bottom: $spacer;
     }
 
     & .subtitle {
