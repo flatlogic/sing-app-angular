@@ -3,6 +3,7 @@
 /***********************/
 
 .loading-overlay {
+  pointer-events: none;
   position: absolute;
   left: 0;
   top: 0;
