@@ -9,6 +9,8 @@
 }
 
 .icon-list-item{
+  display: flex;
+  align-items: center;
   height: 32px;
   font-size: 14px;
   line-height: 32px;
@@ -17,16 +19,17 @@
     text-decoration: none;
   }
 
-
   .glyphicon,
-  .fa{
+  .fa,
+  .fi{
     width: 32px;
     margin-right: 10px;
   }
 
   &:hover{
     .glyphicon,
-    .fa{
+    .fa,
+    .fi{
       font-size: 28px;
     }
   }
