@@ -2,10 +2,10 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
-  selector: '[notification-load]'
+  selector: '[appNotificationsLoad]'
 })
 
-export class NotificationLoad implements OnInit {
+export class NotificationsLoadDirective implements OnInit {
   $el: any;
   resetData: any = null;
 
@@ -15,7 +15,7 @@ export class NotificationLoad implements OnInit {
 
   ngOnInit(): void {
     this.$el.on('click change', function(e): boolean {
-      let $this = jQuery(this),
+      const $this = jQuery(this),
         $target = jQuery($this.data('ajax-target'));
       if ($target.length > 0 ) {
         e = jQuery.Event('ajax-load:start', {originalEvent: e});

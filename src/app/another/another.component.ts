@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'another',
+  selector: 'app-another',
   templateUrl: './another.template.html'
 })
-export class AnotherPage {
+export class AnotherComponent {
 }

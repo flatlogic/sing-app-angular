@@ -1,11 +1,13 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 declare let jQuery: any;
 
+import 'widgster';
+
 @Directive ({
   selector: '[widget]'
 })
 
-export class Widget implements OnInit {
+export class WidgetDirective implements OnInit {
   $el: any;
 
   constructor(el: ElementRef) {
@@ -16,7 +18,7 @@ export class Widget implements OnInit {
      When widget is closed remove its parent if it is .col-*
      */
     jQuery(document).on('close.widgster', (e) => {
-      let $colWrap = jQuery(e.target)
+      const $colWrap = jQuery(e.target)
         .closest('.content > .row > [class*="col-"]:not(.widget-container)');
 
       // remove colWrap only if there are no more widgets inside

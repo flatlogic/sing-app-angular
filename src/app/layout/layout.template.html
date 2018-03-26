@@ -1,7 +1,7 @@
-<nav sidebar id="sidebar" role="navigation" class="sidebar"></nav>
-<nav navbar (toggleSidebarEvent)="toggleSidebarListener($event)"
-     (toggleChatEvent)="toggleChatListener()" class="page-controls navbar navbar-dashboard"></nav>
-<aside chat-sidebar class="chat-sidebar"></aside>
+<app-sidebar id="sidebar" role="navigation" class="sidebar"></app-sidebar>
+<app-navbar (toggleSidebarEvent)="toggleSidebarListener($event)"
+     (toggleChatEvent)="toggleChatListener()" class="page-controls navbar navbar-dashboard"></app-navbar>
+<app-chat-sidebar class="chat-sidebar"></app-chat-sidebar>
 
 <div class="content-wrap" id="content-wrap">
   <ngx-loading-bar></ngx-loading-bar>

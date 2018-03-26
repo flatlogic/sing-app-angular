@@ -6,8 +6,8 @@ declare let jQuery: any;
 export class AppConfig {
   config = {
     name: 'sing',
-    title: 'Sing Dashboard App with Angular 4.0 support by Flatlogic',
-    version: '3.7.0',
+    title: 'Sing Dashboard App with Angular support by Flatlogic',
+    version: '4.2.0',
     /**
      * Whether to print and alert some log information
      */
@@ -44,17 +44,6 @@ export class AppConfig {
       },
       navCollapseTimeout: 2500
     },
-
-    /**
-     * Application state. May be changed when using.
-     * Synced to Local Storage
-     */
-    state: {
-      /**
-       * whether navigation is static (prevent automatic collapsing)
-       */
-      'nav-static': false
-    }
   };
 
   _resizeCallbacks = [];
@@ -67,13 +56,13 @@ export class AppConfig {
   };
 
   isScreen(size): boolean {
-    let screenPx = window.innerWidth;
+    const screenPx = window.innerWidth;
     return (screenPx >= this.config.settings.screens[size + '-min'] || size === 'xs')
       && (screenPx <= this.config.settings.screens[size + '-max'] || size === 'xl');
   }
 
   getScreenSize(): string {
-    let screenPx = window.innerWidth;
+    const screenPx = window.innerWidth;
     if (screenPx <= this.config.settings.screens['xs-max']) { return 'xs'; }
     if ((screenPx >= this.config.settings.screens['sm-min'])
       && (screenPx <= this.config.settings.screens['sm-max'])) { return 'sm'; }
@@ -97,8 +86,8 @@ export class AppConfig {
   }
 
   changeColor(color, ratio, darker): string {
-    let pad = function (num, totalChars): number {
-      let padVal = '0';
+    const pad = function (num, totalChars): number {
+      const padVal = '0';
       num = num + '';
       while (num.length < totalChars) {
         num = padVal + num;
@@ -115,7 +104,7 @@ export class AppConfig {
     );
 
     // Calculate ratio
-    let difference = Math.round(ratio * 256) * (darker ? -1 : 1),
+    const difference = Math.round(ratio * 256) * (darker ? -1 : 1),
     // Determine if input is RGB(A)
       rgb = color.match(new RegExp('^rgba?\\(\\s*' +
         '(\\d|[1-9]\\d|1\\d{2}|2[0-4][0-9]|25[0-5])' +
@@ -202,7 +191,7 @@ export class AppConfig {
     jQuery(window).resize(() => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
-        let size = this.getScreenSize();
+        const size = this.getScreenSize();
         if (size !== prevSize) { // run only if something changed
           // run exit callbacks first
           this._screenSizeCallbacks[prevSize].exit.forEach((fn) => {

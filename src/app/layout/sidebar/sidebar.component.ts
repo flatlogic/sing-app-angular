@@ -1,15 +1,15 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import {Component, OnInit, ElementRef, AfterViewInit} from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
 @Component({
-  selector: '[sidebar]',
+  selector: 'app-sidebar',
   templateUrl: './sidebar.template.html'
 })
 
-export class Sidebar implements OnInit {
+export class SidebarComponent implements OnInit, AfterViewInit {
   $el: any;
   config: any;
   configFn: any;
@@ -25,7 +25,7 @@ export class Sidebar implements OnInit {
   }
 
   initSidebarScroll(): void {
-    let $sidebarContent = this.$el.find('.js-sidebar-content');
+    const $sidebarContent = this.$el.find('.js-sidebar-content');
     if (this.$el.find('.slimScrollDiv').length !== 0) {
       $sidebarContent.slimscroll({
         destroy: true
@@ -38,7 +38,7 @@ export class Sidebar implements OnInit {
   }
 
   changeActiveNavigationItem(location): void {
-    let $newActiveLink = this.$el.find('a[href="#' + location.path().split('?')[0] + '"]');
+    const $newActiveLink = this.$el.find('a[href="#' + location.path().split('?')[0] + '"]');
 
     // collapse .collapse only if new and old active links belong to different .collapse
     if (!$newActiveLink.is('.active > .collapse > li > a')) {

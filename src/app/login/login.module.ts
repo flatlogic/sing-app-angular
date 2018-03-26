@@ -3,15 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { Login } from './login.component';
+import { LoginComponent } from './login.component';
 
 export const routes = [
-  { path: '', component: Login, pathMatch: 'full' }
+  { path: '', component: LoginComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [
-    Login
+    LoginComponent
   ],
   imports: [
     CommonModule,
