@@ -1,10 +1,10 @@
-@import "../scss/helpers";
+@import "../../scss/helpers";
 
 /***********************************/
 /**          ERROR PAGE           **/
 /***********************************/
 
-.error-page{
+:host {
   background-color: $gray-light;
 }
 
@@ -37,7 +37,7 @@
   font-size: 14px;
 }
 
-.error-page .page-footer {
+:host .page-footer {
   position: fixed;
   bottom: 30px;
   left: 0;

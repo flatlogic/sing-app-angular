@@ -1,17 +1,12 @@
-import { NgModule }      from '@angular/core';
-
-import 'jquery-flot';
-import 'jquery.flot.animator/jquery.flot.animator';
-import 'jquery-flot/jquery.flot.time.js';
-
-import { FlotChart } from './flot.directive';
+import { NgModule } from '@angular/core';
+import { FlotChartDirective } from './flot.directive';
 
 @NgModule({
   declarations: [
-    FlotChart
+    FlotChartDirective
   ],
   exports: [
-    FlotChart
+    FlotChartDirective
   ]
 })
 export class FlotChartModule {

@@ -37,4 +37,4 @@ export default {
     items: ['Favorite', 'Price', 'Popular'],
     checked: ''
   }
-}
+};

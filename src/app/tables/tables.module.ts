@@ -2,31 +2,29 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule, PaginationModule  } from 'ngx-bootstrap';
 import { DataTableModule } from 'angular2-datatable';
 import { Ng2TableModule } from 'ng2-table';
-
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
 import { JqSparklineModule } from '../components/sparkline/sparkline.module';
-
-
-import { TablesBasic } from './basic/tables-basic.component';
-import { TablesDynamic } from './dynamic/tables-dynamic.component';
+import { TablesBasicComponent } from './basic/tables-basic.component';
+import { TablesDynamicComponent } from './dynamic/tables-dynamic.component';
 import { SearchPipe } from './dynamic/pipes/search-pipe';
 
 export const routes = [
   {path: '', redirectTo: 'basic', pathMatch: 'full'},
-  {path: 'basic', component: TablesBasic},
-  {path: 'dynamic', component: TablesDynamic},
+  {path: 'basic', component: TablesBasicComponent},
+  {path: 'dynamic', component: TablesDynamicComponent},
 ];
 
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    TablesBasic,
-    TablesDynamic,
+    TablesBasicComponent,
+    TablesDynamicComponent,
     SearchPipe
   ],
   imports: [

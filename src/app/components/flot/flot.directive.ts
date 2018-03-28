@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[flot-chart]'
 })
 
-export class FlotChart {
+export class FlotChartDirective implements AfterViewInit {
   $el: any;
   @Input() data: any;
   @Input() options: string;

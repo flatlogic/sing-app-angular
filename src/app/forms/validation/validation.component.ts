@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
@@ -7,8 +7,8 @@ declare let jQuery: any;
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./validation.style.scss']
 })
-export class Validation {
-  ngOnInit(): void {
+export class ValidationComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
     jQuery('.parsleyjs').parsley();
   }
 }

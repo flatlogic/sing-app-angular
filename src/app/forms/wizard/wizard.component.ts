@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
@@ -7,7 +7,7 @@ declare let jQuery: any;
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./wizard.style.scss']
 })
-export class Wizard {
+export class WizardComponent implements OnInit {
   destindationMask = {
     mask: [/[1-9]/, /\d/, /\d/, /\d/, /\d/]
   };

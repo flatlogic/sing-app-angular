@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import {Directive, ElementRef, OnInit} from '@angular/core';
 import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
@@ -6,7 +6,7 @@ declare let jQuery: any;
   selector: '[geo-locations-widget]'
 })
 
-export class GeoLocationsWidget {
+export class GeoLocationsWidgetDirective implements OnInit {
   mapData: any;
   config: any;
   $el: any;

@@ -2,12 +2,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: '[extra-invoice]',
-  template: require('./invoice.template.html'),
+  templateUrl: './invoice.template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./invoice.style.scss')]
+  styleUrls: ['./invoice.style.scss']
 })
-export class Invoice {
+export class InvoiceComponent {
   print(): void {
     window.print();
-  };
+  }
 }

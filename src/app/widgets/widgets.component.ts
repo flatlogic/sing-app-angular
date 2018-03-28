@@ -8,7 +8,7 @@ import { AppConfig } from '../app.config';
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./widgets.style.scss']
 })
-export class Widgets {
+export class WidgetsComponent {
   config: any;
   configFn: any;
 

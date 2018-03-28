@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[morris-chart]'
 })
 
-export class MorrisChart {
+export class MorrisChartDirective implements AfterViewInit {
   $el: any;
   @Input() height: number;
   @Input() type: string;

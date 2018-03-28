@@ -12,7 +12,7 @@ declare let Rickshaw: any;
   styleUrls: ['../../../../node_modules/rickshaw/rickshaw.css']
 })
 
-export class MarketStatsWidget {
+export class MarketStatsWidgetComponent {
   seriesData: Array<any> = [ [], [] ];
   random: any;
   series: Array<any>;

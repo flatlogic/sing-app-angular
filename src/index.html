@@ -1,40 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Sing</title>
+  <base href="/">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= htmlWebpackPlugin.options.title %></title>
-  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
-  <!-- base url -->
-  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
-  <% if (webpackConfig.htmlElements.headTags) { %>
-  <!-- Configured Head Tags  -->
-  <%= webpackConfig.htmlElements.headTags %>
-  <% } %>
-
-
-  <%= htmlWebpackPlugin.files.webpackManifest %>
-
-  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
-  <!-- Webpack Dev Server reload -->
-  <script src="/webpack-dev-server.js"></script>
-  <% } %>
-
-  <!-- CSS will be injected by webpack here -->
-  <!-- Preload link tags will be injected by webpack here -->
-
+  <link rel="icon" type="image/x-icon" href="./assets/icon/favicon-32x32.png">
 </head>
-
 <body>
-
-  <app>
+  <app-root>
     <style>
       /*
        * Inline css to add simple styles for loader.
        * Is going to be replaced by angular after bootstrap.
        */
-      app {
+      app-root {
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         padding-top: 45vh;
@@ -44,7 +25,6 @@
       }
     </style>
     Loading...
-  </app>
-  <!-- Scripts will be injected by webpack here -->
+  </app-root>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
@@ -7,7 +7,7 @@ declare let jQuery: any;
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./grid.style.scss']
 })
-export class GridComponent {
+export class GridComponent implements OnInit {
   sortOptions: Object = {
     connectWith: '.widget-container',
     handle: 'header, .handle',

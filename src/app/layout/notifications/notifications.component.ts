@@ -3,11 +3,11 @@ import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
 @Component({
-  selector: '[notifications]',
+  selector: 'app-notifications',
   templateUrl: './notifications.template.html',
   styleUrls: ['./notifications.style.scss']
 })
-export class Notifications {
+export class NotificationsComponent {
   $el: any;
   config: any;
 

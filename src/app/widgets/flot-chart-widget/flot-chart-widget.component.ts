@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './flot-chart-widget.template.html',
 })
 
-export class FlotChartWidget {
+export class FlotChartWidgetComponent {
   configFn: any;
   config: any;
 
@@ -21,11 +21,11 @@ export class FlotChartWidget {
       return (Math.floor(Math.random() * 30)) + 10;
     }
 
-    let data = [],
-      maxValueIndex = 5;
+    const data = [];
+    let maxValueIndex = 5;
 
     for (let i = 0; i < labels.length; i++) {
-      let randomSeries = [];
+      const randomSeries = [];
       for (let j = 0; j < 25; j++) {
         randomSeries.push([j, Math.floor(maxValueIndex * j) + random()]);
       }
@@ -41,5 +41,5 @@ export class FlotChartWidget {
       });
     }
     return data;
-  };
+  }
 }

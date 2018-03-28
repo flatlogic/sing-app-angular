@@ -1,11 +1,11 @@
-import { Directive, ElementRef } from '@angular/core';
+import {Directive, ElementRef, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[number-animate]'
 })
 
-export class AnimateNumber {
+export class AnimateNumberDirective implements OnInit {
   $el: any;
 
   constructor(el: ElementRef) {

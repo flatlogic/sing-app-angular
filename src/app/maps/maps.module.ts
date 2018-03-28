@@ -9,20 +9,20 @@ import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 
 import { AgmCoreModule } from '@agm/core';
 
-import { MapsGoogle } from './google/maps-google.component';
-import { MapsVector } from './vector/maps-vector.component';
+import { MapsGoogleComponent } from './google/maps-google.component';
+import { MapsVectorComponent } from './vector/maps-vector.component';
 
 export const routes = [
   {path: '', redirectTo: 'google', pathMatch: 'full'},
-  {path: 'google', component: MapsGoogle},
-  {path: 'vector', component: MapsVector}
+  {path: 'google', component: MapsGoogleComponent},
+  {path: 'vector', component: MapsVectorComponent}
 ];
 
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    MapsGoogle,
-    MapsVector
+    MapsGoogleComponent,
+    MapsVectorComponent
   ],
   imports: [
     CommonModule,

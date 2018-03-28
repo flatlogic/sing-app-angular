@@ -1,9 +1,11 @@
-import { Component, ViewEncapsulation, Injector } from '@angular/core';
+import {
+  Component, ViewEncapsulation, Injector, OnInit,
+  OnDestroy
+} from '@angular/core';
 import { Select2OptionData } from 'ng2-select2';
 import { ɵDomSharedStylesHost } from '@angular/platform-browser';
 import * as data from './elements.data';
 declare const jQuery: any;
-declare const tinymce: any;
 
 @Component({
   selector: '[elements]',
@@ -11,7 +13,7 @@ declare const tinymce: any;
   styleUrls: [ './elements.style.scss' ],
   encapsulation: ViewEncapsulation.None,
 })
-export class Elements {
+export class ElementsComponent implements OnInit, OnDestroy {
   date: Date = new Date(2016, 5, 10);
   colorOptions: Object = {color: '#f0b518'};
   injector: Injector;
@@ -70,13 +72,6 @@ export class Elements {
     jQuery('.js-slider').slider();
     jQuery('#colorpicker').colorpicker(this.colorOptions);
     jQuery('.selectpicker').selectpicker();
-  }
-
-  ngAfterViewInit() {
-    tinymce.init({
-      selector: '#tinymce',
-      skin_url: 'assets/tinymce/skins/lightgray'
-    });
   }
 
   unmask(event) {

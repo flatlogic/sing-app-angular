@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[jq-sparkline]'
 })
 
-export class JqSparkline {
+export class JqSparklineDirective implements AfterViewInit {
   $el: any;
   @Input() data: any;
   @Input() options: Array<any>;
@@ -15,7 +15,7 @@ export class JqSparkline {
   }
 
   render(): void {
-    let model = jQuery.type(this.data) === 'string' ?
+    const model = jQuery.type(this.data) === 'string' ?
       this.data.replace(/(^,)|(,$)/g, '')
       : this.data,
       options = this.options;

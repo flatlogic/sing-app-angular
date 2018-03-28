@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 declare let nv: any;
 declare let d3: any;
@@ -7,7 +7,7 @@ declare let d3: any;
   selector: '[nvd3-chart]'
 })
 
-export class Nvd3Chart {
+export class Nvd3ChartDirective implements AfterViewInit {
   $el: any;
   @Input() chart: any;
   @Input() height: string;
@@ -19,7 +19,7 @@ export class Nvd3Chart {
 
   render(): void {
     nv.addGraph(() => {
-      let chart = this.chart;
+      const chart = this.chart;
       d3.select(this.$el.find('svg')[0])
         .style('height', this.height || '300px')
         .datum(this.datum)

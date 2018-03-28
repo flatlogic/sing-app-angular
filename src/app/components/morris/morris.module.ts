@@ -1,15 +1,12 @@
-import { NgModule }      from '@angular/core';
-
-import 'morris.js/morris.js';
-
-import { MorrisChart } from './morris.directive';
+import { NgModule } from '@angular/core';
+import { MorrisChartDirective } from './morris.directive';
 
 @NgModule({
   declarations: [
-    MorrisChart
+    MorrisChartDirective
   ],
   exports: [
-    MorrisChart
+    MorrisChartDirective
   ]
 })
 export class MorrisChartModule {

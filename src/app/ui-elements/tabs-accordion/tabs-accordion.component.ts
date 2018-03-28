@@ -1,14 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 declare let jQuery: any;
 
 @Component({
   selector: '[ui-tabs-accordion]',
-  template: require('./tabs-accordion.template.html'),
+  templateUrl: './tabs-accordion.template.html',
   styleUrls: ['./tabs-accordion.style.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class TabsAccordion {
+export class TabsAccordionComponent implements OnInit {
   ngOnInit(): void {
     jQuery('.nav-tabs').on('shown.bs.tab', 'a', (e) => {
       if (e.relatedTarget) {

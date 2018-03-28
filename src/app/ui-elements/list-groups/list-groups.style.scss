@@ -2,7 +2,7 @@ body{
   overflow-x: visible;
 }
 
-@import "../../scss/helpers";
+@import "../../../scss/helpers";
 
 /**
  * Nestable
@@ -177,7 +177,7 @@ body{
   font-weight: bold;
   border: 1px solid #ccc;
   background: #fafafa;
-  background: linear-gradient(top, #fafafa 0%, #eee 100%);
+  background: linear-gradient(to bottom, #fafafa 0%, #eee 100%);
   border-radius: 3px;
   box-sizing: border-box;
 }
@@ -207,9 +207,9 @@ body{
   overflow: hidden;
   border: 1px solid #aaa;
   background: #ddd;
-  background: -webkit-linear-gradient(top, #ddd 0%, #bbb 100%);
-  background: -moz-linear-gradient(top, #ddd 0%, #bbb 100%);
-  background: linear-gradient(top, #ddd 0%, #bbb 100%);
+  background: -webkit-linear-gradient(to bottom, #ddd 0%, #bbb 100%);
+  background: -moz-linear-gradient(to bottom, #ddd 0%, #bbb 100%);
+  background: linear-gradient(to bottom, #ddd 0%, #bbb 100%);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }

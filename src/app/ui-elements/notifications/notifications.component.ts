@@ -6,6 +6,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./notifications.style.scss']
 })
-export class Notifications {
+export class NotificationsComponent {
 }
 

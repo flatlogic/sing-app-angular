@@ -1,0 +1,251 @@
+// Sing variables
+// -------------------------
+// -------------------------
+
+$enable-shadows:            true !default;
+
+$glyphicons-halflings-include-bonus: false !default;
+$glyphicons-halflings-class-prefix: glyphicon !default;
+$glyphicons-halflings-font-base-size: 14px !default;
+$glyphicons-halflings-font-path: '~../src/scss/fonts/glyphicons' !default;
+
+$fa-font-path: "~font-awesome/fonts";
+
+$colorpicker-img-path: "~bootstrap-colorpicker/dist/img/bootstrap-colorpicker" !default;
+
+/*
+ * Typography
+ * ======================================================================== */
+$font-size-initial:       14px; // reset default browser value from 16px to 13px
+$font-size-base:          1rem !default;
+$font-size-lg:            1.25rem !default;
+$font-size-sm:            0.875rem !default;
+$font-size-larger:        1.1rem;
+$font-size-mini:          0.9rem;
+$font-size-index:         0.7rem;
+
+$small-font-size: 85% !default;
+
+$font-family-base: 'Montserrat', sans-serif;
+$font-family-sans-serif: 'Montserrat', sans-serif;
+
+// Color system
+//
+
+$white: #fff !default;
+$gray-100: #f5f5f5 !default;
+$gray-200: #dfdfdf !default;
+$gray-300: #eee !default;
+$gray-400: #ddd !default;
+$gray-500: #adb5bd !default;
+$gray-600: #777 !default;
+$gray-700: #555 !default;
+$gray-800: #343434 !default;
+$gray-900: #242424 !default;
+$black: #000 !default;
+$gray-light: #ddd !default;
+
+
+$blue: #5d8fc2 !default;
+$red: #dd5826 !default;
+$yellow: #f0b518 !default;
+$green: #64bd63 !default;
+$cyan: #5dc4bf !default;
+
+$theme-colors: (
+  primary: $blue,
+  secondary: $gray-600,
+  success: $green,
+  primary-light: #dee4ee,
+  success-light: #ecfaec,
+  info-light: #f2fafa,
+  warning-light: #fdf7e6,
+  danger-light: #fff2ef,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  dark: $gray-800,
+  inverse: $gray-700,
+  gray: $gray-300,
+  default: #f8f8f8
+);
+
+$link-color: #218bc3;
+
+$text-color: $gray-700 !default;
+
+$font-weight-bold: 700 !default;
+$font-weight-semi-bold: 600 !default;
+$font-weight-normal: 400 !default;
+$font-weight-thin: 300 !default;
+$font-weight-base: $font-weight-thin !default;
+
+$headings-font-weight: $font-weight-thin !default;
+
+$addition-bg: #f8f8f8 !default;
+
+$body-bg: #f5f5f5 !default;
+$body-bg-light: lighten($body-bg, 3%);
+
+//== Components
+//
+
+$padding-base-vertical:     0.5rem !default;
+$padding-base-horizontal:   1rem !default;
+
+$padding-large-vertical:    0.75rem !default;
+$padding-large-horizontal:  1.25rem !default;
+
+$padding-small-vertical:    0.25rem !default;
+$padding-small-horizontal:  0.75rem !default;
+
+$margin-base-vertical:     0.5rem !default;
+$margin-base-horizontal:   1rem !default;
+
+$margin-large-vertical:    0.75rem !default;
+$margin-large-horizontal:  1.25rem !default;
+
+$margin-small-vertical:    0.25rem !default;
+$margin-small-horizontal:  0.75rem !default;
+
+$border-radius:          .3rem !default;
+$border-radius-lg:       .35rem !default;
+$border-radius-sm:       .25rem !default;
+
+$nav-link-padding: 14px;
+
+//== Sidebar
+//
+$sidebar-padding-horizontal: 11px;
+$sidebar-width-open: 200px;
+$sidebar-width-closed: 50px;
+$sidebar-transition-time: 0.3s !default;
+$sidebar-slim-scroll-width: 4px;
+$sidebar-width: $sidebar-width-open + $sidebar-slim-scroll-width !default;
+
+$sidebar-bg-color: #242424;
+$sidebar-color: #aaa;
+
+$sidebar-item-border-color: transparent;
+$sidebar-item-active-color: #f2be35;
+$sidebar-item-hover-bg-color: #111;
+
+$chat-sidebar-bg-color: $gray-900 !default;
+$chat-sidebar-width: 250px + $sidebar-slim-scroll-width !default;
+
+$breadcrumb-divider: '>';
+$breadcrumb-padding-y: 0;
+$breadcrumb-bg: transparent;
+
+$badge-font-weight: 600;
+
+$widget-bg: #fff;
+$widget-title-color: #444;
+$widget-shadow: 0 0 10px darken($body-bg, 5%);
+
+
+$input-btn-line-height: 1.5;
+
+$input-btn-padding-y-sm: 0.4rem;
+$input-btn-padding-x-sm: 0.8rem;
+
+$input-height-small: 30px;
+
+//== Navbar
+//
+
+$navbar-height:  50px !default;
+$navbar-padding-y: 0 !default;
+$navbar-padding-x: 0 !default;
+
+$navbar-dashboard-bg:                $white !default;
+$navbar-dashboard-color:             #777 !default;
+$navbar-dashboard-border:            darken($navbar-dashboard-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-dashboard-link-color:                #666 !default;
+
+// Navbar links
+$navbar-dashboard-link-hover-color:          #333 !default;
+$navbar-dashboard-link-hover-bg:             transparent !default;
+$navbar-dashboard-link-active-color:         #555 !default;
+$navbar-dashboard-link-active-bg:            darken($navbar-dashboard-bg, 6.5%) !default;
+$navbar-dashboard-link-disabled-color:       #ccc !default;
+$navbar-dashboard-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-dashboard-brand-color:               $navbar-dashboard-link-color !default;
+$navbar-dashboard-brand-hover-color:         darken($navbar-dashboard-brand-color, 10%) !default;
+$navbar-dashboard-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-dashboard-toggle-hover-bg:           #ddd !default;
+$navbar-dashboard-toggle-icon-bar-bg:        #888 !default;
+$navbar-dashboard-toggle-border-color:       #ddd !default;
+
+
+// Content
+// -------------------------
+
+$content-padding: 40px;
+$content-padding-top: $content-padding + $navbar-height !default;
+
+// Screens
+// -------------------------
+
+$screen-lg-height: 670px !default;
+
+
+//== Buttons
+//
+$btn-default-bg: $addition-bg !default;
+$btn-default-border: rgba(0, 0, 0, 0.15) !default;
+
+// Dropdowns
+$dropdown-link-color: $text-color;
+
+// Widgets
+// -------------------------
+$widget-padding-vertical: 15px !default;
+$widget-padding-horizontal: 20px !default;
+$widget-bg-color: $white;
+
+//== Navs
+//
+$nav-tabs-active-link-hover-bg: $white !default;
+$nav-tabs-active-link-hover-color: $gray-700 !default;
+
+//== Forms
+//
+$input-border-focus: #4d90fe !default; //webkit focus color
+$legend-color: lighten($text-color, 15%) !default;
+
+$pre-bg: #f5f5f5 !default;
+
+$cursor-disabled: not-allowed !default;
+
+// Form states and alerts
+//
+// Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             #3c763d !default;
+$state-success-bg:               #dff0d8 !default;
+$state-success-border:           darken($state-success-bg, 5%) !default;
+
+$state-info-text:                #31708f !default;
+$state-info-bg:                  #d9edf7 !default;
+$state-info-border:              darken($state-info-bg, 7%) !default;
+
+$state-warning-text:             #8a6d3b !default;
+$state-warning-bg:               #fcf8e3 !default;
+$mark-bg:                        $state-warning-bg !default;
+$state-warning-border:           darken($state-warning-bg, 5%) !default;
+
+$state-danger-text:              #a94442 !default;
+$state-danger-bg:                #f2dede !default;
+$state-danger-border:            darken($state-danger-bg, 5%) !default;
+
+//*  Popover  */
+$popover-bg: #ebeff1 !default;
+$popover-arrow-outer-color: $popover-bg !default;
+$popover-arrow-color: $popover-bg !default;

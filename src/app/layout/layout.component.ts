@@ -1,9 +1,9 @@
 import {
   Component,
   ViewEncapsulation,
-  ElementRef, Renderer,
+  ElementRef, Renderer2,
   NgZone,
-  ViewChild
+  ViewChild, HostBinding, OnInit
 } from '@angular/core';
 import {
   Router,
@@ -20,30 +20,26 @@ declare let Hammer: any;
 declare let Raphael: any;
 
 @Component({
-  selector: 'layout',
+  selector: 'app-layout',
   encapsulation: ViewEncapsulation.None,
   templateUrl: './layout.template.html',
-  host: {
-    '[class.nav-static]' : 'config.state["nav-static"]',
-    '[class.chat-sidebar-opened]' : 'chatOpened',
-    '[class.app]' : 'true',
-    id: 'app'
-  }
 })
-export class Layout {
+export class LayoutComponent implements OnInit {
+  @HostBinding('class.nav-static') navStatic: boolean;
+  @HostBinding('class.chat-sidebar-opened') chatOpened: boolean = false;
+  @HostBinding('class.app') appClass: boolean = true;
   config: any;
   configFn: any;
   $sidebar: any;
   el: ElementRef;
   router: Router;
-  chatOpened: boolean = false;
   @ViewChild('spinnerElement') spinnerElement: ElementRef;
   @ViewChild('routerComponent') routerComponent: ElementRef;
 
   constructor(config: AppConfig,
               el: ElementRef,
               router: Router,
-              private renderer: Renderer,
+              private renderer: Renderer2,
               private ngZone: NgZone) {
     Raphael.prototype.safari = function(): any { return; };
     this.el = el;
@@ -53,11 +49,11 @@ export class Layout {
   }
 
   toggleSidebarListener(state): void {
-    let toggleNavigation = state === 'static'
+    const toggleNavigation = state === 'static'
       ? this.toggleNavigationState
       : this.toggleNavigationCollapseState;
     toggleNavigation.apply(this);
-    localStorage.setItem('nav-static', this.config.state['nav-static']);
+    localStorage.setItem('nav-static', JSON.stringify(this.navStatic));
   }
 
   toggleChatListener(): void {
@@ -77,8 +73,8 @@ export class Layout {
   }
 
   toggleNavigationState(): void {
-    this.config.state['nav-static'] = !this.config.state['nav-static'];
-    if (!this.config.state['nav-static']) {
+    this.navStatic = !this.navStatic;
+    if (!this.navStatic) {
       this.collapseNavigation();
     }
   }
@@ -87,8 +83,7 @@ export class Layout {
     // this method only makes sense for non-static navigation state
     if (this.isNavigationStatic()
       && (this.configFn.isScreen('lg') || this.configFn.isScreen('xl'))) { return; }
-
-    jQuery('layout').removeClass('nav-collapsed');
+    jQuery('app-layout').removeClass('nav-collapsed');
     this.$sidebar.find('.active .active').closest('.collapse').collapse('show')
       .siblings('[data-toggle=collapse]').removeClass('collapsed');
   }
@@ -98,7 +93,7 @@ export class Layout {
     if (this.isNavigationStatic()
       && (this.configFn.isScreen('lg') || this.configFn.isScreen('xl'))) { return; }
 
-    jQuery('layout').addClass('nav-collapsed');
+    jQuery('app-layout').addClass('nav-collapsed');
     this.$sidebar.find('.collapse.in').collapse('hide')
       .siblings('[data-toggle=collapse]').addClass('collapsed');
   }
@@ -124,11 +119,11 @@ export class Layout {
   }
 
   isNavigationStatic(): boolean {
-    return this.config.state['nav-static'] === true;
+    return this.navStatic === true;
   }
 
   toggleNavigationCollapseState(): void {
-    if (jQuery('layout').is('.nav-collapsed')) {
+    if (jQuery('app-layout').is('.nav-collapsed')) {
       this.expandNavigation();
     } else {
       this.collapseNavigation();
@@ -147,14 +142,14 @@ export class Layout {
   }
 
   enableSwipeCollapsing(): void {
-    let swipe = new Hammer(document.getElementById('content-wrap'));
-    let d = this;
+    const swipe = new Hammer(document.getElementById('content-wrap'));
+    const d = this;
 
     swipe.on('swipeleft', () => {
       setTimeout(() => {
         if (d.configFn.isScreen('md')) { return; }
 
-        if (!jQuery('layout').is('.nav-collapsed')) {
+        if (!jQuery('app-layout').is('.nav-collapsed')) {
           d.collapseNavigation();
         }
       });
@@ -163,9 +158,9 @@ export class Layout {
     swipe.on('swiperight', () => {
       if (d.configFn.isScreen('md')) { return; }
 
-      if (jQuery('layout').is('.chat-sidebar-opened')) { return; }
+      if (jQuery('app-layout').is('.chat-sidebar-opened')) { return; }
 
-      if (jQuery('layout').is('.nav-collapsed')) {
+      if (jQuery('app-layout').is('.nav-collapsed')) {
         d.expandNavigation();
       }
     });
@@ -179,13 +174,12 @@ export class Layout {
   }
 
   ngOnInit(): void {
-
     if (localStorage.getItem('nav-static') === 'true') {
-      this.config.state['nav-static'] = true;
+      this.navStatic = true;
     }
 
-    let $el = jQuery(this.el.nativeElement);
-    this.$sidebar = $el.find('[sidebar]');
+    const $el = jQuery(this.el.nativeElement);
+    this.$sidebar = $el.find('app-sidebar');
 
     $el.find('a[href="#"]').on('click', (e) => {
       e.preventDefault();
@@ -197,19 +191,15 @@ export class Layout {
     this.checkNavigationState();
 
     this.$sidebar.on('click', () => {
-      if (jQuery('layout').is('.nav-collapsed')) {
+      if (jQuery('app-layout').is('.nav-collapsed')) {
         this.expandNavigation();
       }
     });
 
     this.router.events.subscribe((event) => {
       this._navigationInterceptor(event);
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          this.collapseNavIfSmallScreen();
-          window.scrollTo(0, 0);
-        })
-      }
+      this.collapseNavIfSmallScreen();
+      window.scrollTo(0, 0);
     });
 
     if ('ontouchstart' in window) {
@@ -221,7 +211,7 @@ export class Layout {
       // return for bubbled events
       if (e.target !== e.currentTarget) { return; }
 
-      let $triggerLink = jQuery(this).prev('[data-toggle=collapse]');
+      const $triggerLink = jQuery(this).prev('[data-toggle=collapse]');
       jQuery($triggerLink.data('parent'))
         .find('.collapse.show').not(jQuery(this)).collapse('hide');
     })
@@ -252,12 +242,12 @@ export class Layout {
         // For simplicity we are going to turn opacity on / off
         // you could add/remove a class for more advanced styling
         // and enter/leave animation of the spinner
-        this.renderer.setElementStyle(
+        this.renderer.setStyle(
           this.spinnerElement.nativeElement,
           'opacity',
           '1'
         );
-        this.renderer.setElementStyle(
+        this.renderer.setStyle(
           this.routerComponent.nativeElement,
           'opacity',
           '0'
@@ -286,12 +276,12 @@ export class Layout {
       // For simplicity we are going to turn opacity on / off
       // you could add/remove a class for more advanced styling
       // and enter/leave animation of the spinner
-      this.renderer.setElementStyle(
+      this.renderer.setStyle(
         this.spinnerElement.nativeElement,
         'opacity',
         '0'
       );
-      this.renderer.setElementStyle(
+      this.renderer.setStyle(
         this.routerComponent.nativeElement,
         'opacity',
         '1'

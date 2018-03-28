@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { AppConfig } from '../app.config';
 
 @Component({
@@ -7,7 +7,7 @@ import { AppConfig } from '../app.config';
   styleUrls: ['./dashboard.style.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class Dashboard {
+export class DashboardComponent implements OnInit {
   config: any;
   month: any;
   year: any;
@@ -17,7 +17,7 @@ export class Dashboard {
   }
 
   ngOnInit(): void {
-    let now = new Date();
+    const now = new Date();
     this.month = now.getMonth() + 1;
     this.year = now.getFullYear();
   }

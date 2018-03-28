@@ -1,46 +1,44 @@
 import 'messenger/build/js/messenger.js';
-import 'jquery-ui/ui/sortable.js';
 import 'jquery.nestable/jquery.nestable.js';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 import { TabsModule, AccordionModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
-
-import { Components } from './components/components.component';
+import { ComponentsComponent } from './components/components.component';
 import { WidgetModule } from '../layout/widget/widget.module';
-import { Buttons } from './buttons/buttons.component';
-import { Notifications } from './notifications/notifications.component';
-import { Icons } from './icons/icons.component';
-import { TabsAccordion } from './tabs-accordion/tabs-accordion.component';
-import { ListGroups } from './list-groups/list-groups.component';
-
-import { MessengerDemo } from './notifications/messenger/messenger.directive';
+import { ButtonsComponent } from './buttons/buttons.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { IconsComponent } from './icons/icons.component';
+import { TabsAccordionComponent } from './tabs-accordion/tabs-accordion.component';
+import { ListGroupsComponent } from './list-groups/list-groups.component';
+import { MessengerDemoDirective } from './notifications/messenger/messenger.directive';
 
 export const routes = [
   {path: '', redirectTo: 'components', pathMatch: 'full'},
-  {path: 'components', component: Components},
-  {path: 'buttons', component: Buttons},
-  {path: 'notifications', component: Notifications},
-  {path: 'icons', component: Icons},
-  {path: 'tabs-accordion', component: TabsAccordion},
-  {path: 'list-groups', component: ListGroups},
+  {path: 'components', component: ComponentsComponent},
+  {path: 'buttons', component: ButtonsComponent},
+  {path: 'notifications', component: NotificationsComponent},
+  {path: 'icons', component: IconsComponent},
+  {path: 'tabs-accordion', component: TabsAccordionComponent},
+  {path: 'list-groups', component: ListGroupsComponent},
 ];
 
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    Components,
-    Buttons,
-    Notifications,
-    MessengerDemo,
-    Icons,
-    TabsAccordion,
-    ListGroups
+    ComponentsComponent,
+    ButtonsComponent,
+    NotificationsComponent,
+    MessengerDemoDirective,
+    IconsComponent,
+    TabsAccordionComponent,
+    ListGroupsComponent
   ],
   imports: [
     CommonModule,

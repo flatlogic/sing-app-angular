@@ -1,14 +1,14 @@
-@import "../scss/helpers";
+@import "../../scss/helpers";
 
 /***********************************/
 /**             LOGIN             **/
 /***********************************/
 
-.login-page{
+:host {
   background-color: $gray-light;
 }
 
-.login-page .page-footer {
+:host .page-footer {
   margin-bottom: 25px;
   font-size: $font-size-mini;
   color: $text-muted;
@@ -59,9 +59,9 @@
   .form-control{
     font-size: $font-size-mini;
     border: none;
-    background-color: $gray-200;
+    background-color: $gray-300;
     &:focus{
-      background-color: $gray-600;
+      background-color: $gray-200;
     }
   }
 }

@@ -1,15 +1,12 @@
-import 'jQuery-Mapael/js/jquery.mapael.js';
-import 'jQuery-Mapael/js/maps/world_countries.js';
-
-import { NgModule }      from '@angular/core';
-import { MapaelLayersMap } from './mapael.directive';
+import { NgModule } from '@angular/core';
+import { MapaelLayersMapDirective } from './mapael.directive';
 
 @NgModule({
   declarations: [
-    MapaelLayersMap
+    MapaelLayersMapDirective
   ],
   exports: [
-    MapaelLayersMap
+    MapaelLayersMapDirective
   ]
 })
 export class MapaelLayersMapModule {

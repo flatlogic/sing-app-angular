@@ -15,7 +15,7 @@ export class FoldersPipe implements PipeTransform {
   folders = FOLDERS;
 
   transform(value, args?): Array<any> {
-    let folderName = args;
+    const folderName = args;
     if (value) {
       return value.filter(conversation => {
         /* tslint:disable */

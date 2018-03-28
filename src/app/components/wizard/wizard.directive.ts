@@ -1,11 +1,11 @@
-import { Directive, ElementRef } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[bootstrap-wizard]'
 })
 
-export class BootstrapWizard {
+export class BootstrapWizardDirective implements AfterViewInit {
   $el: any;
 
   constructor(el: ElementRef) {
@@ -15,10 +15,10 @@ export class BootstrapWizard {
   render(): void {
     this.$el.bootstrapWizard({
       onTabShow: ($activeTab, $navigation, index): void => {
-        let $total = $navigation.find('li').length;
-        let $current = index + 1;
-        let $percent = ($current / $total) * 100;
-        let $wizard = this.$el;
+        const $total = $navigation.find('li').length;
+        const $current = index + 1;
+        const $percent = ($current / $total) * 100;
+        const $wizard = this.$el;
         $wizard.find('#bar').css({width: $percent + '%'});
 
         if ($current >= $total) {
@@ -36,8 +36,8 @@ export class BootstrapWizard {
       },
 
       // validate on tab change
-      onNext: function($activeTab, $navigation, nextIndex): boolean{
-        let $activeTabPane = jQuery($activeTab.find('a[data-toggle=tab]').attr('href')),
+      onNext: function($activeTab, $navigation, nextIndex): boolean {
+        const $activeTabPane = jQuery($activeTab.find('a[data-toggle=tab]').attr('href')),
           $form = $activeTabPane.find('form');
 
         // validate form in casa there is form

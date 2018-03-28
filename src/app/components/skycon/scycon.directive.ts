@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {Directive, ElementRef, Input, OnInit} from '@angular/core';
 declare let jQuery: any;
 declare let Skycons: any;
 
@@ -6,7 +6,7 @@ declare let Skycons: any;
   selector: '[skycon]'
 })
 
-export class Skycon {
+export class SkyconDirective implements OnInit {
   $el: any;
   @Input() color: string;
   @Input() weather: string;
@@ -16,7 +16,7 @@ export class Skycon {
   }
 
   ngOnInit(): void {
-    let icons = new Skycons.Skycons({'color': this.color});
+    const icons = new Skycons({'color': this.color});
     icons.set(this.$el[0], this.weather);
     icons.play();
   }

@@ -1,13 +1,13 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
   selector: '[ui-list-groups]',
-  template: require('./list-groups.template.html'),
+  templateUrl: './list-groups.template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./list-groups.style.scss')]
+  styleUrls: ['./list-groups.style.scss']
 })
-export class ListGroups {
+export class ListGroupsComponent implements OnInit {
   sortOptions: Object = {
     placeholder: 'list-group-item list-group-item-placeholder',
     forcePlaceholderSize: true

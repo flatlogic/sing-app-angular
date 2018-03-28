@@ -1,15 +1,13 @@
-import { Directive } from '@angular/core';
+import {AfterViewInit, Directive} from '@angular/core';
 declare let jQuery: any;
 
 @Directive({
   selector: '[grid-demo]',
 })
 
-export class GridDemo {
+export class GridDemoDirective implements AfterViewInit {
   render(): void {
-    jQuery.fn.widgster.Constructor.DEFAULTS.bodySelector = '.widget-body';
-
-    let $widgets = jQuery('.widget'),
+    const $widgets = jQuery('.widget'),
       $newsWidget = jQuery('#news-widget'),
       $sharesWidget = jQuery('#shares-widget'),
       $autoloadWidget = jQuery('#autoload-widget');
@@ -56,7 +54,7 @@ export class GridDemo {
      */
     $newsWidget.widgster({
       showLoader: false,
-      closePrompt: function(callback): void{
+      closePrompt: function(callback): void {
         jQuery('#news-close-modal').modal('show');
         jQuery('#news-widget-remove').on('click', () => {
           jQuery('#news-close-modal').on('hidden.bs.modal', callback).modal('hide');

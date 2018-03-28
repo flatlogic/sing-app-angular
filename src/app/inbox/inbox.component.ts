@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
@@ -7,7 +7,7 @@ declare let jQuery: any;
   styleUrls: ['./inbox.style.scss']
 })
 
-export class Inbox {
+export class InboxComponent implements OnInit {
   mailListShow: boolean = true;
   mailFormShow: boolean = false;
   mailDetailShow: boolean = false;
@@ -22,8 +22,8 @@ export class Inbox {
     this.initMailboxAppDemo(this.$el);
   }
 
-  handleComposeBtn(event): void {
-    this.repliedMessage = event || undefined;
+  handleComposeBtn(): void {
+    this.repliedMessage = void 0;
     this.changeEmailComponents('mailForm');
   }
 
@@ -33,7 +33,7 @@ export class Inbox {
   }
 
   changeEmailComponents(componentName: string): void {
-    let mailState = {
+    const mailState = {
       'mailList': (that): void => {
         that.mailFormShow = that.mailDetailShow = false;
         that.mailListShow = true;

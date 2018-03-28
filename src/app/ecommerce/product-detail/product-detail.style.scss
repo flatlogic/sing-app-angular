@@ -1,4 +1,4 @@
-@import '../../scss/helpers';
+@import '../../../scss/helpers';
 
 p-section:last-child {
   @include media-breakpoint-down(sm) {

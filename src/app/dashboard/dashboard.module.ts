@@ -1,6 +1,5 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import 'jquery.animate-number/jquery.animateNumber.js';
@@ -8,16 +7,16 @@ import 'jQuery-Mapael/js/jquery.mapael.js';
 import 'jQuery-Mapael/js/maps/usa_states';
 import 'bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.js';
 
-import { Dashboard } from './dashboard.component';
+import { DashboardComponent } from './dashboard.component';
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
 import { RickshawChartModule } from '../components/rickshaw/rickshaw.module';
-import { GeoLocationsWidget } from './geo-locations-widget/geo-locations-widget.directive';
-import { MarketStatsWidget } from './market-stats-widget/market-stats-widget.component';
-import { BootstrapCalendar } from './bootstrap-calendar/bootstrap-calendar.component';
+import { GeoLocationsWidgetDirective } from './geo-locations-widget/geo-locations-widget.directive';
+import { MarketStatsWidgetComponent } from './market-stats-widget/market-stats-widget.component';
+import { BootstrapCalendarDirective } from './bootstrap-calendar/bootstrap-calendar.component';
 
 export const routes = [
-  { path: '', component: Dashboard, pathMatch: 'full' }
+  { path: '', component: DashboardComponent, pathMatch: 'full' }
 ];
 
 
@@ -30,10 +29,10 @@ export const routes = [
     RickshawChartModule
   ],
   declarations: [
-    Dashboard,
-    GeoLocationsWidget,
-    BootstrapCalendar,
-    MarketStatsWidget
+    DashboardComponent,
+    GeoLocationsWidgetDirective,
+    BootstrapCalendarDirective,
+    MarketStatsWidgetComponent
   ]
 })
 export class DashboardModule {

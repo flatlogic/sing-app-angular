@@ -12,31 +12,31 @@ import { AlertModule, TooltipModule,
   ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
 
-import { Calendar } from './calendar/calendar.component';
-import { Invoice } from './invoice/invoice.component';
-import { SearchResults } from './search-results/search-results.component';
-import { TimeLine } from './time-line/time-line.component';
-import { Gallery } from './gallery/gallery.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { TimeLineComponent } from './time-line/time-line.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 import { AgmCoreModule } from '@agm/core';
 
 export const routes = [
   {path: '', redirectTo: 'calendar', pathMatch: 'full'},
-  {path: 'calendar', component: Calendar},
-  {path: 'invoice', component: Invoice},
-  {path: 'search', component: SearchResults},
-  {path: 'timeline', component: TimeLine},
-  {path: 'gallery', component: Gallery}
+  {path: 'calendar', component: CalendarComponent},
+  {path: 'invoice', component: InvoiceComponent},
+  {path: 'search', component: SearchResultsComponent},
+  {path: 'timeline', component: TimeLineComponent},
+  {path: 'gallery', component: GalleryComponent}
 ];
 
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    Calendar,
-    Invoice,
-    SearchResults,
-    TimeLine,
-    Gallery
+    CalendarComponent,
+    InvoiceComponent,
+    SearchResultsComponent,
+    TimeLineComponent,
+    GalleryComponent
   ],
   imports: [
     CommonModule,

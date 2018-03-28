@@ -8,7 +8,7 @@ declare let jQuery: any;
   template: '<div jq-sparkline [data]="data" [options]="options"></div>'
 })
 
-export class NasdaqSparklineWidget {
+export class NasdaqSparklineWidgetComponent {
   data: Array<number>;
   options: any;
   config: any;

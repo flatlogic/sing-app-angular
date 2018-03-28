@@ -9,7 +9,7 @@ declare let Rickshaw: any;
   styleUrls: ['../../../../node_modules/rickshaw/rickshaw.css']
 })
 
-export class RealtimeTrafficWidget {
+export class RealtimeTrafficWidgetComponent {
   seriesData: Array<any> = [ [], [] ];
   random: any;
   series: Array<any>;

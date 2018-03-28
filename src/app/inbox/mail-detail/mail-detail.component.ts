@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './mail-detail.template.html',
   styleUrls: ['./mail-detail.style.scss']
 })
-export class MailDetail {
+export class MailDetailComponent {
   @Input() mail: any;
   @Output() backToMailList = new EventEmitter();
   @Output() replyMessage = new EventEmitter();

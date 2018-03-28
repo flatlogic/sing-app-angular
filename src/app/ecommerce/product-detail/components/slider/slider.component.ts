@@ -10,7 +10,7 @@ export class SliderComponent {
   @Input() cards: Array<any> = [];
 
   public toggleSliderProductStarred(id) {
-    let index = this.cards.findIndex((it) => it.id === id);
+    const index = this.cards.findIndex((it) => it.id === id);
     this.cards[index].starred = !this.cards[index].starred;
-  };
+  }
 }

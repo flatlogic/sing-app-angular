@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     './package.style.scss'
   ]
 })
-export class Package {
+export class PackageComponent {
 
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
@@ -6,7 +6,7 @@ declare let jQuery: any;
   templateUrl: './components.template.html',
   styleUrls: ['./components.style.scss']
 })
-export class Components {
+export class ComponentsComponent implements OnInit {
   alerts: Array<Object>;
 /* tslint:disable */
   constructor() {
@@ -34,11 +34,11 @@ export class Components {
   /* tslint:enable */
   addAlert(): void {
     this.alerts.push({type: 'warning', msg: 'Another alert!'});
-  };
+  }
 
   closeAlert(index): void {
     this.alerts.splice(index, 1);
-  };
+  }
 
   ngOnInit(): void {
     jQuery('#popover1, #popover2').popover();

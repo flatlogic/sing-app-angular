@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 
 @Directive({
   selector: '[bootstrap-calendar]'
 })
 
-export class BootstrapCalendar {
+export class BootstrapCalendarDirective implements AfterViewInit {
   $el: any;
   @Input() events: Array<any>;
 
@@ -14,7 +14,7 @@ export class BootstrapCalendar {
   }
 
   render(): void {
-    let monthNames = [
+    const monthNames = [
       'January',
       'February',
       'March',
@@ -29,10 +29,10 @@ export class BootstrapCalendar {
       'December'
     ];
 
-    let dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
-    let events = this.events;
-    let $calendar = this.$el;
+    const events = this.events;
+    const $calendar = this.$el;
     $calendar.calendar({
       months: monthNames,
       days: dayNames,
@@ -46,7 +46,7 @@ export class BootstrapCalendar {
     $calendar.find('.icon-arrow-right').addClass('fa fa-arrow-right');
     function restyleCalendar(): void {
       $calendar.find('.event').each(function(): void {
-        let $this = jQuery(this),
+        const $this = jQuery(this),
           $eventIndicator = jQuery('<span></span>');
         $eventIndicator
           .css('background-color', $this.css('background-color'))

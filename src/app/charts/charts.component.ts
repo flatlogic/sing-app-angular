@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 declare let jQuery: any;
 declare let Rickshaw: any;
@@ -11,7 +11,7 @@ declare let nv: any;
   styleUrls: ['./charts.style.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class Charts {
+export class ChartsComponent implements OnInit {
   seriesData: Array<any> = [ [], [] ];
   random: any;
   series: Array<any>;
@@ -73,23 +73,24 @@ export class Charts {
         name: 'Downloads'
       }
     ];
-  };
+  }
 
   applyNvd3Data(): void {
     /* Inspired by Lee Byron's test data generator. */
     function _stream_layers(n, m, o): Array<any> {
       if (arguments.length < 3) { o = 0; }
       function bump(a): void {
-        let x = 1 / (.1 + Math.random()),
+        const x = 1 / (.1 + Math.random()),
           y = 2 * Math.random() - .5,
           z = 10 / (.1 + Math.random());
         for (let i = 0; i < m; i++) {
-          let w = (i / m - y) * z;
+          const w = (i / m - y) * z;
           a[i] += x * Math.exp(-w * w);
         }
       }
       return d3.range(n).map(function(): Array<Object> {
-        let a = [], i;
+        const a = [];
+        let i;
         for (i = 0; i < m; i++) { a[i] = o + o * Math.random(); }
         for (i = 0; i < 5; i++) { bump(a); }
         return a.map(function(d, iItem): Object {
@@ -99,7 +100,7 @@ export class Charts {
     }
 
     function testData(streamNames, pointCount): Array<any> {
-      let now = new Date().getTime(),
+      const now = new Date().getTime(),
         day = 1000 * 60 * 60 * 24, // milliseconds
         daysAgoCount = 60,
         daysAgo = daysAgoCount * day,
@@ -153,7 +154,7 @@ export class Charts {
       el.area = true;
       return el;
     });
-  };
+  }
 
   ngOnInit(): void {
     this.applyRickshawData();
@@ -244,21 +245,21 @@ export class Charts {
       size: 120
     });
 
-    let barCustomised1 = [
+    const barCustomised1 = [
       [1388534400000, 120],
       [1391212800000, 70],
       [1393632000000, 100],
       [1396310400000, 60],
       [1398902400000, 35]
     ];
-    let barCustomised2 = [
+    const barCustomised2 = [
       [1388534400000, 90],
       [1391212800000, 60],
       [1393632000000, 30],
       [1396310400000, 73],
       [1398902400000, 30]
     ];
-    let barCustomised3 = [
+    const barCustomised3 = [
       [1388534400000, 80],
       [1391212800000, 40],
       [1393632000000, 47],

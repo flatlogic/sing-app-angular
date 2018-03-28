@@ -1,14 +1,14 @@
-import { NgModule }      from '@angular/core';
-import { LiveTile } from './tile.directive';
+import { NgModule } from '@angular/core';
+import { LiveTileDirective } from './tile.directive';
 
 import 'metrojs/release/MetroJs.Full/MetroJs';
 
 @NgModule({
   declarations: [
-    LiveTile
+    LiveTileDirective
   ],
   exports: [
-    LiveTile
+    LiveTileDirective
   ]
 })
 export class LiveTileModule {

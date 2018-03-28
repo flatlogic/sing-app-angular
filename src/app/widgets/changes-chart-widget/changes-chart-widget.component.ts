@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 declare let Rickshaw: any;
@@ -10,7 +10,7 @@ declare let Rickshaw: any;
   styleUrls: ['../../../../node_modules/rickshaw/rickshaw.css']
 })
 
-export class ChangesChartWidget {
+export class ChangesChartWidgetComponent implements OnInit {
   series: Array<any>;
   config: any;
   configFn: any;
@@ -23,8 +23,8 @@ export class ChangesChartWidget {
   }
 
   applyRickshawData(): void {
-    let seriesData = [ [], [] ];
-    let random = new Rickshaw.Fixtures.RandomData(10000);
+    const seriesData = [ [], [] ];
+    const random = new Rickshaw.Fixtures.RandomData(10000);
 
     for (let i = 0; i < 32; i++) {
       random.addData(seriesData);
@@ -48,10 +48,10 @@ export class ChangesChartWidget {
       color: this.config.settings.colors['white']
       /* tslint:enable */
     }];
-  };
+  }
 
   applySparklineData(): void {
-    let data = [3, 6, 2, 4, 5, 8, 6, 8],
+    const data = [3, 6, 2, 4, 5, 8, 6, 8],
       dataMax = this.configFn.max(data),
       backgroundData = data.map(function(): number { return dataMax; });
 
@@ -76,7 +76,7 @@ export class ChangesChartWidget {
       barWidth: 7,
       barSpacing: 5
     }];
-  };
+  }
 
   ngOnInit(): void {
     this.applyRickshawData();

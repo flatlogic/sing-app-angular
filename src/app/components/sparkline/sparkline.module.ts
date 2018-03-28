@@ -1,15 +1,12 @@
-import { NgModule }      from '@angular/core';
-
-import 'jquery-sparkline';
-
-import { JqSparkline } from './sparkline.directive';
+import { NgModule } from '@angular/core';
+import { JqSparklineDirective } from './sparkline.directive';
 
 @NgModule({
   declarations: [
-    JqSparkline
+    JqSparklineDirective
   ],
   exports: [
-    JqSparkline
+    JqSparklineDirective
   ]
 })
 export class JqSparklineModule {

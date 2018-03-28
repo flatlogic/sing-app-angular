@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: '[maps-google]',
-  template: require('./maps-google.template.html'),
+  templateUrl: './maps-google.template.html',
   styles: ['agm-map { height: 100% }']
 })
-export class MapsGoogle {
+export class MapsGoogleComponent {
   lat: number = -37.813179;
   lng: number = 144.950259;
   zoom: number = 12;

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
+import {Component, ViewEncapsulation, ViewChild, OnInit, AfterViewInit} from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap';
 declare let jQuery: any;
 declare let moment: any;
@@ -9,7 +9,7 @@ declare let moment: any;
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./calendar.style.scss']
 })
-export class Calendar {
+export class CalendarComponent implements OnInit, AfterViewInit {
   calendarOptions: any;
   $calendar: any;
   dragOptions: Object = { zIndex: 999, revert: true, revertDuration: 0 };
@@ -20,10 +20,10 @@ export class Calendar {
   @ViewChild('modalWindow') public modalWindow: ModalDirective;
 
   constructor() {
-    let date = new Date();
-    let d = date.getDate();
-    let m = date.getMonth();
-    let y = date.getFullYear();
+    const date = new Date();
+    const d = date.getDate();
+    const m = date.getMonth();
+    const y = date.getFullYear();
 
     this.calendarOptions = {
       header: {
@@ -97,7 +97,7 @@ export class Calendar {
       selectHelper: true,
       select: (start, end, allDay): void => {
         this.createEvent = () => {
-          let title = this.event.title;
+          const title = this.event.title;
           if (title) {
             this.$calendar.fullCalendar('renderEvent',
               {
@@ -128,19 +128,19 @@ export class Calendar {
 
       drop: (dateItem, event): void => { // this function is called when something is dropped
         // retrieve the dropped element's stored Event Object
-        let originalEventObject = {
+        const originalEventObject = {
           // use the element's text as the event title
           title: jQuery.trim(jQuery(event.target).text())
         };
 
         // we need to copy it, so that multiple events don't have a reference to the same object
-        let copiedEventObject = jQuery.extend({}, originalEventObject);
+        const copiedEventObject = jQuery.extend({}, originalEventObject);
 
         // assign it the date that was reported
         copiedEventObject.start = dateItem;
         copiedEventObject.allDay = !dateItem.hasTime();
 
-        let $categoryClass = jQuery(event.target).data('event-class');
+        const $categoryClass = jQuery(event.target).data('event-class');
         if ($categoryClass) { copiedEventObject.className = [$categoryClass]; }
 
         // render the event on the calendar
@@ -153,31 +153,31 @@ export class Calendar {
 
       },
     };
-  };
+  }
 
   addEvent(event): void {
     this.calendarOptions.events.push(event);
-  };
+  }
 
   changeView(view): void {
     this.$calendar.fullCalendar('changeView', view);
-  };
+  }
 
   currentMonth(): string {
     return moment(this.$calendar.fullCalendar('getDate')).format('MMM YYYY');
-  };
+  }
 
   currentDay(): string {
     return moment(this.$calendar.fullCalendar('getDate')).format('dddd');
-  };
+  }
 
   prev(): void {
     this.$calendar.fullCalendar('prev');
-  };
+  }
 
   next(): void {
     this.$calendar.fullCalendar('next');
-  };
+  }
 
   ngOnInit(): void {
     this.$calendar = jQuery('#calendar');

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
@@ -6,7 +6,7 @@ declare let jQuery: any;
   selector: '[flot-chart-animator]'
 })
 
-export class FlotChartAnimator {
+export class FlotChartAnimatorDirective implements AfterViewInit {
   $el: any;
   config: any;
   @Input() data: any;
@@ -17,9 +17,9 @@ export class FlotChartAnimator {
   }
 
   render(): void {
-    let data = this.data;
-    let $el = this.$el;
-    let d = this;
+    const data = this.data;
+    const $el = this.$el;
+    const d = this;
 
     function resize(): void {
       jQuery.plotAnimator($el, data, {

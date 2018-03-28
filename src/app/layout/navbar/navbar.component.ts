@@ -4,10 +4,10 @@ import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
 @Component({
-  selector: '[navbar]',
+  selector: 'app-navbar',
   templateUrl: './navbar.template.html'
 })
-export class Navbar implements OnInit {
+export class NavbarComponent implements OnInit {
   @Output() toggleSidebarEvent: EventEmitter<any> = new EventEmitter();
   @Output() toggleChatEvent: EventEmitter<any> = new EventEmitter();
   $el: any;
@@ -34,7 +34,7 @@ export class Navbar implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      let $chatNotification = jQuery('#chat-notification');
+      const $chatNotification = jQuery('#chat-notification');
       $chatNotification.removeClass('hide').addClass('animated fadeIn')
         .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', () => {
           $chatNotification.removeClass('animated fadeIn');
@@ -49,5 +49,10 @@ export class Navbar implements OnInit {
       $chatNotification.siblings('#toggle-chat')
         .append('<i class="chat-notification-sing animated bounceIn"></i>');
     }, 4000);
+
+    this.$el.find('.input-group-addon + .form-control').on('blur focus', function(e): void {
+      jQuery(this).parents('.input-group')
+        [e.type === 'focus' ? 'addClass' : 'removeClass']('focus');
+    });
   }
 }

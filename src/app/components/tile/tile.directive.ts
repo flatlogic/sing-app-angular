@@ -1,11 +1,11 @@
-import { Directive, ElementRef } from '@angular/core';
+import {Directive, ElementRef, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[live-tile]'
 })
 
-export class LiveTile {
+export class LiveTileDirective implements OnInit {
   $el: any;
 
   constructor(el: ElementRef) {

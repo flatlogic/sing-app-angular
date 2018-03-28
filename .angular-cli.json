@@ -1,0 +1,82 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "Sing App 4.2.0 with Angular 4.0 Final Release support by Flatlogic"
+  },
+  "apps": [
+    {
+      "name": "Sing",
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "tsconfig": "tsconfig.app.json",
+      "prefix": "app",
+      "styles": [
+        "scss/application.scss"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/popper.js/dist/umd/popper.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/webpack-raphael/raphael-min.js",
+        "../node_modules/hammerjs/hammer.min.js",
+        "../node_modules/d3/d3.min.js",
+        "../node_modules/nvd3/build/nv.d3.min.js",
+        "../node_modules/rickshaw/rickshaw.min.js",
+        "../node_modules/moment/min/moment.min.js",
+        "../node_modules/fullcalendar/dist/fullcalendar.min.js",
+        "../node_modules/skycons/skycons.js",
+        "../node_modules/dropzone/dist/dropzone.js",
+        "../node_modules/parsleyjs/dist/parsley.js",
+        "../node_modules/jasny-bootstrap/dist/js/jasny-bootstrap.min.js",
+        "../node_modules/markdown/lib/markdown.js",
+        "../node_modules/bootstrap-markdown/js/bootstrap-markdown.js",
+        "../node_modules/bootstrap-slider/dist/bootstrap-slider.js",
+        "../node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
+        "../node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js",
+        "../node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js",
+        "../node_modules/select2/dist/js/select2.min.js",
+        "../node_modules/bootstrap-select/dist/js/bootstrap-select.js",
+        "../node_modules/easy-pie-chart/dist/jquery.easypiechart.js",
+        "../node_modules/jquery-ui/ui/core.js",
+        "../node_modules/jquery-ui/ui/widget.js",
+        "../node_modules/jquery-ui/ui/mouse.js",
+        "../node_modules/jquery-ui/ui/sortable.js",
+        "../node_modules/jquery-ui/ui/draggable.js",
+        "../node_modules/jvectormap/jquery-jvectormap.min.js",
+        "../node_modules/jvectormap-world/jquery-jvectormap-world-mill-en.js",
+        "../node_modules/jquery-sparkline/jquery.sparkline.min.js",
+        "../node_modules/magnific-popup/dist/jquery.magnific-popup.min.js",
+        "../node_modules/jquery-flot/jquery.flot.js",
+        "../node_modules/jquery-flot/jquery.flot.time.js",
+        "../node_modules/jquery.flot.animator/jquery.flot.animator.min.js",
+        "../node_modules/morris.js/morris.js",
+        "../node_modules/bootstrap-application-wizard/src/bootstrap-wizard.js",
+        "../node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "defaults": {
+    "styleExt": "scss",
+    "component": {},
+    "serve": {
+      "port": 3000
+    }
+  }
+}

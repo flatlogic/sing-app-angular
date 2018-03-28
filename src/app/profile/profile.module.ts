@@ -3,16 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { Profile } from './profile.component';
+import { ProfileComponent } from './profile.component';
 
 export const routes = [
-  {path: '', component: Profile, pathMatch: 'full'}
+  {path: '', component: ProfileComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
-    Profile
+    ProfileComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { tableData } from './tables-dynamic.data';
 declare let jQuery: any;
 
@@ -274,8 +274,9 @@ const PEOPLE = [
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./tables-dynamic.style.scss']
 })
-export class TablesDynamic {
+export class TablesDynamicComponent implements OnInit {
   data: any[] = PEOPLE;
+  searchText: string = '';
 
   rows: Array<any> = [];
   columns: Array<any> = [
@@ -305,7 +306,7 @@ export class TablesDynamic {
   }
 
   ngOnInit(): void {
-    let searchInput = jQuery('#table-search-input, #search-countries');
+    const searchInput = jQuery('#table-search-input, #search-countries');
     searchInput
       .focus((e) => {
       jQuery(e.target).closest('.input-group').addClass('focus');
@@ -317,8 +318,8 @@ export class TablesDynamic {
   }
 
   changePage(page: any, data: Array<any> = this.ng2TableData): Array<any> {
-    let start = (page.page - 1) * page.itemsPerPage;
-    let end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
+    const start = (page.page - 1) * page.itemsPerPage;
+    const end = page.itemsPerPage > -1 ? (start + page.itemsPerPage) : data.length;
     return data.slice(start, end);
   }
 
@@ -327,7 +328,7 @@ export class TablesDynamic {
       return data;
     }
 
-    let columns = this.config.sorting.columns || [];
+    const columns = this.config.sorting.columns || [];
     let columnName: string = void 0;
     let sort: string = void 0;
 
@@ -358,7 +359,7 @@ export class TablesDynamic {
       return data;
     }
 
-    let filteredData: Array<any> = data.filter((item: any) =>
+    const filteredData: Array<any> = data.filter((item: any) =>
       item[config.filtering.columnName].match(this.config.filtering.filterString));
 
     return filteredData;
@@ -372,8 +373,8 @@ export class TablesDynamic {
       Object.assign(this.config.sorting, config.sorting);
     }
 
-    let filteredData = this.changeFilter(this.ng2TableData, this.config);
-    let sortedData = this.changeSort(filteredData, this.config);
+    const filteredData = this.changeFilter(this.ng2TableData, this.config);
+    const sortedData = this.changeSort(filteredData, this.config);
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
     this.length = sortedData.length;
   }

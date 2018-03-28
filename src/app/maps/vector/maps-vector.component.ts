@@ -1,14 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
 import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
 @Component({
   selector: '[maps-vector]',
-  template: require('./maps-vector.template.html'),
+  templateUrl: './maps-vector.template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('../../../../node_modules/jvectormap/jquery-jvectormap.css')]
+  styleUrls: ['../../../../node_modules/jvectormap/jquery-jvectormap.css']
 })
-export class MapsVector {
+export class MapsVectorComponent implements AfterViewInit {
   config: any;
   configFn: any;
   data: any;

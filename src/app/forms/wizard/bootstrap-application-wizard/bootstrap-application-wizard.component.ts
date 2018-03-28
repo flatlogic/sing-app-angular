@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 declare let jQuery: any;
 
 @Component ({
@@ -6,7 +6,7 @@ declare let jQuery: any;
   templateUrl: './bootstrap-application-wizard.template.html'
 })
 
-export class BootstrapApplicationWizard {
+export class BootstrapApplicationWizardComponent implements OnInit, AfterViewInit {
   $el: any;
 
   @ViewChild('wizard') wizard: ElementRef;
@@ -22,7 +22,7 @@ export class BootstrapApplicationWizard {
   }
 
   render(): void {
-    let wizard = jQuery(this.wizard.nativeElement).wizard({
+    const wizard = jQuery(this.wizard.nativeElement).wizard({
       keyboard : false,
       contentHeight : 400,
       contentWidth : 700,
@@ -38,7 +38,7 @@ export class BootstrapApplicationWizard {
       }
     });
 
-    let $modalWizard = jQuery('.modal.wizard');
+    const $modalWizard = jQuery('.modal.wizard');
     $modalWizard.on('show.bs.modal', () => {
       jQuery('#btn-fqdn').find('button').on('click', this.lookup);
     });
@@ -60,7 +60,7 @@ export class BootstrapApplicationWizard {
         return false;
       }
     }).keyup(function(): void {
-      let $this = jQuery(this);
+      const $this = jQuery(this);
       if (!pattern.test($this.val())) {
         // jQuery('#validate_ip').text('Not Valid IP');
         console.log('Not Valid IP');
@@ -71,11 +71,11 @@ export class BootstrapApplicationWizard {
         x = 46;
       } else {
         x = 0;
-        let lastChar = $this.val().substr($this.val().length - 1);
+        const lastChar = $this.val().substr($this.val().length - 1);
         if (lastChar === '.') {
           $this.val($this.val().slice(0, -1));
         }
-        let ip = $this.val().split('.');
+        const ip = $this.val().split('.');
         if (ip.length === 4) {
           // jQuery('#validate_ip').text('Valid IP');
           console.log('Valid IP');
@@ -95,7 +95,7 @@ export class BootstrapApplicationWizard {
     });
 
     wizard.on('submit', function(wizardItem): void {
-      let submit = {
+      const submit = {
         'hostname': jQuery('#new-server-fqdn').val()
       };
 
@@ -142,7 +142,7 @@ export class BootstrapApplicationWizard {
       wizard.errorPopover = function(el, msg, allowHtml): void {
         this.log('launching popover on', el);
         allowHtml = typeof allowHtml !== 'undefined' ? allowHtml : false;
-        let popover = el.popover({
+        const popover = el.popover({
           content: msg,
           trigger: 'manual',
           html: allowHtml,
@@ -167,8 +167,8 @@ export class BootstrapApplicationWizard {
 
   ngOnInit() {
     (<any>window).validateServerLabel = function(el) {
-      let name = el.val();
-      let retValue = {};
+      const name = el.val();
+      const retValue = {};
 
       if (name === '') {
         retValue['status'] = false;
@@ -181,8 +181,8 @@ export class BootstrapApplicationWizard {
     };
 
     (<any>window).validateFQDN = function(el) {
-      let $this = jQuery(el);
-      let retValue = {};
+      const $this = jQuery(el);
+      const retValue = {};
 
       if ($this.is(':disabled')) {
         // FQDN Disabled

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive} from '@angular/core';
 declare let jQuery: any;
 declare let Messenger: any;
 
@@ -6,7 +6,7 @@ declare let Messenger: any;
   selector: '[messenger-demo]'
 })
 
-export class MessengerDemo {
+export class MessengerDemoDirective implements AfterViewInit {
   $el: any;
 
   initializationCode(): void {
@@ -70,7 +70,7 @@ export class MessengerDemo {
 
   render(): void {
     this.initializationCode();
-    let theme = 'air';
+    const theme = 'air';
 
     jQuery.globalMessenger({ theme: theme });
     Messenger.options = { theme: theme  };
@@ -79,9 +79,9 @@ export class MessengerDemo {
 
     let loc = ['bottom', 'right'];
 
-    let $lsel = jQuery('.location-selector');
+    const $lsel = jQuery('.location-selector');
 
-    let update = function(): void {
+    const update = function(): void {
       let classes = 'messenger-fixed';
 
       for (let i = 0; i < loc.length; i++) { classes += ' messenger-on-' + loc[i]; }
@@ -124,7 +124,7 @@ export class MessengerDemo {
     });
 
     jQuery('#show-info-message').on('click', function(): boolean {
-      let msg = Messenger().post({
+      const msg = Messenger().post({
         message: 'Launching thermonuclear war...',
         actions: {
           cancel: {

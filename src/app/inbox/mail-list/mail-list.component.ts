@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import { Output, Input } from '@angular/core';
 import { EventEmitter, ElementRef } from '@angular/core';
 declare let jQuery: any;
@@ -158,15 +158,16 @@ const MAILS = [
 @Component({
   selector: '[mail-list]',
   templateUrl: './mail-list.template.html',
-  styles: [require('./mail-list.style.scss')]
+  styleUrls: ['./mail-list.style.scss']
 })
 
-export class MailList  {
+export class MailListComponent implements OnInit, OnChanges {
   @Output() replyMail = new EventEmitter();
   @Input() folderName: any;
   mails = MAILS;
   $el: any;
   $toggleAll: any;
+  searchText: string = '';
 
   constructor(el: ElementRef) {
     this.$el = jQuery(el.nativeElement);
@@ -184,7 +185,7 @@ export class MailList  {
   }
 
   selectAll(): void {
-    let checked = this.$toggleAll.prop('checked');
+    const checked = this.$toggleAll.prop('checked');
 
     this.toggleAll(checked);
   }
@@ -203,7 +204,7 @@ export class MailList  {
   }
 
   toggleAll(checked: boolean): void {
-    for (let mail of this.mails) {
+    for (const mail of this.mails) {
       mail.selected = checked;
     }
 
@@ -231,7 +232,7 @@ export class MailList  {
   }
 
   deleteEmails(): void {
-    let mails = [];
+    const mails = [];
     this.mails.forEach((mail) => {
       if (!mail.selected) {
         mails.push(mail);

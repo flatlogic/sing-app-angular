@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { AnimateNumber } from './directives/animate-number.directive.ts';
-import { CheckAll } from './directives/check-all.directive';
-import { ProgressAnimate } from './directives/progress-animate.directive';
+import { AnimateNumberDirective } from './directives/animate-number.directive';
+import { CheckAllDirective } from './directives/check-all.directive';
+import { ProgressAnimateDirective } from './directives/progress-animate.directive';
 
 @NgModule({
   declarations: [
-    AnimateNumber,
-    CheckAll,
-    ProgressAnimate
+    AnimateNumberDirective,
+    CheckAllDirective,
+    ProgressAnimateDirective
   ],
   exports: [
-    AnimateNumber,
-    CheckAll,
-    ProgressAnimate
+    AnimateNumberDirective,
+    CheckAllDirective,
+    ProgressAnimateDirective
   ],
   imports: [
     CommonModule

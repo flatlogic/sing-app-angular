@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Output, Input } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
@@ -7,7 +7,7 @@ import { EventEmitter } from '@angular/core';
   templateUrl: './mail-form.template.html',
 })
 
-export class MailForm {
+export class MailFormComponent implements OnInit {
   @Output() backToMailList = new EventEmitter();
   @Input() message: any;
 
@@ -18,7 +18,6 @@ export class MailForm {
     ' So we hope it will appear soon.';
 
   onToBack(): void {
-    console.log('qwerty');
     this.backToMailList.emit('');
   }
 
@@ -27,7 +26,7 @@ export class MailForm {
       this.sender = this.message.sender;
       this.subject = 'Re: ' + this.message.subject;
 
-      let span = document.createElement('span');
+      const span = document.createElement('span');
       span.innerHTML = this.message.body;
       this.body = span.innerText;
     }

@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import { Widget } from './widget.directive';
+import {WidgetDirective} from './widget.directive';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [Widget],
-  exports: [Widget]
+  exports: [WidgetDirective],
+  declarations: [WidgetDirective]
 })
 export class WidgetModule {
 }

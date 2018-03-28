@@ -4,10 +4,10 @@ declare let jQuery: any;
 declare let Hammer: any;
 
 @Component({
-  selector: '[chat-sidebar]',
+  selector: 'app-chat-sidebar',
   templateUrl: './chat-sidebar.template.html'
 })
-export class ChatSidebar implements OnInit {
+export class ChatSidebarComponent implements OnInit {
   conversations: ChatService;
   newMessage: string = '';
   activeConversation: any;
@@ -32,8 +32,8 @@ export class ChatSidebar implements OnInit {
   }
 
   enableSwipeCollapsing(): void {
-    let $chatContainer = jQuery('layout');
-    let chatSidebarSwipe = new Hammer(document.getElementById('content-wrap'));
+    const $chatContainer = jQuery('app-layout');
+    const chatSidebarSwipe = new Hammer(document.getElementById('content-wrap'));
 
     chatSidebarSwipe.on('swipeleft', () => {
       if ($chatContainer.is('.nav-collapsed')) {
@@ -51,7 +51,7 @@ export class ChatSidebar implements OnInit {
   }
 
   ngOnInit(): void {
-    jQuery('layout').addClass('chat-sidebar-container');
+    jQuery('app-layout').addClass('chat-sidebar-container');
 
     if ('ontouchstart' in window) {
       this.enableSwipeCollapsing();

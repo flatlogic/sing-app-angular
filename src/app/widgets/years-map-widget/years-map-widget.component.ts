@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { AppConfig } from '../../app.config';
 import { FakeWorldData } from './fake-world-data.service';
 declare let jQuery: any;
@@ -8,7 +8,7 @@ declare let jQuery: any;
   templateUrl: './years-map-widget.template.html',
 })
 
-export class YearsMapWidget {
+export class YearsMapWidgetComponent implements OnInit {
   configFn: any;
   config: any;
   selectedYear: number;
@@ -25,7 +25,7 @@ export class YearsMapWidget {
 
   triggerYear(year): void {
     this.selectedYear = year;
-    let $map = jQuery('[mapael-layers-map]');
+    const $map = jQuery('[mapael-layers-map]');
     $map.trigger('update', [this.fakeWorldData[year], {}, {}, {animDuration : 300}]);
   }
 

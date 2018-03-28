@@ -1,20 +1,20 @@
 import 'jquery-slimscroll';
 
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
-import { FormsModule }  from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { BsDropdownModule, TooltipModule } from 'ngx-bootstrap';
 
-import { ROUTES }       from './layout.routes';
+import { ROUTES } from './layout.routes';
 
-import { Layout } from './layout.component';
-import { Sidebar } from './sidebar/sidebar.component';
-import { Navbar } from './navbar/navbar.component';
-import { ChatSidebar } from './chat-sidebar/chat-sidebar.component';
-import { ChatMessage } from './chat-sidebar/chat-message/chat-message.component';
+import { LayoutComponent } from './layout.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ChatSidebarComponent } from './chat-sidebar/chat-sidebar.component';
+import { ChatMessageComponent } from './chat-sidebar/chat-message/chat-message.component';
 import { SearchPipe } from './pipes/search.pipe';
-import { NotificationLoad } from './notifications/notifications-load.directive';
-import { Notifications } from './notifications/notifications.component';
+import { NotificationsLoadDirective } from './notifications/notifications-load.directive';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
@@ -22,20 +22,20 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
   imports: [
     CommonModule,
     TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
     ROUTES,
     FormsModule,
-    BsDropdownModule.forRoot(),
     LoadingBarRouterModule
   ],
   declarations: [
-    Layout,
-    Sidebar,
-    Navbar,
-    ChatSidebar,
+    LayoutComponent,
+    SidebarComponent,
+    NavbarComponent,
+    ChatSidebarComponent,
     SearchPipe,
-    Notifications,
-    NotificationLoad,
-    ChatMessage
+    NotificationsComponent,
+    NotificationsLoadDirective,
+    ChatMessageComponent
   ]
 })
 export class LayoutModule {

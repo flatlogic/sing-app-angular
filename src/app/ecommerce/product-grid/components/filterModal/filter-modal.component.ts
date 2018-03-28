@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/
   templateUrl: './filter-modal.template.html',
   styleUrls: ['./filter-modal.style.scss']
 })
-export class FilterModalComponent {
+export class FilterModalComponent implements OnChanges {
   @Input() public title: string = '';
   @Input() public data: any = {};
 

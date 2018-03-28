@@ -1,16 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'error',
+  selector: 'app-error',
   styleUrls: [ './error.style.scss' ],
   templateUrl: './error.template.html',
-  encapsulation: ViewEncapsulation.None,
-  host: {
-    class: 'error-page app'
-  },
 })
 export class ErrorComponent {
+  @HostBinding('class') classes = 'error-page app';
+
   router: Router;
 
   constructor(router: Router) {
@@ -18,6 +16,6 @@ export class ErrorComponent {
   }
 
   searchResult(): void {
-    this.router.navigate(['/app', 'extra', 'search']);
+    this.router.navigate(['/app', 'dashboard']);
   }
 }

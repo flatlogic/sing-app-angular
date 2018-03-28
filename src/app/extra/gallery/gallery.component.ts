@@ -1,15 +1,16 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import * as Shuffle from 'shufflejs/dist/shuffle.js';
+
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 declare let jQuery: any;
-declare let Shuffle: any;
 
 @Component({
   selector: '[extra-gallery]',
-  template: require('./gallery.template.html'),
+  templateUrl: './gallery.template.html',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./gallery.style.scss')]
+  styleUrls: ['./gallery.style.scss']
 })
-export class Gallery {
+export class GalleryComponent implements OnInit {
   magnificOptions: any = {
     delegate: '.img-thumbnail > a',
     type: 'image',

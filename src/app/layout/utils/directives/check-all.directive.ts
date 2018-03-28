@@ -1,11 +1,11 @@
-import { Directive, ElementRef } from '@angular/core';
+import {Directive, ElementRef, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
   selector: '[check-all]'
 })
 
-export class CheckAll {
+export class CheckAllDirective implements OnInit {
   $el: any;
 
   constructor(el: ElementRef) {
@@ -13,7 +13,7 @@ export class CheckAll {
   }
 
   ngOnInit(): void {
-    let $el = this.$el;
+    const $el = this.$el;
     $el.on('click', function(): void {
       $el.closest('table').find('input[type=checkbox]')
         .not(this).prop('checked', jQuery(this).prop('checked'));

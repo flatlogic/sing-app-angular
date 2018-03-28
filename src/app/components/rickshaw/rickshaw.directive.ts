@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input } from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 declare let Rickshaw: any;
 
@@ -6,7 +6,7 @@ declare let Rickshaw: any;
   selector: '[rickshaw-chart]'
 })
 
-export class RickshawChart {
+export class RickshawChartDirective implements AfterViewInit {
   $el: any;
   @Input() height: string;
   @Input() series: Array<any>;
@@ -21,15 +21,15 @@ export class RickshawChart {
   }
 
   render(): void {
-    let graph = new Rickshaw.Graph({
+    const graph = new Rickshaw.Graph({
       element: this.$el[0],
       height: this.height,
       renderer: this.renderer || 'area',
       series: this.series
     });
 
-    let onResize = () => {
-      let configureProperties = jQuery.extend({
+    const onResize = () => {
+      const configureProperties = jQuery.extend({
         height: this.height
       }, this.configureProps);
       graph.configure(configureProperties);
@@ -41,7 +41,7 @@ export class RickshawChart {
     jQuery(window).on('sn:resize', onResize);
     onResize();
 
-    let hoverDetail = new Rickshaw.Graph.HoverDetail({
+    const hoverDetail = new Rickshaw.Graph.HoverDetail({
       graph: graph,
       xFormatter: function(x): string {
         return new Date(x * 1000).toString();

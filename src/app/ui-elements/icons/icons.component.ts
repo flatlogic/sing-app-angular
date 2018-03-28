@@ -6,6 +6,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./icons.style.scss']
 })
-export class Icons {
+export class IconsComponent {
 }
 
