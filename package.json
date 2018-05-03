@@ -89,6 +89,7 @@
     "@angular/language-service": "5.2.0",
     "@types/hammerjs": "2.0.34",
     "@types/node": "6.0.60",
+    "@types/select2": "4.0.31",
     "codelyzer": "4.0.1",
     "metrojs": "0.9.77",
     "napa": "2.3.0",
@@ -105,6 +106,7 @@
   },
   "resolutions": {
     "@angular/core": "5.2.0",
-    "uglifyjs-webpack-plugin": "file:src/build/uglifyJS"
+    "uglifyjs-webpack-plugin": "file:src/build/uglifyJS",
+    "@types/select2": "4.0.31"
   }
 }
