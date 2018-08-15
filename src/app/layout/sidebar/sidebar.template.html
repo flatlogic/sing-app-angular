@@ -1,6 +1,6 @@
 <div class="js-sidebar-content">
   <header class="logo d-none d-md-block">
-    <a href="index.html">{{config.name}}</a>
+    <a href="index.html"><span class="text-warning">Sing</span> App</a>
   </header>
   <div class="sidebar-status d-md-none dropdown" dropdown [autoClose]="false" (isOpenChange)="toggleSidebarOverflow($event)"
     placement="bottom left">
@@ -44,7 +44,7 @@
           <i class="fi flaticon-paper-plane"></i>
         </span>
         Email
-        <span class="badge badge-danger">
+        <span class="badge badge-pill badge-warning">
           9
         </span>
       </a>
@@ -283,19 +283,19 @@
       <a href="#">
         <!-- yep, .circle again -->
         <i class="fa fa-circle text-warning mr-xs"></i>
-        <span class="label-name">My Recent</span>
+        <span class="label-name text-muted">My Recent</span>
       </a>
     </li>
     <li>
       <a href="#">
         <i class="fa fa-circle text-gray mr-xs"></i>
-        <span class="label-name">Starred</span>
+        <span class="label-name text-muted">Starred</span>
       </a>
     </li>
     <li>
       <a href="#">
         <i class="fa fa-circle text-danger mr-xs"></i>
-        <span class="label-name">Background</span>
+        <span class="label-name text-muted">Background</span>
       </a>
     </li>
   </ul>
@@ -304,7 +304,7 @@
   <div class="sidebar-alerts">
     <div class="alert fade show">
       <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-      <span class="text-white fw-semi-bold">Sales Report</span>
+      <span>Sales Report</span>
       <br>
       <div class="progress progress-xs mt-xs mb-0">
         <div class="progress-bar progress-bar-gray-light" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0"
@@ -314,7 +314,7 @@
     </div>
     <div class="alert fade show">
       <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-      <span class="text-white fw-semi-bold">Personal Responsibility</span>
+      <span>Personal Responsibility</span>
       <br>
       <div class="progress progress-xs mt-xs mb-0">
         <div class="progress-bar bg-danger" role="progressbar" style="width: 23%" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100"></div>

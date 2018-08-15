@@ -5,7 +5,7 @@
       {{conversation.name}}
     </a>
   </h6>
-  <ul class="message-list">
+  <ul class="message-list bg-gray-light">
     <li *ngFor="let message of conversation.messages | SearchPipe : searchMessage" class="message" [ngClass]="{'from-me': message.fromMe}">
     <span class="thumb-sm">
         <img class="rounded-circle" src="{{message.fromMe ? 'assets/img/avatar.png' : conversation.image}}" alt="...">
@@ -14,7 +14,7 @@
     </li>
   </ul>
   <footer class="chat-sidebar-footer">
-    <input class="form-control input-dark fs-mini"
+    <input class="form-control fs-mini"
            [(ngModel)]="newMessage" (keyup.enter)="addMessage()"
            type="text" placeholder="Type your message">
   </footer>

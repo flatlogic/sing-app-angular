@@ -1,7 +1,7 @@
 const products = [{
     id: 0,
     starred: true,
-    image: 'assets/products/product1.jpg',
+    image: 'assets/img/products/img1.jpg',
     title: 'TRAINERS',
     subtitle: 'Trainers In White',
     price: 76,
@@ -12,7 +12,7 @@ const products = [{
     id: 1,
     starred: false,
     label: 'Sale',
-    image: 'assets/products/product5.jpeg',
+    image: 'assets/img/products/img2.jpg',
     title: 'BOOTS',
     subtitle: 'Trainers In Blue',
     price: {
@@ -27,7 +27,7 @@ const products = [{
     id: 2,
     starred: false,
     label: 'New',
-    image: 'assets/products/product4.jpeg',
+    image: 'assets/img/products/img3.jpg',
     title: 'FLAT SANDALS',
     subtitle: 'Trainers In Black',
     price: 55,
@@ -37,7 +37,7 @@ const products = [{
   {
     id: 3,
     starred: false,
-    image: 'assets/products/product7.jpg',
+    image: 'assets/img/products/img4.jpg',
     title: 'TRAINERS',
     subtitle: 'Trainers In White',
     price: {
@@ -51,7 +51,7 @@ const products = [{
   {
     id: 4,
     starred: false,
-    image: 'assets/products/product6.jpg',
+    image: 'assets/img/products/img5.jpeg',
     title: 'TRAINERS',
     subtitle: 'Trainers In White',
     price: 76,
@@ -62,7 +62,7 @@ const products = [{
     id: 5,
     starred: true,
     label: 'New',
-    image: 'assets/products/product3.jpg',
+    image: 'assets/img/products/img6.jpg',
     title: 'BOOTS',
     subtitle: 'Trainers In Orange',
     price: {
@@ -77,7 +77,7 @@ const products = [{
     id: 6,
     starred: false,
     label: 'Sale',
-    image: 'assets/products/product8.jpg',
+    image: 'assets/img/products/img7.jpg',
     title: 'TRAINERS',
     subtitle: 'Trainers In White',
     price: {
@@ -92,7 +92,7 @@ const products = [{
     id: 7,
     starred: false,
     label: 'New',
-    image: 'assets/products/product2.jpg',
+    image: 'assets/img/products/img8.jpg',
     title: 'TRAINERS',
     subtitle: 'Trainers In White',
     price: 55,

@@ -400,61 +400,85 @@
 /**       Chat List Group         **/
 /***********************************/
 
-.widget-chat-list-group{
+.widget-image .forecast {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+/*       Chat List Group         */
+.widget-chat-list-group {
   padding-top: $spacer/2;
-  .list-group-item{
+
+  .list-group-item {
     margin-left: $widget-padding-horizontal;
     margin-right: $widget-padding-horizontal;
     padding: 0;
     border: 0;
-
     display: flex;
+
+    div {
+      width: 100%;
+    }
+
+    &:nth-child(even) {
+      margin-left: 75px;
+    }
 
     &:hover {
       background: none;
     }
 
-    & + .list-group-item{
+    & + .list-group-item {
       margin-top: 20px;
     }
 
     .thumb,
-    .thumb-sm{
+    .thumb-sm {
       float: left;
       margin-right: 15px;
     }
 
-    .time{
-      float: right;
+    .time {
       font-size: $font-size-sm;
-      color: $link-color;
+      color: $text-muted;
     }
 
-    .sender{
+    .sender {
       margin-top: 5px;
       margin-bottom: 5px;
       font-size: $font-size-mini;
       font-weight: $font-weight-normal;
+      color: theme-color('primary');
     }
 
-    .body{
+    .body {
       font-size: $font-size-mini;
-      color: $text-muted;
+      margin-bottom: 0;
     }
 
-    &.on-right{
+    &.on-right {
+      div {
+        padding-right: 1rem;
+      }
+
       .thumb,
-      .thumb-sm{
+      .thumb-sm {
         order: 1;
         margin-left: auto;
         margin-right: 0;
       }
 
-      .time{
+      .time {
         float: left;
       }
 
-      .sender{
+      .sender {
         text-align: right;
       }
     }
