@@ -32,42 +32,48 @@ $font-family-sans-serif: 'Montserrat', sans-serif;
 // Color system
 //
 
-$white: #fff !default;
-$gray-100: #f5f5f5 !default;
-$gray-200: #dfdfdf !default;
-$gray-300: #eee !default;
-$gray-400: #ddd !default;
-$gray-500: #adb5bd !default;
-$gray-600: #777 !default;
-$gray-700: #555 !default;
-$gray-800: #343434 !default;
-$gray-900: #242424 !default;
-$black: #000 !default;
-$gray-light: #ddd !default;
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #d6dee5 !default;
+$gray-400: #c1ccd3 !default;
+$gray-500: #a3aeb7 !default;
+$gray-600: #798892 !default;
+$gray-700: #495057 !default;
+$gray-800: #3c484f !default;
+$gray-900: #29323a !default;
+$black:    #000 !default;
+$gray-light: $gray-100 !default;
 
 
-$blue: #5d8fc2 !default;
-$red: #dd5826 !default;
-$yellow: #f0b518 !default;
-$green: #64bd63 !default;
-$cyan: #5dc4bf !default;
+$blue:    #547fff !default;
+$indigo:  #7f3ddb !default;
+$purple:  #9964e3 !default;
+$pink:    #e54e9a !default;
+$red:     #f55d5d !default;
+$orange:  #ff7d47 !default;
+$yellow:  #ffc247 !default;
+$green:   #68ca66 !default;
+$teal:    #3abf94 !default;
+$cyan:    #17a2b8 !default;
 
 $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
-  success: $green,
-  primary-light: #dee4ee,
-  success-light: #ecfaec,
-  info-light: #f2fafa,
-  warning-light: #fdf7e6,
-  danger-light: #fff2ef,
-  info: $cyan,
+  success: $teal,
+  info: $purple,
   warning: $yellow,
   danger: $red,
   dark: $gray-800,
   inverse: $gray-700,
   gray: $gray-300,
-  default: #f8f8f8
+  light: $gray-100,
+  default: #e9ecef,
+  primary-light: #dee4ee,
+  success-light: #ecfaec,
+  info-light: #f2fafa,
+  warning-light: #fdf7e6,
+  danger-light: #fff2ef,
 );
 
 $link-color: #218bc3;
@@ -82,9 +88,9 @@ $font-weight-base: $font-weight-thin !default;
 
 $headings-font-weight: $font-weight-thin !default;
 
-$addition-bg: #f8f8f8 !default;
+$addition-bg: $gray-100 !default;
 
-$body-bg: #f5f5f5 !default;
+$body-bg: #fafbff !default;
 $body-bg-light: lighten($body-bg, 3%);
 
 //== Components
@@ -116,21 +122,23 @@ $nav-link-padding: 14px;
 
 //== Sidebar
 //
-$sidebar-padding-horizontal: 11px;
-$sidebar-width-open: 200px;
+
+$sidebar-width-open: 224px;
 $sidebar-width-closed: 50px;
 $sidebar-transition-time: 0.3s !default;
+$sidebar-padding-horizontal: 11px;
 $sidebar-slim-scroll-width: 4px;
 $sidebar-width: $sidebar-width-open + $sidebar-slim-scroll-width !default;
 
-$sidebar-bg-color: #242424;
-$sidebar-color: #aaa;
+$sidebar-bg-color: #fff !default;
+$sidebar-color: #6c757d !default;
+$sidebar-action-bg: #f9fafe !default;
 
-$sidebar-item-border-color: transparent;
-$sidebar-item-active-color: #f2be35;
-$sidebar-item-hover-bg-color: #111;
+$sidebar-item-border-color: transparent !default;
+$sidebar-item-active-color: $yellow !default;
+$sidebar-item-hover-bg-color: $sidebar-action-bg;
 
-$chat-sidebar-bg-color: $gray-900 !default;
+$chat-sidebar-bg-color: $sidebar-bg-color !default;
 $chat-sidebar-width: 250px + $sidebar-slim-scroll-width !default;
 
 $breadcrumb-divider: '>';
@@ -141,7 +149,8 @@ $badge-font-weight: 600;
 
 $widget-bg: #fff;
 $widget-title-color: #444;
-$widget-shadow: 0 0 10px darken($body-bg, 5%);
+$widget-shadow: 0 0 40px darken($body-bg, 2%);
+$widget-shadow-designated: -1px 0 8px $gray-400;
 
 
 $input-btn-line-height: 1.5;
@@ -158,19 +167,19 @@ $navbar-height:  50px !default;
 $navbar-padding-y: 0 !default;
 $navbar-padding-x: 0 !default;
 
-$navbar-dashboard-bg:                $white !default;
-$navbar-dashboard-color:             #777 !default;
-$navbar-dashboard-border:            darken($navbar-dashboard-bg, 6.5%) !default;
+$navbar-dashboard-bg:                transparent !default;
+$navbar-dashboard-color:             $text-color !default;
+$navbar-dashboard-border:            transparent !default;
 
 // Navbar links
-$navbar-dashboard-link-color:                #666 !default;
+$navbar-dashboard-link-color:                $text-color !default;
 
 // Navbar links
-$navbar-dashboard-link-hover-color:          #333 !default;
+$navbar-dashboard-link-hover-color:          $gray-800 !default;
 $navbar-dashboard-link-hover-bg:             transparent !default;
-$navbar-dashboard-link-active-color:         #555 !default;
-$navbar-dashboard-link-active-bg:            darken($navbar-dashboard-bg, 6.5%) !default;
-$navbar-dashboard-link-disabled-color:       #ccc !default;
+$navbar-dashboard-link-active-color:         $gray-700 !default;
+$navbar-dashboard-link-active-bg:            $gray-300 !default;
+$navbar-dashboard-link-disabled-color:       $gray-400 !default;
 $navbar-dashboard-link-disabled-bg:          transparent !default;
 
 // Navbar brand label
@@ -200,6 +209,10 @@ $screen-lg-height: 670px !default;
 //
 $btn-default-bg: $addition-bg !default;
 $btn-default-border: rgba(0, 0, 0, 0.15) !default;
+
+//== Alerts
+//
+$alert-transparent: 0.25;
 
 // Dropdowns
 $dropdown-link-color: $text-color;

@@ -33,7 +33,8 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     }
     $sidebarContent.slimscroll({
       height: window.innerHeight,
-      size: '4px'
+      size: '4px',
+      color: '#e5e7f1',
     });
   }
 

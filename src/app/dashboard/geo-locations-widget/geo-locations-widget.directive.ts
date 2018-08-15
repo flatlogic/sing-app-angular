@@ -19,9 +19,13 @@ export class GeoLocationsWidgetDirective implements OnInit {
       map: {
         name : 'usa_states',
         defaultArea : {
-          attrsHover : {
-            fill : '#242424',
-            animDuration : 100
+          attrs: {
+            fill: '#e5e7f1',
+            stroke: '#fafbff',
+          },
+          attrsHover: {
+            fill: '#e9ebf6',
+            animDuration: 50,
           },
           tooltip: {
             content: function(): string {

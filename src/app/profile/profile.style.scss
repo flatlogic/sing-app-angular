@@ -117,7 +117,7 @@
 
   .contacts {
     display: block;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: -10px;
     margin-right: -10px;
     padding-left: 0;
@@ -151,14 +151,22 @@
 .stats-row-profile {
   .stat-item {
     border-left: 0;
-    padding-left: 15px;
     text-align: center;
+
+    &:nth(n + 1) {
+      padding-left: 15px;
+    }
+
+    h6 {
+      text-align: left;
+    }
 
     @include media-breakpoint-up(lg){
       padding-right: 0;
     }
 
     .value {
+      margin-bottom: 0.5rem;
       font-size: 28px;
       font-weight: $font-weight-base;
     }
