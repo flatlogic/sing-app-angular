@@ -18,7 +18,7 @@ app, .app {
 
   .slimScrollBar{
     @include border-radius(0 !important);
-    background-color: $sidebar-color !important;
+    background-color: $gray-400 !important;
   }
 }
 
@@ -67,7 +67,12 @@ app, .app {
   z-index: 1;
   height: $navbar-height;
   font-size: 13px;
-  box-shadow: $widget-shadow;
+  padding: 7px 10px 0;
+
+  .navbar-nav .la {
+    font-size: 1.42rem;
+    vertical-align: -5%;
+  }
 
   @include media-breakpoint-down(sm) {
     font-size: $font-size-lg;
@@ -84,11 +89,6 @@ app, .app {
       position: relative;
       z-index: 1;
     }
-
-    .navbar-nav .fa {
-      font-size: 1.5rem;
-      vertical-align: -5%;
-    }
   }
 
   .avatar{
@@ -104,10 +104,6 @@ app, .app {
     & > .nav-item > .nav-link {
       display: flex;
       align-items: center;
-    }
-
-    .fa-times.fa-lg {
-      font-size: 1.4rem;
     }
   }
 }
@@ -143,27 +139,28 @@ app, .app {
   }
 }
 
-.logo{
-  margin: 0.8rem 0 1.6rem;
-  height: $navbar-height;
-  width: 100%;
-  line-height: $navbar-height;
-  text-align: center;
-  vertical-align: middle;
-  font-weight: $font-weight-bold;
+.logo {
+  margin: 15px 0 35px;
   font-size: 18px;
+  width: 100%;
+  font-weight: $font-weight-thin;
+  text-align: center;
+  transition: width $sidebar-transition-time ease-in-out;
+
+  a {
+    color: $gray-800;
+    padding: 0 5px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 
   @include transition(width .3s ease-in-out);
-  a{
-    color: $white;
-    text-decoration: none;
-  }
 
   .nav-collapsed &{
     width: $sidebar-width-closed;
   }
 
-  .nav-static &{
+  .nav-static & {
     @include media-breakpoint-up(lg) {
       width: 100%;
       @include transition(none);
@@ -196,10 +193,13 @@ app, .app {
       margin-top: 7px;
       margin-right: $sidebar-padding-horizontal + $sidebar-slim-scroll-width;
       padding: $padding-base-vertical;
-      border-radius: $border-radius-sm;
+
+      &:not(.badge-pill) {
+        border-radius: $border-radius-sm;
+      }
 
       @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-        margin-top: 11px;
+        margin-top: 16px;
       }
     }
   }
@@ -215,12 +215,12 @@ app, .app {
     }
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-      line-height: 44px;
+      line-height: 55px;
     }
 
     .icon{
       @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-        top: 8px;
+        top: 12px;
       }
 
       display: block;
@@ -237,13 +237,17 @@ app, .app {
         color: rgba($sidebar-color, .7);
       }
 
+      .fa-database {
+        vertical-align: -1px;
+      }
+
     }
 
     .toggle{
       line-height: 35px;
 
       @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
-        line-height: 44px;
+        line-height: 55px;
       }
     }
 
@@ -265,7 +269,7 @@ app, .app {
       border-radius: 50%;
       background-color: $sidebar-item-active-color;
 
-      .fa, .glyphicon{
+      .fa, .glyphicon, .fi{
         color: $sidebar-bg-color;
       }
     }
@@ -276,9 +280,9 @@ app, .app {
    */
 
   > li ul{
-    padding: 0;
+    padding: 1rem;
     font-size: 13px;
-    background-color: lighten($sidebar-bg-color, 5%);
+    background-color: $sidebar-action-bg;
     list-style: none;
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
@@ -287,17 +291,13 @@ app, .app {
 
     > li{
       > a{
-        padding: 5px 0 5px 40px;
+        padding: 10px 20px 10px 26px;
         font-size: $font-size-base*0.95;
-        &:hover{
-          background-color: lighten($sidebar-item-hover-bg-color, 5%);
-        }
       }
 
       &.active{
         > a{
-          font-weight: normal;
-          color: $white;
+          font-weight: $font-weight-semi-bold;
         }
       }
 
@@ -672,18 +672,13 @@ app, .app {
     align-items: center;
 
     &:hover {
-      background-color: rgba(0,0,0,.15);
-
-      .message-sender{
-        color: white;
-      }
+      background-color: $gray-100;
     }
 
     &.active{
-      &,
       &:focus,
       &:hover{
-        background-color: rgba(255,255,255, .1);
+        background-color:  $gray-100;
       }
 
       .badge{
@@ -722,13 +717,12 @@ app, .app {
 .chat-sidebar-footer{
   width: 100%;
   padding: $padding-large-vertical;
-  background-color: #3a3a3a;
 }
 
 .chat-notification{
   position: absolute;
-  right: 10px;
-  top: 35px;
+  right: 25px;
+  top: 45px;
   z-index: 20;
   margin-top: 3px;
   padding: 5px 0;
