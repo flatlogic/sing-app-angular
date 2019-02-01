@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule, PaginationModule  } from 'ngx-bootstrap';
-import { DataTableModule } from 'angular2-datatable';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2TableModule } from 'ng2-table';
 import { WidgetModule } from '../layout/widget/widget.module';
 import { UtilsModule } from '../layout/utils/utils.module';
@@ -39,7 +39,7 @@ export const routes = [
     WidgetModule,
     UtilsModule,
     Ng2TableModule,
-    DataTableModule,
+    NgxDatatableModule,
     RouterModule.forChild(routes)
   ],
   schemas:  [ CUSTOM_ELEMENTS_SCHEMA ]

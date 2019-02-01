@@ -275,7 +275,7 @@ const PEOPLE = [
   styleUrls: ['./tables-dynamic.style.scss']
 })
 export class TablesDynamicComponent implements OnInit {
-  data: any[] = PEOPLE;
+  people: any[] = PEOPLE;
   searchText: string = '';
 
   rows: Array<any> = [];
