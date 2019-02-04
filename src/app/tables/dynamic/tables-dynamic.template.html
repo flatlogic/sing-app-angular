@@ -18,14 +18,15 @@
       <a href="https://github.com/swimlane/ngx-datatable" target="_blank">swimlane/ngx-datatable</a>
     </p>
     <div class="mt">
-      <div class="width-200 float-right">
-        <div class="input-group input-group-sm input-group-transparent input-group-rounded">
+      <div class="float-right mb">
+        <div class="input-group input-group-rounded">
           <span class="input-group-prepend">
             <span class="input-group-text">
               <i class="fa fa-search"></i>
             </span>
           </span>
-          <input class="form-control form-control-sm" id="table-search-input" [(ngModel)]="searchText" type="text" placeholder="Search Countries">
+          <input class="form-control"
+                 (keyup)='updateFilter($event)' type="text" placeholder="Search Table">
         </div>
       </div>
       <div>
@@ -35,7 +36,8 @@
           [columnMode]="'force'"
           [headerHeight]="50"
           [footerHeight]="50"
-          [rowHeight]="'auto'">
+          [rowHeight]="'auto'"
+          [limit]="8">
           <ngx-datatable-column name="ID">
             <ng-template let-value="value" ngx-datatable-cell-template>
               {{value}}

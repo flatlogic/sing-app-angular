@@ -1,4 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { DatatableComponent } from '@swimlane/ngx-datatable';
 import { tableData } from './tables-dynamic.data';
 declare let jQuery: any;
 
@@ -276,7 +277,9 @@ const PEOPLE = [
 })
 export class TablesDynamicComponent implements OnInit {
   people: any[] = PEOPLE;
-  searchText: string = '';
+  peopleTemp: any[] = [...PEOPLE];
+
+  @ViewChild(DatatableComponent) table: DatatableComponent;
 
   rows: Array<any> = [];
   columns: Array<any> = [
@@ -377,5 +380,19 @@ export class TablesDynamicComponent implements OnInit {
     const sortedData = this.changeSort(filteredData, this.config);
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
     this.length = sortedData.length;
+  }
+
+  updateFilter(event) {
+    const val = event.target.value.toLowerCase();
+
+    // filter our data
+    const temp = this.peopleTemp.filter(function(d) {
+      return d.name.toLowerCase().indexOf(val) !== -1 || !val;
+    });
+
+    // update the rows
+    this.people = temp;
+    // Whenever the filter changes, always go back to the first page
+    this.table.offset = 0;
   }
 }
