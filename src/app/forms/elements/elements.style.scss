@@ -91,26 +91,26 @@
 
 .form-group.has-warning .fileinput {
   .fileinput-preview {
-    color: $state-warning-text;
+    color: $warning;
   }
   .thumbnail {
-    border-color: $state-warning-border;
+    border-color: $warning;
   }
 }
 .form-group.has-error .fileinput {
   .fileinput-preview {
-    color: $state-danger-text;
+    color: $danger;
   }
   .thumbnail {
-    border-color: $state-danger-border;
+    border-color: $danger;
   }
 }
 .form-group.has-success .fileinput {
   .fileinput-preview {
-    color: $state-success-text;
+    color: $success;
   }
   .thumbnail {
-    border-color: $state-success-border;
+    border-color: $success;
   }
 }
 

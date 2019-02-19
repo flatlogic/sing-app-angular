@@ -13,6 +13,7 @@ app, .app {
   top: 0;
   bottom: 0;
   width: $sidebar-width;
+  border-right: $sidebar-border;
   background-color: $sidebar-bg-color;
   color: $sidebar-color;
 
@@ -216,6 +217,7 @@ app, .app {
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
       line-height: 55px;
+      font-size: 13px;
     }
 
     .icon{
@@ -331,6 +333,7 @@ app, .app {
   margin: 35px 0 5px $sidebar-padding-horizontal;
   font-size: 14px;
   text-transform: uppercase;
+  color: darken(color-yiq($sidebar-bg-color), 13%);
 
   opacity: 1;
   @include transition(opacity $sidebar-transition-time ease-in-out);
@@ -828,7 +831,7 @@ app, .app {
   margin-bottom: $grid-gutter-width;
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
-  border-radius: $border-radius-sm;
+  border-radius: $widget-border-radius;
   box-shadow: $widget-shadow;
 
   > header{

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: '[buttons]',
   templateUrl: './buttons.template.html',
-  styleUrls: ['./buttons.style.scss']
+  styleUrls: ['./buttons.style.scss'],
+  preserveWhitespaces: true
 })
 export class ButtonsComponent {
   checkboxModel: any = { left: false, middle: true, right: false };

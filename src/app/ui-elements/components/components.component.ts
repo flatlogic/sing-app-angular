@@ -4,7 +4,8 @@ declare let jQuery: any;
 @Component({
   selector: '[components]',
   templateUrl: './components.template.html',
-  styleUrls: ['./components.style.scss']
+  styleUrls: ['./components.style.scss'],
+  preserveWhitespaces: true
 })
 export class ComponentsComponent implements OnInit {
   alerts: Array<Object>;

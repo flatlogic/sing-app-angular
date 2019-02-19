@@ -12,6 +12,7 @@ declare const jQuery: any;
   templateUrl: './elements.template.html',
   styleUrls: [ './elements.style.scss' ],
   encapsulation: ViewEncapsulation.None,
+  preserveWhitespaces: true
 })
 export class ElementsComponent implements OnInit, OnDestroy {
   date: Date = new Date(2016, 5, 10);

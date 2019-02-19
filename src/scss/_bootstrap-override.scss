@@ -145,14 +145,6 @@ small, .small {
   }
 }
 
-.input-group-text,
-.input-group-addon,
-.input-group-append > .btn,
-.input-group-prepend > .btn {
-  padding-top: $padding-base-vertical;
-  padding-bottom: $padding-base-vertical;
-}
-
 .form-control-lg {
   padding: $padding-large-vertical $padding-large-horizontal;
 }
@@ -174,8 +166,7 @@ small, .small {
 }
 
 .btn-group.bootstrap-select > .btn {
-  padding-top: $padding-base-vertical;
-  padding-bottom: $padding-base-vertical;
+  white-space: nowrap;
 }
 
 label {
@@ -542,6 +533,7 @@ legend {
 .btn {
   font-family: $font-family-sans-serif;
   color: $white;
+  background-image: linear-gradient(to right, #ffffff26, #fff0);
 }
 
 .btn, .btn-inverse, .btn-gray {
