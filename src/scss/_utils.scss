@@ -25,10 +25,10 @@
 }
 
 /**
- * .circle & .rounded are pretty cool way to add a bit of beauty to raw data.
+ * .circle is a pretty cool way to add a bit of beauty to raw data.
  * should be used with bg-* and text-* classes for colors.
  */
-.circle, .rounded, .circle-o{
+.circle, .circle-o{
   display: inline-block;
   width: #{$line-height-base}em;
   height: #{$line-height-base}em;
@@ -40,11 +40,7 @@
   @include border-radius(50%);
 }
 
-.rounded{
-  @include border-radius(5px);
-}
-
-.circle-lg, .rounded-lg{
+.circle-lg {
   width: 2.2em;
   height: 2.2em;
   line-height: 2.2em;

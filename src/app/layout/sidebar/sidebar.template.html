@@ -106,22 +106,22 @@
   <ul class="sidebar-nav">
     <li>
       <!-- an example of nested submenu. basic bootstrap collapse component -->
-      <a class="collapsed" data-target="#sidebar-forms" data-toggle="collapse" data-parent="#sidebar">
+      <a class="collapsed" data-target="#sidebar-core" data-toggle="collapse" data-parent="#sidebar">
         <span class="icon">
-          <i class="fi flaticon-list"></i>
+          <i class="fi flaticon-network"></i>
         </span>
-        Forms
+        Core
         <i class="toggle fa fa-angle-down"></i>
       </a>
-      <ul id="sidebar-forms" class="collapse">
+      <ul id="sidebar-core" class="collapse">
         <li>
-          <a [routerLink]=" ['forms/elements'] ">Form Elements</a>
+          <a [routerLink]=" ['core/typography'] ">Typography</a>
         </li>
         <li>
-          <a [routerLink]=" ['forms/validation'] ">Form Validation</a>
+          <a [routerLink]=" ['core/colors'] ">Colors</a>
         </li>
         <li>
-          <a [routerLink]=" ['forms/wizard'] ">Form Wizard</a>
+          <a [routerLink]=" ['core/grid'] ">Grid</a>
         </li>
       </ul>
     </li>
@@ -151,6 +151,27 @@
         </li>
         <li>
           <a [routerLink]=" ['ui/list-groups'] ">List Groups</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <!-- an example of nested submenu. basic bootstrap collapse component -->
+      <a class="collapsed" data-target="#sidebar-forms" data-toggle="collapse" data-parent="#sidebar">
+        <span class="icon">
+          <i class="fi flaticon-list"></i>
+        </span>
+        Forms
+        <i class="toggle fa fa-angle-down"></i>
+      </a>
+      <ul id="sidebar-forms" class="collapse">
+        <li>
+          <a [routerLink]=" ['forms/elements'] ">Form Elements</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['forms/validation'] ">Form Validation</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['forms/wizard'] ">Form Wizard</a>
         </li>
       </ul>
     </li>
