@@ -201,3 +201,29 @@ ngx-loading-bar {
   border-radius: $border-radius;
   box-shadow: $widget-shadow;
 }
+
+/*************************************/
+/*                Flot               */
+/*************************************/
+
+.chart-tooltip {
+  position: fixed;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+  border: 1px solid $gray-light;
+  font-size: $font-size-mini;
+  background-color: $white;
+}
+
+/*************************************/
+/*              Dropdown             */
+/*************************************/
+.dropdown-toggle::after {
+  font-family: LineAwesome, sans-serif;
+  content: "\F110";
+  border: none;
+  width: auto;
+  height: auto;
+  vertical-align: baseline;
+  opacity: .8;
+  font-size: 85%;
+}

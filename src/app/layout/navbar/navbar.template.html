@@ -1,4 +1,4 @@
-<ul class="navbar-nav flex-row" (click)="$event.preventDelault()">
+<ul class="navbar-nav flex-row" (click)="$event.preventDefault()">
   <li class="nav-item">
     <ng-template #sidebarToggleTooltip>
       Turn on/off <br> sidebar <br>collapsing
@@ -48,8 +48,8 @@
     </div>
   </div>
 </form>
-<ul class="navbar-nav mr-3 d-none d-md-flex flex-row" (click)="$event.preventDelault()">
-    <li class="nav-item dropdown" dropdown placement="bottom right" [autoClose]="lalse">
+<ul class="navbar-nav mr-3 d-none d-md-flex flex-row" (click)="$event.preventDefault()">
+    <li class="nav-item dropdown" dropdown placement="bottom right" [autoClose]="false">
       <a href="#" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-notifications"
          id="notifications-dropdown-toggle">
          <span class="avatar thumb-sm float-left mr-2">

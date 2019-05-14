@@ -342,7 +342,7 @@
         </div>
       </header>
       <div class="widget-body p-0">
-        <div class="bg-gray-light" bootstrap-calendar [events]="[
+        <calendar class="bg-gray-light" [events]="[
                 [
                         '2/'+month+'/'+year,
                     'The flower bed',
@@ -370,7 +370,7 @@
                     'http://www.flatlogic.com',
                     config.settings.colors['brand-danger']
                 ]
-            ]"></div>
+            ]"></calendar>
         <div class="list-group fs-mini">
           <a href="#" class="list-group-item text-ellipsis">
             <span class="badge badge-pill badge-warning float-right">6:45</span>
