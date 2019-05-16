@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { AppConfig } from './app.config';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 const APP_PROVIDERS = [
   AppConfig

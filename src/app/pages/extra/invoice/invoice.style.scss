@@ -1,0 +1,28 @@
+@import "../../../styles/helpers";
+
+/***********************************/
+/**            INVOICE            **/
+/***********************************/
+
+.widget-invoice{
+  padding: 40px;
+
+  .print-buttons {
+    .btn {
+      @include media-breakpoint-down(xs) {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+      }
+    }
+  }
+
+  > header{
+    .invoice-logo{
+      max-height: 50px;
+    }
+
+    + .widget-body{
+      margin-top: 70px;
+    }
+  }
+}
