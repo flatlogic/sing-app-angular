@@ -1,7 +1,7 @@
-@import "../../../../node_modules/rickshaw/rickshaw";
-@import "../../../../node_modules/morris.js/morris";
-@import "../../../../node_modules/nvd3/build/nv.d3";
-@import "../../styles/helpers";
+@import "../../../../../node_modules/rickshaw/rickshaw";
+@import "../../../../../node_modules/morris.js/morris";
+@import "../../../../../node_modules/nvd3/build/nv.d3";
+@import "../../../styles/helpers";
 
 /***********************/
 /*         NvD3        */
@@ -13,12 +13,12 @@
   font-size: $font-size-sm;
   text-align: center;
 
-  p{
+  p {
     margin: 0;
     padding: 0;
   }
 
-  h3{
+  h3 {
     background: none;
     border-bottom: 0;
   }
@@ -42,41 +42,19 @@ svg .title {
   stroke-opacity: 0;
 }
 
-.nv-controlsWrap{
+.nv-controlsWrap {
 
-  .nv-legend-symbol{
+  .nv-legend-symbol {
     fill: #666 !important;
     stroke: #666 !important;
   }
 }
 
 /***********************/
-/*   Easy Pie Chart    */
-/***********************/
-
-
-.easy-pie-chart{
-  position: relative;
-  display: inline-block;
-  line-height: 120px;
-  height: 120px;
-  width: 120px;
-  text-align: center;
-  color: $gray-600;
-  canvas{
-    position: absolute;
-    top: 0;
-    left: 0
-  }
-}
-
-
-/***********************/
 /*         Flot        */
 /***********************/
 
-
-.chart-tooltip{
+.chart-tooltip {
   position: fixed;
   padding: $padding-small-vertical $padding-small-horizontal;
   border: 1px solid $gray-600;

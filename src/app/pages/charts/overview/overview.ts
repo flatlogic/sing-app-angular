@@ -6,12 +6,12 @@ declare let d3: any;
 declare let nv: any;
 
 @Component({
-  selector: '[charts]',
-  templateUrl: './charts.template.html',
-  styleUrls: ['./charts.style.scss'],
+  selector: '[charts-overview]',
+  templateUrl: './overview.html',
+  styleUrls: ['./overview.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ChartsComponent implements OnInit {
+export class OverviewComponent implements OnInit {
   seriesData: Array<any> = [ [], [] ];
   random: any;
   series: Array<any>;
@@ -237,9 +237,9 @@ export class ChartsComponent implements OnInit {
       colors: ['#F7653F', '#F8C0A2', '#e6e6e6']
     };
 
-    jQuery('.easy-pie-chart').easyPieChart({
-      barColor: '#5dc4bf',
-      trackColor: '#ddd',
+    jQuery('.easy-pie-chart-md').easyPieChart({
+      barColor: '#8fe5d4',
+      trackColor: '#f8f9fa',
       scaleColor: false,
       lineWidth: 10,
       size: 120

@@ -53,14 +53,6 @@
       </a>
     </li>
     <li>
-      <a [routerLink]=" ['charts'] ">
-        <span class="icon">
-          <i class="fi flaticon-controls"></i>
-        </span>
-        Charts
-      </a>
-    </li>
-    <li>
       <a [routerLink]=" ['profile'] ">
         <span class="icon">
           <i class="fi flaticon-user"></i>
@@ -202,6 +194,32 @@
         </li>
         <li>
           <a [routerLink]=" ['forms/wizard'] ">Form Wizard</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a class="collapsed" data-target="#sidebar-charts" data-toggle="collapse" data-parent="#sidebar">
+        <span class="icon">
+          <i class="fi flaticon-controls"></i>
+        </span>
+        Charts
+        <i class="toggle fa fa-angle-down"></i>
+      </a>
+      <ul id="sidebar-charts" class="collapse">
+        <li>
+          <a [routerLink]=" ['charts/overview'] ">Charts Overview</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['charts/flot'] ">Flot Charts</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['charts/morris'] ">Morris Charts</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['charts/sparkline'] ">Sparkline Charts</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['charts/easy-pie'] ">Easy Pie Charts</a>
         </li>
       </ul>
     </li>

@@ -42,6 +42,7 @@
     "font-awesome": "4.7.0",
     "fullcalendar": "3.4.0",
     "glyphicons-halflings": "https://github.com/inway/glyphicons-halflings#df545d9e4bdae9b5ffa112fcb70b3f8350929875",
+    "govpredict-morris": "^0.5.1",
     "hammerjs": "2.0.8",
     "jasny-bootstrap": "3.1.3",
     "jquery": "3.2.1",

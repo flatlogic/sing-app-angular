@@ -227,3 +227,32 @@ ngx-loading-bar {
   opacity: .8;
   font-size: 85%;
 }
+
+//  Easy Pie Chart
+
+.easy-pie-chart-md,
+.easy-pie-chart-lg {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  color: #798892;
+}
+
+.easy-pie-chart-md canvas,
+.easy-pie-chart-lg canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.easy-pie-chart-md {
+  line-height: 120px;
+  height: 120px;
+  width: 120px;
+}
+
+.easy-pie-chart-lg {
+  line-height: 140px;
+  height: 140px;
+  width: 140px;
+}

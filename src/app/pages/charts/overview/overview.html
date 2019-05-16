@@ -1,6 +1,7 @@
 <ol class="breadcrumb">
   <li class="breadcrumb-item">YOU ARE HERE</li>
-  <li class="breadcrumb-item active">Charts</li>
+  <li class="breadcrumb-item">Charts</li>
+  <li class="breadcrumb-item active">Overview</li>
 </ol>
 <h1 class="page-title">Visual - <span class="fw-semi-bold">Charts</span></h1>
 <div data-ng-controller="ChartsDemoController">
@@ -19,7 +20,7 @@
         </header>
         <div class="widget-body">
           <div class="mt mb" id="flot-main" style="width: 100%; height: 260px;" flot-chart-animator
-               [data] = "[{
+               [data]="[{
                         label: 'Traffic',
                         data: data3,
                         lines: {
@@ -57,7 +58,8 @@
                   <h6 class="name text-muted m-0 fs-mini">Overall Values</h6>
                 </div>
                 <div class="stat-item stat-item-mini-chart">
-                  <div class="sparkline" jq-sparkline [data]="[9,12,14,15,10,14,20]" [options] = "{type: 'bar', barColor: '#f0b518', height: '30px', barWidth: 6, barSpacing: 2}"></div>
+                  <div class="sparkline" jq-sparkline [data]="[9,12,14,15,10,14,20]"
+                       [options]="{type: 'bar', barColor: '#f0b518', height: '30px', barWidth: 6, barSpacing: 2}"></div>
                 </div>
               </div>
             </div>
@@ -68,7 +70,8 @@
                   <h6 class="name text-muted m-0 fs-mini">Overall Values</h6>
                 </div>
                 <div class="stat-item stat-item-mini-chart">
-                  <div class="sparkline" jq-sparkline [data]="[9,12,14,15,10,14,20]" [options] = "{type: 'bar', barColor: '#FFA587', height: '30px', barWidth: 6, barSpacing: 2}"></div>
+                  <div class="sparkline" jq-sparkline [data]="[9,12,14,15,10,14,20]"
+                       [options]="{type: 'bar', barColor: '#FFA587', height: '30px', barWidth: 6, barSpacing: 2}"></div>
                 </div>
               </div>
             </div>
@@ -97,7 +100,8 @@
           <p class="fs-mini text-muted mb-lg">
             Rickshaw provides the elements you need to create interactive graphs: renderers, legends,
             hovers, range selectors, etc. You put the pieces together.
-            It's all based on <span class="fw-semi-bold">d3</span> underneath, so graphs are drawn with standard SVG and styled with CSS.
+            It's all based on <span class="fw-semi-bold">d3</span> underneath, so graphs are drawn with standard SVG and
+            styled with CSS.
             Customize all you like with techniques you already know.
           </p>
           <h5>720 Users</h5>
@@ -145,7 +149,8 @@
           </div>
           <p class="text-muted fs-mini">
             <span class="fw-semi-bold">17% higher</span> than last month</p>
-          <div jq-sparkline [data]="sparklineCompositeData" [options]="sparklineCompositeOptions" class="chart-overflow-bottom"></div>
+          <div jq-sparkline [data]="sparklineCompositeData" [options]="sparklineCompositeOptions"
+               class="chart-overflow-bottom"></div>
         </div>
       </section>
       <section class="widget" widget>
@@ -161,7 +166,8 @@
           <p class="fs-mini text-muted">
             Each example displayed below takes just 1 line of HTML or javascript to generate.
           </p>
-          <div jq-sparkline [data]="sparklinePieData" [options]="sparklinePieOptions" class="chart-overflow-bottom mb-0 text-center"></div>
+          <div jq-sparkline [data]="sparklinePieData" [options]="sparklinePieOptions"
+               class="chart-overflow-bottom mb-0 text-center"></div>
         </div>
       </section>
     </div>
@@ -179,7 +185,8 @@
         </header>
         <div class="widget-body">
           <p class="fs-mini text-muted">
-            This project is an attempt to build re-usable charts and chart components for <span class="fw-semi-bold">d3.js</span> without
+            This project is an attempt to build re-usable charts and chart components for <span class="fw-semi-bold">d3.js</span>
+            without
             taking away the power that d3.js gives you.
           </p>
           <div nvd3-chart [chart]="nvd31Chart" [datum]="nvd31Data">
@@ -273,7 +280,7 @@
         </header>
         <div class="widget-body clearfix">
           <div class="text-center">
-            <div class="easy-pie-chart mb-lg" data-percent="73">73</div>
+            <div class="easy-pie-chart-md mb-lg" data-percent="73">73</div>
           </div>
           <p class="fs-mini text-muted">
             Easy pie chart is a jQuery plugin that uses the canvas element to render simple pie charts

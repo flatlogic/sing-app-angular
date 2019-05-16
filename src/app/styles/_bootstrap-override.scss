@@ -799,6 +799,28 @@ legend {
   }
 }
 
+.alert {
+  font-size: $font-size-sm;
+
+  .close {
+    color: #fff;
+  }
+}
+
+.alert-sm {
+  padding: 10px 15px;
+
+  .close {
+    font-size: 20px;
+    top: 0;
+    right: -8px;
+  }
+}
+
+.alert-dismissible {
+  padding-right: 1.25rem;
+}
+
 
 //
 // Popovers
