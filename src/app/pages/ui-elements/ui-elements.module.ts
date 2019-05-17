@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import {AlertModule, CarouselModule, TooltipModule} from 'ngx-bootstrap';
+import {AlertModule, CarouselModule, PopoverModule, ProgressbarModule, TooltipModule} from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 import { TabsModule, AccordionModule, ModalModule } from 'ngx-bootstrap';
 import { WidgetModule } from '../../layout/widget/widget.module';
@@ -18,8 +18,6 @@ import { ListGroupsComponent } from './list-groups/list-groups.component';
 import { MessengerDemoDirective } from './notifications/messenger/messenger.directive';
 import {PopoversComponent} from './popovers/popovers';
 import {ProgressComponent} from './progress/progress';
-import {NavbarComponent} from './navbar/navbar';
-import {NavComponent} from './nav/nav';
 import {ModalComponent} from './modal/modal';
 import {JumbotronComponent} from './jumbotron/jumbotron';
 import {CarouselComponent} from './carousel/carousel';
@@ -41,8 +39,6 @@ export const routes = [
   {path: 'carousel', component: CarouselComponent},
   {path: 'jumbotron', component: JumbotronComponent},
   {path: 'modal', component: ModalComponent},
-  {path: 'nav', component: NavComponent},
-  {path: 'navbar', component: NavbarComponent},
   {path: 'popovers', component: PopoversComponent},
   {path: 'progress', component: ProgressComponent},
 ];
@@ -62,8 +58,6 @@ export const routes = [
     CarouselComponent,
     JumbotronComponent,
     ModalComponent,
-    NavComponent,
-    NavbarComponent,
     PopoversComponent,
     ProgressComponent
   ],
@@ -81,7 +75,9 @@ export const routes = [
     AccordionModule.forRoot(),
     NewWidgetModule,
     AlertModule.forRoot(),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    PopoverModule.forRoot(),
+    ProgressbarModule.forRoot()
   ]
 })
 export class UiElementsModule {

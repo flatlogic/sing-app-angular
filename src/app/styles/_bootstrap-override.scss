@@ -1019,19 +1019,6 @@ legend {
 }
 
 
-@mixin bg-variant($parent, $color) {
-  #{$parent} {
-    background-color: $color !important;
-    color: $text-color !important;
-  }
-  a#{$parent} {
-    @include hover-focus {
-      background-color: darken($color, 10%);
-    }
-  }
-}
-
-
 //
 // Code
 // -----------------

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'progress',
+  selector: 'progress-page',
   templateUrl: './progress.html'
 })
 export class ProgressComponent {
