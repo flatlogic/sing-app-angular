@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 
 declare let jQuery: any;
 declare let Rickshaw: any;
@@ -12,6 +12,8 @@ declare let nv: any;
   encapsulation: ViewEncapsulation.None
 })
 export class OverviewComponent implements OnInit {
+  @ViewChild('sparklineLineChart') sparklineLineChart: ElementRef;
+
   seriesData: Array<any> = [ [], [] ];
   random: any;
   series: Array<any>;
@@ -64,11 +66,11 @@ export class OverviewComponent implements OnInit {
     }
     this.series = [
       {
-        color: '#96E593',
+        color: '#17a2b8',
         data: this.seriesData[0],
         name: 'Uploads'
       }, {
-        color: '#ecfaec',
+        color: '#1ac7e0',
         data: this.seriesData[1],
         name: 'Downloads'
       }
@@ -123,7 +125,7 @@ export class OverviewComponent implements OnInit {
     this.nvd31Chart = nv.models.lineChart()
       .useInteractiveGuideline(true)
       .margin({left: 28, bottom: 30, right: 0})
-      .color(['#82DFD6', '#ddd']);
+      .color(['#ff6e7c', '#5faaff']);
 
     this.nvd31Chart.xAxis
       .showMaxMin(false)
@@ -140,7 +142,7 @@ export class OverviewComponent implements OnInit {
 
     this.nvd32Chart = nv.models.multiBarChart()
       .margin({left: 28, bottom: 30, right: 0})
-      .color(['#F7653F', '#ddd']);
+      .color(['#4ce5d3', '#ff3d43']);
 
     this.nvd32Chart.xAxis
       .showMaxMin(false)
@@ -156,7 +158,23 @@ export class OverviewComponent implements OnInit {
     });
   }
 
+  initSparklineLine() {
+    jQuery(this.sparklineLineChart.nativeElement).sparkline([1, 2, 4, 2, 3, 7], {
+      width: '100%',
+      height: '100px',
+      lineColor: '#ffc247',
+      fillColor: false,
+      highlightLineColor: '#8fe5d4',
+      spotColor: '#8fe5d4',
+      minSpotColor: '#ffc247',
+      maxSpotColor: '#ffc247',
+      spotRadius: 2,
+      lineWidth: 2
+    });
+  }
+
   ngOnInit(): void {
+    this.initSparklineLine();
     this.applyRickshawData();
 
     this.sparklineCompositeData = [
@@ -183,12 +201,12 @@ export class OverviewComponent implements OnInit {
       highlightLineColor: '#ddd'
     }];
 
-    this.sparklinePieData = [2, 4, 6];
+    this.sparklinePieData = [2, 5];
     this.sparklinePieOptions = {
       type: 'pie',
       width: '100px',
       height: '100px',
-      sliceColors: ['#F5CB7B', '#FAEEE5', '#f0f0f0']
+      sliceColors: ['#17CBE1', '#1DE3FF']
     };
 
     this.applyNvd3Data();
@@ -207,7 +225,7 @@ export class OverviewComponent implements OnInit {
       xkey: 'y',
       ykeys: ['a', 'b'],
       labels: ['Series A', 'Series B'],
-      lineColors: ['#88C4EE', '#ccc']
+      lineColors: ['#8fe5d4', '#ffebb2']
     };
 
     this.morris2Options = {
@@ -224,7 +242,7 @@ export class OverviewComponent implements OnInit {
       xkey: 'y',
       ykeys: ['a', 'b'],
       labels: ['Series A', 'Series B'],
-      lineColors: ['#80DE78', '#9EEE9B'],
+      lineColors: ['#f5b868', '#f55d5d'],
       lineWidth: 0
     };
 
@@ -234,7 +252,7 @@ export class OverviewComponent implements OnInit {
         {label: 'In-Store Sales', value: 30},
         {label: 'Mail-Order Sales', value: 20}
       ],
-      colors: ['#F7653F', '#F8C0A2', '#e6e6e6']
+      colors: ['#ff9592', '#ffcf94', '#e6e6e6']
     };
 
     jQuery('.easy-pie-chart-md').easyPieChart({
@@ -344,7 +362,7 @@ export class OverviewComponent implements OnInit {
         backgroundColor: 'transparent',
         labelBoxBorderColor: 'none'
       },
-      colors: ['#64bd63', '#f0b518', '#F7653F']
+      colors: ['#a7beff', '#ace5d1', '#ffd7de']
     };
   }
 }

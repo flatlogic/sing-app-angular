@@ -973,6 +973,16 @@ app, .app {
   }
 }
 
+.widget-controls .dropdown-toggle:after {
+  content: none;
+}
+
+.widget-controls {
+  .glyphicon-resize-full {
+    font-size: 9px;
+  }
+}
+
 .widget-card { min-height: 135px;}
 
 .widget-icon{
