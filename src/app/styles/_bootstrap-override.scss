@@ -1016,6 +1016,10 @@ legend {
       }
     }
   }
+
+  .navbar-settings .dropdown-toggle:after {
+    content: none;
+  }
 }
 
 
