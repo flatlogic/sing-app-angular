@@ -97,8 +97,8 @@ export class AnalyticsComponent implements OnInit {
     ]
   ];
 
-  @ViewChild('chartContainer') chartContainer: ElementRef;
-  @ViewChild('chartLegend') chartLegend: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
+  @ViewChild('chartLegend', {static: true}) chartLegend: ElementRef;
 
   trends: Array<any> = [
     {

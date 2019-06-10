@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './bars-chart.html'
 })
 export class BarsChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
 
   getBarChartData() { /* eslint-disable */
     return [

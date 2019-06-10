@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './markers-chart.html'
 })
 export class MarkersChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
 
   data: Array<any> = [
     { data: this.generate(2, 0.6), points: { symbol: 'circle' } },

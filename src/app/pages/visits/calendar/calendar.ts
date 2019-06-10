@@ -14,7 +14,7 @@ export class CalendarComponent implements AfterViewInit {
   @Input() events: Array<any>;
   @Input() white: boolean = false;
 
-  @ViewChild('calendarWrapper') el: ElementRef;
+  @ViewChild('calendarWrapper', {static: true}) el: ElementRef;
 
   render(): void {
     const monthNames = [

@@ -9,7 +9,7 @@ declare let jQuery: any;
 export class BootstrapApplicationWizardComponent implements OnInit, AfterViewInit {
   $el: any;
 
-  @ViewChild('wizard') wizard: ElementRef;
+  @ViewChild('wizard', {static: true}) wizard: ElementRef;
 
   constructor() {
   }

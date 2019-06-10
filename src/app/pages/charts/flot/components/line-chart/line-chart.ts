@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './line-chart.html'
 })
 export class LineChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
 
   options: any = {
     xaxis: {

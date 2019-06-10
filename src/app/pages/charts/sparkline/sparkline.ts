@@ -8,13 +8,13 @@ declare let jQuery: any;
   templateUrl: './sparkline.html'
 })
 export class SparklineComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('sparkline1') sparkline1: ElementRef;
-  @ViewChild('sparkline2') sparkline2: ElementRef;
-  @ViewChild('sparkline3') sparkline3: ElementRef;
-  @ViewChild('sparkline4') sparkline4: ElementRef;
-  @ViewChild('sparkline5') sparkline5: ElementRef;
-  @ViewChild('sparkline6') sparkline6: ElementRef;
-  @ViewChild('sparkline7') sparkline7: ElementRef;
+  @ViewChild('sparkline1', {static: true}) sparkline1: ElementRef;
+  @ViewChild('sparkline2', {static: true}) sparkline2: ElementRef;
+  @ViewChild('sparkline3', {static: true}) sparkline3: ElementRef;
+  @ViewChild('sparkline4', {static: true}) sparkline4: ElementRef;
+  @ViewChild('sparkline5', {static: true}) sparkline5: ElementRef;
+  @ViewChild('sparkline6', {static: true}) sparkline6: ElementRef;
+  @ViewChild('sparkline7', {static: true}) sparkline7: ElementRef;
 
   generateRandomArr(length, min = null, max = null, isFloat = false) { // eslint-disable-line
     const result = [];

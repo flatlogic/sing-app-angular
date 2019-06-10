@@ -7,8 +7,8 @@ declare let jQuery: any;
   templateUrl: './donut-chart.html'
 })
 export class DonutChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
-  @ViewChild('chartLegend') chartLegend: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
+  @ViewChild('chartLegend', {static: true}) chartLegend: ElementRef;
 
   getPieChartData() {
     const data = [];

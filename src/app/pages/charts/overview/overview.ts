@@ -12,7 +12,7 @@ declare let nv: any;
   encapsulation: ViewEncapsulation.None
 })
 export class OverviewComponent implements OnInit {
-  @ViewChild('sparklineLineChart') sparklineLineChart: ElementRef;
+  @ViewChild('sparklineLineChart', {static: true}) sparklineLineChart: ElementRef;
 
   seriesData: Array<any> = [ [], [] ];
   random: any;

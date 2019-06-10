@@ -11,12 +11,12 @@ declare let jQuery: any;
   templateUrl: './morris.html'
 })
 export class MorrisComponent implements AfterViewInit {
-  @ViewChild('morrisLineChart') morrisLineChart: ElementRef;
-  @ViewChild('morrisAreaChart') morrisAreaChart: ElementRef;
-  @ViewChild('morrisBarChart') morrisBarChart: ElementRef;
-  @ViewChild('morrisDonutChart') morrisDonutChart: ElementRef;
-  @ViewChild('morrisBar2Chart') morrisBar2Chart: ElementRef;
-  @ViewChild('morrisStackedChart') morrisStackedChart: ElementRef;
+  @ViewChild('morrisLineChart', {static: true}) morrisLineChart: ElementRef;
+  @ViewChild('morrisAreaChart', {static: true}) morrisAreaChart: ElementRef;
+  @ViewChild('morrisBarChart', {static: true}) morrisBarChart: ElementRef;
+  @ViewChild('morrisDonutChart', {static: true}) morrisDonutChart: ElementRef;
+  @ViewChild('morrisBar2Chart', {static: true}) morrisBar2Chart: ElementRef;
+  @ViewChild('morrisStackedChart', {static: true}) morrisStackedChart: ElementRef;
 
   initMorrisLineChart() {
     jQuery(this.morrisLineChart.nativeElement).html('');

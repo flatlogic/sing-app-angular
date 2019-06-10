@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './bars-stacked-chart.html'
 })
 export class BarsStackedChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
 
   getStackedBarChartData() {
     const seriesCount = 3;

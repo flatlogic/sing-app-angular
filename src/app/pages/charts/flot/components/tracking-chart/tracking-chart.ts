@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './tracking-chart.html'
 })
 export class TrackingChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
 
   chart: any;
   legend: any;

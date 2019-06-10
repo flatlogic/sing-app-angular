@@ -17,7 +17,7 @@ export class CalendarComponent implements OnInit, AfterViewInit {
   createEvent: any;
   calendarEvent: string = null;
 
-  @ViewChild('modalWindow') public modalWindow: ModalDirective;
+  @ViewChild('modalWindow', {static: true}) public modalWindow: ModalDirective;
 
   constructor() {
     const date = new Date();

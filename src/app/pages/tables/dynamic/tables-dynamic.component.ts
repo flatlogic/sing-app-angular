@@ -279,7 +279,7 @@ export class TablesDynamicComponent implements OnInit {
   people: any[] = PEOPLE;
   peopleTemp: any[] = [...PEOPLE];
 
-  @ViewChild(DatatableComponent) table: DatatableComponent;
+  @ViewChild(DatatableComponent, {static: true}) table: DatatableComponent;
 
   rows: Array<any> = [];
   columns: Array<any> = [

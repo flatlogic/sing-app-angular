@@ -7,7 +7,7 @@ declare let jQuery: any;
   templateUrl: './pie-chart.html'
 })
 export class PieChartComponent implements AfterViewInit {
-  @ViewChild('chartContainer') chartContainer: ElementRef;
+  @ViewChild('chartContainer', {static: true}) chartContainer: ElementRef;
 
   getPieChartData() {
     const data = [];

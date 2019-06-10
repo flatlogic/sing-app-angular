@@ -18,8 +18,8 @@ import 'jquery-sparkline';
   templateUrl: './flot.html'
 })
 export class FlotComponent implements AfterViewInit {
-  @ViewChild('sparklines1') sparklines1: ElementRef;
-  @ViewChild('sparklines2') sparklines2: ElementRef;
+  @ViewChild('sparklines1', {static: true}) sparklines1: ElementRef;
+  @ViewChild('sparklines2', {static: true}) sparklines2: ElementRef;
 
   initSparkline(ref) {
     const spark = jQuery(this[ref].nativeElement);
