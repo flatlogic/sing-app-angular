@@ -58,22 +58,22 @@ $teal:    #3abf94 !default;
 $cyan:    #17a2b8 !default;
 
 $theme-colors: (
-  primary: $blue,
-  secondary: $gray-600,
-  success: $teal,
-  info: $purple,
-  warning: $yellow,
-  danger: $red,
-  dark: $gray-800,
-  inverse: $gray-700,
-  gray: $gray-300,
-  light: $gray-100,
-  default: #e9ecef,
-  primary-light: #dee4ee,
-  success-light: #ecfaec,
-  info-light: #f2fafa,
-  warning-light: #fdf7e6,
-  danger-light: #fff2ef,
+  'primary': $blue,
+  'secondary': $gray-600,
+  'success': $teal,
+  'info': $purple,
+  'warning': $yellow,
+  'danger': $red,
+  'dark': $gray-800,
+  'inverse': $gray-700,
+  'gray': $gray-300,
+  'light': $gray-100,
+  'default': #e9ecef,
+  'primary-light': #dee4ee,
+  'success-light': #ecfaec,
+  'info-light': #f2fafa,
+  'warning-light': #fdf7e6,
+  'danger-light': #fff2ef,
 ) !default;
 
 $link-color: #218bc3;
