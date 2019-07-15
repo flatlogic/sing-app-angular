@@ -1,0 +1,137 @@
+@import '../../styles/helpers';
+
+.abc-radio-secondary input[type="radio"]:not(:checked) + label::before {
+  background-color: #798892;
+}
+
+.abc-radio-warning input[type="radio"]:not(:checked) + label::before {
+  background-color: theme-color('warning');
+}
+
+.theme-switcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .theme {
+    position: relative;
+
+    &,
+    & > label {
+      width: 100%;
+      height: max-content;
+    }
+
+    & > input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    & > label {
+      margin: 0;
+      border: 1px solid $input-border-color;
+      padding: 3px;
+      border-radius: $border-radius;
+      transition: background-color .2s ease-in-out;
+      cursor: pointer;
+      display: block;
+
+      &:hover {
+        background-color: $gray-200;
+      }
+    }
+
+    & > input:checked + label {
+      background-color: $gray-300;
+    }
+
+    .theme-image {
+      width: 100%;
+    }
+  }
+}
+
+.theme-helper-btn {
+  position: absolute;
+  width: $sidebar-width-open / 4;
+  transform: translateX(-76px);
+  margin-top: -($widget-padding-vertical);
+  cursor: pointer;
+  z-index: 200;
+  border-radius: 50% 0 0 50%;
+  padding: $spacer * 0.8 $spacer / 2 $spacer * 0.8 $spacer;
+
+  &,
+  &:not(.active) {
+    box-shadow: $widget-shadow-designated !important;
+  }
+
+  i {
+    animation-duration: 6500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  i:first-of-type {
+    animation-name: spin;
+    margin-right: -$spacer * 1.15;
+    vertical-align: text-bottom;
+  }
+
+  i:last-of-type {
+    animation-name: spin-reverse;
+    vertical-align: $font-size-sm;
+  }
+}
+
+.theme-helper-spinner {
+  font-size: $font-size-lg * 1.4;
+  line-height: initial;
+}
+
+.theme-helper-header {
+  padding-top: 0;
+
+  h6 {
+    margin: auto;
+  }
+}
+
+.theme-helper-content {
+  box-shadow: $widget-shadow-designated;
+  border-radius: 0;
+}
+
+.theme-helper-sharing {
+  font-size: $font-size-lg;
+  cursor: pointer;
+}
+
+.glyphicon {
+  vertical-align: top;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-360deg);
+  }
+}

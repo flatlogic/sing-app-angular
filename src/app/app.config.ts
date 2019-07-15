@@ -6,7 +6,7 @@ declare let jQuery: any;
 export class AppConfig {
   config = {
     name: 'sing',
-    title: 'Sing Dashboard App with Angular 7.0 support by Flatlogic',
+    title: 'Sing Dashboard App with Angular 8.0 support by Flatlogic',
     version: '4.0.0',
     /**
      * Whether to print and alert some log information

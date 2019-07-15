@@ -17,6 +17,8 @@ import { NotificationsLoadDirective } from './notifications/notifications-load.d
 import { NotificationsComponent } from './notifications/notifications.component';
 
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import {HelperComponent} from './helper/helper.component';
+import {NewWidgetModule} from './new-widget/widget.module';
 
 @NgModule({
   imports: [
@@ -25,7 +27,8 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
     BsDropdownModule.forRoot(),
     ROUTES,
     FormsModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule,
+    NewWidgetModule
   ],
   declarations: [
     LayoutComponent,
@@ -35,7 +38,8 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
     SearchPipe,
     NotificationsComponent,
     NotificationsLoadDirective,
-    ChatMessageComponent
+    ChatMessageComponent,
+    HelperComponent
   ]
 })
 export class LayoutModule {
