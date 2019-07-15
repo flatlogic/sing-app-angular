@@ -10,14 +10,14 @@
   </header>
   <div class="theme-switcher">
     <div class="theme mb-3">
-      <input [checked]="true" type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
-      <label for="css-light">
+      <input [checked]="helperService.dashboardTheme === dashboardThemes.LIGHT" type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
+      <label for="css-light" (click)="changeTheme(dashboardThemes.LIGHT)">
         <img class="theme-image" src="assets/img/theme-light.png" alt="light theme"/>
       </label>
     </div>
     <div class="theme">
-      <input [checked]="false" type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
-      <label for="css-dark">
+      <input [checked]="helperService.dashboardTheme === dashboardThemes.DARK" type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
+      <label for="css-dark" (click)="changeTheme(dashboardThemes.DARK)">
         <img class="theme-image" src="assets/img/theme-dark.png" alt="dark theme"/>
       </label>
     </div>

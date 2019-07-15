@@ -1,19 +1,8 @@
-import {
-  Component,
-  ViewEncapsulation,
-  ElementRef, Renderer2,
-  NgZone,
-  ViewChild, HostBinding, OnInit
-} from '@angular/core';
-import {
-  Router,
-  Event as RouterEvent,
-  NavigationStart,
-  NavigationEnd,
-  NavigationCancel,
-  NavigationError
-} from '@angular/router';
-import { AppConfig } from '../app.config';
+import {Component, ElementRef, HostBinding, NgZone, OnInit, Renderer2, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Event as RouterEvent, NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
+import {AppConfig} from '../app.config';
+import {DashboardThemes} from './helper/helper.interface';
+import {HelperService} from './helper/helper.service';
 
 declare let jQuery: any;
 declare let Hammer: any;
@@ -28,6 +17,14 @@ export class LayoutComponent implements OnInit {
   @HostBinding('class.nav-static') navStatic: boolean;
   @HostBinding('class.chat-sidebar-opened') chatOpened: boolean = false;
   @HostBinding('class.app') appClass: boolean = true;
+  @HostBinding('class.sing-dashboard') singDashboardClass: boolean = true;
+  @HostBinding('class.dashboard-light') get dashboardLight() {
+    return this.helperService.dashboardTheme === DashboardThemes.LIGHT;
+  }
+  @HostBinding('class.dashboard-dark') get dashboardDark() {
+    return this.helperService.dashboardTheme === DashboardThemes.DARK;
+  }
+
   config: any;
   configFn: any;
   $sidebar: any;
@@ -40,7 +37,9 @@ export class LayoutComponent implements OnInit {
               el: ElementRef,
               router: Router,
               private renderer: Renderer2,
-              private ngZone: NgZone) {
+              private ngZone: NgZone,
+              private helperService: HelperService
+  ) {
     Raphael.prototype.safari = function(): any { return; };
     this.el = el;
     this.config = config.getConfig();

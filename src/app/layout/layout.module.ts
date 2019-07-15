@@ -19,6 +19,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import {HelperComponent} from './helper/helper.component';
 import {NewWidgetModule} from './new-widget/widget.module';
+import {HelperService} from './helper/helper.service';
 
 @NgModule({
   imports: [
@@ -40,6 +41,9 @@ import {NewWidgetModule} from './new-widget/widget.module';
     NotificationsLoadDirective,
     ChatMessageComponent,
     HelperComponent
+  ],
+  providers: [
+    HelperService
   ]
 })
 export class LayoutModule {
