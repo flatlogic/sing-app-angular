@@ -12,7 +12,7 @@ export class HelperComponent {
   @HostBinding('class.theme-helper') themeHelperClass = true;
   @HostBinding('class.theme-helper-opened') isOpened = false;
 
-  constructor(private helperService: HelperService) {}
+  constructor(public helperService: HelperService) {}
 
   toggle() {
     this.isOpened = !this.isOpened;
