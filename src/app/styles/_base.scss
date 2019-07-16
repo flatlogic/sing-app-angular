@@ -14,8 +14,8 @@ app, .app {
   bottom: 0;
   width: $sidebar-width;
   border-right: $sidebar-border;
-  background-color: $sidebar-bg-color;
-  color: $sidebar-color;
+  background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-color);
 
   .slimScrollBar{
     @include border-radius(0 !important);
@@ -68,7 +68,8 @@ app, .app {
   z-index: 1;
   height: $navbar-height;
   font-size: 13px;
-  padding: 7px 10px 0;
+  padding: 0;
+  box-shadow: var(--navbar-shadow);
 
   .navbar-nav .la {
     font-size: 1.42rem;
@@ -149,7 +150,7 @@ app, .app {
   transition: width $sidebar-transition-time ease-in-out;
 
   a {
-    color: $gray-800;
+    color: var(--logo-color);
     padding: 0 5px;
     text-decoration: none;
     white-space: nowrap;
@@ -174,7 +175,7 @@ app, .app {
 
   li a{
     display: block;
-    color: $sidebar-color;
+    color: var(--sidebar-color);
     text-decoration: none;
 
     .toggle{
@@ -212,7 +213,7 @@ app, .app {
     line-height: 35px;
 
     &:hover{
-      background-color: $sidebar-item-hover-bg-color;
+      background-color: var(--sidebar-item-hover-bg-color);;
     }
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
@@ -236,7 +237,6 @@ app, .app {
 
       .fa, .glyphicon{
         font-size: 16px;
-        color: rgba($sidebar-color, .7);
       }
 
       .fa-database {
@@ -256,7 +256,7 @@ app, .app {
   }
 
   > .open > a{
-    background-color: lighten($sidebar-item-hover-bg-color, 2%);
+    background-color: var(--sidebar-item-hover-bg-color);
   }
 
   > li:last-child > a{
@@ -265,14 +265,18 @@ app, .app {
 
   > .active > a{
     color: $sidebar-item-active-color;
-    background-color: $sidebar-bg-color;
+    background-color: var(--sidebar-bg-color);
+
+    &:hover {
+      color: $sidebar-item-active-color;
+    }
 
     .icon{
       border-radius: 50%;
       background-color: $sidebar-item-active-color;
 
       .fa, .glyphicon, .fi{
-        color: $sidebar-bg-color;
+        color: var(--sidebar-bg-color);
       }
     }
   }
@@ -284,7 +288,7 @@ app, .app {
   > li ul{
     padding: 1rem;
     font-size: 13px;
-    background-color: $sidebar-action-bg;
+    background-color: var(--sidebar-action-bg);
     list-style: none;
 
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px){
@@ -333,13 +337,13 @@ app, .app {
   margin: 35px 0 5px $sidebar-padding-horizontal;
   font-size: 14px;
   text-transform: uppercase;
-  color: darken(color-yiq($sidebar-bg-color), 13%);
+  color: var(--sidebar-nav-title-color);
 
   opacity: 1;
   @include transition(opacity $sidebar-transition-time ease-in-out);
 
   .action-link{
-    color: $sidebar-color;
+    color: var(--sidebar-color);
     float: right;
     margin-right: $sidebar-padding-horizontal + $sidebar-slim-scroll-width;
     margin-top: -1px;
@@ -477,12 +481,12 @@ app, .app {
       font-size: 16px;
       text-shadow: none;
       opacity: 1;
-      color: $sidebar-color;
+      color: var(--sidebar-color);
     }
   }
 
   .progress{
-    background-color: lighten($sidebar-bg-color, 10%);
+    background-color: var(--sidebar-progress-bg-color);
   }
 }
 
@@ -492,7 +496,7 @@ app, .app {
   bottom: 0;
   right: -$chat-sidebar-width;
   width: $chat-sidebar-width;
-  background-color: $sidebar-bg-color;
+  background-color: var(--chat-sidebar-bg-color);
   @include transition(right $sidebar-transition-time ease-in-out);
 }
 
@@ -525,7 +529,7 @@ app, .app {
   top: 0;
   padding: 1rem;
   z-index: 3;
-  background-color: $sidebar-bg-color;
+  background-color: var(--chat-sidebar-bg-color);
 
   .form-control {
     padding: 0.6rem 0.85rem;
@@ -533,7 +537,7 @@ app, .app {
 }
 
 .chat-sidebar-content{
-  color: $sidebar-color;
+  color: var(--sidebar-color);
 }
 
 
@@ -565,7 +569,7 @@ app, .app {
   display: flex;
   flex-direction: column;
   right: -100%;
-  background-color: $sidebar-bg-color;
+  background-color: var(--chat-sidebar-bg-color);
 
   @include transition(right .2s ease-in-out);
 
@@ -579,8 +583,6 @@ app, .app {
     > a{
       display: block;
       padding: $padding-large-vertical $padding-large-horizontal;
-      background-color: rgba(255,255,255, .1);
-      color: $gray-200;
     }
   }
 
@@ -675,13 +677,15 @@ app, .app {
     align-items: center;
 
     &:hover {
-      background-color: $gray-100;
+      background-color: var(--sidebar-action-bg);
     }
 
     &.active{
+      background: rgba($white, 0.1);
+
       &:focus,
       &:hover{
-        background-color:  $gray-100;
+        background-color:  var(--sidebar-action-bg);
       }
 
       .badge{
@@ -698,7 +702,7 @@ app, .app {
 
   .thumb .status,
   .thumb-sm .status{
-    border-color: $sidebar-bg-color;
+    border-color: var(--chat-sidebar-bg-color);
   }
 
   .message-preview{
@@ -724,7 +728,7 @@ app, .app {
 
 .chat-notification{
   position: absolute;
-  right: 25px;
+  right: 15px;
   top: 45px;
   z-index: 20;
   margin-top: 3px;
@@ -773,8 +777,8 @@ app, .app {
 
 .chat-notification-sing{
   position: absolute;
-  top: 16px;
-  left: 10px;
+  top: 19px;
+  right: 14px;
   display: inline-block;
   width: 8px;
   height: 8px;
@@ -833,7 +837,7 @@ app, .app {
   padding: $widget-padding-vertical $widget-padding-horizontal;
   background: $widget-bg-color;
   border-radius: $widget-border-radius;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
 
   > header{
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);

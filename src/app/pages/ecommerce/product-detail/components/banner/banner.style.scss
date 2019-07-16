@@ -5,7 +5,7 @@
   overflow: hidden;
 
   @include media-breakpoint-up(md) {
-    box-shadow: $widget-shadow;
+    box-shadow: var(--widget-shadow);
     border-radius: $border-radius;
     margin-top: $content-padding;
     margin-bottom: $content-padding * 2;

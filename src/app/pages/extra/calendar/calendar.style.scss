@@ -51,7 +51,7 @@ a.fc-event{
     border-radius: $border-radius;
     background-color: $white;
     border: 1px solid #ccc;
-    box-shadow: $widget-shadow;
+    box-shadow: var(--widget-shadow);
   }
 }
 

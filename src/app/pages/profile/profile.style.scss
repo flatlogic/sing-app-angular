@@ -182,7 +182,7 @@
   .activities &{
     margin-top: $spacer;
     width: 100%;
-    box-shadow: $widget-shadow;
+    box-shadow: var(--widget-shadow);
   }
 }
 

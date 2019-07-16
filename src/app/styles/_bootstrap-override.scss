@@ -905,7 +905,7 @@ legend {
 // Navbar Dasboard
 // --------------------------------------------------
 .navbar-dashboard {
-  background-color: $navbar-dashboard-bg;
+  background-color: var(--navbar-bg);
   border-color: $navbar-dashboard-border;
 
   .navbar-brand {

@@ -22,7 +22,7 @@
 .search-result-item{
   padding: 20px;
   background-color: $white;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
   border-radius: $border-radius;
   @include clearfix();
 

@@ -133,7 +133,7 @@
   border-radius: $border-radius;
   padding: 20px 20px 0;
   position: relative;
-  box-shadow: $widget-shadow;
+  box-shadow: var(--widget-shadow);
 
   .timeline & {
     float: right;
@@ -228,7 +228,7 @@
     line-height: 37px;
     margin-left: -25px;
     background-color: $white;
-    box-shadow: $widget-shadow;
+    box-shadow: var(--widget-shadow);
     border: 7px solid $white;
     border-radius: 50%;
     text-align: center;
