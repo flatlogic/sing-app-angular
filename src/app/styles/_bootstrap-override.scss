@@ -119,6 +119,15 @@ small, .small {
   &:focus{
     @include box-shadow(none);
   }
+
+  &.no-border {
+    border: none;
+    background-color: darken($input-bg, 5%);
+
+    &:focus {
+      background-color: darken($input-bg, 7%);
+    }
+  }
 }
 
 .form-control-lg {

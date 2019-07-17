@@ -1,0 +1,55 @@
+<div class="container">
+  <h5 class="auth-logo animated fadeInUp">
+    <i class="fa fa-circle text-gray"></i>
+    Sing App
+    <i class="fa fa-circle text-warning"></i>
+  </h5>
+  <widget
+    class="widget-auth animated fadeInUp mx-auto"
+    [title]="'<h3 class=mt-0>Create an account</h3>'"
+    [customHeader]="true"
+    bodyClass="mt-0"
+  >
+    <p class="widget-auth-info">
+      Please fill all fields below
+    </p>
+    <form class="mt" (ngSubmit)="register()">
+      <alert type="danger alert-sm" *ngIf="registerService.errorMessage">
+        {{registerService.errorMessage}}
+      </alert>
+      <div class="form-group">
+        <input name="email" [(ngModel)]="email" class="form-control no-border" id="email" type="text"
+               placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <input name="password" [(ngModel)]="password" class="form-control no-border" id="password" type="password"
+               placeholder="Password" required>
+      </div>
+      <div class="form-group">
+        <input name="confirmPassword" [(ngModel)]="confirmPassword" class="form-control no-border" id="confirmPassword" type="password"
+               placeholder="Confirm" required>
+      </div>
+      <button class="btn btn-inverse btn-sm auth-btn mb-3"
+              type="submit">{{registerService.isFetching ? 'Loading...' : 'Register'}}</button>
+      <p class="widget-auth-info">or sign in with</p>
+      <div class="social-buttons">
+        <button (click)="googleLogin()" class="btn btn-primary social-button mb-2">
+          <i class="social-icon social-google"></i>
+          <p class="social-text">GOOGLE</p>
+        </button>
+        <button (click)="microsoftLogin()" class="btn btn-success social-button">
+          <i class="social-icon social-microsoft"></i>
+          <p class="social-text">MICROSOFT</p>
+        </button>
+      </div>
+    </form>
+    <p class="widget-auth-info">
+      Already have the account? Login now!
+    </p>
+    <a class="d-block text-center" routerLink="/login">Enter the account</a>
+  </widget>
+  <footer class="auth-footer">
+    2019 &copy; Sing App Angular - Angular Admin Dashboard Template Made by <a href="https://flatlogic.com"
+                                                                               target="_blank">Flatlogic</a>
+  </footer>
+</div>

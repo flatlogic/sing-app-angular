@@ -13,6 +13,7 @@
 @import "../../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
 @import "../../../node_modules/bootstrap-select/sass/bootstrap-select";
 @import '../../../node_modules/govpredict-morris/morris.css';
+@import '../../../node_modules/ngx-toastr/toastr-bs4-alert';
 
 @import "bootstrap-override";
 @import "libs-override";
@@ -23,6 +24,7 @@
 //end custom libs
 
 //everything below this line is required for essential styling
+@import "auth";
 @import "font";
 @import "general";
 @import "global-transitions";

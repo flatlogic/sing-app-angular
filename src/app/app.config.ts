@@ -2,12 +2,23 @@ import { Injectable } from '@angular/core';
 
 declare let jQuery: any;
 
+const hostApi = process.env.NODE_ENV === 'development' ? 'http://localhost' : 'https://flatlogic-node-backend.herokuapp.com';
+const portApi = process.env.NODE_ENV === 'development' ? 8080 : '';
+const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}`;
+
 @Injectable()
 export class AppConfig {
   config = {
     name: 'sing',
     title: 'Sing Dashboard App with Angular 8.0 support by Flatlogic',
     version: '4.0.0',
+    hostApi,
+    portApi,
+    baseURLApi,
+    auth: {
+      email: 'admin@flatlogic.com',
+      password: 'password'
+    },
     /**
      * Whether to print and alert some log information
      */

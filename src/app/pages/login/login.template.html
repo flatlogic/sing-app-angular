@@ -1,56 +1,54 @@
 <div class="container">
-  <main id="content" class="widget-login-container" role="main">
-    <div class="row justify-content-center">
-      <div class="col-xl-4 col-md-6 col-10">
-        <h5 class="widget-login-logo animated fadeInUp">
-          <i class="fa fa-circle text-gray"></i>
-          sing
-          <i class="fa fa-circle text-warning"></i>
-        </h5>
-        <section class="widget widget-login animated fadeInUp">
-          <header>
-            <h3>Login to your Sing App</h3>
-          </header>
-          <div class="widget-body">
-            <p class="widget-login-info">
-              Use Facebook, Twitter or your email to sign in.
-            </p>
-            <p class="widget-login-info">
-              Don't have an account? Sign up now!
-            </p>
-            <form class="login-form mt-lg">
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username">
-              </div>
-              <div class="form-group">
-                <input class="form-control" id="pswd" type="text" placeholder="Password">
-              </div>
-              <div class="clearfix">
-                <div class="btn-toolbar float-right m-t-1">
-                  <button type="button" class="btn btn-default btn-sm">Create an Account</button>
-                  <a class="btn btn-inverse btn-sm" [routerLink]="['/app', 'dashboard'] ">Login</a>
-                </div>
-              </div>
-              <div class="row m-t-1">
-                <div class="col-md-6 order-md-2">
-                  <div class="clearfix">
-                    <div class="form-check abc-checkbox widget-login-info float-right pl-0">
-                      <input class="form-check-input" type="checkbox" id="checkbox1" value="1">
-                      <label class="form-check-label" for="checkbox1">Keep me signed in </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 order-md-1">
-                  <a class="mr-n-lg" href="#">Trouble with account?</a>
-                </div>
-              </div>
-            </form>
-          </div>
-        </section>
+  <h5 class="auth-logo animated fadeInUp">
+    <i class="fa fa-circle text-gray"></i>
+    Sing App
+    <i class="fa fa-circle text-warning"></i>
+  </h5>
+  <widget
+    class="widget-auth animated fadeInUp mx-auto"
+    [title]="'<h3 class=mt-0>Login to your Web App</h3>'"
+    [customHeader]="true"
+    bodyClass="mt-0"
+  >
+    <p class="widget-auth-info">
+      Use your email to sign in.
+    </p>
+    <alert type="secondary alert-sm text-center mt-2">
+      This is a real app with Node.js backend - use
+      <br/>
+      <span class="font-weight-bold">"admin@flatlogic.com / password"</span>
+      <br/>
+      to login!
+    </alert>
+    <form class="login-form" (ngSubmit)="login()">
+      <alert type="danger alert-sm" *ngIf="loginService.errorMessage">
+        {{loginService.errorMessage}}
+      </alert>
+      <div class="form-group">
+        <input name="email" [(ngModel)]="email" class="form-control no-border" id="email" type="text" placeholder="Email" required>
       </div>
-    </div>
-  </main>
-  <footer class="page-footer">
+      <div class="form-group">
+        <input name="password" [(ngModel)]="password" class="form-control no-border" id="password" type="password" placeholder="Password" required>
+      </div>
+      <button class="btn btn-inverse btn-sm auth-btn mb-3" type="submit">{{loginService.isFetching ? 'Loading...' : 'Login'}}</button>
+      <p class="widget-auth-info">or sign in with</p>
+      <div class="social-buttons">
+        <button (click)="googleLogin()" class="btn btn-primary social-button mb-2">
+          <i class="social-icon social-google"></i>
+          <p class="social-text">GOOGLE</p>
+        </button>
+        <button (click)="microsoftLogin()" class="btn btn-success social-button">
+          <i class="social-icon social-microsoft"></i>
+          <p class="social-text">MICROSOFT</p>
+        </button>
+      </div>
+    </form>
+    <p class="widget-auth-info">
+      Don't have an account? Sign up now!
+    </p>
+    <a class="d-block text-center" routerLink="/register">Create an Account</a>
+  </widget>
+  <footer class="auth-footer">
     2019 &copy; Sing App Angular - Angular Admin Dashboard Template Made by <a href="https://flatlogic.com" target="_blank">Flatlogic</a>
   </footer>
 </div>
