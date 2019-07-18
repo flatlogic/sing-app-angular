@@ -19,7 +19,6 @@ export class ProductGridComponent {
 
   public openModal(id) {
     this.activeModalFilter = id;
-    console.log(this.activeModalFilter);
   }
 
   public closeModal() {

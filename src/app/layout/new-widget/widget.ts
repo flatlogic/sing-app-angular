@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostBinding, Input} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, HostBinding, Input, Output, ViewChild} from '@angular/core';
 declare let jQuery: any;
 
 import 'widgster';
@@ -27,6 +27,7 @@ export class WidgetComponent implements AfterViewInit {
   @Input() bodyClass: string = '';
   @Input() options: any = null;
   @Input() dataWidgster: any = null;
+  @Input() fetchingData: boolean = false;
 
   constructor(el: ElementRef) {
     this.randomId = Math.floor(Math.random() * 100);

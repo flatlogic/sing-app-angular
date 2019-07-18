@@ -17,6 +17,8 @@ import {TrendModule} from 'ngx-trend';
 import {TaskContainerComponent} from './components/task-container/task-container.component';
 import {TaskComponent} from './components/task/task';
 import {CalendarModule} from '../visits/calendar/calendar.module';
+import {AnalyticsService} from './analytics.service';
+import {NewWidgetModule} from '../../layout/new-widget/widget.module';
 
 export const routes = [
   { path: '', component: AnalyticsComponent, pathMatch: 'full' }
@@ -31,7 +33,8 @@ export const routes = [
     ProgressbarModule.forRoot(),
     TrendModule,
     BsDropdownModule.forRoot(),
-    CalendarModule
+    CalendarModule,
+    NewWidgetModule
   ],
   declarations: [
     AnalyticsComponent,
@@ -39,6 +42,9 @@ export const routes = [
     BigStatComponent,
     TaskContainerComponent,
     TaskComponent
+  ],
+  providers: [
+    AnalyticsService
   ]
 })
 export class AnalyticsModule {

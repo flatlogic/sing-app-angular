@@ -838,6 +838,11 @@ app, .app {
   background: $widget-bg-color;
   border-radius: $widget-border-radius;
   box-shadow: var(--widget-shadow);
+  min-height: 150px;
+
+  &.collapsed {
+    min-height: unset;
+  }
 
   > header{
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
@@ -849,6 +854,13 @@ app, .app {
     + .widget-body,
     + .widget-body.p-0{
       margin-top: $widget-padding-vertical;
+    }
+  }
+
+  .widget-body {
+    .fetching-data {
+      height: 0;
+      opacity: 0;
     }
   }
 
@@ -938,6 +950,12 @@ app, .app {
   &.bg-transparent {
     box-shadow: none;
   }
+}
+
+.widget-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .widget-controls{

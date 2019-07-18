@@ -1,8 +1,6 @@
 import {Component, HostBinding} from '@angular/core';
 import {RegisterService} from './register.service';
 import {LoginService} from '../login/login.service';
-import {ActivatedRoute} from '@angular/router';
-import {AppConfig} from '../../app.config';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +9,16 @@ import {AppConfig} from '../../app.config';
 export class RegisterComponent {
   @HostBinding('class') classes = 'auth-page app';
 
-  private email: string = '';
-  private password: string = '';
-  private confirmPassword: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
   constructor(
     public loginService: LoginService,
     public registerService: RegisterService,
-    private route: ActivatedRoute,
-    appConfig: AppConfig
-  ) {
-    const config: any = appConfig.getConfig();
-  }
+  ) {}
 
-  private register() {
+  public register() {
     const email = this.email;
     const password = this.password;
 
@@ -52,11 +46,11 @@ export class RegisterComponent {
     return this.password && this.password === this.confirmPassword;
   }
 
-  private googleLogin() {
+  public googleLogin() {
     this.loginService.loginUser({social: 'google'});
   }
 
-  private microsoftLogin() {
+  public microsoftLogin() {
     this.loginService.loginUser({social: 'microsoft'});
   }
 }

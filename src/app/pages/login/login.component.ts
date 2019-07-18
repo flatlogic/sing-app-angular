@@ -10,8 +10,8 @@ import {AppConfig} from '../../app.config';
 export class LoginComponent {
   @HostBinding('class') classes = 'auth-page app';
 
-  private email: string = '';
-  private password: string = '';
+  email: string = '';
+  password: string = '';
 
   constructor(
     public loginService: LoginService,
@@ -34,7 +34,7 @@ export class LoginComponent {
     });
   }
 
-  private login() {
+  public login() {
     const {email, password} = this;
 
     if (email.length !== 0 && password.length !== 0) {
@@ -42,11 +42,11 @@ export class LoginComponent {
     }
   }
 
-  private googleLogin() {
+  public googleLogin() {
     this.loginService.loginUser({social: 'google'});
   }
 
-  private microsoftLogin() {
+  public microsoftLogin() {
     this.loginService.loginUser({social: 'microsoft'});
   }
 }
