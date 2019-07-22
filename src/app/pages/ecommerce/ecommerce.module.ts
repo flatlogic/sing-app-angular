@@ -29,7 +29,8 @@ import {FormsModule} from '@angular/forms';
 
 export const routes = [
   {path: 'product-grid', component: ProductGridComponent, pathMatch: 'full'},
-  {path: 'product-detail', component: ProductDetailComponent, pathMatch: 'full'},
+  {path: 'product', component: ProductDetailComponent, pathMatch: 'full'},
+  {path: 'product/:id', component: ProductDetailComponent, pathMatch: 'full'},
   {path: 'management', component: ManagementComponent, pathMatch: 'full'},
   {path: 'management/:id', component: ProductEditComponent, pathMatch: 'full'},
 ];

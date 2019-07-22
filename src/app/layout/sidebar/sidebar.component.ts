@@ -45,10 +45,6 @@ export class SidebarComponent implements OnInit, AfterViewInit {
     if (!$newActiveLink.is('.active > .collapse > li > a')) {
       this.$el.find('.active .active').closest('.collapse').collapse('hide');
     }
-    this.$el.find('.sidebar-nav .active').removeClass('active');
-
-    $newActiveLink.closest('li').addClass('active')
-      .parents('li').addClass('active');
 
     // uncollapse parent
     $newActiveLink.closest('.collapse').addClass('in').css('height', '')

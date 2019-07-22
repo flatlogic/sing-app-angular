@@ -21,7 +21,7 @@
   </div>
   <!-- main notification links are placed inside of .sidebar-nav -->
   <ul class="sidebar-nav">
-    <li>
+    <li routerLinkActive="active">
       <a class="collapsed" data-target="#sidebar-dashboard" data-toggle="collapse" data-parent="#sidebar">
         <span class="icon">
           <i class="fi flaticon-home"></i>
@@ -30,18 +30,18 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-dashboard" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['analytics'] ">Analytics</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['visits'] ">Visits</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['widgets'] ">Widgets</a>
         </li>
       </ul>
     </li>
-    <li>
+    <li routerLinkActive="active">
       <a class="collapsed" data-target="#sidebar-ecommerce" data-toggle="collapse" data-parent="#sidebar">
         <span class="icon">
           <i class="fi flaticon-diamond"></i>
@@ -50,18 +50,18 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-ecommerce" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ecommerce/management'] ">Product Management</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ecommerce/product-grid'] ">Product Grid</a>
         </li>
-        <li>
-          <a [routerLink]=" ['ecommerce/product-detail'] ">Product Detail</a>
+        <li routerLinkActive="active">
+          <a [routerLink]=" ['ecommerce/product'] ">Product Detail</a>
         </li>
       </ul>
     </li>
-    <li>
+    <li routerLinkActive="active">
       <a [routerLink]=" ['inbox'] ">
         <span class="icon">
           <i class="fi flaticon-paper-plane"></i>
@@ -72,7 +72,7 @@
         </span>
       </a>
     </li>
-    <li>
+    <li routerLinkActive="active">
       <a [routerLink]=" ['profile'] ">
         <span class="icon">
           <i class="fi flaticon-user"></i>
@@ -83,7 +83,7 @@
         </sup>
       </a>
     </li>
-    <li>
+    <li routerLinkActive="active">
       <a [routerLink]=" ['package'] ">
         <span class="icon">
           <i class="fi flaticon-database-1"></i>
@@ -112,13 +112,13 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-core" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['core/typography'] ">Typography</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['core/colors'] ">Colors</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['core/grid'] ">Grid</a>
         </li>
       </ul>
@@ -132,43 +132,43 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-ui" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/alerts'] ">Alerts</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/badge'] ">Badge</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/buttons'] ">Buttons</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/card'] ">Card</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/carousel'] ">Carousel</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/jumbotron'] ">Jumbotron</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/icons'] ">Icons</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/list-groups'] ">List Groups</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/modal'] ">Modal</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/notifications'] ">Notifications</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/popovers'] ">Popovers</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/progress'] ">Progress</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['ui/tabs-accordion'] ">Tabs & Accordion</a>
         </li>
       </ul>
@@ -183,13 +183,13 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-forms" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['forms/elements'] ">Form Elements</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['forms/validation'] ">Form Validation</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['forms/wizard'] ">Form Wizard</a>
         </li>
       </ul>
@@ -203,19 +203,19 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-charts" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['charts/overview'] ">Charts Overview</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['charts/flot'] ">Flot Charts</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['charts/morris'] ">Morris Charts</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['charts/sparkline'] ">Sparkline Charts</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['charts/easy-pie'] ">Easy Pie Charts</a>
         </li>
       </ul>
@@ -237,10 +237,10 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-maps" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['maps/google'] ">Google Maps</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['maps/vector'] ">Vector Maps</a>
         </li>
       </ul>
@@ -255,10 +255,10 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-tables" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['tables/basic'] ">Tables Basic</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['tables/dynamic'] ">Tables Dynamic
             <sup class="bg-transparent text-danger fs-sm fw-bold">ng2</sup>
           </a>
@@ -274,29 +274,29 @@
         <i class="toggle fa fa-angle-down"></i>
       </a>
       <ul id="sidebar-extra" class="collapse">
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['extra/calendar'] ">Calendar
             <sup class="bg-transparent text-danger fs-sm fw-bold">ng2</sup>
           </a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['extra/invoice'] ">Invoice</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['/login'] ">Login Page</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['/error'] ">Error Page</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['extra/gallery'] ">Gallery
             <sup class="bg-transparent text-danger fs-sm fw-bold">ng2</sup>
           </a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['extra/search'] ">Search Results</a>
         </li>
-        <li>
+        <li routerLinkActive="active">
           <a [routerLink]=" ['extra/timeline'] ">Time Line</a>
         </li>
       </ul>

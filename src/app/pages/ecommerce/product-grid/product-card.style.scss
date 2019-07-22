@@ -9,6 +9,13 @@
     box-shadow: var(--widget-shadow);
     border-radius: $border-radius;
 
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
     @include media-breakpoint-down(sm) {
       height: 200px;
     }
@@ -82,7 +89,7 @@
     }
 
     .old {
-      color: $gray-light;
+      color: $gray-500;
       position: relative;
       margin-right: $spacer;
 
@@ -93,7 +100,7 @@
         left: 0;
         bottom: 0;
         transform: translateY(-10px);
-        background-color: $gray-light;
+        background-color: $gray-500;
         position: absolute;
       }
 
