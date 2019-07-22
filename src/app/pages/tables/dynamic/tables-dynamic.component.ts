@@ -272,8 +272,6 @@ const PEOPLE = [
 @Component({
   selector: '[tables-dynamic]',
   templateUrl: './tables-dynamic.template.html',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./tables-dynamic.style.scss']
 })
 export class TablesDynamicComponent implements OnInit {
   people: any[] = PEOPLE;

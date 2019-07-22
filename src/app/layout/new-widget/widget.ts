@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, HostBinding, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostBinding, Input} from '@angular/core';
 declare let jQuery: any;
 
 import 'widgster';

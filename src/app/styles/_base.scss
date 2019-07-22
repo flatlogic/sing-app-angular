@@ -790,6 +790,17 @@ app, .app {
   margin-bottom: $spacer * 1.5;
 }
 
+.page-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & .close {
+    margin-left: 25px;
+  }
+}
+
 .notifications{
   @include media-breakpoint-up(md){
     width: 333px;

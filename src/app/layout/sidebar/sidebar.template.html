@@ -42,6 +42,26 @@
       </ul>
     </li>
     <li>
+      <a class="collapsed" data-target="#sidebar-ecommerce" data-toggle="collapse" data-parent="#sidebar">
+        <span class="icon">
+          <i class="fi flaticon-diamond"></i>
+        </span>
+        E-commerce
+        <i class="toggle fa fa-angle-down"></i>
+      </a>
+      <ul id="sidebar-ecommerce" class="collapse">
+        <li>
+          <a [routerLink]=" ['ecommerce/management'] ">Product Management</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['ecommerce/product-grid'] ">Product Grid</a>
+        </li>
+        <li>
+          <a [routerLink]=" ['ecommerce/product-detail'] ">Product Detail</a>
+        </li>
+      </ul>
+    </li>
+    <li>
       <a [routerLink]=" ['inbox'] ">
         <span class="icon">
           <i class="fi flaticon-paper-plane"></i>
@@ -73,23 +93,6 @@
           4.0
         </sup>
       </a>
-    </li>
-    <li>
-      <a class="collapsed" data-target="#sidebar-ecommerce" data-toggle="collapse" data-parent="#sidebar">
-        <span class="icon">
-          <i class="fi flaticon-diamond"></i>
-        </span>
-        E-commerce
-        <i class="toggle fa fa-angle-down"></i>
-      </a>
-      <ul id="sidebar-ecommerce" class="collapse">
-        <li>
-          <a [routerLink]=" ['ecommerce/product-grid'] ">Product Grid</a>
-        </li>
-        <li>
-          <a [routerLink]=" ['ecommerce/product-detail'] ">Product Detail</a>
-        </li>
-      </ul>
     </li>
   </ul>
   <!-- every .sidebar-nav may have a title -->
