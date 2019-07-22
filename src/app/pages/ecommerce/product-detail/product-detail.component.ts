@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ProductsService} from '../products.service';
+import {Product, ProductsService} from '../products.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
     public route: ActivatedRoute
   ) {}
 
-  get product() {
+  get product(): Product {
     return this.findProduct(this.getId()) || {
       title: 'trainers',
       subtitle: 'Trainers In White',
@@ -28,8 +28,7 @@ export class ProductDetailComponent implements OnInit {
         'Ollie patch',
         'Cup soles',
         'Vulcanized rubber soles'
-      ],
-      reviews: 32
+      ]
     };
   }
 
