@@ -52,11 +52,17 @@
     <li class="nav-item dropdown" dropdown placement="bottom right" [autoClose]="false">
       <a href="#" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-notifications"
          id="notifications-dropdown-toggle">
-         <span class="avatar thumb-sm float-left mr-2">
-            <img class="rounded-circle" src="assets/img/people/a5.jpg" alt="..." />
-          </span>
-          <span class="small">Philip <span class="fw-semi-bold">Smith</span></span>
-          <span class="ml-1 circle bg-warning text-white fw-bold">13</span>
+        <span class="avatar rounded-circle thumb-sm float-left mr-2">
+          <img
+            *ngIf="user.avatar || user.email === 'admin@flatlogic.com'; else firstLetter"
+            class="rounded-circle"
+            [src]="user.avatar || 'assets/img/people/a5.jpg'"
+            alt="..."
+          />
+          <ng-template #firstLetter>{{firstUserLetter}}</ng-template>
+        </span>
+        <span class="small">{{user.name || user.email || "Philip smith"}}</span>
+        <span class="ml-1 circle bg-warning text-white fw-bold">13</span>
       </a>
       <!-- ready to use notifications dropdown. inspired by smartadmin template.
                    consists of three components:

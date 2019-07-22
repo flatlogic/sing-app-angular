@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   @Output() toggleChatEvent: EventEmitter<any> = new EventEmitter();
   $el: any;
   config: any;
+  user: any = JSON.parse(localStorage.getItem('user')) || {};
 
   constructor(
     el: ElementRef,
@@ -38,6 +39,10 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.loginService.logoutUser();
+  }
+
+  firstUserLetter() {
+    return (this.user.name || this.user.email || 'P')[0].toUpperCase();
   }
 
   ngOnInit(): void {
