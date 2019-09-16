@@ -12,7 +12,7 @@ Run `yarn install`.
 
 Run `yarn start` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
-### If you use app with backend support, please use
+## If you use app with backend support, please use
 ```
 yarn run serve:backend
 ```
