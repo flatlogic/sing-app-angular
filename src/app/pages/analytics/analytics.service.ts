@@ -1,5 +1,7 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {AppConfig} from '../../app.config';
+import mock from './mock';
 
 @Injectable()
 export class AnalyticsService {
@@ -10,15 +12,30 @@ export class AnalyticsService {
   _mainChart: any = [];
   _isReceiving: any = false;
 
+  config: any;
+
   onReceiveDataSuccess: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    appConfig: AppConfig
+  ) {
+    this.config = appConfig.getConfig();
+  }
 
   receiveDataRequest() {
     this.receivingData();
-    this.http.get('/analytics').subscribe(data => {
-      this.receiveDataSuccess(data);
-    });
+    if (!this.config.isBackend) {
+      new Promise((resolve) => {
+        resolve(mock.backendData);
+      }).then(data => {
+        this.receiveDataSuccess(data);
+      });
+    } else {
+      this.http.get('/analytics').subscribe(data => {
+        this.receiveDataSuccess(data);
+      });
+    }
   }
 
   receiveDataSuccess(payload) {

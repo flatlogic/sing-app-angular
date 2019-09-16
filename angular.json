@@ -91,6 +91,14 @@
                   "with": "src/environments/environment.hmr.ts"
                 }
               ]
+            },
+            "backend": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.backend.ts"
+                }
+              ]
             }
           }
         },
@@ -107,6 +115,9 @@
             "hmr": {
               "hmr": true,
               "browserTarget": "Sing:build:hmr"
+            },
+            "backend": {
+              "browserTarget": "Sing:build:backend"
             }
           }
         },

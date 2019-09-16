@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {environment} from '../environments/environment';
 
 declare let jQuery: any;
 
@@ -12,6 +13,8 @@ export class AppConfig {
     name: 'sing',
     title: 'Sing Dashboard App with Angular 8.0 support by Flatlogic',
     version: '4.0.0',
+    remote: 'https://flatlogic-node-backend.herokuapp.com',
+    isBackend: environment.backend,
     hostApi,
     portApi,
     baseURLApi,
