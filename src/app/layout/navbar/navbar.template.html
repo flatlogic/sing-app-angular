@@ -1,0 +1,102 @@
+<ul class="navbar-nav flex-row" (click)="$event.preventDefault()">
+  <li class="nav-item">
+    <ng-template #sidebarToggleTooltip>
+      Turn on/off <br> sidebar <br>collapsing
+    </ng-template>
+    <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
+    <a (click)="toggleSidebar('static')"  class="nav-link d-none ml-3 d-lg-flex" [tooltip]="sidebarToggleTooltip"
+      placement="bottom">
+      <i class="la la-bars la-lg"></i>
+    </a>
+    <!-- shown on xs & sm screen. collapses and expands navigation -->
+    <a (click)="toggleSidebar('collapse')" class="d-lg-none nav-link" href="#" data-html="true" title="Show/hide<br>sidebar" data-placement="bottom">
+      <span class="rounded rounded-lg bg-gray text-white d-md-none"><i class="la la-bars la-lg"></i></span>
+      <i class="ml-3 la la-bars la-lg d-none d-md-block d-lg-none"></i>
+    </a>
+  </li>
+  <li class="nav-item d-none d-md-block"><a class="nav-link pl-2" href="#"><i class="la la-refresh la-lg"></i></a></li>
+  <li class="nav-item d-none d-md-block"><a class="nav-link pl-2" href="#"><i class="la la-times la-lg"></i></a></li>
+</ul>
+<ul class="navbar-nav flex-row d-md-none">
+  <li class="nav-item">
+    <!-- toggles chat -->
+    <a class="nav-link" href="#" (click)="toggleChat()">
+      <span class="rounded rounded-lg bg-gray text-white"><i class="la la-globe la-lg"></i></span>
+    </a>
+  </li>
+</ul>
+<a class="navbar-brand d-md-none" [routerLink]=" ['/app/dashboard'] ">
+  <i class="la la-circle la-sm text-gray mr-n-sm"></i>
+  <i class="la la-circle la-sm text-warning"></i>
+  &nbsp;
+  {{config.name}}
+  &nbsp;
+  <i class="la la-circle la-sm text-warning mr-n-sm"></i>
+  <i class="la la-circle la-sm text-gray"></i>
+</a>
+<!-- this part is hidden for xs screens -->
+  <!-- search form! link it to your search server -->
+<form class="navbar-form d-none d-md-block mr-auto" role="search">
+  <div class="form-group">
+    <div class="input-group input-group-no-border">
+      <input class="form-control" type="text" placeholder="Search Dashboard">
+      <span class="input-group-append">
+        <span class="input-group-text">
+          <i class="la la-search"></i>
+        </span>
+      </span>
+    </div>
+  </div>
+</form>
+<ul class="navbar-nav mr-3 d-none d-md-flex flex-row" (click)="$event.preventDefault()">
+    <li class="nav-item dropdown" dropdown placement="bottom right" [autoClose]="false">
+      <a href="#" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-notifications"
+         id="notifications-dropdown-toggle">
+        <span class="avatar rounded-circle thumb-sm float-left mr-2">
+          <img
+            *ngIf="user.avatar || user.email === 'admin@flatlogic.com'; else firstLetter"
+            class="rounded-circle"
+            [src]="user.avatar || 'assets/img/people/a5.jpg'"
+            alt="..."
+          />
+          <ng-template #firstLetter>{{firstUserLetter}}</ng-template>
+        </span>
+        <span class="small">{{user.name || user.email || "Philip smith"}}</span>
+        <span class="ml-1 circle bg-warning text-white fw-bold">13</span>
+      </a>
+      <!-- ready to use notifications dropdown. inspired by smartadmin template.
+                   consists of three components:
+                   notifications, messages, progress. leave or add what's important for you.
+                   uses Sing's ajax-load plugin for async content loading. See #load-notifications-btn -->
+      <app-notifications *dropdownMenu class="dropdown-menu dropdown-menu-right animated animated-last fadeInUp"></app-notifications>
+    </li>
+    <li class="nav-item dropdown navbar-settings" dropdown placement="bottom right">
+      <a href="#" class="nav-link dropdown-toggle" dropdownToggle>
+        <i class="la la-cog la-lg"></i>
+      </a>
+      <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">
+        <li><a class="dropdown-item" href="#"><i class="glyphicon glyphicon-user"></i> &nbsp; My Account</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" [routerLink]=" ['/error'] ">Calendar</a></li>
+        <li><a class="dropdown-item" [routerLink]=" ['/error'] ">Inbox &nbsp;&nbsp;<span class="badge badge-pill badge-danger animated bounceIn">9</span></a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" (click)="logout()"><i class="la la-sign-out"></i> &nbsp; Log Out</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="toggleChat()" id="toggle-chat">
+        <i class="la la-globe la-lg"></i>
+      </a>
+      <div id="chat-notification" class="chat-notification hide" (click)="toggleChat()">
+        <div class="chat-notification-inner">
+          <h6 class="title">
+            <span class="thumb-xs">
+                <img src="assets/img/people/a6.jpg" class="rounded-circle mr-xs float-left">
+            </span>
+            Jess Smith
+          </h6>
+          <p class="text">Hi there! <br> This is a completely new version of Sing App <br> built with <strong class="text-danger">Angular 8.0 Final Release</strong> </p>
+        </div>
+      </div>
+    </li>
+  </ul>

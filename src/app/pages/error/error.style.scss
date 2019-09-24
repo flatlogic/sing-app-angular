@@ -1,0 +1,49 @@
+@import "../../styles/helpers";
+
+/***********************************/
+/**          ERROR PAGE           **/
+/***********************************/
+
+:host {
+  background-color: $gray-light;
+}
+
+.error-container{
+  padding-top: 5%;
+  text-align: center;
+
+  > .btn{
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+.error-code{
+  margin: 20px;
+  font-size: 80px;
+  font-weight: $font-weight-normal;
+  color: $gray-800;
+  @include media-breakpoint-up(md){
+    font-size: 180px;
+  }
+}
+
+.error-info{
+  font-size: 20px;
+  color: $gray-800;
+}
+
+.error-help{
+  font-size: 14px;
+}
+
+:host .page-footer {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: $font-size-mini;
+  color: $text-muted;
+  text-align: center;
+}

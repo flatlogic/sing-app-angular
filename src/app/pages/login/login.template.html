@@ -1,0 +1,47 @@
+<div class="container">
+  <h5 class="auth-logo animated fadeInUp">
+    <i class="fa fa-circle text-gray"></i>
+    Sing App
+    <i class="fa fa-circle text-warning"></i>
+  </h5>
+  <widget
+    class="widget-auth animated fadeInUp mx-auto"
+    [title]="'<h3 class=mt-0>Login to your Web App</h3>'"
+    [customHeader]="true"
+    bodyClass="mt-0"
+  >
+    <p class="widget-auth-info">
+      Use your email to sign in.
+    </p>
+    <alert type="secondary alert-sm text-center mt-2">
+      This is a real app with .net core 2.2 backend - use
+      <br/>
+      <span class="font-weight-bold">"Identity Server 4"</span>
+      <br/>
+      to login!
+    </alert>
+    <form class="login-form">
+      <alert type="danger alert-sm" *ngIf="loginService.errorMessage">
+        {{loginService.errorMessage}}
+      </alert>
+      <p class="widget-auth-info">sign in with</p>
+      <div class="social-buttons">
+        <button (click)="loginWithIdentity()" class="btn btn-primary social-button mb-2">
+          <!--<i class="social-icon social-google"></i>-->
+          <p class="social-text">Identity Server 4</p>
+        </button>
+        <button (click)="logout()" class="btn btn-light social-button mb-2">
+          <!--<i class="social-icon social-google"></i>-->
+          <p class="social-text">logout</p>
+        </button>
+      </div>
+    </form>
+    <p class="widget-auth-info">
+      Don't have an account? Sign up now!
+    </p>
+    <a class="d-block text-center" routerLink="/register">Create an Account</a>
+  </widget>
+  <footer class="auth-footer">
+    2019 &copy; Sing App Angular - Angular Admin Dashboard Template Made by <a href="https://flatlogic.com" target="_blank">Flatlogic</a>
+  </footer>
+</div>

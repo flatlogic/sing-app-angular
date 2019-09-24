@@ -1,0 +1,75 @@
+<widget class="theme-helper-content">
+  <header class="theme-helper-header d-flex p-0">
+    <button class="btn btn-warning theme-helper-btn" (click)="toggle()">
+      <div class="theme-helper-spinner text-white">
+        <i class="la la-cog"></i>
+        <i class="la la-cog"></i>
+      </div>
+    </button>
+    <h6 class="mb-3">Theme</h6>
+  </header>
+  <div class="theme-switcher">
+    <div class="theme mb-3">
+      <input [checked]="helperService.dashboardTheme === dashboardThemes.LIGHT" type="radio" id="css-light" value="option2" name="theme-variant" aria-label="Sing Light" readOnly/>
+      <label for="css-light" (click)="changeTheme(dashboardThemes.LIGHT)">
+        <img class="theme-image" src="assets/img/theme-light.png" alt="light theme"/>
+      </label>
+    </div>
+    <div class="theme">
+      <input [checked]="helperService.dashboardTheme === dashboardThemes.DARK" type="radio" id="css-dark" value="option1" name="theme-variant" aria-label="Single Dark" readOnly/>
+      <label for="css-dark" (click)="changeTheme(dashboardThemes.DARK)">
+        <img class="theme-image" src="assets/img/theme-dark.png" alt="dark theme"/>
+      </label>
+    </div>
+  </div>
+  <div class="mt-4">
+    <a href="https://flatlogic.com/admin-dashboards/sing-app-react" target="_blank"
+      class="btn btn-warning btn-rounded-f btn-block fs-mini"
+    >
+      <span class="text-white">Purchase</span>
+    </a>
+    <a
+      href="http://demo.flatlogic.com/sing-app/documentation/" target="_blank"
+      class="btn btn-rounded-f btn-secondary btn-block fs-mini"
+    >
+      Documentation
+    </a>
+  </div>
+  <div class="d-flex justify-content-between mt-lg">
+    <a
+      href="https://flatlogic.com/contact" target="_blank"
+      class="btn btn-outline-default btn-rounded-f fs-mini text-muted px-2"
+    >
+      <i class="glyphicon glyphicon-headphones mr-xs"></i>
+      Support
+    </a>
+    <a
+      href="https://github.com/flatlogic/sing-app" target="_blank"
+      class="btn btn-outline-default btn-rounded-f fs-mini text-muted px-2"
+    >
+      <i class="fa fa-github mr-xs"></i>
+      Github
+    </a>
+  </div>
+  <div class="mt-lg d-flex flex-column align-items-center theme-helper__sharing">
+              <span class="fs-sm">
+                Thank you for sharing!
+              </span>
+    <div class="d-flex justify-content-center text-light mt-2">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://twitter.com/intent/tweet?text=Amazing%20dashboard%20built%20with%20NodeJS,%20React%20and%20Bootstrap!&url=https://github.com/flatlogic/react-dashboard&via=flatlogic"
+      >
+        <i class="fa fa-twitter pr-1"></i>
+      </a>
+      <a
+        href="https://www.facebook.com/search/top/?q=flatlogic%20llc"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa fa-facebook pl-1"></i>
+      </a>
+    </div>
+  </div>
+</widget>
