@@ -28,7 +28,7 @@
     "@ngx-loading-bar/router": "4.1.1",
     "@swimlane/ngx-datatable": "15.0.2",
     "@tinymce/tinymce-angular": "2.2.0",
-    "angular-auth-oidc-client": "^10.0.5",
+    "angular-auth-oidc-client": "10.0.8",
     "angular2-text-mask": "8.0.5",
     "animate.css": "3.5.2",
     "awesome-bootstrap-checkbox": "1.0.1",
