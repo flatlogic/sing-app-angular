@@ -32,7 +32,7 @@ export class Product {
     this.code = null;
     this.hashtag = '';
     this.technology = [];
-    this.discount = null;
+    this.discount = 0;
   }
 }
 
@@ -101,7 +101,7 @@ export class ProductsService {
     this.http.get(`${this.config.baseURLApi}/products/images-list`).subscribe((images: Array<string>) => {
       this.receiveProductImages(images);
       if (!payload.img && images.length) {
-        this.updateProduct ({id: payload.id, img: images[0]});
+        this.updateProduct ({id: payload.id, img: this.images[0]});
       }
     });
   }
@@ -119,7 +119,9 @@ export class ProductsService {
   }
 
   receiveProduct(payload) {
-    payload.img = `${this.config.resourcesUrl}/${payload.img}`;
+    if(payload.img){
+      payload.img = `${this.config.resourcesUrl}/${payload.img}`;
+    }
     this.products = [...this.products, payload];
     this.isReceiving = false;
   }
