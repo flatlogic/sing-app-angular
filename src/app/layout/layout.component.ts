@@ -32,8 +32,8 @@ export class LayoutComponent implements OnInit {
   $sidebar: any;
   el: ElementRef;
   router: Router;
-  @ViewChild('spinnerElement') spinnerElement: ElementRef;
-  @ViewChild('routerComponent') routerComponent: ElementRef;
+  @ViewChild('spinnerElement', {static: false}) spinnerElement: ElementRef;
+  @ViewChild('routerComponent', {static: false}) routerComponent: ElementRef;
 
   constructor(config: AppConfig,
               el: ElementRef,

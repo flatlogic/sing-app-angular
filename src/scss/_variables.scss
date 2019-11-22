@@ -7,7 +7,7 @@ $enable-shadows:            true !default;
 $glyphicons-halflings-include-bonus: false !default;
 $glyphicons-halflings-class-prefix: glyphicon !default;
 $glyphicons-halflings-font-base-size: 14px !default;
-$glyphicons-halflings-font-path: '~../src/scss/fonts/glyphicons' !default;
+$glyphicons-halflings-font-path: './fonts/glyphicons' !default;
 
 $fa-font-path: "~font-awesome/fonts";
 
@@ -66,7 +66,7 @@ $theme-colors: (
   danger: $red,
   dark: $gray-800,
   inverse: $gray-700,
-  gray: $gray-300,
+  'gray': $gray-300,
   light: $gray-100,
   default: #e9ecef,
   primary-light: #dee4ee,
