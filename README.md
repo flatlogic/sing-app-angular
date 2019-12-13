@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Install dependencies
 
 Run `yarn install`.
+**Do NOT use NPM!**
 
 ## Development server
 
