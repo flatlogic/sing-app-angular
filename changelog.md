@@ -1,4 +1,16 @@
 # Changelog
+
+## [5.2.2]
+
+### Updated
+
+- Updated the Angular builder
+- Updated the Angular CLI
+
+### Fixed
+
+- Fixed 'Daily line chart'
+
  
 ## [5.2.1]
  

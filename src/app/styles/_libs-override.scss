@@ -218,8 +218,11 @@ ngx-loading-bar {
 /*              Dropdown             */
 /*************************************/
 .dropdown-toggle::after {
-  font-family: LineAwesome, sans-serif;
-  content: "\F110";
+  font-family: 'Line Awesome Free';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  content: "\f107";
   border: none;
   width: auto;
   height: auto;

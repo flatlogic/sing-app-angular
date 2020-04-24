@@ -28,7 +28,7 @@ export class AnalyticsService {
     if (!this.config.isBackend) {
       new Promise((resolve) => {
         resolve(mock.backendData);
-      }).then(data => {
+      }).then((data: number[][][]) => {
         this.receiveDataSuccess(data);
       });
     } else {
@@ -40,12 +40,18 @@ export class AnalyticsService {
 
   receiveDataSuccess(payload) {
     const {visits, performance, server, revenue, mainChart} = payload;
+    const mainChartData = mainChart.map((elem: number[][]) => {
+      return elem.map((item: number[]) => {
+        return [item[0], item[1] / 1000];
+      });
+    });
+
     this.isReceiving = false;
     this.visits = visits;
     this.performance = performance;
     this.server = server;
     this.revenue = revenue;
-    this.mainChart = mainChart;
+    this.mainChart = mainChartData;
     this.onReceiveDataSuccess.emit(true);
   }
 
