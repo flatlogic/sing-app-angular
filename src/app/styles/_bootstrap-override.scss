@@ -933,6 +933,10 @@ legend {
 
   .navbar-nav > .nav-item > .nav-link {
     padding: $nav-link-padding-y $nav-link-padding-x;
+
+    @media (max-width: 768px) {
+      padding: $nav-link-padding-y 0.8rem;
+    }
   }
 
   .navbar-nav {

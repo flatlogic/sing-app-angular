@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.2.3]
+
+### Fixed
+
+- Fixed 'Header' for mobile and tablets.
+
 ## [5.2.2]
 
 ### Updated

@@ -65,7 +65,7 @@ export class LoginService {
           const token = res.token;
           this.receiveToken(token);
         }, err => {
-          this.loginError(err.response.data);
+          this.loginError('Something was wrong. Try again');
         });
 
       } else {

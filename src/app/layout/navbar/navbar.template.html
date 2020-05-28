@@ -10,7 +10,7 @@
     </a>
     <!-- shown on xs & sm screen. collapses and expands navigation -->
     <a (click)="toggleSidebar('collapse')" class="d-lg-none nav-link" href="#" data-html="true" title="Show/hide<br>sidebar" data-placement="bottom">
-      <span class="rounded rounded-lg bg-gray text-white d-md-none"><i class="la la-bars la-lg"></i></span>
+      <span class="rounded rounded-lg text-gray d-md-none"><i class="la la-bars la-lg"></i></span>
       <i class="ml-3 la la-bars la-lg d-none d-md-block d-lg-none"></i>
     </a>
   </li>
@@ -21,19 +21,19 @@
   <li class="nav-item">
     <!-- toggles chat -->
     <a class="nav-link" href="#" (click)="toggleChat()">
-      <span class="rounded rounded-lg bg-gray text-white"><i class="la la-globe la-lg"></i></span>
+      <span class="rounded rounded-lg text-gray"><i class="la la-globe la-lg"></i></span>
     </a>
   </li>
 </ul>
-<a class="navbar-brand d-md-none" [routerLink]=" ['/app/dashboard'] ">
-  <i class="la la-circle la-sm text-gray mr-n-sm"></i>
-  <i class="la la-circle la-sm text-warning"></i>
+<div class="navbar-brand d-md-none navbar-m display-flex align-items-center justify-content-center" [routerLink]=" ['/app/dashboard'] ">
+  <i class="fa fa-circle fa-xs text-primary mr-n-sm"></i>
+  <i class="fa fa-circle fa-xs text-orange"></i>
   &nbsp;
   {{config.name}}
   &nbsp;
-  <i class="la la-circle la-sm text-warning mr-n-sm"></i>
-  <i class="la la-circle la-sm text-gray"></i>
-</a>
+  <i class="fa fa-circle fa-xs text-orange mr-n-sm"></i>
+  <i class="fa fa-circle fa-xs text-primary"></i>
+</div>
 <!-- this part is hidden for xs screens -->
   <!-- search form! link it to your search server -->
 <form class="navbar-form d-none d-md-block mr-auto" role="search">
