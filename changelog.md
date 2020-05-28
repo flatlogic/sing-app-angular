@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.2.4]
+
+### Changed
+
+- Changed colors in header navbar for mobiles.
+
 ## [5.2.3]
 
 ### Fixed
