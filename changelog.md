@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.2.5]
+
+### Changed
+
+- Minor package updates.
+
 ## [5.2.4]
 
 ### Changed
