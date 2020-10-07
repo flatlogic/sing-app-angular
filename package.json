@@ -8,7 +8,7 @@
     "start": "ng serve",
     "start:backend": "ng serve --configuration backend",
     "hmr": "ng serve --configuration hmr",
-    "build": "ng build --prod",
+    "build": "ng build --prod --base-href ./",
     "test": "ng test",
     "lint": "ng lint"
   },
