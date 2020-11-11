@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
 import mockFilters from './filters.mock';
-import {ProductsService} from '../products.service';
 import {Router} from '@angular/router';
+import { AppConfig } from '../../../app.config';
+import {ProductsService} from '../products.service';
 
 @Component({
   selector: '[product-grid]',
@@ -12,11 +13,15 @@ import {Router} from '@angular/router';
 export class ProductGridComponent implements OnInit {
   public filters = mockFilters;
   public activeModalFilter: number = null;
+  config: any;
 
   constructor(
+    private _appConfig: AppConfig,
     public productsService: ProductsService,
     public router: Router
-  ) {}
+  ) {
+    this.config = _appConfig.getConfig();
+  }
 
   ngOnInit(): void {
     this.productsService.getProductsRequest();

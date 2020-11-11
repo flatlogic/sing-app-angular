@@ -33,7 +33,7 @@ export class Product {
     this.code = null;
     this.hashtag = '';
     this.technology = [];
-    this.discount = null;
+    this.discount = 0;
   }
 }
 
@@ -57,6 +57,21 @@ export class ProductsService {
     this.config = appConfig.getConfig();
   }
 
+  public setImgField(product: any) {
+    if(!product) return {};
+    let imgString = '';
+    let resourceApi = (this.config.resourceApi) ? this.config.resourceApi : '';
+
+    if(product.img) {
+      imgString = product.img;
+    }
+
+    return {
+      ...product,
+      img: resourceApi + imgString
+    }
+  }
+
   getProductsRequest() {
     // We check if app runs with backend mode
     if (!this.config.isBackend) {
@@ -64,6 +79,9 @@ export class ProductsService {
     } else {
       this.receivingProducts();
       this.http.get('/products').subscribe(products => {
+        if(Array.isArray(products)) {
+          products = products.map(product => this.setImgField(product));
+        }
         this.receiveProducts(products);
       });
     }
@@ -76,7 +94,7 @@ export class ProductsService {
     } else {
       this.receivingProduct();
       this.http.get('/products/' + id).subscribe(product => {
-        this.receiveProduct(product);
+        this.receiveProduct(this.setImgField(product));
       });
     }
   }
@@ -184,7 +202,25 @@ export class ProductsService {
   }
 
   receiveProductImages(payload) {
-    this.images = payload;
+    if(!payload) {
+      this.images = []
+    } else {
+      
+      if(!this.config.isBackend) {
+        this.images = payload
+      } else {
+        this.images = payload.map(img => {
+          let imgString = '';
+          let resourceApi = (this.config.resourceApi) ? this.config.resourceApi : '';
+    
+          if(img) {
+            imgString = img;
+          }
+      
+          return resourceApi + imgString;
+        });
+      }
+    }
   }
 
   get products() {

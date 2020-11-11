@@ -1,6 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import {Router} from '@angular/router';
 import {Product} from '../../../products.service';
+import { AppConfig } from '../../../../../app.config';
 
 @Component({
   selector: 'slider',
@@ -10,10 +11,14 @@ import {Product} from '../../../products.service';
 })
 export class SliderComponent {
   @Input() products: Product[] = [];
+  config: any;
 
   constructor(
-    public router: Router
-  ) {}
+    public router: Router,
+    private _appConfig: AppConfig,
+  ) {
+    this.config = _appConfig.getConfig();
+  }
 
   public toggleSliderProductStarred(product: Product) {
     product['starred'] = !product['starred'];

@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 declare let jQuery: any;
 
 const hostApi = process.env.NODE_ENV === 'development' ? 'http://localhost' : 'https://flatlogic-node-backend.herokuapp.com';
-const portApi = process.env.NODE_ENV === 'development' ? 8080 : '';
-const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}`;
+const portApi = process.env.NODE_ENV === 'development' ? 5001 : '';
+const baseURLApi = `${hostApi}${portApi ? `:${portApi}/api` : ``}`;
+const resourceApi = `${hostApi}${portApi ? `:${portApi}/Resources/` : ``}`;
+const tokenRoleField = 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role';
+const tokenEmailField = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress';
+const tokenSidField = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid';
 
 @Injectable()
 export class AppConfig {
@@ -17,7 +21,11 @@ export class AppConfig {
     isBackend: environment.backend,
     hostApi,
     portApi,
+    resourceApi,
     baseURLApi,
+    tokenEmailField,
+    tokenRoleField,
+    tokenSidField,
     auth: {
       email: 'admin@flatlogic.com',
       password: 'password'

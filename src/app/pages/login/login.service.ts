@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {Injectable} from '@angular/core';
+import { exception } from 'console';
 
 const jwt = new JwtHelperService();
 
@@ -13,13 +14,21 @@ export class LoginService {
   _errorMessage: string = '';
 
   constructor(
-    appConfig: AppConfig,
+    private _appConfig: AppConfig,
     private http: HttpClient,
     private router: Router,
   ) {
-    this.config = appConfig.getConfig();
+    this.config = _appConfig.getConfig();
   }
 
+  private _navigateTo(path: string[]) {
+    if(!path || path.length === 0) {
+      path = [ '/' ];
+    }
+
+    this.router.navigate(path);
+  }
+  
   get isFetching() {
     return this._isFetching;
   }
@@ -47,7 +56,7 @@ export class LoginService {
     try {
     data = jwt.decodeToken(token);
     } catch(e) {
-      this.router.navigate(['/login']);
+      this._navigateTo([ '/login' ]);
     }
     if (!data) return;
     return date < data.exp;
@@ -59,29 +68,33 @@ export class LoginService {
       this.receiveToken('token');
     } else {
       this.requestLogin();
-      if (creds.social) {
-        // tslint:disable-next-line
-        window.location.href = this.config.baseURLApi + '/user/signin/' + creds.social + (process.env.NODE_ENV === 'production' ? '?app=sing-app/angular' : '');
-      } else if (creds.email.length > 0 && creds.password.length > 0) {
-        this.http.post('/user/signin/local', creds).subscribe((res: any) => {
-          const token = res.token;
+
+      if (creds.email.length > 0 && creds.password.length > 0) {
+        this.http.post(`/account/login`, creds).subscribe((res: any) => {
+          const token = res.accessToken;
+          if(!token) {
+            throw new Error("There is no token!");
+          }
+
           this.receiveToken(token);
         }, err => {
           this.loginError('Something was wrong. Try again');
         });
-
-      } else {
-        this.loginError('Something was wrong. Try again');
       }
     }
   }
 
   receiveToken(token) {
+    let decodedToken = null;
     let user: any = {};
     // We check if app runs with backend mode
     if (this.config.isBackend) {
-      user = jwt.decodeToken(token).user;
-      delete user.id;
+      decodedToken = jwt.decodeToken(token);
+      if(decodedToken) {
+        user = {
+          email: decodedToken[this.config.tokenEmailField]
+        };
+      }
     } else {
       user = {
         email: this.config.auth.email
@@ -97,7 +110,7 @@ export class LoginService {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     document.cookie = 'token=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    this.router.navigate(['/login']);
+    this._navigateTo([ '/login' ]);
   }
 
   loginError(payload) {
@@ -108,7 +121,7 @@ export class LoginService {
   receiveLogin() {
     this.isFetching = false;
     this.errorMessage = '';
-    this.router.navigate(['/app/analytics']);
+    this._navigateTo([ 'app', 'analytics' ]);
   }
 
   requestLogin() {
