@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Product, ProductsService} from '../../../products.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Product, ProductsService } from '../../../products.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'product-edit',
@@ -13,7 +13,7 @@ export class ProductEditComponent implements OnInit {
     public productsService: ProductsService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const newProduct = new Product(-1);
@@ -34,7 +34,7 @@ export class ProductEditComponent implements OnInit {
   }
 
   get product(): Product {
-    return this.findProduct(this.getId()) || {technology: []};
+    return this.findProduct(this.getId()) || { technology: [] };
   }
 
   goBack() {
@@ -42,7 +42,8 @@ export class ProductEditComponent implements OnInit {
   }
 
   findProduct(id) {
-    return this.productsService.products.find(p => p.id === id);
+    const pr = this.productsService.products.find(p => p.id === id);
+    return pr;
   }
 
   getId() {

@@ -47,6 +47,7 @@ export class ProductsService {
   _idToDelete: string = null;
 
   config: any;
+  resourceApi: string;
 
   constructor(
     private http: HttpClient,
@@ -55,12 +56,12 @@ export class ProductsService {
     appConfig: AppConfig
   ) {
     this.config = appConfig.getConfig();
+    this.resourceApi = (this.config.resourceApi) ? this.config.resourceApi : '';
   }
 
   public setImgField(product: any) {
     if(!product) return {};
     let imgString = '';
-    let resourceApi = (this.config.resourceApi) ? this.config.resourceApi : '';
 
     if(product.img) {
       imgString = product.img;
@@ -68,7 +69,7 @@ export class ProductsService {
 
     return {
       ...product,
-      img: resourceApi + imgString
+      img: this.resourceApi + imgString
     }
   }
 
@@ -134,7 +135,7 @@ export class ProductsService {
 
     this.deletingProduct (payload);
     this.http.delete('/products/' + payload.id).subscribe(() => {
-      this.deleteProduct ({id: payload.id});
+      this.deleteProduct({id: payload.id});
       // if (this.router.history.current.pathname !== '/app/ecommerce/management') {
       //   this.router.navigate(['/app/ecommerce/management']);
       // }
@@ -151,7 +152,7 @@ export class ProductsService {
     this.http.get('/products/images-list').subscribe((images: Array<string>) => {
       this.receiveProductImages(images);
       if (!payload.img && images.length) {
-        this.updateProduct ({id: payload.id, img: images[0]});
+        this.updateProduct ({id: payload.id, img: this.resourceApi + images[0]});
       }
     });
   }
