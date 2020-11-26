@@ -1,10 +1,10 @@
 <div class="filters">
   <div class="filters-group" *ngFor="let filter of filters.mainFilters">
-    {{filter.name}}
+    <p class="mr-3 mb-0">{{filter.name}}</p>
     <filter-dropdown [dropdown]="filter.items"></filter-dropdown>
   </div>
   <div class="filters-group">
-    {{filters.sortFilter.name}}
+    <p class="mr-3 mb-0">{{filters.sortFilter.name}}</p>
     <filter-dropdown [dropdown]="filters.sortFilter.items"></filter-dropdown>
   </div>
 </div>

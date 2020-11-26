@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.2.6]
+### Changed
+
+Dashboard: table -> change buttons to badges, fix justify content in widgets, add more space between elements, upd badges, fix border color in table,
+Package: add/fix links;
+Update gray button;
+Alerts: change content position;
+Fixed colors;
+Form elements: fix several ui bugs;
+Gallery: fix page;
+TimeLine: fix image;
+
 ## [5.2.5]
 
 ### Changed

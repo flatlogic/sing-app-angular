@@ -42,8 +42,8 @@ export class MapsVectorComponent implements AfterViewInit {
       },
       markerStyle: {
         initial: {
-          fill: this.config.settings.colors['brand-danger'],
-          stroke: this.configFn.darkenColor(this.config.settings.colors['brand-danger'], .1),
+          fill: '#313947',
+          stroke: this.configFn.darkenColor('#313947', .1),
           'fill-opacity': 1,
           'stroke-width': 4,
           'stroke-opacity': 0.2,

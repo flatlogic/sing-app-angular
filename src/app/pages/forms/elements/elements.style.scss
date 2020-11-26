@@ -46,9 +46,6 @@
   background: rgb(100, 189, 99);
 }
 
-
-
-
 /**
  * Jasny Bootstrap
  * Fileinput.less
@@ -330,11 +327,16 @@ $slider-handle-size: 26px;
  * Bootstrap select
  */
 
+
+
 .selectpicker.form-control {
   height: auto;
 }
 
 .bootstrap-select {
+  .bs-caret {
+    display: none;
+  }
   .dropdown-toggle {
     padding-left: 10px;
 

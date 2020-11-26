@@ -364,7 +364,7 @@ ul.messenger-theme-air .messenger-message .messenger-message-inner:before {
 }
 /* line 99, ../../src/sass/messenger-theme-air.sass */
 ul.messenger-theme-air .messenger-message.alert-success .messenger-message-inner:before {
-  background-color: #5fca4a;
+  background-color: $teal;
 }
 /* line 32, ../../src/sass/messenger-spinner.scss */
 ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-soon .messenger-spinner {
@@ -424,11 +424,11 @@ ul.messenger-theme-air .messenger-message.alert-error.messenger-retry-later .mes
 }
 /* line 109, ../../src/sass/messenger-theme-air.sass */
 ul.messenger-theme-air .messenger-message.alert-error .messenger-message-inner:before {
-  background-color: #dd6a45;
+  background-color: $red;
 }
 /* line 113, ../../src/sass/messenger-theme-air.sass */
 ul.messenger-theme-air .messenger-message.alert-info .messenger-message-inner:before {
-  background-color: #61c4b8;
+  background-color: $purple;
 }
 /* line 116, ../../src/sass/messenger-theme-air.sass */
 ul.messenger-theme-air .messenger-spinner {

@@ -280,8 +280,8 @@ ngx-loading-bar {
     font-weight: $font-weight-semi-bold;
   }
 
-  .datatable-body-cell {
-    border-top: 1px solid $table-border-color;
+  .datatable-body .datatable-body-row > div {
+    border-top: 1px solid $gray-300;
   }
 
   .datatable-row-center.datatable-row-group .datatable-body-cell {

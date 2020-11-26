@@ -37,6 +37,13 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+// Accordion //
+
+#accordion, #accordion2 {
+  .panel-heading.card-header {
+    background-color: $white;
+  }
+}
 
 //
 // cards
@@ -254,7 +261,6 @@ legend {
 .form-actions{
   margin: $spacer 0 0;
   padding: $spacer;
-  background-color: #f5f5f5;
 
   .form-horizontal & .row{
     margin-left: ($grid-gutter-width/-2) - 20px;
@@ -547,7 +553,7 @@ legend {
 }
 
 .btn-gray{
-  @include button-variant($gray-light, darken($gray-light, 5%));
+  @include button-variant($gray-300, darken($gray-300, 5%));
 }
 
 .btn-inverse {
@@ -1064,15 +1070,11 @@ code {
 .label,
 .badge {
   display: inline-block;
-  padding: 2px 4px;
+  padding: $padding-base-vertical $padding-base-horizontal;
   line-height: 14px; // ensure proper line-height if floated
   text-shadow: none;
   font-weight: $font-weight-bold;
   font-size: 11px;
-}
-
-.badge-pill {
-  padding: 2px 6px;
 }
 
 .badge-default {
