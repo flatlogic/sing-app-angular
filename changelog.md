@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.2.7]
+### Fixed
+
+- fixed build error
+- Package: set ngx-chips version to 2.0.2;
+
 ## [5.2.6]
 ### Changed
 
