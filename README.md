@@ -1,6 +1,6 @@
-# Sing App Angular Dashboard - Ngx Admin Template (5.2.5 Full version) with Angular 8.0 Final Release support
+# Sing App Angular Dashboard - Ngx Admin Template (5.2.5 Full version) with Angular 11.2 Final Release support
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11
 
 **For upgrade instruction please refer to [https://update.angular.io/](https://update.angular.io/).**
 
