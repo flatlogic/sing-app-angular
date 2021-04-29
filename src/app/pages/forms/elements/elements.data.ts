@@ -1,4 +1,4 @@
-import { Select2OptionData } from 'ng2-select2/ng2-select2';
+import { Select2OptionData } from 'ng-select2/ng-select2';
 
 export const select2DefaultData: Select2OptionData[] = [{
   id: 'Magellanic',

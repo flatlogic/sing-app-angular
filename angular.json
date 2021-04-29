@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/app/styles/application.scss"
+              "src/app/styles/application.scss",
+              "node_modules/select2/dist/css/select2.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

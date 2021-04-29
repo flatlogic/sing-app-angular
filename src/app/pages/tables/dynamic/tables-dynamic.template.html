@@ -85,7 +85,7 @@
 </section>
 <section class="widget" widget>
   <header>
-    <h4>Ng2 <span class="fw-semi-bold">Tables</span></h4>
+    <h4>ag-grid <span class="fw-semi-bold">Tables</span></h4>
     <div class="widget-controls">
       <a data-widgster="expand" title="Expand" href="#"><i class="la la-angle-up"></i></a>
       <a data-widgster="collapse" title="Collapse" href="#"><i class="la la-angle-down"></i></a>
@@ -94,32 +94,18 @@
   </header>
   <div class="widget-body">
     <p>
-      Simple table extension with sorting, filtering and pagination for Angular2 apps. Built with
-      <a href="http://valor-software.github.io/ng2-table/" target="_blank">ng2-table</a>
+      Simple table extension with sorting and pagination for Angular apps. Built with
+      <a href="https://www.ag-grid.com/angular-grid" target="_blank">ag-grid-angular</a>
     </p>
-    <p>
-      <input *ngIf="config.filtering"
-             [ngTableFiltering]="config.filtering"
-             (tableChanged)="onChangeTable(config)"
-             class="form-control input-no-border bg-gray-lighter"
-             placeholder="Filter Table" type="text">
-    </p>
-    <ng-table [config]="config.sorting"
-              (tableChanged)="onChangeTable(config)"
-              [rows]="rows" [columns]="columns">
-    </ng-table>
-    <pagination *ngIf="config.paging"
-                class="pagination-sm"
-                [(ngModel)]="page"
-                [totalItems]="length"
-                [itemsPerPage]="itemsPerPage"
-                [maxSize]="maxSize"
-                [boundaryLinks]="true"
-                [rotate]="false"
-                (pageChanged)="onChangeTable(config, $event)"
-                (numPages)="numPages = $event">
-    </pagination>
-    <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+    <ag-grid-angular [columnDefs]="columns"
+                     [rowData]="agGridTableData"
+                     [pagination]="true"
+                     [paginationPageSize]="itemsPerPage"
+                     class="ag-theme-balham"
+                     style="width: 100%; height: 347px"
+                     (gridSizeChanged)="onGridSizeChanged($event)"
+                     (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
   </div>
 
 </section>

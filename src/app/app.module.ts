@@ -33,9 +33,10 @@ const APP_PROVIDERS = [
     HttpClientModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(ROUTES, {
-      useHash: true,
-      preloadingStrategy: PreloadAllModules
-    })
+    useHash: true,
+    preloadingStrategy: PreloadAllModules,
+    relativeLinkResolution: 'legacy'
+})
   ],
   providers: [
     APP_PROVIDERS,
