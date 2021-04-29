@@ -6,13 +6,13 @@ export const ROUTES: Routes = [{
    path: '', redirectTo: 'app', pathMatch: 'full'
   },
   {
-    path: 'app', canActivate: [AppGuard],   loadChildren: './layout/layout.module#LayoutModule'
+    path: 'app', canActivate: [AppGuard],   loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
   },
   {
-    path: 'login', loadChildren: './pages/login/login.module#LoginModule'
+    path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'register', loadChildren: './pages/register/register.module#RegisterModule'
+    path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)
   },
   {
     path: 'error', component: ErrorComponent

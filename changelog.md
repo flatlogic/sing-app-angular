@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.2.8]
+
+### Updated
+
+- Updated the Angular builder
+- Updated the Angular CLI
+- Updated packages
+- Tables: added ag-grid-angular table
+
 ## [5.2.7]
 ### Fixed
 

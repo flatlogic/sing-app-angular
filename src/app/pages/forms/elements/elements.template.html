@@ -443,17 +443,17 @@ Enjoy!
             <div class="form-group row">
               <label class="col-md-4 col-form-label" for="default-select">Default select</label>
               <div class="col-md-8 ">
-                <select2 id="default-select"
+                <ng-select2 id="default-select"
                          (valueChanged)="select2Changed($event)"
-                         [data]="getSelect2DefaultList()" [options]="select2Options" [width]="250"></select2>
+                         [data]="getSelect2DefaultList()" [options]="select2Options" [width]="250"></ng-select2>
                 <p *ngIf="selected" class="help-block mb-0">Selected value in select 2: <b>{{selected}}</b>.</p>
               </div>
             </div>
             <div class="form-group row">
               <label class="col-md-4 col-form-label" for="grouped-select">Select with search & groups</label>
               <div class="col-md-8 ">
-                <select2 id="grouped-select"
-                         [data]="getSelect2GroupedList()" [options]="select2Options" [width]="250"></select2>
+                <ng-select2 id="grouped-select"
+                         [data]="getSelect2GroupedList()" [options]="select2Options" [width]="250"></ng-select2>
               </div>
             </div>
           </fieldset>
@@ -833,7 +833,7 @@ Enjoy!
                 <span class="help-block">(123) 456-7890</span>
               </label>
               <div class="col-md-7 col-12">
-                <input id="mask-phone" name="mask-phone" class="form-control" [textMask]="phoneMask" [ngModel]="phoneValue" (ngModelChange)="phoneValue = unmask($event)" type="text"/>
+                <input id="mask-phone" name="mask-phone" class="form-control" [mask]="phoneMask" [ngModel]="phoneValue" (ngModelChange)="phoneValue = unmask($event)" type="text"/>
               </div>
             </div>
             <div class="form-group row">
@@ -842,7 +842,7 @@ Enjoy!
                 <span class="help-block">+375 123 456 789</span>
               </label>
               <div class="col-md-7 col-12">
-                <input id="mask-int-phone" name="mask-phone-inter" class="form-control" [textMask]="interPhoneMask" [ngModel]="interPhoneValue" (ngModelChange)="interPhoneValue = unmask($event)" type="text"/>
+                <input id="mask-int-phone" name="mask-phone-inter" class="form-control" [mask]="interPhoneMask" [ngModel]="interPhoneValue" (ngModelChange)="interPhoneValue = unmask($event)" type="text"/>
               </div>
             </div>
             <div class="form-group row">
@@ -851,7 +851,7 @@ Enjoy!
                 <span class="help-block">07-03-2013</span>
               </label>
               <div class="col-md-7 col-12">
-                <input id="mask-date" name="mask-date" class="form-control" [textMask]="dateMask" [(ngModel)]="dateValue" type="text"/>
+                <input id="mask-date" name="mask-date" class="form-control" [mask]="dateMask" [(ngModel)]="dateValue" type="text"/>
               </div>
             </div>
             <div class="form-group row">
@@ -860,7 +860,7 @@ Enjoy!
                 <span class="help-block">13:43</span>
               </label>
               <div class="col-md-7 col-12">
-                <input id="mask-time" name="mask-time" class="form-control" [textMask]="timeMask" [(ngModel)]="timeValue" type="text"/>
+                <input id="mask-time" name="mask-time" class="form-control" [mask]="timeMask" [(ngModel)]="timeValue" type="text"/>
               </div>
             </div>
           </fieldset>

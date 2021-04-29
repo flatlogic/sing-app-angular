@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation, Input} from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
 
 declare let jQuery: any;
 
@@ -15,16 +15,17 @@ export class MainChartComponent {
   @Input() data: any[];
 
   _isReceiving: boolean = false;
+
+  get isReceiving() {
+    return this._isReceiving;
+  }
+
   @Input() set isReceiving(state) {
     const prevState = this._isReceiving;
     this._isReceiving = state;
     if (!state && prevState) {
       this.init();
     }
-  }
-
-  get isReceiving() {
-    return this._isReceiving;
   }
 
   onDrawHook() {

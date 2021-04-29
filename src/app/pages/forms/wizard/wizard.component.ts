@@ -8,17 +8,8 @@ declare let jQuery: any;
   styleUrls: ['./wizard.style.scss']
 })
 export class WizardComponent implements OnInit {
-  destindationMask = {
-    mask: [/[1-9]/, /\d/, /\d/, /\d/, /\d/]
-  };
-
-  creditMask = {
-    mask: [/[1-9]/, /\d/, /\d/, /\d/, '-',
-      /\d/, /\d/, /\d/, /\d/, '-',
-      /\d/, /\d/, /\d/, /\d/, '-',
-      /\d/, /\d/, /\d/, /\d/
-    ]
-  };
+  destindationMask = '00000';
+  creditMask = '0000-0000-0000-0000';
 
   destinationValue = '';
   creditValue = '';

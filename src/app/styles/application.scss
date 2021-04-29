@@ -13,8 +13,9 @@
 @import "../../../node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox";
 @import "../../../node_modules/bootstrap-select/sass/bootstrap-select";
 @import '../../../node_modules/govpredict-morris/morris.css';
-@import '../../../node_modules/ngx-toastr/toastr-bs4-alert';
-
+@import '~ngx-toastr/toastr-bs4-alert';
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
 @import "bootstrap-override";
 @import "libs-override";
 

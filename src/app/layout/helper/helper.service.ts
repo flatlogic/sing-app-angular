@@ -1,6 +1,7 @@
-import {EventEmitter} from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import {DashboardThemes} from './helper.interface';
 
+@Injectable()
 export class HelperService {
   dashboardThemes = DashboardThemes;
   _dashboardTheme: DashboardThemes = this.dashboardThemes.DARK;

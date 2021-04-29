@@ -5,9 +5,9 @@ import { RouterModule } from '@angular/router';
 
 import { TooltipModule, AlertModule, BsDropdownModule } from 'ngx-bootstrap';
 import { Autosize } from 'ng-autosize';
-import { Select2Module } from 'ng2-select2';
+import { NgSelect2Module } from 'ng-select2';
 import { WidgetModule } from '../../layout/widget/widget.module';
-import { TextMaskModule } from 'angular2-text-mask';
+import { NgxMaskModule } from 'ngx-mask'
 /* tslint:disable */
 import { BootstrapWizardModule } from '../../components/wizard/wizard.module';
 import { BootstrapApplicationWizardComponent } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.component';
@@ -38,14 +38,14 @@ export const routes = [
   imports: [
     CommonModule,
     FormsModule,
-    TextMaskModule,
+    NgxMaskModule.forRoot(),
     TooltipModule.forRoot(),
     AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
     WidgetModule,
     BootstrapWizardModule,
     NKDatetimeModule,
-    Select2Module,
+    NgSelect2Module,
     RouterModule.forChild(routes),
     EditorModule
   ]

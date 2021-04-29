@@ -2,7 +2,7 @@ import {
   Component, ViewEncapsulation, Injector, OnInit,
   OnDestroy
 } from '@angular/core';
-import { Select2OptionData } from 'ng2-select2';
+import { Select2OptionData } from 'ng-select2';
 import { ɵDomSharedStylesHost } from '@angular/platform-browser';
 import * as data from './elements.data';
 declare const jQuery: any;
@@ -24,29 +24,10 @@ export class ElementsComponent implements OnInit, OnDestroy {
     theme: 'bootstrap'
   };
 
-  phoneMask = {
-    mask: ['(', /[1-9]/, /\d/, /\d/, ')',
-      ' ', /\d/, /\d/, /\d/,
-      '-', /\d/, /\d/, /\d/, /\d/]
-  };
-
-  interPhoneMask = {
-    mask: ['+', /[1-9]/, /\d/, /\d/,
-      ' ', /\d/, /\d/, /\d/,
-      ' ', /\d/, /\d/, /\d/, /\d/,
-      ' ', /\d/, /\d/, /\d/, /\d/]
-  };
-
-  dateMask = {
-    mask: [/\d/, /\d/,
-      '-', /\d/, /\d/,
-      '-', /[1-9]/, /\d/, /\d/, /\d/]
-  };
-
-  timeMask = {
-    mask: [/\d/, /\d/,
-      ':', /\d/, /\d/]
-  };
+  phoneMask = '(000) 000-0000';
+  interPhoneMask = '+000 000 0000 0000';
+  dateMask = '00-00-0000';
+  timeMask = '00:00';
 
   phoneValue = '';
   interPhoneValue = '';

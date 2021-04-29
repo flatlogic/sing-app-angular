@@ -1,4 +1,6 @@
+import { Injectable } from "@angular/core";
 /* tslint:disable */
+@Injectable()
 export class FakeWorldData {
   fakeWorldData = {
     "2008": {

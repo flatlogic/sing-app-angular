@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/app/styles/application.scss"
+              "src/app/styles/application.scss",
+              "node_modules/select2/dist/css/select2.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -150,10 +151,13 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": "0f3211c9-c1fc-42ac-be42-5797cfb87313"
   }
 }
