@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { Component, ViewEncapsulation, Input, HostListener } from '@angular/core';
 
 declare let jQuery: any;
 
@@ -117,7 +117,7 @@ export class MainChartComponent {
       },
       yaxis: {
         tickColor: '#f8f9fa',
-        max: 8,
+        max: 0.006,
         font: {
           lineHeight: 11,
           weight: 400,

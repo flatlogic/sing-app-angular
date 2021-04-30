@@ -11,7 +11,7 @@ const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}`;
 export class AppConfig {
   config = {
     name: 'sing',
-    title: 'Sing Dashboard App with Angular 8.0 support by Flatlogic',
+    title: 'Sing Dashboard App with Angular 11.2 support by Flatlogic',
     version: '4.0.0',
     remote: 'https://flatlogic-node-backend.herokuapp.com',
     isBackend: environment.backend,
