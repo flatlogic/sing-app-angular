@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.3.0] - 04/30/2021
+### Fixed
+
+- fixed tabs;
+- fixed build error
+- changed year text to 2021;
+
+###Updated packages
+    terser-webpack-plugin: 5.1.1 -> 4.2.3
+
 ## [5.2.9] - 04/29/2021
 ### Fixed
 

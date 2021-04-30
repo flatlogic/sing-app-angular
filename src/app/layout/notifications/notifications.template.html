@@ -3,34 +3,20 @@
     <div class="text-center mb-sm">
       <strong>You have 13 notifications</strong>
     </div>
-    <div class="btn-group btn-group-sm" id="notifications-toggle" data-toggle="buttons">
-      <label class="btn btn-default active">
-        <!-- ajax-load plugin in action. setting data-ajax-load & data-ajax-target is the
-             only requirement for async reloading -->
-        <input type="radio"
-               notification-load
-               data-ajax-trigger="change"
-               data-ajax-load="assets/demo/notifications/notifications.html"
-               data-ajax-target="#notifications-list"> Notifications
+    <div class="btn-group btn-group-sm">
+      <label class="btn btn-default"  [ngClass]="{'active' : showNotifications}">
+        <a (click)="toggleTab('notifications')"> Notifications </a>
       </label>
-      <label class="btn btn-default">
-        <input type="radio"
-               notification-load
-               data-ajax-trigger="change"
-               data-ajax-load="assets/demo/notifications/messages.html"
-               data-ajax-target="#notifications-list"> Messages
+      <label class="btn btn-default" [ngClass]="{'active' : showMessages}">
+        <a (click)="toggleTab('messages')"> Messages </a>
       </label>
-      <label class="btn btn-default">
-        <input type="radio"
-               notification-load
-               data-ajax-trigger="change"
-               data-ajax-load="assets/demo/notifications/progress.html"
-               data-ajax-target="#notifications-list"> Progress
+      <label class="btn btn-default"  [ngClass]="{'active' : showProgress}">
+        <a (click)="toggleTab('progress')"> Progress </a>
       </label>
     </div>
   </header>
   <!-- notification list with .thin-scroll which styles scrollbar for webkit -->
-  <div id="notifications-list" class="list-group thin-scroll">
+  <div *ngIf="showNotifications" id="notifications-list" class="list-group thin-scroll">
     <div class="list-group-item">
       <span class="thumb-sm float-left mr clearfix">
         <img class="rounded-circle" src="assets/img/people/a3.jpg" alt="...">
@@ -98,7 +84,7 @@
       <p class="text-ellipsis m-0">
         New <strong>76</strong> facebook likes received.</p>
       <time class="help-block m-0">
-        15 Apr 2014
+        15 Apr 2021
       </time>
     </a>
     <a class="list-group-item" href="#">
@@ -110,13 +96,134 @@
       <p class="text-ellipsis m-0">
         Dark matter detected.</p>
       <time class="help-block m-0">
-        15 Apr 2014
+        15 Apr 2021
       </time>
     </a>
   </div>
+
+  <!-- messages list with .thin-scroll which styles scrollbar for webkit -->
+  <div *ngIf="showMessages" id="messages-list" class="list-group thin-scroll">
+    <a class="list-group-item bg-warning-light" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
+        <img class="rounded-circle" src="assets/img/people/a2.jpg" alt="...">
+        <i class="status status-bottom bg-success"></i>
+    </span>
+      <time class="text-link help float-right">10 sec ago</time>
+      <h6 class="no-margin fw-bold mb-xs">Chris Gray</h6>
+      <p class="deemphasize text-ellipsis no-margin">Hey! What's up? So many times since we</p>
+    </a>
+    <a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
+        <img class="rounded-circle" src="assets/img/avatar.png" alt="...">
+        <i class="status status-bottom bg-success"></i>
+    </span>
+      <time class="text-link help float-right">2 min ago</time>
+      <h6 class="no-margin mb-xs">Jamey Brownlow</h6>
+      <p class="deemphasize text-ellipsis no-margin">Good news coming tonight. Seems they agreed to proceed</p>
+    </a>
+    <a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
+        <img class="rounded-circle" src="assets/img/people/a1.jpg" alt="...">
+        <i class="status status-bottom bg-warning"></i>
+    </span>
+      <time class="text-link help float-right">9 min ago</time>
+      <h6 class="no-margin mb-xs">Livia Walsh</h6>
+      <p class="deemphasize text-ellipsis no-margin">Check out my latest email plz!</p>
+    </a>
+    <a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
+        <img class="rounded-circle" src="assets/img/avatar.png" alt="...">
+        <i class="status status-bottom bg-danger"></i>
+    </span>
+      <time class="text-link help float-right">12:56 AM</time>
+      <h6 class="no-margin mb-xs">Jaron Fitzroy</h6>
+      <p class="deemphasize text-ellipsis no-margin">What about summer break?</p>
+    </a>
+    <a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
+        <img class="rounded-circle" src="assets/img/people/a4.jpg" alt="...">
+        <i class="status status-bottom bg-gray-light"></i>
+    </span>
+      <time class="text-link help float-right">Yesterday</time>
+      <h6 class="no-margin mb-xs">Mike Lewis</h6>
+      <p class="deemphasize text-ellipsis no-margin">Just ain't sure about the weekend now. 90% I'll make it.</p>
+    </a>
+    <a class="list-group-item" href="#" style="display: block">
+    <span class="thumb-sm float-left mr">
+        <img class="rounded-circle" src="assets/img/people/a6.jpg" alt="...">
+        <i class="status status-bottom bg-success"></i>
+    </span>
+      <time class="text-link help float-right">Apr 23</time>
+      <h6 class="no-margin mb-xs">Freda Edison</h6>
+      <p class="deemphasize text-ellipsis no-margin">Hey what's up? Me and Monica going for a lunch somewhere. Wanna join?</p>
+    </a>
+  </div>
+
+  <!-- progress list with .thin-scroll which styles scrollbar for webkit -->
+  <div *ngIf="showProgress" id="progress-list" class="list-group thin-scroll">
+    <div class="list-group-item" style="display: block">
+      <span class="text-muted float-right">60%</span>
+      <h6 class="no-margin mb-xs text-gray">
+        <strong>Urgent:</strong>
+        Rails 4.1.0 upgrade
+      </h6>
+      <div class="bg-gray-lighter progress">
+        <div class="progress-bar bg-primary no-margin" style="width: 60%"></div>
+      </div>
+      <span class="help-block">3 notes added by James 2h ago...</span>
+    </div>
+    <div class="list-group-item" style="display: block">
+      <span class="text-muted float-right">83%</span>
+      <h6 class="no-margin mb-xs text-gray">
+        <strong>Primary:</strong>
+        Sing Web App
+      </h6>
+      <div class="bg-gray-lighter progress progress-sm">
+        <div class="progress-bar bg-success no-margin" style="width: 83%"></div>
+      </div>
+      <span class="help-block">verifying stable probability status</span>
+    </div>
+    <div class="list-group-item" style="display: block">
+      <span class="text-muted float-right">44%</span>
+      <h6 class="no-margin mb-xs">
+        <span class="circle bg-gray-dark text-warning"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              data-container="body"
+              title="2 issues require your attention"><i class="fa fa-question"></i></span>
+        &nbsp;
+        Finish The Road to Hell Song
+      </h6>
+      <div class="bg-gray-lighter progress progress-sm">
+        <div class="progress-bar bg-bar-gray-light no-margin" style="width: 44%"></div>
+      </div>
+      <span class="help-block">last update: 2h ago</span>
+    </div>
+    <div class="list-group-item" style="display: block">
+      <span class="text-muted float-right">86%</span>
+      <h6 class="no-margin mb-xs deemphasize text-gray">
+        Complete project planning
+      </h6>
+      <div class="bg-gray-lighter progress progress-xs">
+        <div class="progress-bar bg-danger no-margin" style="width: 86%"></div>
+      </div>
+      <span class="help-block">no, no way this is not working...</span>
+    </div>
+    <div class="list-group-item" style="display: block">
+      <span class="text-muted float-right">100%</span>
+      <h6 class="no-margin mb-xs deemphasize text-gray">
+        <strong>Completed:</strong>
+        Instruct newbies on coding standards
+      </h6>
+      <div class="bg-gray-lighter progress progress-xs">
+        <div class="progress-bar bg-primary no-margin" style="width: 100%"></div>
+      </div>
+      <span class="help-block">last update: April 22, 2021 2:36 pm</span>
+    </div>
+
+  </div>
   <footer class="card-footer text-sm">
-    <!-- ajax-load button. loads assets/demo/notifications/notifications.php to #notifications-list
-         when clicked -->
+    <!-- load button calls notifications-load.directive to update #notifications-list when clicked -->
     <button class="btn btn-xs btn-link float-right btn-notifications-reload"
             id="load-notifications-btn"
             appNotificationsLoad
@@ -125,6 +232,6 @@
             data-loading-text="<i class='fa fa-refresh fa-spin mr-xs'></i> Loading...">
       <i class="fa fa-refresh"></i>
     </button>
-    <span class="fs-mini">Synced at: 21 Apr 2014 18:36</span>
+    <span class="fs-mini">Synced at: 21 Apr 2021 18:36</span>
   </footer>
 </section>
