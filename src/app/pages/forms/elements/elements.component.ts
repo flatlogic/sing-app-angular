@@ -15,7 +15,7 @@ declare const jQuery: any;
   preserveWhitespaces: true
 })
 export class ElementsComponent implements OnInit, OnDestroy {
-  date: Date = new Date(2016, 5, 10);
+  date: Date = new Date(2021, 5, 10);
   colorOptions: Object = {color: '#f0b518'};
   injector: Injector;
   domSharedStylesHost: any;
