@@ -1,7 +1,13 @@
 # Changelog
 
-## [5.2.8]
+## [5.2.9]
+### Fixed
 
+- fixed daily line chart
+- changed texts about angular version;
+- changed date on footer;
+
+## [5.2.8]
 ### Updated
 
 - Updated the Angular builder
