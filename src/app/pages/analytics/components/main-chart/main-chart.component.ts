@@ -117,7 +117,7 @@ export class MainChartComponent {
       },
       yaxis: {
         tickColor: '#f8f9fa',
-        max: 0.006,
+        max: 8,
         font: {
           lineHeight: 11,
           weight: 400,
