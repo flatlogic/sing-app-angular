@@ -272,9 +272,9 @@ function getMainChartData() {
     return result;
   }
 
-  const d1 = generateRandomPicks(0.2, 3, 4, 90);
-  const d2 = generateRandomPicks(0.4, 3.8, 4, 90);
-  const d3 = generateRandomPicks(0.2, 4.2, 3, 90);
+  const d1 = generateRandomPicks(2500, 6000, 3, 90);
+  const d2 = generateRandomPicks(2000, 6000, 4, 90);
+  const d3 = generateRandomPicks(4500, 7000, 2, 90);
 
   return [d1, d2, d3];
 }

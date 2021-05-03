@@ -1,5 +1,10 @@
 # Changelog
 
+## [5.3.1] - 05/03/2021
+### Fixed
+
+- fixed daily line chart;
+
 ## [5.3.0] - 04/30/2021
 ### Fixed
 
