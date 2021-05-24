@@ -1,6 +1,6 @@
 {
   "name": "sing-app",
-  "version": "5.3.1",
+  "version": "5.3.2",
   "description": "Sing Dashboard App with Angular 11.2 Final Release support by Flatlogic",
   "scripts": {
     "install": "napa",
@@ -56,6 +56,7 @@
     "jquery.animate-number": "0.0.14",
     "jvectormap": "2.0.4",
     "line-awesome": "icons8/line-awesome",
+    "lodash.isequal": "^4.5.0",
     "magnific-popup": "1.1.0",
     "markdown": "0.5.0",
     "messenger": "git+https://github.com/HubSpot/messenger.git#v1.4.2",
@@ -86,7 +87,7 @@
   "napa": {
     "bootstrap-application-wizard": "git://github.com/amoffat/bootstrap-application-wizard.git#3768da3142f43428c5f63284407a2481a9e283d3",
     "twitter-bootstrap-wizard": "git://github.com/VinceG/twitter-bootstrap-wizard.git#62a9aca8cc61fdb496c4bf7b92e1ff70c698667e",
-    "jvectormap-world": "http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js",
+    "jvectormap-world": "https://github.com/islambek01/jvectormap-world",
     "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
     "jquery.nestable": "https://github.com/dbushell/Nestable.git#4f93032cfafe2002f24ed6bd7dc1510931498503",
     "jquery.flot.animator": "https://github.com/Codicode/flotanimator.git#3c256c0183d713fd3bf41d04417873928eb1a751",
@@ -108,12 +109,15 @@
     "@types/select2": "4.0.53",
     "codelyzer": "^6.0.0",
     "metrojs": "0.9.77",
-    "napa": "2.3.0",
+    "napa": "3.0.0",
     "rxjs-compat": "^6.5.5",
     "terser-webpack-plugin": "4.2.3",
     "ts-node": "4.1.0",
     "tslint": "~6.1.0",
     "typescript": "4.1.5"
+  },
+  "napa-config": {
+    "cache": false
   },
   "overrides": {
     "rickshaw": {
