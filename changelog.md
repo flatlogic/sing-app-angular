@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.3.2] - 05/24/2021
+### Fixed
+
+- Fixed node version dependency on starting project;
+
+###Updated packages
+    jvectormap-world: http://jvectormap.com/js/jquery-jvectormap-world-mill-en.js -> https://github.com/islambek01/jvectormap-world
+    napa: 2.3.0 -> 3.0.0
+
+###Added packages
+    lodash.isequal: 4.5.0
+    
 ## [5.3.1] - 05/03/2021
 ### Fixed
 
