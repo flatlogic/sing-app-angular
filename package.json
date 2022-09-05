@@ -63,7 +63,6 @@
     "moment": "2.15.2",
     "morris.js": "0.5.0",
     "ng-autosize": "1.1.0",
-    "ng-select2": "^1.2.5",
     "ng2-carouselamos": "4.1.0",
     "ng2-datetime": "1.4.0",
     "ngx-bootstrap": "5.0.0",
@@ -80,13 +79,12 @@
     "select2-bootstrap-theme": "0.1.0-beta.9",
     "shufflejs": "4.2.0",
     "tslib": "^2.0.0",
-    "webpack-raphael": "2.1.4",
     "widgster": "1.0.0",
     "zone.js": "~0.10.2"
   },
   "napa": {
-    "bootstrap-application-wizard": "git://github.com/amoffat/bootstrap-application-wizard.git#3768da3142f43428c5f63284407a2481a9e283d3",
-    "twitter-bootstrap-wizard": "git://github.com/VinceG/twitter-bootstrap-wizard.git#62a9aca8cc61fdb496c4bf7b92e1ff70c698667e",
+    "bootstrap-application-wizard": "https://github.com/amoffat/bootstrap-application-wizard.git#3768da3142f43428c5f63284407a2481a9e283d3",
+    "twitter-bootstrap-wizard": "https://github.com/VinceG/twitter-bootstrap-wizard.git#62a9aca8cc61fdb496c4bf7b92e1ff70c698667e",
     "jvectormap-world": "https://github.com/islambek01/jvectormap-world",
     "bootstrap_calendar": "https://github.com/xero/bootstrap_calendar.git#1.0.1",
     "jquery.nestable": "https://github.com/dbushell/Nestable.git#4f93032cfafe2002f24ed6bd7dc1510931498503",
