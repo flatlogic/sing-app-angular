@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import 'jQuery-Mapael/js/jquery.mapael.js';
 import 'jQuery-Mapael/js/maps/world_countries.js';
@@ -20,7 +20,7 @@ import { RealtimeTrafficWidgetComponent } from './realtime-traffic-widget/realti
 import { YearsMapWidgetComponent } from './years-map-widget/years-map-widget.component';
 import { FakeWorldData } from './years-map-widget/fake-world-data.service';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', component: WidgetsComponent, pathMatch: 'full'}
 ];
 

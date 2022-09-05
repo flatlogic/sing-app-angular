@@ -10,7 +10,7 @@ declare const jQuery: any;
 @Component({
   selector: '[elements]',
   templateUrl: './elements.template.html',
-  styleUrls: [ './elements.style.scss' ],
+  // styleUrls: [ './elements.style.scss' ],
   encapsulation: ViewEncapsulation.None,
   preserveWhitespaces: true
 })

@@ -4,7 +4,7 @@ import 'jquery.nestable/jquery.nestable.js';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import {AlertModule, CarouselModule, PopoverModule, ProgressbarModule, TooltipModule} from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -26,7 +26,7 @@ import {BadgeComponent} from './badge/badge';
 import {AlertsComponent} from './alerts/alerts';
 import {NewWidgetModule} from '../../layout/new-widget/widget.module';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'components', pathMatch: 'full'},
   {path: 'buttons', component: ButtonsComponent},
   {path: 'notifications', component: NotificationsComponent},

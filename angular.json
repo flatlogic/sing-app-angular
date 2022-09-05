@@ -30,7 +30,7 @@
               "node_modules/jquery/dist/jquery.js",
               "node_modules/popper.js/dist/umd/popper.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/webpack-raphael/raphael-min.js",
+              "src/assets/raphael.min.js",
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/d3/d3.min.js",
               "node_modules/nvd3/build/nv.d3.min.js",

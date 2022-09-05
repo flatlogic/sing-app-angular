@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule, PaginationModule  } from 'ngx-bootstrap';
@@ -14,7 +14,7 @@ import { TablesBasicComponent } from './basic/tables-basic.component';
 import { TablesDynamicComponent } from './dynamic/tables-dynamic.component';
 import { SearchPipe } from './dynamic/pipes/search-pipe';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'basic', pathMatch: 'full'},
   {path: 'basic', component: TablesBasicComponent},
   {path: 'dynamic', component: TablesDynamicComponent},

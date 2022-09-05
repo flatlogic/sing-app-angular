@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { InboxComponent } from './inbox.component';
 import { MailListComponent } from './mail-list/mail-list.component';
@@ -10,7 +10,7 @@ import { MailDetailComponent } from './mail-detail/mail-detail.component';
 import { SearchPipe } from './mail-list/pipes/search-pipe';
 import { FoldersPipe } from './mail-list/pipes/folders-pipe';
 
-export const routes = [
+export const routes: Routes = [
     { path: '', component: InboxComponent, pathMatch: 'full' }
 ];
 

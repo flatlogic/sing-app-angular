@@ -1,29 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { TooltipModule, AlertModule, BsDropdownModule } from 'ngx-bootstrap';
 import { Autosize } from 'ng-autosize';
 import { NgSelect2Module } from 'ng-select2';
 import { WidgetModule } from '../../layout/widget/widget.module';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule } from 'ngx-mask';
 /* tslint:disable */
-import { BootstrapWizardModule } from '../../components/wizard/wizard.module';
-import { BootstrapApplicationWizardComponent } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.component';
+// import { BootstrapWizardModule } from '../../components/wizard/wizard.module';
+// import { BootstrapApplicationWizardComponent } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.component';
 import { DropzoneDemoDirective } from '../../components/dropzone/dropzone.directive';
 import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 /* tslint:enable */
 import { ElementsComponent } from './elements/elements.component';
 import { ValidationComponent } from './validation/validation.component';
-import { WizardComponent } from './wizard/wizard.component';
+// import { WizardComponent } from './wizard/wizard.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'elements', pathMatch: 'full'},
   {path: 'elements', component: ElementsComponent},
   {path: 'validation', component: ValidationComponent},
-  {path: 'wizard', component: WizardComponent}
+  // {path: 'wizard', component: WizardComponent}
 ];
 
 @NgModule({
@@ -31,8 +31,8 @@ export const routes = [
     Autosize,
     ElementsComponent,
     ValidationComponent,
-    BootstrapApplicationWizardComponent,
-    WizardComponent,
+    // BootstrapApplicationWizardComponent,
+    // WizardComponent,
     DropzoneDemoDirective
   ],
   imports: [
@@ -43,7 +43,7 @@ export const routes = [
     AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
     WidgetModule,
-    BootstrapWizardModule,
+    // BootstrapWizardModule,
     NKDatetimeModule,
     NgSelect2Module,
     RouterModule.forChild(routes),

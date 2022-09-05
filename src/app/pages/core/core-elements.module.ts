@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
@@ -12,7 +12,7 @@ import { TypographyComponent } from './typography/typography.component';
 import { ColorsComponent } from './colors/colors.component';
 import { GridComponent } from './grid/grid.component';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'typography', pathMatch: 'full'},
   {path: 'typography', component: TypographyComponent},
   {path: 'colors', component: ColorsComponent},

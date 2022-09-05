@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import {ButtonsModule, BsDropdownModule, CollapseModule, AlertModule, PopoverModule} from 'ngx-bootstrap';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
@@ -27,7 +27,7 @@ import {LoaderModule} from '../../components/loader/loader.module';
 import {TagInputModule} from 'ngx-chips';
 import {FormsModule} from '@angular/forms';
 
-export const routes = [
+export const routes: Routes = [
   {path: 'product-grid', component: ProductGridComponent, pathMatch: 'full'},
   {path: 'product', component: ProductDetailComponent, pathMatch: 'full'},
   {path: 'product/:id', component: ProductDetailComponent, pathMatch: 'full'},

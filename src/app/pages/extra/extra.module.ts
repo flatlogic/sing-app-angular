@@ -7,7 +7,7 @@ import 'moment/moment.js';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AlertModule, TooltipModule,
   ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
@@ -20,7 +20,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 
 import { AgmCoreModule } from '@agm/core';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'calendar', pathMatch: 'full'},
   {path: 'calendar', component: CalendarComponent},
   {path: 'invoice', component: InvoiceComponent},

@@ -3,7 +3,7 @@ import 'jvectormap-world/jquery-jvectormap-world-mill-en.js';
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
 
@@ -12,7 +12,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MapsGoogleComponent } from './google/maps-google.component';
 import { MapsVectorComponent } from './vector/maps-vector.component';
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'google', pathMatch: 'full'},
   {path: 'google', component: MapsGoogleComponent},
   {path: 'vector', component: MapsVectorComponent}

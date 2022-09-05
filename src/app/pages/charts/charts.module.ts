@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { WidgetModule } from '../../layout/widget/widget.module';
 import { FlotChartModule } from '../../components/flot/flot.module';
@@ -9,7 +9,7 @@ import { Nvd3ChartModule } from '../../components/nvd3/nvd3.module';
 import { JqSparklineModule } from '../../components/sparkline/sparkline.module';
 import { RickshawChartModule } from '../../components/rickshaw/rickshaw.module';
 import { FlotChartAnimatorDirective } from './overview/components/flot-chart-animator/flot-chart-animator.directive';
-import {MorrisComponent} from './morris/morris';
+// import {MorrisComponent} from './morris/morris';
 import {FlotComponent} from './flot/flot';
 import {SparklineComponent} from './sparkline/sparkline';
 import {OverviewComponent} from './overview/overview';
@@ -25,11 +25,11 @@ import {PieChartComponent} from './flot/components/pie-chart/pie-chart';
 import {TrackingChartComponent} from './flot/components/tracking-chart/tracking-chart';
 
 
-export const routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'overview', pathMatch: 'full'},
   {path: 'overview', component: OverviewComponent},
   {path: 'flot', component: FlotComponent},
-  {path: 'morris', component: MorrisComponent},
+  // {path: 'morris', component: MorrisComponent},
   {path: 'sparkline', component: SparklineComponent},
   {path: 'easy-pie', component: EasyPieComponent},
 ];
@@ -51,7 +51,7 @@ export const routes = [
   declarations: [
     OverviewComponent,
     FlotComponent,
-    MorrisComponent,
+    // MorrisComponent,
     SparklineComponent,
     EasyPieComponent,
     FlotChartAnimatorDirective,

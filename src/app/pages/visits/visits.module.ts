@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import 'jquery.animate-number/jquery.animateNumber.js';
 import 'jQuery-Mapael/js/jquery.mapael.js';
@@ -14,7 +14,7 @@ import { GeoLocationsWidgetDirective } from './geo-locations-widget/geo-location
 import { MarketStatsWidgetComponent } from './market-stats-widget/market-stats-widget.component';
 import {CalendarModule} from './calendar/calendar.module';
 
-export const routes = [
+export const routes: Routes = [
   { path: '', component: VisitsComponent, pathMatch: 'full' }
 ];
 
