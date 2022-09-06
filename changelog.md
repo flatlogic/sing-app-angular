@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.3.3] - 09/06/2022
+ - Update Angular to 14.2
+ - Remove old dependency 
+
 ## [5.3.2] - 05/24/2021
 ### Fixed
 
