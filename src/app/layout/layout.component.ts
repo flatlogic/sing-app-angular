@@ -6,7 +6,6 @@ import {HelperService} from './helper/helper.service';
 
 declare let jQuery: any;
 declare let Hammer: any;
-declare let Raphael: any;
 
 @Component({
   selector: 'app-layout',
@@ -40,7 +39,6 @@ export class LayoutComponent implements OnInit {
               private ngZone: NgZone,
               private helperService: HelperService
   ) {
-    Raphael.prototype.safari = function(): any { return; };
     this.el = el;
     this.config = config.getConfig();
     this.configFn = config;

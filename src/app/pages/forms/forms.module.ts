@@ -8,15 +8,11 @@ import { Autosize } from 'ng-autosize';
 import { NgSelect2Module } from 'ng-select2';
 import { WidgetModule } from '../../layout/widget/widget.module';
 import { NgxMaskModule } from 'ngx-mask';
-/* tslint:disable */
-// import { BootstrapWizardModule } from '../../components/wizard/wizard.module';
-// import { BootstrapApplicationWizardComponent } from './wizard/bootstrap-application-wizard/bootstrap-application-wizard.component';
 import { DropzoneDemoDirective } from '../../components/dropzone/dropzone.directive';
 import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 /* tslint:enable */
 import { ElementsComponent } from './elements/elements.component';
 import { ValidationComponent } from './validation/validation.component';
-// import { WizardComponent } from './wizard/wizard.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 export const routes: Routes = [
@@ -31,8 +27,6 @@ export const routes: Routes = [
     Autosize,
     ElementsComponent,
     ValidationComponent,
-    // BootstrapApplicationWizardComponent,
-    // WizardComponent,
     DropzoneDemoDirective
   ],
   imports: [
@@ -43,7 +37,6 @@ export const routes: Routes = [
     AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
     WidgetModule,
-    // BootstrapWizardModule,
     NKDatetimeModule,
     NgSelect2Module,
     RouterModule.forChild(routes),
