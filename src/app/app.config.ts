@@ -3,8 +3,8 @@ import {environment} from '../environments/environment';
 
 declare let jQuery: any;
 
-const hostApi = process.env.NODE_ENV === 'development' ? 'http://localhost' : 'https://flatlogic-node-backend.herokuapp.com';
-const portApi = process.env.NODE_ENV === 'development' ? 8080 : '';
+const hostApi = !environment.production ? 'http://localhost' : 'https://flatlogic-node-backend.herokuapp.com';
+const portApi = !environment.production ? 8080 : '';
 const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}`;
 
 @Injectable()

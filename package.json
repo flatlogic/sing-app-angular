@@ -1,6 +1,6 @@
 {
   "name": "sing-app",
-  "version": "5.3.2",
+  "version": "5.3.4",
   "description": "Sing Dashboard App with Angular 11.2 Final Release support by Flatlogic",
   "scripts": {
     "install": "napa",

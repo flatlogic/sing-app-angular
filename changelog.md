@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.3.4] - 09/08/2022
+ - Fix app.config
+
 ## [5.3.3] - 09/06/2022
  - Update Angular to 14.2
  - Remove old dependency 
