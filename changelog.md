@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.3.5] - 27/11/2024
+ - Update dependencies
+
 ## [5.3.4] - 09/08/2022
  - Fix app.config
 
