@@ -2,7 +2,7 @@
 
 [View Demo](https://flatlogic.com/templates/sing-app-angular/demo) | [Download](https://github.com/flatlogic/sing-app-angular/archive/refs/heads/master.zip) | [More Templates](https://flatlogic.com/templates) | [Discord Community](https://discord.gg/flatlogic-community) | [Support Forum](https://flatlogic.com/forum)
 
-**Originally a premium product priced at $69+, now available for free!** 🎉 Built with love and frustration by the [Flatlogic Generator](https://flatlogic.com/ai-software-development-agent) - because who wants to build the CRUD apps from scratch?
+**Originally a premium product priced at $69+, made available for free in January 2025!** 🎉 Built with love and frustration by the [Flatlogic Generator](https://flatlogic.com/ai-software-development-agent) - because who wants to build the CRUD apps from scratch?
 
 ---
 
