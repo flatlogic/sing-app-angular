@@ -1,4 +1,4 @@
-# 🚀 Sing App Angular - A Free Premium Angular Dashboard!
+# 🚀 Sing App Angular - A Free Premium Angular Dashboard Template!
 
 [View Demo](https://flatlogic.com/templates/sing-app-angular/demo) | [Download](https://github.com/flatlogic/sing-app-angular/archive/refs/heads/master.zip) | [More Templates](https://flatlogic.com/templates) | [Discord Community](https://discord.gg/flatlogic-community) | [Support Forum](https://flatlogic.com/forum)
 
