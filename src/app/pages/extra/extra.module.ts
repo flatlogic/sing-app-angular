@@ -1,16 +1,13 @@
-import 'fullcalendar/dist/fullcalendar.js';
-import 'jquery-ui/ui/draggable.js';
-import 'magnific-popup/dist/jquery.magnific-popup.min.js';
-import 'shufflejs/dist/shuffle.js';
-import 'moment/moment.js';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AlertModule, TooltipModule,
-  ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
-import { ModalModule } from 'ngx-bootstrap';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 import { CalendarComponent } from './calendar/calendar.component';
 import { InvoiceComponent } from './invoice/invoice.component';
@@ -18,7 +15,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { TimeLineComponent } from './time-line/time-line.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
-import { AgmCoreModule } from '@agm/core';
+import { GoogleMapModule } from '../../components/google-map/google-map.module';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'calendar', pathMatch: 'full'},
@@ -42,12 +39,12 @@ export const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    AlertModule.forRoot(),
-    TooltipModule.forRoot(),
+    AlertModule,
+    TooltipModule,
     ModalModule,
-    ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    AgmCoreModule.forRoot({
+    ButtonsModule,
+    BsDropdownModule,
+    GoogleMapModule.forRoot({
       apiKey: 'AIzaSyDe_oVpi9eRSN99G4o6TwVjJbFBNr58NxE'
     })
   ],

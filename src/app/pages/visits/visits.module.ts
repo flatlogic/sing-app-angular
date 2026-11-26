@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import 'jquery.animate-number/jquery.animateNumber.js';
-import 'jQuery-Mapael/js/jquery.mapael.js';
-import 'jQuery-Mapael/js/maps/usa_states';
 
 import { VisitsComponent } from './visits.component';
 import { WidgetModule } from '../../layout/widget/widget.module';

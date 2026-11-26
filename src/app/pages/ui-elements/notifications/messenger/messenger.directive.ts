@@ -3,6 +3,7 @@ declare let jQuery: any;
 declare let Messenger: any;
 
 @Directive ({
+  standalone: false,
   selector: '[messenger-demo]'
 })
 

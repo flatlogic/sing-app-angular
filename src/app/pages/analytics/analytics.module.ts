@@ -5,14 +5,9 @@ import { AnalyticsComponent } from './analytics.component';
 import { MainChartComponent } from './components/main-chart/main-chart.component';
 import { BigStatComponent } from './components/big-stat/big-stat.component';
 
-import 'jquery-flot/jquery.flot.js';
-import 'jquery.flot.animator/jquery.flot.animator';
-import 'jquery-flot/jquery.flot.pie.js';
-import 'jquery-flot/jquery.flot.selection.js';
-import 'jquery-flot/jquery.flot.resize.js';
-import 'flot.dashes/jquery.flot.dashes';
 import { WidgetModule } from '../../layout/widget/widget.module';
-import {BsDropdownModule, ProgressbarModule} from 'ngx-bootstrap';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {ProgressbarModule} from 'ngx-bootstrap/progressbar';
 import {TrendModule} from 'ngx-trend';
 import {TaskContainerComponent} from './components/task-container/task-container.component';
 import {TaskComponent} from './components/task/task';
@@ -30,9 +25,9 @@ export const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     WidgetModule,
-    ProgressbarModule.forRoot(),
+    ProgressbarModule,
     TrendModule,
-    BsDropdownModule.forRoot(),
+    BsDropdownModule,
     CalendarModule,
     NewWidgetModule
   ],

@@ -52,7 +52,7 @@
          id="notifications-dropdown-toggle">
         <span class="avatar rounded-circle thumb-sm float-left mr-2">
           <img
-            *ngIf="user.avatar || user.email === 'admin@flatlogic.com'; else firstLetter"
+            *ngIf="user.avatar || user.email === 'admin&#64;flatlogic.com'; else firstLetter"
             class="rounded-circle"
             [src]="user.avatar || 'assets/img/people/a5.jpg'"
             alt="..."

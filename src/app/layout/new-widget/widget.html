@@ -46,7 +46,7 @@
 
 <div *ngIf="customControls" [innerHtml]="customControls" class="widget-controls"></div>
 <div class="widget-body {{bodyClass}}">
-  <loader size="40" class="widget-loader" *ngIf="fetchingData"></loader>
+  <loader [size]="40" class="widget-loader" *ngIf="fetchingData"></loader>
   <div [ngClass]="{'fetching-data': fetchingData}">
     <ng-content></ng-content>
   </div>

@@ -1,4 +1,4 @@
-import { Select2OptionData } from 'ng-select2/ng-select2';
+export interface Select2OptionData { id: string; text: string; children?: Select2OptionData[] }
 
 export const select2DefaultData: Select2OptionData[] = [{
   id: 'Magellanic',

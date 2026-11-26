@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[forms-validation]',
   templateUrl: './validation.template.html',
   encapsulation: ViewEncapsulation.None,

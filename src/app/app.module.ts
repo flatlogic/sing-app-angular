@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { provideZoneChangeDetection, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -34,11 +34,11 @@ const APP_PROVIDERS = [
     ToastrModule.forRoot(),
     RouterModule.forRoot(ROUTES, {
     useHash: true,
-    preloadingStrategy: PreloadAllModules,
-    relativeLinkResolution: 'legacy'
+    preloadingStrategy: PreloadAllModules
 })
   ],
   providers: [
+    provideZoneChangeDetection(),
     APP_PROVIDERS,
     {
       provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true

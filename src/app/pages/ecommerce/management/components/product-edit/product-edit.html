@@ -1,8 +1,8 @@
 <h2 class="page-title">Product - <span class="fw-semi-bold">Detail</span></h2>
 <widget
   [title]="(isNew ? 'New' : 'Edit') + ' product'"
-  collapse
-  close
+  [collapse]="true"
+  [close]="true"
 >
   <loader *ngIf="!isNew && productsService.isReceiving; else form" [size]="40"></loader>
   <ng-template #form>
@@ -83,16 +83,10 @@
       <div class="form-group row">
         <label class="col-md-2" for="productTechnology">Technology</label>
         <div class="col-md-5">
-          <tag-input
-            id="productTechnology"
-            name="productTechnology"
-            theme='bootstrap'
-            [ngModel]="product.technology"
-            (onRemove)="updateTechnology($event, 'remove')"
-            (onAdd)="updateTechnology($event.value, 'add')"
-            placeholder="Add Technology"
-          >
-          </tag-input>
+          <div class="d-flex flex-wrap">
+            <button *ngFor="let technology of product.technology" type="button" class="btn btn-sm btn-secondary mr-1" (click)="updateTechnology(technology, 'remove')" [attr.aria-label]="'Remove ' + technology">{{technology}} ×</button>
+            <input #technologyInput class="form-control" id="productTechnology" placeholder="Add Technology" (keydown.enter)="$event.preventDefault(); addTechnology(technologyInput)">
+          </div>
         </div>
       </div>
       <div class="form-group row">

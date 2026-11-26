@@ -4,6 +4,7 @@ declare let jQuery: any;
 declare let Rickshaw: any;
 
 @Component({
+  standalone: false,
   selector: '[changes-chart-widget]',
   templateUrl: './changes-chart-widget.template.html',
   encapsulation: ViewEncapsulation.None,

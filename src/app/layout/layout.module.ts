@@ -1,9 +1,9 @@
-import 'jquery-slimscroll';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule, TooltipModule } from 'ngx-bootstrap';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
 
 import { ROUTES } from './layout.routes';
 
@@ -24,8 +24,8 @@ import {HelperService} from './helper/helper.service';
 @NgModule({
   imports: [
     CommonModule,
-    TooltipModule.forRoot(),
-    BsDropdownModule.forRoot(),
+    TooltipModule,
+    BsDropdownModule,
     ROUTES,
     FormsModule,
     LoadingBarRouterModule,

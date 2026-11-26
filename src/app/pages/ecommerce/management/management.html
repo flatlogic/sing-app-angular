@@ -68,7 +68,7 @@
     <ngx-datatable-column name="api">
       <ng-template let-row="row" ngx-datatable-cell-template>
         <div class="btn-toolbar">
-          <button class="btn btn-xs btn-info" (click)="this.router.navigate(['/app/ecommerce/management/' + row.id])">
+          <button class="btn btn-xs btn-info" [routerLink]="['/app/ecommerce/management', row.id]">
             <span class="d-none d-md-inline-block">Edit</span>
             <span class="d-md-none"><i class='la la-edit'></i></span>
           </button>

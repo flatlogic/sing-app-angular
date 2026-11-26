@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: '[ui-components]',
   templateUrl: './notifications.template.html',
   encapsulation: ViewEncapsulation.None,

@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 declare let Rickshaw: any;
 
 @Component({
+  standalone: false,
   selector: '[market-stats-widget]',
   template: '<div class="chart-overflow-bottom"' +
   ' rickshaw-chart [series]="series" ' +

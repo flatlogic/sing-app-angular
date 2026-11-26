@@ -1,10 +1,11 @@
-import * as Shuffle from 'shufflejs/dist/shuffle.js';
+import Shuffle from 'shufflejs';
 
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[extra-gallery]',
   templateUrl: './gallery.template.html',
   encapsulation: ViewEncapsulation.None,

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 
 import {WidgetComponent} from './widget';
-import {TooltipModule} from 'ngx-bootstrap';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {LoaderModule} from '../../components/loader/loader.module';
@@ -10,7 +10,7 @@ import {LoaderModule} from '../../components/loader/loader.module';
   imports: [
     CommonModule,
     FormsModule,
-    TooltipModule.forRoot(),
+    TooltipModule,
     LoaderModule
   ],
   exports: [WidgetComponent],

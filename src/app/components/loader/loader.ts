@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
 
-import 'widgster';
 
 @Component({
+  standalone: false,
   selector: 'loader',
   templateUrl: './loader.html',
   styleUrls: ['./loader.scss']

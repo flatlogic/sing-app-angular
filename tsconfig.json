@@ -5,32 +5,24 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2020",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
+    "module": "ES2022",
+    "moduleResolution": "bundler",
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "target": "ES2022",
     "lib": [
-      "es2018",
-      "dom"
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
     ],
-    "paths": {
-      "@angular/*": ["node_modules/@angular/*"]
-    }
+    "esModuleInterop": true,
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true
   },
-  "exclude": [
-    "dist",
-    "node_modules/@tinymce/tinymce-angular/node_modules"
-  ],
-  "include": [
-    "node_modules/ng-autosize/**/*.ts",
-    "node_modules/ng2-datetime/ng2-datetime.ts",
-    "node_modules/ng2-datetime/src/ng2-datetime/ng2-datetime.module.ts",
-    "node_modules/ng2-datetime/src/ng2-datetime/ng2-datetime.ts",
-    "**/*.ts"
-  ]
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictTemplates": true,
+    "strictDomEventTypes": false
+  }
 }

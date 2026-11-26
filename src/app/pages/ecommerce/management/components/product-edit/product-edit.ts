@@ -3,6 +3,7 @@ import {Product, ProductsService} from '../../../products.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'product-edit',
   templateUrl: './product-edit.html',
   styleUrls: ['./product-edit.scss'],
@@ -47,6 +48,14 @@ export class ProductEditComponent implements OnInit {
 
   getId() {
     return parseInt(this.route.params['value'].id, 10) || -1;
+  }
+
+  addTechnology(input: HTMLInputElement): void {
+    const value = input.value.trim();
+    if (value && !this.product.technology.includes(value)) {
+      this.updateTechnology(value, 'add');
+    }
+    input.value = '';
   }
 
   updateTechnology(value, type) {

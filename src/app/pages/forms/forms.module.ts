@@ -1,19 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TooltipModule, AlertModule, BsDropdownModule } from 'ngx-bootstrap';
-import { Autosize } from 'ng-autosize';
-import { NgSelect2Module } from 'ng-select2';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { WidgetModule } from '../../layout/widget/widget.module';
-import { NgxMaskModule } from 'ngx-mask';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { DropzoneDemoDirective } from '../../components/dropzone/dropzone.directive';
-import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 /* tslint:enable */
 import { ElementsComponent } from './elements/elements.component';
 import { ValidationComponent } from './validation/validation.component';
-import { EditorModule } from '@tinymce/tinymce-angular';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'elements', pathMatch: 'full'},
@@ -23,8 +21,9 @@ export const routes: Routes = [
 ];
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [provideNgxMask()],
   declarations: [
-    Autosize,
     ElementsComponent,
     ValidationComponent,
     DropzoneDemoDirective
@@ -32,15 +31,12 @@ export const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    NgxMaskModule.forRoot(),
-    TooltipModule.forRoot(),
-    AlertModule.forRoot(),
-    BsDropdownModule.forRoot(),
+    NgxMaskDirective,
+    TooltipModule,
+    AlertModule,
+    BsDropdownModule,
     WidgetModule,
-    NKDatetimeModule,
-    NgSelect2Module,
     RouterModule.forChild(routes),
-    EditorModule
   ]
 })
 export class FormModule {

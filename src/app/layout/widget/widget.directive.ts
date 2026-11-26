@@ -1,9 +1,9 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 declare let jQuery: any;
 
-import 'widgster';
 
 @Directive ({
+  standalone: false,
   selector: '[widget]'
 })
 

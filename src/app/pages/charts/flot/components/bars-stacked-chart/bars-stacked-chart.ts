@@ -3,6 +3,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'bars-stacked-chart',
   templateUrl: './bars-stacked-chart.html'
 })

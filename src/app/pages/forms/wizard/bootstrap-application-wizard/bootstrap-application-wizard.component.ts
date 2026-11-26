@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 declare let jQuery: any;
 
 @Component ({
+  standalone: false,
   selector: '[bootstrap-application-wizard]',
   templateUrl: './bootstrap-application-wizard.template.html'
 })

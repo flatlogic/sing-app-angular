@@ -156,6 +156,7 @@ const MAILS = [
 ];
 
 @Component({
+  standalone: false,
   selector: '[mail-list]',
   templateUrl: './mail-list.template.html',
   styleUrls: ['./mail-list.style.scss']

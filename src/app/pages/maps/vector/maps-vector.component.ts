@@ -1,8 +1,10 @@
+import worldMap from '@react-jvectormap/world/worldMill.json';
 import {AfterViewInit, Component, ViewEncapsulation} from '@angular/core';
 import { AppConfig } from '../../../app.config';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[maps-vector]',
   templateUrl: './maps-vector.template.html',
   encapsulation: ViewEncapsulation.None,
@@ -87,6 +89,7 @@ export class MapsVectorComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => { jQuery('.vector-map').vectorMap(this.data); });
+    jQuery.fn.vectorMap('addMap', 'world_mill_en', worldMap);
+    jQuery('.vector-map').vectorMap(this.data);
   }
 }

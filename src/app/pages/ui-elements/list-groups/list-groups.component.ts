@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[ui-list-groups]',
   templateUrl: './list-groups.template.html',
   encapsulation: ViewEncapsulation.None,

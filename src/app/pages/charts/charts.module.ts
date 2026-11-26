@@ -14,7 +14,8 @@ import {SparklineComponent} from './sparkline/sparkline';
 import {OverviewComponent} from './overview/overview';
 import {EasyPieComponent} from './easy-pie/easy-pie';
 import {NewWidgetModule} from '../../layout/new-widget/widget.module';
-import {AlertModule, ProgressbarModule} from 'ngx-bootstrap';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {ProgressbarModule} from 'ngx-bootstrap/progressbar';
 import {BarsChartComponent} from './flot/components/bars-chart/bars-chart';
 import {BarsStackedChartComponent} from './flot/components/bars-stacked-chart/bars-stacked-chart';
 import {DonutChartComponent} from './flot/components/donut-chart/donut-chart';
@@ -43,8 +44,8 @@ export const routes: Routes = [
     RickshawChartModule,
     RouterModule.forChild(routes),
     NewWidgetModule,
-    AlertModule.forRoot(),
-    ProgressbarModule.forRoot()
+    AlertModule,
+    ProgressbarModule
   ],
   declarations: [
     OverviewComponent,

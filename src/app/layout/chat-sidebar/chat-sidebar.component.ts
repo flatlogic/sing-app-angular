@@ -4,6 +4,7 @@ declare let jQuery: any;
 declare let Hammer: any;
 
 @Component({
+  standalone: false,
   selector: 'app-chat-sidebar',
   templateUrl: './chat-sidebar.template.html'
 })

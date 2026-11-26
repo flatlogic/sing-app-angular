@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, ElementRef, HostBinding, Input} from '@angular/core';
 declare let jQuery: any;
 
-import 'widgster';
 
 @Component ({
+  standalone: false,
   selector: 'widget',
   templateUrl: './widget.html'
 })
@@ -14,7 +14,7 @@ export class WidgetComponent implements AfterViewInit {
   randomId: number;
 
   @Input() customHeader: boolean = false;
-  @Input() tooltipPlacement: string = 'top';
+  @Input() tooltipPlacement: 'top' | 'right' | 'bottom' | 'left' = 'top';
   @Input() showTooltip: boolean = false;
   @Input() close: boolean = false;
   @Input() fullscreen: boolean = false;

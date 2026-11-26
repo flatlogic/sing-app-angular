@@ -3,6 +3,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[ui-tabs-accordion]',
   templateUrl: './tabs-accordion.template.html',
   styleUrls: ['./tabs-accordion.style.scss'],

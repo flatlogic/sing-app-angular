@@ -53,7 +53,7 @@
     >
       <p>Rounded alerts are available by adding <code>.alert-rounded</code> class.</p>
       <alert
-        [ngClass]="{ 'alert-rounded': true, 'alert-transparent': index % 2 === 0 }"
+        [ngClass]="{ 'alert-rounded': true, 'alert-transparent': i % 2 === 0 }"
         *ngFor="let alert of alerts; let i = index"
         [attr.key]="alert.id"
         [isOpen]="true"

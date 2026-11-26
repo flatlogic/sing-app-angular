@@ -5,6 +5,7 @@ declare let Dropzone: any;
 Dropzone.autoDiscover = false;
 
 @Directive ({
+  standalone: false,
   selector: '[dropzone-demo]'
 })
 

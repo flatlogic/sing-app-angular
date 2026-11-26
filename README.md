@@ -1,123 +1,51 @@
-# 🚀 Sing App Angular - A Free Premium Angular Dashboard Template!
+# Sing App Angular
 
-[View Demo](https://flatlogic.com/templates/sing-app-angular/demo) | [Download](https://github.com/flatlogic/sing-app-angular/archive/refs/heads/master.zip) | [More Templates](https://flatlogic.com/templates) | [Discord Community](https://discord.gg/flatlogic-community) | [Support Forum](https://flatlogic.com/forum)
+Sing App is a free Angular dashboard with a responsive Bootstrap layout. Open the Analytics and Visits dashboards, filter data grids, edit forms, browse a product catalog and navigate a calendar. The standalone demo ships with sample data. API mode connects the same interface to a backend.
 
-**Originally a premium product priced at $69+, made available for free in January 2025!** 🎉 Built with love and frustration by the [Flatlogic Generator](https://flatlogic.com/ai-software-development-agent) - because who wants to build the CRUD apps from scratch?
+[Live demo](https://flatlogic.com/templates/sing-app-angular/demo) · [Latest release](https://github.com/flatlogic/sing-app-angular/releases/latest) · [Changelog](changelog.md)
 
----
+![Sing App dashboard preview](src/assets/img/sing-screenshot.png)
 
-## 🎯 Why Sing App Angular?
-- **Ex-Premium**: This template was previously paid. Enjoy it for free now. 😉
-- **Tons of components**: Again, since it was premium there are literally hundreds of them. Check out the demo.
-- **Join the Community**: [Flatlogic Discord](https://discord.gg/flatlogic-community) is where the action happens.
-- **Free Node.js Backend**: Pair it up with [this backend](https://github.com/flatlogic/nodejs-backend) to go full-stack.
+## Start the standalone demo
 
----
+Use Node.js 22.13 or later on the 22.x line, or Node.js 24 LTS, with npm 10 or later.
 
-## 🚀 Quick Start
+```sh
+git clone https://github.com/flatlogic/sing-app-angular.git
+cd sing-app-angular
+npm ci
+npm start
+```
 
-1. **Clone the repo**  
-   ```bash
-   git clone <repository-url> SingAppAngular
-   cd SingAppAngular
-   ```
-2. **Install dependencies**  
-   ```bash
-   yarn install  # Do NOT use npm!
-   ```
-3. **Run the app**  
-   ```bash
-   yarn start
-   ```
-   Navigate to http://localhost:3000/.
+Open [localhost:3000](http://localhost:3000/) and click **Login** with the prefilled credentials. Sample data is bundled with the frontend. The browser remembers the demo session until you log out. Persistent changes to products require API mode.
 
-4. **Backend Support**  
-   ```bash
-   yarn run serve:backend
-   ```
+| Command | Result |
+| --- | --- |
+| `npm run build:demo` | Build the sample dashboard for static hosting |
+| `npm run start:backend` | Run the development frontend against an API |
+| `npm run build` | Build the production frontend with API sign-in |
+| `npm test` | Run the session tests |
+| `npm run lint` | Check TypeScript with ESLint |
 
-5. **Build for production**  
-   ```bash
-   yarn build --prod
-   ```
+Both production builds write deployable files to `dist/`. Serve the contents of that directory over HTTP. Relative asset URLs and hash-based routes allow deployment beneath a subdirectory.
 
-> **Pro Tip:** If something breaks, it's probably your fault. 😜
+## Connect a backend
 
----
+Run the [Flatlogic Node.js backend](https://github.com/flatlogic/nodejs-backend) and use an account registered with that API. The development frontend expects `http://localhost:8080/api`. The production frontend uses `/api` on its own origin. To change this without rebuilding, set the content of the `sing-api` meta tag in the deployed `index.html`. For a separate API origin, allow the frontend origin on the API.
 
-## 🧩 Features
+The default sign-in and registration endpoints are `/auth/signin/local` and `/auth/signup`, relative to the API base. For older servers using `/user`, change `authPath` in [app.config.ts](src/app/app.config.ts) before building. Google and Microsoft sign-in require the corresponding provider configuration on your backend.
 
-- Hundreds of Pages
-- Fully Responsive
-- Built with Angular 14
-- 8 Charts Library
-- 2 Dashboards
-- Theme Support
-- E-Commerce Section
-- Static & Hover Sidebar
-- Fully Documented Codebase
+## Upgrade from 5.x
 
----
+Use npm with the committed lockfile. Version 6 uses Angular 21 LTS and the Angular application builder. Choose `build:demo` for the sample site and `build` for API deployments. The new lockfile replaces the old Yarn and Napa setup.
 
-## 🛠 Built With
-- Angular 14
-- Bootstrap 4
-- Node.js
-- HTML5
-- JavaScript (ES6)
-- Webpack
+## Project layout
 
----
+| Directory | Contents |
+| --- | --- |
+| `src/app/pages/` | Dashboards, charts, tables, forms, maps, calendar and ecommerce screens |
+| `src/app/layout/` | Application shell, navigation and shared widgets |
+| `src/environments/` | Standalone and API build modes |
+| `src/vendor/` | Legacy widget sources and their upstream licenses |
 
-## 📦 Components
-- UI Elements
-- Components
-- Notifications
-- Forms
-- Charts (Flot, Morris, Rickshaw, etc.)
-- Buttons
-- Tables
-- Dashboards
-- Maps (Google, Vector)
-- Widgets
-- Pages (Profile, Email, E-commerce, Calendar, etc.)
-
----
-
-## 🌍 Available Variants
-
-|               | **Material**                                              | **Transparent**                                         | **Classic**                                          | **Sofia**                                          | **Flatlogic**                                      |
-|---------------|-----------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------|-----------------------------------------------------|----------------------------------------------------|
-| **React**     | [React Material Admin](https://github.com/flatlogic/react-material-admin-full) | [Light Blue React](https://github.com/flatlogic/light-blue-react) | [Sing App React](https://github.com/flatlogic/sing-app-react) | [Sofia React](https://github.com/flatlogic/sofia-react) | [One React](https://github.com/flatlogic/one-react) |
-| **Angular**   | [Angular Material Admin](https://github.com/flatlogic/angular-material-admin-full) | [Light Blue Angular](https://github.com/flatlogic/light-blue-angular) | [Sing App Angular](https://github.com/flatlogic/sing-app-angular) | - | - |
-| **Vue**       | [Material Vue](https://github.com/flatlogic/material-vue-full) | [Light Blue Vue](https://github.com/flatlogic/light-blue-vue) | [Sing App Vue](https://github.com/flatlogic/sing-app-vue) | - | - |
-| **Bootstrap** | - | [Light Blue HTML5](https://github.com/flatlogic/light-blue-html5) | [Sing App HTML5](https://github.com/flatlogic/sing-app-html5) | - | [One Bootstrap](https://github.com/flatlogic/one-bootstrap-template-full) |
-
-
-Additionally, these templates are tailored for specific business needs:
-- [E-Commerce Frontend (React)](https://github.com/flatlogic/ecommerce-frontend) - A complete e-commerce solution.
-- [Bookkeeper UI (React)](https://github.com/flatlogic/bookkeeper-ui) - Accounting dashboard for finance management.
-- [User Management Template (React)](https://github.com/flatlogic/user-management-template) - User authentication and management.
-
----
-
-## 👨‍💻 How to Contribute
-- **Star this repo ⭐** - show some love.
-- **Report bugs** - but be nice.
-- **Join the [Discord](<insert-discord-invite-link>)** - meet fellow devs.
-
----
-
-## 🔥 About Flatlogic
-[Flatlogic](https://flatlogic.com/ai-software-development-agent) builds modern business software so you don't have to. Our AI Software Development Agent helps you generate, deploy, and maintain enterprise applications with minimal effort.
-
----
-
-## 📜 License
-This template is free to use. Modify it, break it, make it your own. Just don’t try to sell it back to us. 😎
-
----
-
-> **Questions or feedback?**  
-> Join our [Flatlogic Community Discord](https://discord.gg/flatlogic-community) or visit our [support forum](https://flatlogic.com/forum). We might even reply!
-
+[More Flatlogic templates](https://flatlogic.com/templates) · [Report an issue](https://github.com/flatlogic/sing-app-angular/issues) · [MIT license](LICENSE)

@@ -2,6 +2,7 @@ import {Component, HostBinding} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-error',
   styleUrls: [ './error.style.scss' ],
   templateUrl: './error.template.html',

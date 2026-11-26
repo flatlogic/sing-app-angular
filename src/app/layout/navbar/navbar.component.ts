@@ -5,6 +5,7 @@ import {LoginService} from '../../pages/login/login.service';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'app-navbar',
   templateUrl: './navbar.template.html'
 })

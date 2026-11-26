@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './login.component';
 import {NewWidgetModule} from '../../layout/new-widget/widget.module';
-import {AlertModule} from 'ngx-bootstrap';
+import {AlertModule} from 'ngx-bootstrap/alert';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent, pathMatch: 'full' }
@@ -20,7 +20,7 @@ export const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
     NewWidgetModule,
-    AlertModule.forRoot()
+    AlertModule
   ]
 })
 export class LoginModule {

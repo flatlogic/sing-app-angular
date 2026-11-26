@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { AppConfig } from '../../app.config';
 
 @Component({
+  standalone: false,
   selector: 'widgets',
   templateUrl: './widgets.template.html',
   encapsulation: ViewEncapsulation.None,

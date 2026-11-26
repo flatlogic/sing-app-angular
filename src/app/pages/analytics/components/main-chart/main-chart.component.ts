@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation, Input, HostListener } from '@angular/core
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'main-chart',
   templateUrl: './main-chart.template.html',
   encapsulation: ViewEncapsulation.None
@@ -143,7 +144,7 @@ export class MainChartComponent {
       },
       legend: {
         noColumns: 3,
-        container: $('#main-chart .chart-legend'),
+        container: jQuery('#main-chart .chart-legend'),
       },
       colors: ['#E2E1FF', '#3abf94', '#ffc247'],
       hooks: {

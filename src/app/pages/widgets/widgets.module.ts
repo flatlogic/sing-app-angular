@@ -2,8 +2,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import 'jQuery-Mapael/js/jquery.mapael.js';
-import 'jQuery-Mapael/js/maps/world_countries.js';
 
 import { WidgetsComponent } from './widgets.component';
 import { LiveTileModule } from '../../components/tile/tile.module';

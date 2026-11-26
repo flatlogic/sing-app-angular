@@ -3,12 +3,13 @@ declare let jQuery: any;
 declare let Rickshaw: any;
 
 @Directive ({
+  standalone: false,
   selector: '[rickshaw-chart]'
 })
 
 export class RickshawChartDirective implements AfterViewInit {
   $el: any;
-  @Input() height: string;
+  @Input() height: number;
   @Input() series: Array<any>;
   @Input() seriesData: Array<any>;
   @Input() random: any;

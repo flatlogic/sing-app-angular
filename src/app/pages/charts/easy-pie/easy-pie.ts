@@ -1,9 +1,9 @@
 import {AfterViewInit, Component} from '@angular/core';
-import 'easy-pie-chart/dist/jquery.easypiechart.js';
 
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'easy-pie',
   templateUrl: './easy-pie.html'
 })

@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[grid]',
   templateUrl: './grid.template.html',
   encapsulation: ViewEncapsulation.None,

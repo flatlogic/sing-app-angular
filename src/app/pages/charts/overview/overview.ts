@@ -6,6 +6,7 @@ declare let d3: any;
 declare let nv: any;
 
 @Component({
+  standalone: false,
   selector: '[charts-overview]',
   templateUrl: './overview.html',
   styleUrls: ['./overview.scss'],

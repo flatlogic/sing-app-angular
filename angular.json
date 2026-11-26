@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -9,39 +12,50 @@
       "projectType": "application",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular/build:application",
           "options": {
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js"
+            "outputPath": {
+              "base": "dist",
+              "browser": ""
             },
-            "outputPath": "dist",
             "index": "src/index.html",
-            "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "assets": [
               "src/assets"
             ],
             "styles": [
               "src/app/styles/application.scss",
-              "node_modules/select2/dist/css/select2.min.css"
+              "node_modules/select2/dist/css/select2.min.css",
+              "node_modules/trix/dist/trix.css",
+              "node_modules/easymde/dist/easymde.min.css"
             ],
+            "browser": "src/main.ts",
+            "optimization": {
+              "scripts": false,
+              "styles": {
+                "minify": true,
+                "inlineCritical": false
+              },
+              "fonts": false
+            },
+            "baseHref": "./",
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/popper.js/dist/umd/popper.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/hammerjs/hammer.min.js",
+              "node_modules/jquery-ui-dist/jquery-ui.js",
               "node_modules/d3/d3.min.js",
               "node_modules/nvd3/build/nv.d3.min.js",
-              "node_modules/rickshaw/rickshaw.min.js",
+              "node_modules/rickshaw/rickshaw.js",
               "node_modules/moment/min/moment.min.js",
               "node_modules/fullcalendar/dist/fullcalendar.js",
-              "node_modules/skycons/skycons.js",
               "node_modules/dropzone/dist/dropzone.js",
               "node_modules/parsleyjs/dist/parsley.js",
               "node_modules/jasny-bootstrap/dist/js/jasny-bootstrap.min.js",
-              "node_modules/markdown/lib/markdown.js",
-              "node_modules/bootstrap-markdown/js/bootstrap-markdown.js",
               "node_modules/bootstrap-slider/dist/bootstrap-slider.js",
               "node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js",
               "node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js",
@@ -49,33 +63,38 @@
               "node_modules/select2/dist/js/select2.min.js",
               "node_modules/bootstrap-select/dist/js/bootstrap-select.js",
               "node_modules/easy-pie-chart/dist/jquery.easypiechart.js",
-              "node_modules/jquery-ui/ui/core.js",
-              "node_modules/jquery-ui/ui/widget.js",
-              "node_modules/jquery-ui/ui/mouse.js",
-              "node_modules/jquery-ui/ui/sortable.js",
-              "node_modules/jquery-ui/ui/draggable.js",
               "node_modules/jvectormap/jquery-jvectormap.min.js",
-              "node_modules/jvectormap-world/jquery-jvectormap-world-mill-en.js",
               "node_modules/jquery-sparkline/jquery.sparkline.min.js",
               "node_modules/magnific-popup/dist/jquery.magnific-popup.min.js",
               "node_modules/jquery-flot/jquery.flot.js",
               "node_modules/jquery-flot/jquery.flot.time.js",
-              "node_modules/jquery.flot.animator/jquery.flot.animator.min.js",
-              "node_modules/morris.js/morris.js",
-              "node_modules/bootstrap-application-wizard/src/bootstrap-wizard.js",
-              "node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.js"
+              "node_modules/jquery-flot/jquery.flot.resize.js",
+              "node_modules/jquery-flot/jquery.flot.crosshair.js",
+              "node_modules/jquery-flot/jquery.flot.symbol.js",
+              "node_modules/jquery-flot/jquery.flot.selection.js",
+              "node_modules/jquery-flot/jquery.flot.pie.js",
+              "node_modules/flot-orderbars/js/jquery.flot.orderBars.js",
+              "src/vendor/flotanimator/jquery.flot.animator.js",
+              "src/vendor/flot.dashes/jquery.flot.dashes.js",
+              "node_modules/raphael/raphael.min.js",
+              "node_modules/govpredict-morris/morris.js",
+              "src/vendor/bootstrap-application-wizard/bootstrap-wizard.js",
+              "node_modules/jquery-bootstrap-wizard/jquery.bootstrap.wizard.js",
+              "node_modules/jquery.animate-number/jquery.animateNumber.js",
+              "node_modules/jquery-mapael/js/jquery.mapael.js",
+              "node_modules/jquery-mapael/js/maps/usa_states.js",
+              "node_modules/jquery-mapael/js/maps/world_countries.js",
+              "node_modules/jquery-nestable/jquery.nestable.js",
+              "node_modules/jquery-slimscroll/jquery.slimscroll.js",
+              "node_modules/widgster/widgster.js",
+              "node_modules/messenger/build/js/messenger.js",
+              "node_modules/metrojs/release/MetroJs.Full/MetroJs.js",
+              "src/vendor/bootstrap_calendar/bootstrap_calendar.js"
             ]
           },
           "configurations": {
             "production": {
-              "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -83,15 +102,22 @@
                 }
               ]
             },
-            "hmr": {
+            "demo": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.hmr.ts"
+                  "with": "src/environments/environment.demo.ts"
                 }
               ]
             },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            },
             "backend": {
+              "optimization": false,
+              "sourceMap": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -99,51 +125,52 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular/build:dev-server",
           "options": {
-            "browserTarget": "Sing:build",
             "port": 3000
           },
           "configurations": {
-            "production": {
-              "browserTarget": "Sing:build:production"
-            },
-            "hmr": {
-              "hmr": true,
-              "browserTarget": "Sing:build:hmr"
+            "development": {
+              "buildTarget": "Sing:build:development"
             },
             "backend": {
-              "browserTarget": "Sing:build:backend"
+              "buildTarget": "Sing:build:backend"
+            },
+            "production": {
+              "buildTarget": "Sing:build:production"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular/build:extract-i18n",
           "options": {
-            "browserTarget": "Sing:build"
+            "buildTarget": "Sing:build"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "tsconfig.spec.json",
+            "buildTarget": "Sing:build:development"
           }
         }
       }
-    },
-    "Sing-e2e": {
-      "root": "e2e",
-      "sourceRoot": "e2e",
-      "projectType": "application"
     }
   },
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "style": "scss"
+      "style": "scss",
+      "standalone": false
     },
     "@schematics/angular:directive": {
-      "prefix": "app"
+      "prefix": "app",
+      "standalone": false
     }
-  },
-  "cli": {
-    "analytics": "0f3211c9-c1fc-42ac-be42-5797cfb87313"
   }
 }

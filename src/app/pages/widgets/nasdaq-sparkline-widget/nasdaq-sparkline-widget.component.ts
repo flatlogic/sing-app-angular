@@ -4,6 +4,7 @@ import { AppConfig } from '../../../app.config';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[nasdaq-sparkline-widget]',
   template: '<div jq-sparkline [data]="data" [options]="options"></div>'
 })

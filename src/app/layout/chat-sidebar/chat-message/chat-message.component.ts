@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 
+  standalone: false,
   selector: 'app-chat-message',
   templateUrl: './chat-message.template.html'
 })

@@ -2,6 +2,7 @@ import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
+  standalone: false,
   selector: '[flot-chart]'
 })
 

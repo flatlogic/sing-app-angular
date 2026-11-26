@@ -2,6 +2,7 @@ import {AfterViewInit, Directive} from '@angular/core';
 declare let jQuery: any;
 
 @Directive({
+  standalone: false,
   selector: '[grid-demo]',
 })
 

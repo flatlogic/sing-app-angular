@@ -2,13 +2,14 @@ import {AfterViewInit, Directive, ElementRef, Input} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
+  standalone: false,
   selector: '[jq-sparkline]'
 })
 
 export class JqSparklineDirective implements AfterViewInit {
   $el: any;
   @Input() data: any;
-  @Input() options: Array<any>;
+  @Input() options: Record<string, unknown> | Array<Record<string, unknown>>;
 
   constructor(el: ElementRef) {
     this.$el = jQuery(el.nativeElement);
@@ -20,7 +21,7 @@ export class JqSparklineDirective implements AfterViewInit {
       : this.data,
       options = this.options;
     // enabling composite chart if array passed
-    if (jQuery.type(model) === 'array' && jQuery.type(options) === 'array') {
+    if (jQuery.type(model) === 'array' && Array.isArray(options)) {
       options.forEach((singleOptions, i) => {
         if (i === 0) {
           this.$el.sparkline(model[i], singleOptions);

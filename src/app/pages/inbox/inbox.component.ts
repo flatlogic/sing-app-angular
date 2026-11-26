@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'inbox',
   templateUrl: './inbox.template.html',
   styleUrls: ['./inbox.style.scss']

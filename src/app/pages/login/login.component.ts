@@ -4,12 +4,14 @@ import {ActivatedRoute} from '@angular/router';
 import {AppConfig} from '../../app.config';
 
 @Component({
+  standalone: false,
   selector: 'app-login',
   templateUrl: './login.template.html'
 })
 export class LoginComponent {
   @HostBinding('class') classes = 'auth-page app';
 
+  readonly demoMode: boolean;
   email: string = '';
   password: string = '';
 
@@ -20,8 +22,11 @@ export class LoginComponent {
   ) {
     const config: any = appConfig.getConfig();
     const creds = config.auth;
-    this.email = creds.email;
-    this.password = creds.password;
+    this.demoMode = !config.isBackend;
+    if (this.demoMode) {
+      this.email = creds.email;
+      this.password = creds.password;
+    }
 
     if (this.loginService.isAuthenticated()) {
       this.loginService.receiveLogin();

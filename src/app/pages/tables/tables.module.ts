@@ -3,8 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AlertModule, TooltipModule } from 'ngx-bootstrap';
-import { ButtonsModule, BsDropdownModule, PaginationModule  } from 'ngx-bootstrap';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {PaginationModule} from 'ngx-bootstrap/pagination';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AgGridModule } from 'ag-grid-angular';
 import { WidgetModule } from '../../layout/widget/widget.module';
@@ -31,11 +34,11 @@ export const routes: Routes = [
     CommonModule,
     JqSparklineModule,
     FormsModule,
-    AlertModule.forRoot(),
-    TooltipModule.forRoot(),
-    ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    PaginationModule.forRoot(),
+    AlertModule,
+    TooltipModule,
+    ButtonsModule,
+    BsDropdownModule,
+    PaginationModule,
     WidgetModule,
     UtilsModule,
     AgGridModule,

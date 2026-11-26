@@ -3,6 +3,7 @@ import {ProductsService} from '../products.service';
 import {Router} from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'management',
   templateUrl: './management.html',
   styleUrls: ['./management.scss'],

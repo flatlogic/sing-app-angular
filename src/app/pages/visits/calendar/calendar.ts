@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef, Input, ViewChild, ViewEncapsulatio
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'calendar',
   template: `<div #calendarWrapper class="calendar-wrapper" [ngClass]="{'white': white}"></div>`,
   styleUrls: ['./calendar.scss'],

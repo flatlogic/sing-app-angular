@@ -3,20 +3,17 @@ import {environment} from '../environments/environment';
 
 declare let jQuery: any;
 
-const hostApi = !environment.production ? 'http://localhost' : 'https://flatlogic-node-backend.herokuapp.com';
-const portApi = !environment.production ? 8080 : '';
-const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}`;
+const api = document.querySelector<HTMLMetaElement>('meta[name="sing-api"]')?.content.trim();
+const baseURLApi = (api || (environment.production ? '/api' : 'http://localhost:8080/api')).replace(/\/$/, '');
 
 @Injectable()
 export class AppConfig {
   config = {
     name: 'sing',
-    title: 'Sing Dashboard App with Angular 11.2 support by Flatlogic',
-    version: '4.0.0',
-    remote: 'https://flatlogic-node-backend.herokuapp.com',
+    title: 'Sing App Angular Dashboard',
+    version: '6.0.0',
     isBackend: environment.backend,
-    hostApi,
-    portApi,
+    authPath: '/auth',
     baseURLApi,
     auth: {
       email: 'admin@flatlogic.com',

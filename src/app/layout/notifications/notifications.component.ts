@@ -6,6 +6,7 @@ declare let jQuery: any;
 export type Tabs = 'notifications' | 'messages' | 'progress';
 
 @Component({
+  standalone: false,
   selector: 'app-notifications',
   templateUrl: './notifications.template.html',
   styleUrls: ['./notifications.style.scss']

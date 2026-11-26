@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { AppConfig } from '../../app.config';
 
 @Component({
+  standalone: false,
   selector: 'visits',
   templateUrl: './visits.template.html',
   styleUrls: ['./visits.style.scss'],

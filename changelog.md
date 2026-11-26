@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.0] - 26/11/2026
+ - Upgrade Angular to 21.2.26 LTS, Angular CLI to 21.2.31 and jQuery to 3.8.0.
+ - Adopt the Angular application builder, npm lockfile and supported Node.js runtime. Replace the Napa install hook with licensed, bundled widget sources.
+ - Update the data grids, forms, editors and Google Maps integration. Ship sample product images with the standalone dashboard.
+ - Support static hosting under a subdirectory and configurable API deployments. Handle both plain-text and JSON sign-in responses, and test session expiry and sign-in failures.
+
 ## [5.3.5] - 27/11/2024
  - Update dependencies
 

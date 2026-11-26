@@ -1,14 +1,19 @@
-import 'messenger/build/js/messenger.js';
-import 'jquery.nestable/jquery.nestable.js';
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {AlertModule, CarouselModule, PopoverModule, ProgressbarModule, TooltipModule} from 'ngx-bootstrap';
-import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
-import { TabsModule, AccordionModule, ModalModule } from 'ngx-bootstrap';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {CarouselModule} from 'ngx-bootstrap/carousel';
+import {PopoverModule} from 'ngx-bootstrap/popover';
+import {ProgressbarModule} from 'ngx-bootstrap/progressbar';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import {AccordionModule} from 'ngx-bootstrap/accordion';
+import {ModalModule} from 'ngx-bootstrap/modal';
 import { WidgetModule } from '../../layout/widget/widget.module';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -65,19 +70,19 @@ export const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    AlertModule.forRoot(),
+    AlertModule,
     WidgetModule,
-    TooltipModule.forRoot(),
+    TooltipModule,
     ModalModule,
-    ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    AccordionModule.forRoot(),
+    ButtonsModule,
+    BsDropdownModule,
+    TabsModule,
+    AccordionModule,
     NewWidgetModule,
-    AlertModule.forRoot(),
-    CarouselModule.forRoot(),
-    PopoverModule.forRoot(),
-    ProgressbarModule.forRoot()
+    AlertModule,
+    CarouselModule,
+    PopoverModule,
+    ProgressbarModule
   ]
 })
 export class UiElementsModule {

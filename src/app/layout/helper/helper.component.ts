@@ -3,6 +3,7 @@ import {HelperService} from './helper.service';
 import {DashboardThemes} from './helper.interface';
 
 @Component({
+  standalone: false,
   selector: 'theme-helper',
   templateUrl: './helper.template.html',
   styleUrls: ['./helper.style.scss']

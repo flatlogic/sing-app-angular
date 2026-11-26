@@ -4,6 +4,7 @@ declare let nv: any;
 declare let d3: any;
 
 @Directive ({
+  standalone: false,
   selector: '[nvd3-chart]'
 })
 

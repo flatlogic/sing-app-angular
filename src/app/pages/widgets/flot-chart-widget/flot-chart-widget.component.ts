@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AppConfig } from '../../../app.config';
 
 @Component({
+  standalone: false,
   selector: '[flot-chart-widget]',
   templateUrl: './flot-chart-widget.template.html',
 })

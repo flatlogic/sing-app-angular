@@ -1,9 +1,10 @@
 import {Component, ViewEncapsulation, ViewChild, OnInit, AfterViewInit} from '@angular/core';
-import { ModalDirective } from 'ngx-bootstrap';
+import {ModalDirective} from 'ngx-bootstrap/modal';
 declare let jQuery: any;
 declare let moment: any;
 
 @Component({
+  standalone: false,
   selector: '[extra-calendar]',
   templateUrl: './calendar.template.html',
   encapsulation: ViewEncapsulation.None,

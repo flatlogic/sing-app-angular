@@ -4,6 +4,7 @@ import { FakeWorldData } from './fake-world-data.service';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: '[years-map-widget]',
   templateUrl: './years-map-widget.template.html',
 })

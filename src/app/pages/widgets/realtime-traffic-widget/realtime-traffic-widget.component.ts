@@ -3,6 +3,7 @@ import { AppConfig } from '../../../app.config';
 declare let Rickshaw: any;
 
 @Component({
+  standalone: false,
   selector: '[realtime-traffic-widget]',
   templateUrl: './realtime-traffic-widget.template.html',
   encapsulation: ViewEncapsulation.None,

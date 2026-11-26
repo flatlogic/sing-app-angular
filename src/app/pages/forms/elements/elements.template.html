@@ -382,7 +382,7 @@
               </label>
               <div class="col-md-9 ">
                   <textarea rows="3" class="autogrow form-control transition-height" id="elastic-textarea"
-                            autosize
+                            style="field-sizing: content"
                             placeholder="Try to add few new lines.."></textarea>
               </div>
             </div>
@@ -394,7 +394,7 @@
                 </span>
               </label>
               <div class="col-md-9 ">
-                <editor apiKey="test" [init]="{plugins: 'link'}"></editor>
+                <trix-editor aria-label="Rich text editor" (trix-file-accept)="$event.preventDefault()"></trix-editor>
               </div>
             </div>
             <div class="form-group row">
@@ -443,17 +443,14 @@ Enjoy!
             <div class="form-group row">
               <label class="col-md-4 col-form-label" for="default-select">Default select</label>
               <div class="col-md-8 ">
-                <ng-select2 id="default-select"
-                         (valueChanged)="select2Changed($event)"
-                         [data]="getSelect2DefaultList()" [options]="select2Options" [width]="250"></ng-select2>
+                <select id="default-select" class="enhanced-select form-control"><option *ngFor="let option of getSelect2DefaultList()" [value]="option.id">{{option.text}}</option></select>
                 <p *ngIf="selected" class="help-block mb-0">Selected value in select 2: <b>{{selected}}</b>.</p>
               </div>
             </div>
             <div class="form-group row">
               <label class="col-md-4 col-form-label" for="grouped-select">Select with search & groups</label>
               <div class="col-md-8 ">
-                <ng-select2 id="grouped-select"
-                         [data]="getSelect2GroupedList()" [options]="select2Options" [width]="250"></ng-select2>
+                <select id="grouped-select" class="enhanced-select form-control"><optgroup *ngFor="let group of getSelect2GroupedList()" [label]="group.text"><option *ngFor="let option of group.children" [value]="option.id">{{option.text}}</option></optgroup></select>
               </div>
             </div>
           </fieldset>
@@ -783,7 +780,7 @@ Enjoy!
               <label for="datetimepicker2i">
                 Time-enabled
               </label>
-              <datetime [(ngModel)]="date" name="datetime" id="datetimepicker2i" [timepicker]="{ icon: 'fa fa-clock-o' }" [datepicker]="{ icon: 'fa fa-calendar' }"></datetime>
+              <input type="datetime-local" class="form-control" [(ngModel)]="date" name="datetime" id="datetimepicker2i">
             </div>
           </fieldset>
           <fieldset>

@@ -3,6 +3,7 @@ import { AppConfig } from '../../../../../app.config';
 declare let jQuery: any;
 
 @Directive({
+  standalone: false,
   selector: '[flot-chart-animator]'
 })
 

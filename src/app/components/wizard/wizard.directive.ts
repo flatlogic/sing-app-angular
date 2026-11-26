@@ -2,6 +2,7 @@ import {AfterViewInit, Directive, ElementRef} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
+  standalone: false,
   selector: '[bootstrap-wizard]'
 })
 

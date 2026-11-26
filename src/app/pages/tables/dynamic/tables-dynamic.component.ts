@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DatatableComponent } from '@swimlane/ngx-datatable';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PEOPLE, tableData } from './tables-dynamic.data';
 import { GridSizeChangedEvent } from 'ag-grid-community';
 declare let jQuery: any;
 
 
 @Component({
+  standalone: false,
   selector: '[tables-dynamic]',
   templateUrl: './tables-dynamic.template.html',
 })
@@ -13,7 +13,7 @@ export class TablesDynamicComponent implements OnInit {
   people: any[] = PEOPLE;
   peopleTemp: any[] = [...PEOPLE];
 
-  @ViewChild(DatatableComponent, {static: true}) table: DatatableComponent;
+  tableOffset = 0;
 
   rows: Array<any> = [];
   columns: Array<any> = [
@@ -128,7 +128,7 @@ export class TablesDynamicComponent implements OnInit {
     // update the rows
     this.people = temp;
     // Whenever the filter changes, always go back to the first page
-    this.table.offset = 0;
+    this.tableOffset = 0;
   }
 
   onGridReady(params) {

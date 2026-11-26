@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
-import 'jquery-sparkline';
 
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'sparkline',
   templateUrl: './sparkline.html'
 })

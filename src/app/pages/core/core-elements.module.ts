@@ -3,10 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AlertModule, TooltipModule } from 'ngx-bootstrap';
-import { ButtonsModule, BsDropdownModule } from 'ngx-bootstrap';
-import { TabsModule, AccordionModule } from 'ngx-bootstrap';
-import { ModalModule } from 'ngx-bootstrap';
+import {AlertModule} from 'ngx-bootstrap/alert';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import {AccordionModule} from 'ngx-bootstrap/accordion';
+import {ModalModule} from 'ngx-bootstrap/modal';
 import { WidgetModule } from '../../layout/widget/widget.module';
 import { TypographyComponent } from './typography/typography.component';
 import { ColorsComponent } from './colors/colors.component';
@@ -30,14 +33,14 @@ export const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    AlertModule.forRoot(),
+    AlertModule,
     WidgetModule,
-    TooltipModule.forRoot(),
+    TooltipModule,
     ModalModule,
-    ButtonsModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    AccordionModule.forRoot()
+    ButtonsModule,
+    BsDropdownModule,
+    TabsModule,
+    AccordionModule
   ]
 })
 export class CoreElementsModule {

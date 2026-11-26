@@ -3,6 +3,7 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'line-chart',
   templateUrl: './line-chart.html'
 })

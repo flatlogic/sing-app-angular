@@ -5,6 +5,7 @@ import { AppConfig } from '../../app.config';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'app-sidebar',
   templateUrl: './sidebar.template.html'
 })

@@ -5,6 +5,7 @@ import {AnalyticsService} from './analytics.service';
 declare let jQuery: any;
 
 @Component({
+  standalone: false,
   selector: 'analytics',
   templateUrl: './analytics.template.html',
   styleUrls: ['./analytics.style.scss'],
@@ -83,7 +84,7 @@ export class AnalyticsComponent implements OnInit {
   }
 
   initChart() {
-    jQuery.plot($(this.chartContainer.nativeElement), this.analyticsService.revenue, {
+    jQuery.plot(jQuery(this.chartContainer.nativeElement), this.analyticsService.revenue, {
       series: {
         pie: {
           innerRadius: 0.8,
@@ -94,7 +95,7 @@ export class AnalyticsComponent implements OnInit {
       colors: ['#ffc247', '#f55d5d', '#9964e3'],
       legend: {
         noColumns: 1,
-        container: $(this.chartLegend.nativeElement),
+        container: jQuery(this.chartLegend.nativeElement),
         labelBoxBorderColor: '#ffffff',
       },
     });

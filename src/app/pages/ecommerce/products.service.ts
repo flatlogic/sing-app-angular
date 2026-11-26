@@ -6,6 +6,7 @@ import mock from './mock';
 import {AppConfig} from '../../app.config';
 
 export class Product {
+  starred?: boolean;
   id?: number;
   img?: string;
   title?: string;

@@ -2,6 +2,7 @@ import {Directive, ElementRef, OnInit} from '@angular/core';
 declare let jQuery: any;
 
 @Directive ({
+  standalone: false,
   selector: '[live-tile]'
 })
 

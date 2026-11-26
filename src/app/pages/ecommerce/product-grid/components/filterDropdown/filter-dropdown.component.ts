@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
+  standalone: false,
   selector: 'filter-dropdown',
   templateUrl: './filter-dropdown.template.html'
 })
